@@ -48,6 +48,7 @@ const repositoriesToClone = argv.org !== undefined && argv.repo !== undefined ? 
 
 for (const repository of repositoriesToClone) {
   const { org, repo, packageManager, hardhatConfig } = repository;
+  const executable = packageManager === undefined || packageManager === 'npm' ? 'npx' : packageManager;
 
   switch (argv._[0]) {
     case 'clone':
@@ -57,16 +58,16 @@ for (const repository of repositoriesToClone) {
       init(org, repo, packageManager, hardhatConfig);
       break;
     case 'build:hardhat':
-      run(org, repo, packageManager, ['hardhat3', 'compile']);
+      run(org, repo, [executable, 'hardhat3', 'compile']);
       break;
     case 'build:forge':
-      run(org, repo, packageManager, ['forge', 'build']);
+      run(org, repo, ['forge', 'build']);
       break;
     case 'test:hardhat':
-      run(org, repo, packageManager, ['hardhat3', 'test', 'solidity']);
+      run(org, repo, packageManager, [executable, 'hardhat3', 'test', 'solidity']);
       break;
     case 'test:forge':
-      run(org, repo, packageManager, ['forge', 'test']);
+      run(org, repo, ['forge', 'test']);
       break;
     default:
       throw new Error(`Invalid command: ${argv._[0]}`);
@@ -138,7 +139,7 @@ function init(org, repo, packageManager, hardhatConfig) {
   return;
 }
 
-function run(org, repo, packageManager, command) {
+function run(org, repo, command) {
   console.log(`Running ${command.join(' ')} in ${org}/${repo}...`);
   const dir = path.join(__dirname, 'repositories', org, repo);
   if (!fs.existsSync(dir)) {
@@ -164,8 +165,7 @@ function run(org, repo, packageManager, command) {
   }
   const outputFD = fs.openSync(outputFile, 'w');
   const errorFD = fs.openSync(errorFile, 'w');
-  const executable = packageManager === undefined || packageManager === 'npm' ? 'npx' : packageManager;
-  spawnSync(executable , command, { cwd: dir, stdio: ['inherit', outputFD, errorFD] });
+  spawnSync(command[0] , command.slice(1), { cwd: dir, stdio: ['inherit', outputFD, errorFD] });
   fs.closeSync(outputFD);
   fs.closeSync(errorFD);
 }
