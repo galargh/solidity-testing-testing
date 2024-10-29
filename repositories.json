@@ -26,8 +26,8 @@
   }, {
     "org": "sablier-labs",
     "repo": "v2-core",
+    "packageManager": "bun",
     "scripts": {
-      "bun": "bun install",
       "forge": "forge build && forge test"
     },
     "env": {
@@ -46,15 +46,15 @@
   }, {
     "org": "PaulRBerg",
     "repo": "prb-math",
+    "packageManager": "bun",
     "scripts": {
-      "bun": "bun install",
       "forge": "forge build && forge test"
     }
   }, {
     "org": "PaulRBerg",
     "repo": "prb-proxy",
+    "packageManager": "bun",
     "scripts": {
-      "bun": "bun install",
       "forge": "forge build && forge test"
     }
   }, {
@@ -84,8 +84,8 @@
   }, {
     "org": "pancakeswap",
     "repo": "pancake-v4-core",
+    "packageManager": "yarn",
     "scripts": {
-      "yarn": "yarn install",
       "forge": "forge build && forge test --isolate"
     }
   }, {
