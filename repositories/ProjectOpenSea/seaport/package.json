@@ -22,6 +22,7 @@
     "solady": "^0.0.84"
   },
   "devDependencies": {
+    "@ignored/hardhat-vnext": "^3.0.0-next.7",
     "@nomicfoundation/hardhat-chai-matchers": "^1.0.5",
     "@nomiclabs/hardhat-ethers": "^2.0.6",
     "@nomiclabs/hardhat-etherscan": "^3.1.0",
@@ -117,5 +118,6 @@
     "*.sol": "prettier --write",
     "*.js": "prettier --write",
     "*.ts": "prettier --write"
-  }
+  },
+  "type": "module"
 }

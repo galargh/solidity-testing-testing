@@ -1,20 +1,62 @@
 [
   {
     "org": "foundry-rs",
-    "repo": "forge-std"
+    "repo": "forge-std",
+    "packageManager": "npm",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["src", "test"]
+      },
+      "solidity": "0.8.26"
+    }
   }, {
     "org": "transmissions11",
-    "repo": "solmate"
+    "repo": "solmate",
+    "packageManager": "npm",
+    "hardhatConfig": {
+      "paths": {
+        "sources": "src"
+      },
+      "solidity": "0.8.15"
+    }
   }, {
     "org": "Vectorized",
-    "repo": "solady"
+    "repo": "solady",
+    "packageManager": "npm",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["src", "test"]
+      },
+      "solidity": {
+        "version": "0.8.28",
+        "remappings": ["forge-std=test/utils/forge-std/"]
+      }
+    }
   }, {
     "org": "Uniswap",
-    "repo": "UniswapX"
+    "repo": "UniswapX",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["src", "test"]
+      },
+      "solidity": {
+        "version": "0.8.24",
+        "remappings": ["ds-test/=lib/forge-std/lib/ds-test/src/", "forge-gas-snapshot/=lib/forge-gas-snapshot/src/", "forge-std/=lib/forge-std/src/", "openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/", "permit2/=lib/permit2/", "solmate/=lib/solmate/"]
+      }
+    }
   }, {
     "org": "sablier-labs",
     "repo": "v2-core",
     "packageManager": "bun",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["src", "test"]
+      },
+      "solidity": {
+        "version": "0.8.26",
+        "remappings": ["@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/", "@prb/math/=node_modules/@prb/math/", "forge-std/=node_modules/forge-std/", "solady/=node_modules/solady/", "solarray/=node_modules/solarray/"]
+      }
+    },
     "env": {
       "RPC_URL_MAINNET": "https://eth-mainnet.g.alchemy.com/v2/<api-key>"
     }
@@ -22,6 +64,15 @@
     "org": "sablier-labs",
     "repo": "v2-periphery",
     "packageManager": "bun",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["src", "test"]
+      },
+      "solidity": {
+        "version": "0.8.26",
+        "remappings": ["@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/", "@prb/math/=node_modules/@prb/math/", "@sablier/v2-core/=node_modules/@sablier/v2-core/", "forge-std/=node_modules/forge-std/", "solady/=node_modules/solady/"]
+      }
+    },
     "env": {
       "RPC_URL_MAINNET": "https://eth-mainnet.g.alchemy.com/v2/<api-key>"
     }
@@ -38,28 +89,96 @@
   }, {
     "org": "PaulRBerg",
     "repo": "prb-proxy",
-    "packageManager": "bun"
+    "packageManager": "bun",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["src", "test"]
+      },
+      "solidity": "0.8.23"
+    }
   }, {
     "org": "PaulRBerg",
-    "repo": "prb-test"
+    "repo": "prb-test",
+    "packageManager": "bun",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["src", "test"]
+      },
+      "solidity": "0.8.26"
+    }
   }, {
     "org": "ProjectOpenSea",
-    "repo": "seaport"
+    "repo": "seaport",
+    "packageManager": "yarn",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["contracts", "test/foundry"]
+      },
+      "solidity": {
+        "version": "0.8.24",
+        "remappings": ["@rari-capital/solmate/=lib/solmate/", "ds-test/=lib/ds-test/src/", "forge-std/=lib/forge-std/src/", "murky/=lib/murky/src/", "@openzeppelin/=lib/openzeppelin-contracts/", "solarray/=lib/solarray/src/", "solady/=lib/solady/", "seaport-sol/=lib/seaport-sol/", "seaport-types/=lib/seaport-types/", "seaport-core/=lib/seaport-core/", "seaport/=contracts/"]
+      }
+    }
   }, {
     "org": "kalidao",
-    "repo": "keep"
+    "repo": "keep",
+    "packageManager": "pnpm",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["contracts", "test"]
+      },
+      "solidity": {
+        "version":"0.8.18",
+        "remappings": ["@std/=lib/forge-std/src/", "@solady/=lib/solady/"]
+      }
+    }
   }, {
     "org": "SoulWallet",
-    "repo": "soul-wallet-contract"
+    "repo": "soul-wallet-contract",
+    "packageManager": "npm",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["contracts", "test"]
+      },
+      "solidity": {
+        "version": "0.8.24",
+        "remappings": ["@soulwallet-core/=lib/soulwallet-core/", "@source/=contracts/", "@arbitrum/nitro-contracts=lib/nitro-contracts/", "@solady=lib/solady/", "@solenv=lib/solenv/src/", "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/", "@account-abstraction/=lib/account-abstraction/", "@crypto-lib/=lib/crypto-lib/src/"]
+      }
+    }
   }, {
     "org": "pancakeswap",
     "repo": "pancake-v4-core",
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["src", "test"]
+      },
+      "solidity": {
+        "version": "0.8.26",
+        "remappings": ["ds-test/=lib/forge-std/lib/ds-test/src/", "forge-std/=lib/forge-std/src/", "@openzeppelin/=lib/openzeppelin-contracts/", "solmate/=lib/solmate/"]
+      }
+    }
   }, {
     "org": "pcaversaccio",
-    "repo": "createx"
+    "repo": "createx",
+    "packageManager": "pnpm",
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["src", "test"]
+      },
+      "solidity": {
+        "version": "0.8.23",
+        "remappings": ["solady/=lib/solady/src/", "forge-std/=lib/forge-std/src/", "openzeppelin/=lib/openzeppelin-contracts/contracts/"]
+      }
+    }
   }, {
     "org": "mds1",
-    "repo": "multicall"
+    "repo": "multicall",
+    "hardhatConfig": {
+      "paths": {
+        "sources": "src"
+      },
+      "solidity": "0.8.12"
+    }
   }
 ]

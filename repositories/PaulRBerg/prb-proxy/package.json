@@ -10,6 +10,7 @@
     "url": "https://github.com/PaulRBerg/prb-proxy/issues"
   },
   "devDependencies": {
+    "@ignored/hardhat-vnext": "^3.0.0-next.7",
     "@prb/test": "0.6.4",
     "forge-std": "github:foundry-rs/forge-std#v1.8.0",
     "prettier": "^2.8.8",
@@ -48,5 +49,6 @@
     "gas:snapshot:optimized": "bun run build:optimized && FOUNDRY_PROFILE=test-optimized forge snapshot --no-match-test \"test(Fuzz)?_RevertWhen_\"",
     "prettier:check": "prettier --check \"**/*.{json,md,yml}\"",
     "prettier:write": "prettier --write \"**/*.{json,md,yml}\""
-  }
+  },
+  "type": "module"
 }

@@ -103,6 +103,21 @@ function init(org, repo, packageManager, hardhatConfig) {
   if (!fs.existsSync(dir)) {
     throw new Error(`Directory ${dir} does not exist`);
   }
+  const jsHardhatConfig = `export default ${JSON.stringify(hardhatConfig ?? {}, null, 2)};\n`;
+  if (fs.existsSync(path.join(dir, 'hardhat.config.js')) || fs.existsSync(path.join(dir, 'hardhat.config.ts'))) {
+    if (argv.force) {
+      if (fs.existsSync(path.join(dir, 'hardhat.config.js'))) {
+        fs.rmSync(path.join(dir, 'hardhat.config.js'));
+      }
+      if (fs.existsSync(path.join(dir, 'hardhat.config.ts'))) {
+        fs.rmSync(path.join(dir, 'hardhat.config.ts'));
+      }
+    } else {
+      console.log(`Skipping ${org}/${repo} as it already has a hardhat.config.js or hardhat.config.ts file. Use --force to override.`);
+      return;
+    }
+  }
+  fs.writeFileSync(path.join(dir, 'hardhat.config.js'), jsHardhatConfig);
   switch (packageManager) {
     case 'bun':
       spawnSync('bun', ['install'], { cwd: dir, stdio: 'inherit' });
@@ -128,13 +143,6 @@ function init(org, repo, packageManager, hardhatConfig) {
   if (packageJson.type === undefined) {
     packageJson.type = 'module';
     fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(packageJson, null, 2));
-  }
-  const jsHardhatConfig = `export default ${JSON.stringify(hardhatConfig, null, 2)};\n`;
-  if (!fs.existsSync(path.join(dir, 'hardhat.config.js'))) {
-    fs.writeFileSync(path.join(dir, 'hardhat.config.js'), jsHardhatConfig);
-  } else if (argv.force) {
-    fs.rmSync(path.join(dir, 'hardhat.config.js'));
-    fs.writeFileSync(path.join(dir, 'hardhat.config.js'), jsHardhatConfig);
   }
   return;
 }

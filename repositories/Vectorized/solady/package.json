@@ -13,5 +13,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vectorized/solady.git"
-  }
+  },
+  "devDependencies": {
+    "@ignored/hardhat-vnext": "^3.0.0-next.7"
+  },
+  "type": "module"
 }

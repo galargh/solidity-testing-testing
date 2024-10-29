@@ -10,6 +10,7 @@
     "url": "https://github.com/PaulRBerg/prb-test/issues"
   },
   "devDependencies": {
+    "@ignored/hardhat-vnext": "^3.0.0-next.7",
     "prettier": "^2.8.7",
     "solhint": "^3.4.1"
   },
@@ -39,5 +40,6 @@
     "prettier:check": "prettier --check \"**/*.{json,md,yml}\"",
     "prettier:write": "prettier --write \"**/*.{json,md,yml}\"",
     "test": "forge test"
-  }
+  },
+  "type": "module"
 }
