@@ -1,0 +1,1511 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/utils/BaseScript.t.sol:BaseScript_Test
+[PASS] test_ConstructCreate2Salt() (gas: 28279)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.94ms (217.96µs CPU time)
+
+Ran 1 test for test/fork/assets/DAI.t.sol:DAI_LockupDynamic_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 927.58µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/DAI.t.sol:DAI_LockupLinear_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 880.96µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/DAI.t.sol:DAI_LockupTranched_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 890.67µs (0.00ns CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:GetStartTime_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetStartTime() (gas: 309117)
+[PASS] test_RevertGiven_Null() (gas: 11200)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 5.06ms (147.33µs CPU time)
+
+Ran 3 tests for test/integration/concrete/nft-descriptor/safe-asset-decimals/safeAssetDecimals.t.sol:SafeAssetDecimals_Integration_Concrete_Test
+[PASS] test_SafeAssetDecimals() (gas: 15282)
+[PASS] test_SafeAssetDecimals_DecimalsNotImplemented() (gas: 14150)
+[PASS] test_SafeAssetDecimals_EOA() (gas: 12509)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.27ms (149.13µs CPU time)
+
+Ran 1 test for test/fork/assets/EURS.t.sol:EURS_LockupDynamic_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 888.88µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/EURS.t.sol:EURS_LockupLinear_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 874.38µs (0.00ns CPU time)
+
+Ran 14 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:Cancel_LockupDynamic_Integration_Concrete_Test
+[PASS] test_Cancel() (gas: 406773)
+[PASS] test_Cancel_RecipientNotAllowedToHook() (gas: 358310)
+[PASS] test_Cancel_RecipientReentrant() (gas: 426855)
+[PASS] test_Cancel_RecipientReturnsInvalidSelector() (gas: 355285)
+[PASS] test_Cancel_RecipientReverting() (gas: 354369)
+[PASS] test_Cancel_StatusPending() (gas: 72629)
+[PASS] test_RevertGiven_Null() (gas: 11323)
+[PASS] test_RevertGiven_StatusCanceled() (gas: 87609)
+[PASS] test_RevertGiven_StatusDepleted() (gas: 63208)
+[PASS] test_RevertGiven_StatusSettled() (gas: 27056)
+[PASS] test_RevertGiven_StreamNotCancelable() (gas: 248904)
+[PASS] test_RevertWhen_CallerUnauthorized_MaliciousThirdParty() (gas: 19283)
+[PASS] test_RevertWhen_CallerUnauthorized_Recipient() (gas: 19261)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 12850)
+Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 6.94ms (1.89ms CPU time)
+
+Ran 1 test for test/fork/assets/EURS.t.sol:EURS_LockupTranched_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 887.00µs (0.00ns CPU time)
+
+Ran 4 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:IsCancelable_LockupDynamic_Integration_Concrete_Test
+[PASS] test_IsCancelable() (gas: 488573)
+[PASS] test_IsCancelable_Cold() (gas: 307712)
+[PASS] test_IsCancelable_StreamCancelable() (gas: 301155)
+[PASS] test_RevertGiven_Null() (gas: 11166)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 9.05ms (433.50µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:GetWithdrawnAmount_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetWithdrawnAmount() (gas: 354783)
+[PASS] test_GetWithdrawnAmount_NoPreviousWithdrawals() (gas: 331810)
+[PASS] test_RevertGiven_Null() (gas: 11211)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.08ms (293.25µs CPU time)
+
+Ran 6 tests for test/integration/concrete/nft-descriptor/safe-asset-symbol/safeAssetSymbol.t.sol:SafeAssetSymbol_Integration_Concrete_Test
+[PASS] test_SafeAssetSymbol() (gas: 23117)
+[PASS] test_SafeAssetSymbol_Bytes32() (gas: 64664)
+[PASS] test_SafeAssetSymbol_EOA() (gas: 13930)
+[PASS] test_SafeAssetSymbol_LongSymbol() (gas: 541567)
+[PASS] test_SafeAssetSymbol_NonAlphanumeric() (gas: 474654)
+[PASS] test_SafeAssetSymbol_SymbolNotImplemented() (gas: 15589)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 5.35ms (345.00µs CPU time)
+
+Ran 3 tests for test/integration/concrete/nft-descriptor/is-allowed-character/IsAllowedCharacter.t.sol:IsAllowedCharacter_Integration_Concrete_Test
+[PASS] test_IsAllowedCharacter() (gas: 48241)
+[PASS] test_IsAllowedCharacter_ContainsUnsupportedCharacters() (gas: 59605)
+[PASS] test_IsAllowedCharacter_EmptyString() (gas: 9610)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.33ms (377.96µs CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:IsCold_LockupDynamic_Integration_Concrete_Test
+[PASS] test_IsCold_StatusCanceled() (gas: 347714)
+[PASS] test_IsCold_StatusDepleted() (gas: 313448)
+[PASS] test_IsCold_StatusPending() (gas: 301645)
+[PASS] test_IsCold_StatusSettled() (gas: 307759)
+[PASS] test_IsCold_StatusStreaming() (gas: 323572)
+[PASS] test_RevertGiven_Null() (gas: 11166)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 5.49ms (684.04µs CPU time)
+
+Ran 7 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:GetRefundedAmount_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetRefundedAmount_StatusDepleted() (gas: 313441)
+[PASS] test_GetRefundedAmount_StatusPending() (gas: 303168)
+[PASS] test_GetRefundedAmount_StatusSettled() (gas: 308446)
+[PASS] test_GetRefundedAmount_StatusStreaming() (gas: 308417)
+[PASS] test_GetRefundedAmount_StreamHasBeenCanceled_StatusCanceled() (gas: 348555)
+[PASS] test_GetRefundedAmount_StreamHasBeenCanceled_StatusDepleted() (gas: 350367)
+[PASS] test_RevertGiven_Null() (gas: 11212)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 18.25ms (817.75µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:IsDepleted_LockupDynamic_Integration_Concrete_Test
+[PASS] test_IsDepleted() (gas: 313228)
+[PASS] test_IsDepleted_StreamNotDepleted() (gas: 300416)
+[PASS] test_RevertGiven_Null() (gas: 11100)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.05ms (266.21µs CPU time)
+
+Ran 11 tests for test/integration/concrete/lockup-dynamic/streamed-amount-of/streamedAmountOf.t.sol:StreamedAmountOf_LockupDynamic_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11235)
+[PASS] test_StreamedAmountOf_CurrentTimestamp1st() (gas: 46481)
+[PASS] test_StreamedAmountOf_CurrentTimestampNot1st() (gas: 51200)
+[PASS] test_StreamedAmountOf_OneSegment() (gas: 245512)
+[PASS] test_StreamedAmountOf_StartTimeInTheFuture() (gas: 20863)
+[PASS] test_StreamedAmountOf_StartTimeInThePresent() (gas: 26204)
+[PASS] test_StreamedAmountOf_StatusDepleted() (gas: 64414)
+[PASS] test_StreamedAmountOf_StatusPending() (gas: 20944)
+[PASS] test_StreamedAmountOf_StatusSettled() (gas: 27500)
+[PASS] test_StreamedAmountOf_StreamHasBeenCanceled_StatusCanceled() (gas: 88893)
+[PASS] test_StreamedAmountOf_StreamHasBeenCanceled_StatusDepleted() (gas: 112523)
+Suite result: ok. 11 passed; 0 failed; 0 skipped; finished in 11.46ms (745.79µs CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-tranched/LockupTranched.t.sol:RefundableAmountOf_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_RefundableAmountOf(uint256) (runs: 50, μ: 42262, ~: 42447)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 9.56ms (3.73ms CPU time)
+
+Ran 13 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:CancelMultiple_LockupLinear_Integration_Concrete_Test
+[PASS] test_CancelMultiple() (gas: 615418)
+[PASS] test_CancelMultiple_ArrayCountZero() (gas: 6004)
+[PASS] test_RevertGiven_AllStreamsCold() (gas: 34318)
+[PASS] test_RevertGiven_AllStreamsNotCancelable() (gas: 653401)
+[PASS] test_RevertGiven_OnlyNull() (gas: 12111)
+[PASS] test_RevertGiven_SomeNull() (gas: 80691)
+[PASS] test_RevertGiven_SomeStreamsCold() (gas: 259579)
+[PASS] test_RevertGiven_SomeStreamsNotCancelable() (gas: 737961)
+[PASS] test_RevertWhen_CallerUnauthorizedAllStreams_MaliciousThirdParty() (gas: 24292)
+[PASS] test_RevertWhen_CallerUnauthorizedAllStreams_Recipient() (gas: 24346)
+[PASS] test_RevertWhen_CallerUnauthorizedSomeStreams_MaliciousThirdParty() (gas: 240711)
+[PASS] test_RevertWhen_CallerUnauthorizedSomeStreams_Recipient() (gas: 24347)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 17727)
+Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 17.04ms (1.80ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:IsStream_LockupDynamic_Integration_Concrete_Test
+[PASS] test_IsStream() (gas: 300203)
+[PASS] test_IsStream_Null() (gas: 10991)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.88ms (120.50µs CPU time)
+
+Ran 8 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:Renounce_LockupTranched_Integration_Concrete_Test
+[PASS] test_Renounce() (gas: 749705)
+[PASS] test_RevertGiven_Null() (gas: 11192)
+[PASS] test_RevertGiven_StatusCanceled() (gas: 86959)
+[PASS] test_RevertGiven_StatusDepleted() (gas: 73517)
+[PASS] test_RevertGiven_StatusSettled() (gas: 34072)
+[PASS] test_RevertGiven_StreamNotCancelable() (gas: 708790)
+[PASS] test_RevertWhen_CallerNotSender() (gas: 294992)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 285459)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 6.00ms (1.09ms CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:IsTransferable_LockupDynamic_Integration_Concrete_Test
+[PASS] test_IsTransferable_Stream() (gas: 300436)
+[PASS] test_RevertGiven_Null() (gas: 11142)
+[PASS] test_RevertGiven_StreamTransferNotEnabled() (gas: 487854)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.05ms (295.88µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:GetSender_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetSender() (gas: 280611)
+[PASS] test_RevertGiven_Null() (gas: 11168)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 11.84ms (129.17µs CPU time)
+
+Ran 4 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:AllowToHook_LockupDynamic_Integration_Concrete_Test
+[PASS] test_AllowToHook() (gas: 46369)
+[PASS] test_RevertWhen_CallerNotAdmin() (gas: 16573)
+[PASS] test_RevertWhen_ProvidedAddressNoCode() (gas: 17189)
+[PASS] test_RevertWhen_ProvidedAddressUnsupportedInterface() (gas: 28327)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 18.54ms (457.63µs CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:IsWarm_LockupDynamic_Integration_Concrete_Test
+[PASS] test_IsWarm_StatusCanceled() (gas: 347676)
+[PASS] test_IsWarm_StatusDepleted() (gas: 313427)
+[PASS] test_IsWarm_StatusPending() (gas: 301519)
+[PASS] test_IsWarm_StatusSettled() (gas: 307758)
+[PASS] test_IsWarm_StatusStreaming() (gas: 323552)
+[PASS] test_RevertGiven_Null() (gas: 11167)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 5.44ms (676.33µs CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-tranched/LockupTranched.t.sol:GetWithdrawnAmount_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_GetWithdrawnAmount(uint256,uint128) (runs: 50, μ: 357933, ~: 357796)
+[PASS] testFuzz_GetWithdrawnAmount_NoPreviousWithdrawals(uint256) (runs: 50, μ: 333452, ~: 333726)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 25.73ms (20.97ms CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-dynamic/LockupDynamic.t.sol:Cancel_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_Cancel(uint256,uint128) (runs: 50, μ: 471841, ~: 474972)
+[PASS] testFuzz_Cancel_StatusPending(uint256) (runs: 50, μ: 73192, ~: 73494)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 33.50ms (28.61ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:IsAllowedToHook_LockupTranched_Integration_Concrete_Test
+[PASS] test_IsAllowedToHook() (gas: 44224)
+[PASS] test_IsAllowedToHook_GivenProvidedAddressIsNotAllowedToHook() (gas: 13222)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.91ms (55.17µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:GetStartTime_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetStartTime() (gas: 283746)
+[PASS] test_RevertGiven_Null() (gas: 11200)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 13.34ms (127.50µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:SetNFTDescriptor_LockupTranched_Integration_Concrete_Test
+[PASS] test_RevertWhen_CallerNotAdmin() (gas: 16599)
+[PASS] test_SetNFTDescriptor_NewNFTDescriptor() (gas: 6708172)
+[PASS] test_SetNFTDescriptor_SameNFTDescriptor() (gas: 2159423)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 17.66ms (12.82ms CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:GetWithdrawnAmount_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetWithdrawnAmount() (gas: 354300)
+[PASS] test_GetWithdrawnAmount_NoPreviousWithdrawals() (gas: 306439)
+[PASS] test_RevertGiven_Null() (gas: 11211)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.15ms (366.67µs CPU time)
+
+Ran 4 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:IsCancelable_LockupTranched_Integration_Concrete_Test
+[PASS] test_IsCancelable() (gas: 537493)
+[PASS] test_IsCancelable_Cold() (gas: 334252)
+[PASS] test_IsCancelable_StreamCancelable() (gas: 326548)
+[PASS] test_RevertGiven_Null() (gas: 11188)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 11.12ms (434.00µs CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:StatusOf_LockupTranched_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11114)
+[PASS] test_StatusOf() (gas: 334026)
+[PASS] test_StatusOf_AssetsFullyWithdrawn() (gas: 341123)
+[PASS] test_StatusOf_RefundableAmountNotZero() (gas: 334386)
+[PASS] test_StatusOf_StartTimeInTheFuture() (gas: 327007)
+[PASS] test_StatusOf_StreamCanceled() (gas: 370379)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 5.44ms (661.25µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:GetAsset_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetAsset() (gas: 280582)
+[PASS] test_RevertGiven_Null() (gas: 11160)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 12.67ms (353.25µs CPU time)
+
+Ran 11 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:Burn_LockupDynamic_Integration_Concrete_Test
+[PASS] test_Burn_CallerApprovedOperator() (gas: 88046)
+[PASS] test_Burn_CallerNFTOwner() (gas: 78516)
+[PASS] test_Burn_NonTransferableNFT() (gas: 78505)
+[PASS] test_RevertGiven_NFTDoesNotExist() (gas: 79854)
+[PASS] test_RevertGiven_Null() (gas: 11240)
+[PASS] test_RevertGiven_StatusCanceled() (gas: 93199)
+[PASS] test_RevertGiven_StatusPending() (gas: 14226)
+[PASS] test_RevertGiven_StatusSettled() (gas: 19465)
+[PASS] test_RevertGiven_StatusStreaming() (gas: 19392)
+[PASS] test_RevertWhen_CallerUnauthorized() (gas: 73998)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 12762)
+Suite result: ok. 11 passed; 0 failed; 0 skipped; finished in 25.56ms (1.23ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:TransferFrom_LockupTranched_Integration_Concrete_Test
+[PASS] test_RevertGiven_StreamNotTransferable() (gas: 309593)
+[PASS] test_TransferFrom() (gas: 322720)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 5.00ms (234.67µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:WasCanceled_LockupTranched_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11141)
+[PASS] test_WasCanceled() (gas: 344059)
+[PASS] test_WasCanceled_StreamNotCanceled() (gas: 325800)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.01ms (257.63µs CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:IsCold_LockupTranched_Integration_Concrete_Test
+[PASS] test_IsCold_StatusCanceled() (gas: 370384)
+[PASS] test_IsCold_StatusDepleted() (gas: 341120)
+[PASS] test_IsCold_StatusPending() (gas: 327060)
+[PASS] test_IsCold_StatusSettled() (gas: 334321)
+[PASS] test_IsCold_StatusStreaming() (gas: 334552)
+[PASS] test_RevertGiven_Null() (gas: 11210)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 11.42ms (884.21µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:GetDepositedAmount_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetDepositedAmount() (gas: 283884)
+[PASS] test_RevertGiven_Null() (gas: 11190)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 10.50ms (129.13µs CPU time)
+
+Ran 13 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:CancelMultiple_LockupDynamic_Integration_Concrete_Test
+[PASS] test_CancelMultiple() (gas: 826591)
+[PASS] test_CancelMultiple_ArrayCountZero() (gas: 5982)
+[PASS] test_RevertGiven_AllStreamsCold() (gas: 32098)
+[PASS] test_RevertGiven_AllStreamsNotCancelable() (gas: 842797)
+[PASS] test_RevertGiven_OnlyNull() (gas: 12089)
+[PASS] test_RevertGiven_SomeNull() (gas: 78527)
+[PASS] test_RevertGiven_SomeStreamsCold() (gas: 328496)
+[PASS] test_RevertGiven_SomeStreamsNotCancelable() (gas: 927073)
+[PASS] test_RevertWhen_CallerUnauthorizedAllStreams_MaliciousThirdParty() (gas: 24270)
+[PASS] test_RevertWhen_CallerUnauthorizedAllStreams_Recipient() (gas: 24324)
+[PASS] test_RevertWhen_CallerUnauthorizedSomeStreams_MaliciousThirdParty() (gas: 292135)
+[PASS] test_RevertWhen_CallerUnauthorizedSomeStreams_Recipient() (gas: 24325)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 17705)
+Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 7.33ms (2.31ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:GetEndTime_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetEndTime() (gas: 283791)
+[PASS] test_RevertGiven_Null() (gas: 11156)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.90ms (125.96µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:IsDepleted_LockupTranched_Integration_Concrete_Test
+[PASS] test_IsDepleted() (gas: 340878)
+[PASS] test_IsDepleted_StreamNotDepleted() (gas: 325809)
+[PASS] test_RevertGiven_Null() (gas: 11122)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 6.06ms (778.83µs CPU time)
+
+Ran 5 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:WithdrawHooks_LockupTranched_Integration_Concrete_Test
+[PASS] test_WithdrawHooks_CallerApprovedOperator() (gas: 373395)
+[PASS] test_WithdrawHooks_CallerRecipient() (gas: 338786)
+[PASS] test_WithdrawHooks_CallerSender() (gas: 344775)
+[PASS] test_WithdrawHooks_CallerUnknown() (gas: 344506)
+[PASS] test_WithdrawHooks_GivenSameSenderAndRecipient() (gas: 313914)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 9.64ms (773.50µs CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-linear/LockupLinear.t.sol:CancelMultiple_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_CancelMultiple(uint256,uint40) (runs: 50, μ: 889473, ~: 892546)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 53.19ms (48.25ms CPU time)
+
+Ran 7 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:WithdrawMaxAndTransfer_LockupTranched_Integration_Concrete_Test
+[PASS] test_RevertGiven_NFTBurned() (gas: 80124)
+[PASS] test_RevertGiven_Null() (gas: 13513)
+[PASS] test_RevertGiven_StreamNotTransferable() (gas: 278449)
+[PASS] test_RevertWhen_CallerNotCurrentRecipient() (gas: 19061)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 15043)
+[PASS] test_WithdrawMaxAndTransfer() (gas: 120696)
+[PASS] test_WithdrawMaxAndTransfer_WithdrawableAmountZero() (gas: 105633)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 7.82ms (1.32ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:IsStream_LockupTranched_Integration_Concrete_Test
+[PASS] test_IsStream() (gas: 325574)
+[PASS] test_IsStream_Null() (gas: 10991)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 11.98ms (126.25µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:GetRecipient_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetRecipient() (gas: 15435)
+[PASS] test_RevertGiven_NFTBurned() (gas: 68098)
+[PASS] test_RevertGiven_Null() (gas: 11157)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 16.68ms (345.25µs CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-dynamic/LockupDynamic.t.sol:GetWithdrawnAmount_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_GetWithdrawnAmount(uint256,uint128) (runs: 50, μ: 357716, ~: 357714)
+[PASS] testFuzz_GetWithdrawnAmount_NoPreviousWithdrawals(uint256) (runs: 50, μ: 308085, ~: 308355)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 37.16ms (20.62ms CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:IsTransferable_LockupTranched_Integration_Concrete_Test
+[PASS] test_IsTransferable_Stream() (gas: 325829)
+[PASS] test_RevertGiven_Null() (gas: 11164)
+[PASS] test_RevertGiven_StreamTransferNotEnabled() (gas: 536774)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.07ms (314.46µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:IsAllowedToHook_LockupDynamic_Integration_Concrete_Test
+[PASS] test_IsAllowedToHook() (gas: 44180)
+[PASS] test_IsAllowedToHook_GivenProvidedAddressIsNotAllowedToHook() (gas: 13200)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.91ms (54.58µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-dynamic/token-uri/tokenURI.t.sol:TokenURI_LockupDynamic_Integration_Concrete_Test
+[PASS] test_RevertGiven_NFTDoesNotExist() (gas: 13230)
+[PASS] test_TokenURI_Decoded() (gas: 6611)
+[PASS] test_TokenURI_Full() (gas: 6610)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.81ms (69.88µs CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-tranched/LockupTranched.t.sol:WithdrawMaxAndTransfer_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawMaxAndTransfer(uint256,address) (runs: 50, μ: 114912, ~: 120681)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 11.68ms (6.59ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:WithdrawMax_LockupTranched_Integration_Concrete_Test
+[PASS] test_WithdrawMax() (gas: 84630)
+[PASS] test_WithdrawMax_EndTimeNotInTheFuture() (gas: 87246)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 5.08ms (229.67µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-linear/token-uri/tokenURI.t.sol:TokenURI_LockupLinear_Integration_Concrete_Test
+[PASS] test_RevertGiven_NFTDoesNotExist() (gas: 13230)
+[PASS] test_TokenURI_Decoded() (gas: 6611)
+[PASS] test_TokenURI_Full() (gas: 6610)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 4.88ms (63.58µs CPU time)
+
+Ran 14 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:Cancel_LockupLinear_Integration_Concrete_Test
+[PASS] test_Cancel() (gas: 315924)
+[PASS] test_Cancel_RecipientNotAllowedToHook() (gas: 267473)
+[PASS] test_Cancel_RecipientReentrant() (gas: 335948)
+[PASS] test_Cancel_RecipientReturnsInvalidSelector() (gas: 290519)
+[PASS] test_Cancel_RecipientReverting() (gas: 289603)
+[PASS] test_Cancel_StatusPending() (gas: 74784)
+[PASS] test_RevertGiven_Null() (gas: 11301)
+[PASS] test_RevertGiven_StatusCanceled() (gas: 80455)
+[PASS] test_RevertGiven_StatusDepleted() (gas: 65531)
+[PASS] test_RevertGiven_StatusSettled() (gas: 29232)
+[PASS] test_RevertGiven_StreamNotCancelable() (gas: 197497)
+[PASS] test_RevertWhen_CallerUnauthorized_MaliciousThirdParty() (gas: 19261)
+[PASS] test_RevertWhen_CallerUnauthorized_Recipient() (gas: 19239)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 12828)
+Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 22.57ms (1.29ms CPU time)
+
+Ran 10 tests for test/integration/concrete/lockup-tranched/streamed-amount-of/streamedAmountOf.t.sol:StreamedAmountOf_LockupTranched_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11235)
+[PASS] test_StreamedAmountOf() (gas: 44253)
+[PASS] test_StreamedAmountOf_CurrentTimestamp1st() (gas: 35471)
+[PASS] test_StreamedAmountOf_StartTimeInTheFuture() (gas: 30018)
+[PASS] test_StreamedAmountOf_StartTimeInThePresent() (gas: 35359)
+[PASS] test_StreamedAmountOf_StatusDepleted() (gas: 74671)
+[PASS] test_StreamedAmountOf_StatusPending() (gas: 30121)
+[PASS] test_StreamedAmountOf_StatusSettled() (gas: 36713)
+[PASS] test_StreamedAmountOf_StreamHasBeenCanceled_StatusCanceled() (gas: 88215)
+[PASS] test_StreamedAmountOf_StreamHasBeenCanceled_StatusDepleted() (gas: 111738)
+Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 5.39ms (503.25µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-tranched/token-uri/tokenURI.t.sol:TokenURI_LockupTranched_Integration_Concrete_Test
+[PASS] test_RevertGiven_NFTDoesNotExist() (gas: 13230)
+[PASS] test_TokenURI_Decoded() (gas: 6611)
+[PASS] test_TokenURI_Full() (gas: 6610)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 13.65ms (68.79µs CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-tranched/LockupTranched.t.sol:WithdrawMax_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawMax(uint256) (runs: 50, μ: 83701, ~: 83801)
+[PASS] testFuzz_WithdrawMax_EndTimeNotInTheFuture(uint256) (runs: 50, μ: 89830, ~: 89948)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 17.66ms (12.79ms CPU time)
+
+Ran 4 tests for test/unit/concrete/adminable/transfer-admin/transferAdmin.t.sol:TransferAdmin_Unit_Concrete_Test
+[PASS] test_RevertWhen_CallerNotAdmin() (gas: 16355)
+[PASS] test_TransferAdmin_NewAdmin() (gas: 22749)
+[PASS] test_TransferAdmin_SameAdmin() (gas: 17842)
+[PASS] test_TransferAdmin_ZeroAddress() (gas: 15622)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 4.79ms (95.58µs CPU time)
+
+Ran 10 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:WithdrawMultiple_LockupTranched_Integration_Concrete_Test
+[PASS] test_RevertGiven_AllStatusesDepleted() (gas: 83683)
+[PASS] test_RevertGiven_OnlyNull() (gas: 20606)
+[PASS] test_RevertGiven_SomeNull() (gas: 124200)
+[PASS] test_RevertGiven_SomeStatusesDepleted() (gas: 93186)
+[PASS] test_RevertWhen_ArrayCountsNotEqual() (gas: 10393)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 27259)
+[PASS] test_RevertWhen_SomeAmountsOverdraw() (gas: 149012)
+[PASS] test_RevertWhen_SomeAmountsZero() (gas: 81657)
+[PASS] test_WithdrawMultiple() (gas: 247939)
+[PASS] test_WithdrawMultiple_ArrayCountsZero() (gas: 6437)
+Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 6.05ms (899.50µs CPU time)
+
+Ran 2 tests for test/unit/fuzz/transferAdmin.t.sol:TransferAdmin_Unit_Fuzz_Test
+[PASS] testFuzz_RevertWhen_CallerNotAdmin(address) (runs: 50, μ: 15578, ~: 15578)
+[PASS] testFuzz_TransferAdmin(address) (runs: 50, μ: 21021, ~: 21021)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 9.29ms (4.17ms CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-tranched/LockupTranched.t.sol:WithdrawMultiple_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawMultiple(uint256,uint128) (runs: 50, μ: 2899737, ~: 2899565)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 131.91ms (120.52ms CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-dynamic/LockupDynamic.t.sol:CancelMultiple_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_CancelMultiple(uint256,uint40) (runs: 50, μ: 1190897, ~: 1193571)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 72.90ms (67.91ms CPU time)
+
+Ran 20 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:Withdraw_LockupTranched_Integration_Concrete_Test
+[PASS] test_Cancel_RecipientReturnsInvalidSelector() (gas: 373654)
+[PASS] test_RevertGiven_Null() (gas: 18974)
+[PASS] test_RevertGiven_StreamDepleted() (gas: 72493)
+[PASS] test_RevertWhen_CallerFormerRecipient() (gas: 63946)
+[PASS] test_RevertWhen_CallerSender() (gas: 31229)
+[PASS] test_RevertWhen_CallerUnknown() (gas: 28952)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 20650)
+[PASS] test_RevertWhen_Overdraw() (gas: 41042)
+[PASS] test_RevertWhen_ToZeroAddress() (gas: 20551)
+[PASS] test_RevertWhen_WithdrawAmountZero() (gas: 21834)
+[PASS] test_Withdraw() (gas: 389015)
+[PASS] test_Withdraw_CallerApprovedOperator() (gas: 101862)
+[PASS] test_Withdraw_CallerRecipient1() (gas: 77359)
+[PASS] test_Withdraw_CallerRecipient2() (gas: 69971)
+[PASS] test_Withdraw_CallerUnknown() (gas: 72902)
+[PASS] test_Withdraw_EndTimeNotInTheFuture() (gas: 80150)
+[PASS] test_Withdraw_RecipientNotAllowedToHook() (gas: 346661)
+[PASS] test_Withdraw_RecipientReentrant() (gas: 395196)
+[PASS] test_Withdraw_RecipientReverting() (gas: 372742)
+[PASS] test_Withdraw_StreamHasBeenCanceled() (gas: 119301)
+Suite result: ok. 20 passed; 0 failed; 0 skipped; finished in 6.88ms (1.88ms CPU time)
+
+Ran 1 test for test/fork/NFTDescriptor.t.sol:NFTDescriptor_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 822.29µs (0.00ns CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-linear/LockupLinear.t.sol:Cancel_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_Cancel(uint256,uint128) (runs: 50, μ: 355898, ~: 357311)
+[PASS] testFuzz_Cancel_StatusPending(uint256) (runs: 50, μ: 75379, ~: 75649)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 48.41ms (43.58ms CPU time)
+
+Ran 5 tests for test/utils/Precompiles.t.sol:Precompiles_Test
+[PASS] test_DeployCore() (gas: 4163)
+[PASS] test_DeployLockupDynamic() (gas: 4142)
+[PASS] test_DeployLockupLinear() (gas: 4119)
+[PASS] test_DeployLockupTranched() (gas: 4097)
+[PASS] test_DeployNFTDescriptor() (gas: 4120)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 5.78ms (87.71µs CPU time)
+
+Ran 1 test for test/fork/assets/SHIB.t.sol:SHIB_LockupDynamic_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.10ms (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/SHIB.t.sol:SHIB_LockupLinear_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 877.88µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/SHIB.t.sol:SHIB_LockupTranched_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 890.04µs (0.00ns CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:GetAsset_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetAsset() (gas: 231500)
+[PASS] test_RevertGiven_Null() (gas: 11160)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.87ms (113.29µs CPU time)
+
+Ran 1 test for test/fork/assets/USDC.t.sol:USDC_LockupDynamic_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 889.00µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/USDC.t.sol:USDC_LockupLinear_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 871.54µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/USDC.t.sol:USDC_LockupTranched_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 932.08µs (0.00ns CPU time)
+
+Ran 9 tests for test/integration/concrete/lockup-linear/withdrawable-amount-of/withdrawableAmountOf.t.sol:WithdrawableAmountOf_LockupLinear_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11168)
+[PASS] test_WithdrawableAmountOf_CliffTimeInTheFuture() (gas: 250953)
+[PASS] test_WithdrawableAmountOf_NoPreviousWithdrawals() (gas: 258605)
+[PASS] test_WithdrawableAmountOf_StatusDepleted() (gas: 263446)
+[PASS] test_WithdrawableAmountOf_StatusPending() (gas: 253582)
+[PASS] test_WithdrawableAmountOf_StatusSettled() (gas: 260121)
+[PASS] test_WithdrawableAmountOf_StreamHasBeenCanceled_StatusCanceled() (gas: 295251)
+[PASS] test_WithdrawableAmountOf_StreamHasBeenCanceled_StatusDepleted() (gas: 297216)
+[PASS] test_WithdrawableAmountOf_WithWithdrawals() (gas: 281754)
+Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 19.01ms (1.94ms CPU time)
+
+Ran 1 test for test/fork/assets/USDT.t.sol:USDT_LockupDynamic_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 896.08µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/USDT.t.sol:USDT_LockupLinear_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 878.04µs (0.00ns CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:SetNFTDescriptor_LockupLinear_Integration_Concrete_Test
+[PASS] test_RevertWhen_CallerNotAdmin() (gas: 16535)
+[PASS] test_SetNFTDescriptor_NewNFTDescriptor() (gas: 6699635)
+[PASS] test_SetNFTDescriptor_SameNFTDescriptor() (gas: 2150886)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 41.68ms (36.88ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:GetDepositedAmount_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetDepositedAmount() (gas: 234754)
+[PASS] test_RevertGiven_Null() (gas: 11178)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 5.26ms (118.75µs CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:StatusOf_LockupLinear_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11114)
+[PASS] test_StatusOf() (gas: 258608)
+[PASS] test_StatusOf_AssetsFullyWithdrawn() (gas: 262746)
+[PASS] test_StatusOf_RefundableAmountNotZero() (gas: 258984)
+[PASS] test_StatusOf_StartTimeInTheFuture() (gas: 252554)
+[PASS] test_StatusOf_StreamCanceled() (gas: 293539)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 5.73ms (571.58µs CPU time)
+
+Ran 1 test for test/fork/assets/USDT.t.sol:USDT_LockupTranched_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 9.60ms (0.00ns CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:TransferFrom_LockupLinear_Integration_Concrete_Test
+[PASS] test_RevertGiven_StreamNotTransferable() (gas: 234476)
+[PASS] test_TransferFrom() (gas: 248261)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.93ms (201.79µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:GetEndTime_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetEndTime() (gas: 234731)
+[PASS] test_RevertGiven_Null() (gas: 11178)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 12.53ms (320.83µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:WasCanceled_LockupLinear_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11176)
+[PASS] test_WasCanceled() (gas: 266710)
+[PASS] test_WasCanceled_StreamNotCanceled() (gas: 251382)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 4.93ms (225.92µs CPU time)
+
+Ran 8 tests for test/unit/concrete/nft-descriptor/abbreviateAmount.t.sol:AbbreviateAmount_Unit_Concrete_Test
+[PASS] test_AbbreviateAmount_Billions() (gas: 55873)
+[PASS] test_AbbreviateAmount_Millions() (gas: 55357)
+[PASS] test_AbbreviateAmount_NoSuffix() (gas: 42746)
+[PASS] test_AbbreviateAmount_Thousands() (gas: 61617)
+[PASS] test_AbbreviateAmount_Tiny() (gas: 28956)
+[PASS] test_AbbreviateAmount_Trillions() (gas: 56456)
+[PASS] test_AbbreviateAmount_Zero() (gas: 19829)
+[PASS] test_AbbreviateAmount_Zillions() (gas: 36215)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 11.38ms (1.15ms CPU time)
+
+Ran 5 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:WithdrawHooks_LockupLinear_Integration_Concrete_Test
+[PASS] test_WithdrawHooks_CallerApprovedOperator() (gas: 295640)
+[PASS] test_WithdrawHooks_CallerRecipient() (gas: 261031)
+[PASS] test_WithdrawHooks_CallerSender() (gas: 267020)
+[PASS] test_WithdrawHooks_CallerUnknown() (gas: 266751)
+[PASS] test_WithdrawHooks_GivenSameSenderAndRecipient() (gas: 236159)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 5.49ms (674.50µs CPU time)
+
+Ran 6 tests for test/unit/concrete/nft-descriptor/calculateDurationInDays.t.sol:CalculateDurationInDays_Unit_Concrete_Test
+[PASS] test_CalculateDurationInDays_FortyTwo() (gas: 11534)
+[PASS] test_CalculateDurationInDays_Leet() (gas: 11640)
+[PASS] test_CalculateDurationInDays_One() (gas: 11410)
+[PASS] test_CalculateDurationInDays_Overflow() (gas: 11046)
+[PASS] test_CalculateDurationInDays_TenThousand() (gas: 11046)
+[PASS] test_CalculateDurationInDays_Zero() (gas: 11119)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 5.22ms (160.96µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:GetRecipient_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetRecipient() (gas: 15429)
+[PASS] test_RevertGiven_NFTBurned() (gas: 70403)
+[PASS] test_RevertGiven_Null() (gas: 11151)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 14.14ms (335.42µs CPU time)
+
+Ran 6 tests for test/unit/concrete/nft-descriptor/calculatePixelWidth.t.sol:CalculatePixelWidth_Unit_Concrete_Test
+[PASS] test_CalculatePixelWidth_Caption() (gas: 23011)
+[PASS] test_CalculatePixelWidth_Duration() (gas: 28240)
+[PASS] test_CalculatePixelWidth_EmptyString() (gas: 9733)
+[PASS] test_CalculatePixelWidth_Progress() (gas: 35263)
+[PASS] test_CalculatePixelWidth_Status() (gas: 27107)
+[PASS] test_CalculatePixelWidth_Streamed() (gas: 35270)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 5.49ms (454.00µs CPU time)
+
+Ran 3 tests for test/unit/concrete/nft-descriptor/calculateStreamedPercentage.t.sol:CalculateStreamedPercentage_Unit_Concrete_Test
+[PASS] test_CalculateStreamedPercentage_Settled() (gas: 9052)
+[PASS] test_CalculateStreamedPercentage_Streaming() (gas: 9070)
+[PASS] test_CalculateStreamedPercentage_Zero() (gas: 9066)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.08ms (56.96µs CPU time)
+
+Ran 7 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:GetRefundedAmount_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetRefundedAmount_StatusDepleted() (gas: 262716)
+[PASS] test_GetRefundedAmount_StatusPending() (gas: 252098)
+[PASS] test_GetRefundedAmount_StatusSettled() (gas: 257376)
+[PASS] test_GetRefundedAmount_StatusStreaming() (gas: 257347)
+[PASS] test_GetRefundedAmount_StreamHasBeenCanceled_StatusCanceled() (gas: 294353)
+[PASS] test_GetRefundedAmount_StreamHasBeenCanceled_StatusDepleted() (gas: 296117)
+[PASS] test_RevertGiven_Null() (gas: 11212)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 9.95ms (886.50µs CPU time)
+
+Ran 7 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:WithdrawMaxAndTransfer_LockupLinear_Integration_Concrete_Test
+[PASS] test_RevertGiven_NFTBurned() (gas: 72235)
+[PASS] test_RevertGiven_Null() (gas: 13513)
+[PASS] test_RevertGiven_StreamNotTransferable() (gas: 200397)
+[PASS] test_RevertWhen_CallerNotCurrentRecipient() (gas: 19061)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 15043)
+[PASS] test_WithdrawMaxAndTransfer() (gas: 112780)
+[PASS] test_WithdrawMaxAndTransfer_WithdrawableAmountZero() (gas: 97721)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 20.47ms (1.35ms CPU time)
+
+Ran 1 test for test/integration/concrete/lockup-dynamic/constructor.t.sol:Constructor_LockupDynamic_Integration_Concrete_Test
+[PASS] test_Constructor() (gas: 5056498)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 4.96ms (207.50µs CPU time)
+
+Ran 1 test for test/integration/concrete/lockup-linear/constructor.t.sol:Constructor_LockupLinear_Integration_Concrete_Test
+[PASS] test_Constructor() (gas: 3935112)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 4.87ms (166.29µs CPU time)
+
+Ran 1 test for test/integration/concrete/lockup-tranched/constructor.t.sol:Constructor_LockupTranched_Integration_Concrete_Test
+[PASS] test_Constructor() (gas: 4115509)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 4.93ms (178.42µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:GetSender_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetSender() (gas: 231523)
+[PASS] test_RevertGiven_Null() (gas: 11162)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 19.41ms (118.58µs CPU time)
+
+Ran 3 tests for test/integration/fuzz/lockup-linear/withdrawableAmountOf.t.sol:WithdrawableAmountOf_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawableAmountOf(uint40,uint128,uint128) (runs: 50, μ: 481494, ~: 481085)
+[PASS] testFuzz_WithdrawableAmountOf_CliffTimeInTheFuture(uint40) (runs: 50, μ: 258616, ~: 258794)
+[PASS] testFuzz_WithdrawableAmountOf_NoPreviousWithdrawals(uint40,uint128) (runs: 50, μ: 458790, ~: 457582)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 59.82ms (52.75ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:GetStartTime_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetStartTime() (gas: 234664)
+[PASS] test_RevertGiven_Null() (gas: 11200)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 5.20ms (457.58µs CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-linear/LockupLinear.t.sol:WithdrawMaxAndTransfer_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawMaxAndTransfer(uint256,address) (runs: 50, μ: 101581, ~: 112213)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 20.40ms (9.50ms CPU time)
+
+Ran 9 tests for test/integration/concrete/lockup-tranched/withdrawable-amount-of/withdrawableAmountOf.t.sol:WithdrawableAmountOf_LockupTranched_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11190)
+[PASS] test_WithdrawableAmountOf() (gas: 364913)
+[PASS] test_WithdrawableAmountOf_NoPreviousWithdrawals() (gas: 339527)
+[PASS] test_WithdrawableAmountOf_StartTimeInThePresent() (gas: 334171)
+[PASS] test_WithdrawableAmountOf_StatusDepleted() (gas: 341799)
+[PASS] test_WithdrawableAmountOf_StatusPending() (gas: 330937)
+[PASS] test_WithdrawableAmountOf_StatusSettled() (gas: 337467)
+[PASS] test_WithdrawableAmountOf_StreamHasBeenCanceled_StatusCanceled() (gas: 372101)
+[PASS] test_WithdrawableAmountOf_StreamHasBeenCanceled_StatusDepleted() (gas: 374074)
+Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 6.00ms (1.17ms CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:GetWithdrawnAmount_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetWithdrawnAmount() (gas: 277022)
+[PASS] test_GetWithdrawnAmount_NoPreviousWithdrawals() (gas: 257369)
+[PASS] test_RevertGiven_Null() (gas: 11211)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 8.34ms (263.79µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:WithdrawMax_LockupLinear_Integration_Concrete_Test
+[PASS] test_WithdrawMax() (gas: 76088)
+[PASS] test_WithdrawMax_EndTimeNotInTheFuture() (gas: 79319)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 11.49ms (211.58µs CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-linear/LockupLinear.t.sol:WithdrawMax_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawMax(uint256) (runs: 50, μ: 75825, ~: 75891)
+[PASS] testFuzz_WithdrawMax_EndTimeNotInTheFuture(uint256) (runs: 50, μ: 81941, ~: 82021)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 16.94ms (12.08ms CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-tranched/withdrawableAmountOf.t.sol:WithdrawableAmountOf_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawableAmountOf(uint40,uint128) (runs: 50, μ: 329376, ~: 329139)
+[PASS] testFuzz_WithdrawableAmountOf_NoPreviousWithdrawals(uint40) (runs: 50, μ: 305050, ~: 305037)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 31.40ms (26.60ms CPU time)
+
+Ran 10 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:WithdrawMultiple_LockupLinear_Integration_Concrete_Test
+[PASS] test_RevertGiven_AllStatusesDepleted() (gas: 75815)
+[PASS] test_RevertGiven_OnlyNull() (gas: 20650)
+[PASS] test_RevertGiven_SomeNull() (gas: 110638)
+[PASS] test_RevertGiven_SomeStatusesDepleted() (gas: 85318)
+[PASS] test_RevertWhen_ArrayCountsNotEqual() (gas: 10437)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 27303)
+[PASS] test_RevertWhen_SomeAmountsOverdraw() (gas: 128184)
+[PASS] test_RevertWhen_SomeAmountsZero() (gas: 75057)
+[PASS] test_WithdrawMultiple() (gas: 227111)
+[PASS] test_WithdrawMultiple_ArrayCountsZero() (gas: 6481)
+Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 5.91ms (856.50µs CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-tranched/createWithDurations.t.sol:CreateWithDurations_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_CreateWithDurations((uint128,uint40)[]) (runs: 50, μ: 4432937, ~: 4066638)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 272.49ms (267.54ms CPU time)
+
+Ran 4 tests for test/integration/fuzz/lockup-linear/LockupLinear.t.sol:Withdraw_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_Withdraw(uint256,address,uint128) (runs: 50, μ: 102743, ~: 102547)
+[PASS] testFuzz_Withdraw_CallerApprovedOperator(address) (runs: 50, μ: 117162, ~: 117162)
+[PASS] testFuzz_Withdraw_StreamHasBeenCanceled(uint256,address,uint128) (runs: 50, μ: 144922, ~: 144900)
+[PASS] testFuzz_Withdraw_UnknownCaller(address) (runs: 50, μ: 72316, ~: 72316)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 41.75ms (27.16ms CPU time)
+
+Ran 4 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:AllowToHook_LockupTranched_Integration_Concrete_Test
+[PASS] test_AllowToHook() (gas: 46413)
+[PASS] test_RevertWhen_CallerNotAdmin() (gas: 16595)
+[PASS] test_RevertWhen_ProvidedAddressNoCode() (gas: 17211)
+[PASS] test_RevertWhen_ProvidedAddressUnsupportedInterface() (gas: 28371)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 5.05ms (163.63µs CPU time)
+
+Ran 16 tests for test/integration/concrete/lockup-dynamic/create-with-timestamps/createWithTimestamps.t.sol:CreateWithTimestamps_LockupDynamic_Integration_Concrete_Test
+[PASS] test_CreateWithTimestamps() (gas: 351252)
+[PASS] test_CreateWithTimestamps_AssetMissingReturnValue() (gas: 357831)
+[PASS] test_RevertGiven_EndTimeNotInTheFuture() (gas: 39085)
+[PASS] test_RevertWhen_AssetNotContract() (gas: 228792)
+[PASS] test_RevertWhen_BrokerFeeTooHigh() (gas: 35300)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 31751)
+[PASS] test_RevertWhen_DepositAmountNotEqualToSegmentAmountsSum() (gas: 37417)
+[PASS] test_RevertWhen_DepositAmountZero() (gas: 32501)
+[PASS] test_RevertWhen_RecipientZeroAddress() (gas: 174020)
+[PASS] test_RevertWhen_SegmentAmountsSumOverflows() (gas: 42353)
+[PASS] test_RevertWhen_SegmentCountTooHigh() (gas: 20360631)
+[PASS] test_RevertWhen_SegmentCountZero() (gas: 31712)
+[PASS] test_RevertWhen_SegmentTimestampsNotOrdered() (gas: 42987)
+[PASS] test_RevertWhen_StartTimeEqualToFirstSegmentTimestamp() (gas: 43705)
+[PASS] test_RevertWhen_StartTimeGreaterThanFirstSegmentTimestamp() (gas: 43777)
+[PASS] test_RevertWhen_StartTimeZero() (gas: 32930)
+Suite result: ok. 16 passed; 0 failed; 0 skipped; finished in 30.03ms (25.14ms CPU time)
+
+Ran 11 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:Burn_LockupTranched_Integration_Concrete_Test
+[PASS] test_Burn_CallerApprovedOperator() (gas: 98258)
+[PASS] test_Burn_CallerNFTOwner() (gas: 88728)
+[PASS] test_Burn_NonTransferableNFT() (gas: 88717)
+[PASS] test_RevertGiven_NFTDoesNotExist() (gas: 90021)
+[PASS] test_RevertGiven_Null() (gas: 11195)
+[PASS] test_RevertGiven_StatusCanceled() (gas: 92409)
+[PASS] test_RevertGiven_StatusPending() (gas: 14181)
+[PASS] test_RevertGiven_StatusSettled() (gas: 19420)
+[PASS] test_RevertGiven_StatusStreaming() (gas: 19347)
+[PASS] test_RevertWhen_CallerUnauthorized() (gas: 84210)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 12717)
+Suite result: ok. 11 passed; 0 failed; 0 skipped; finished in 5.59ms (629.50µs CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-linear/LockupLinear.t.sol:GetWithdrawnAmount_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_GetWithdrawnAmount(uint256,uint128) (runs: 50, μ: 280143, ~: 280041)
+[PASS] testFuzz_GetWithdrawnAmount_NoPreviousWithdrawals(uint256) (runs: 50, μ: 259056, ~: 259285)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 81.54ms (66.63ms CPU time)
+
+Ran 13 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:CancelMultiple_LockupTranched_Integration_Concrete_Test
+[PASS] test_CancelMultiple() (gas: 780516)
+[PASS] test_CancelMultiple_ArrayCountZero() (gas: 6004)
+[PASS] test_RevertGiven_AllStreamsCold() (gas: 41267)
+[PASS] test_RevertGiven_AllStreamsNotCancelable() (gas: 941439)
+[PASS] test_RevertGiven_OnlyNull() (gas: 12111)
+[PASS] test_RevertGiven_SomeNull() (gas: 87665)
+[PASS] test_RevertGiven_SomeStreamsCold() (gas: 345001)
+[PASS] test_RevertGiven_SomeStreamsNotCancelable() (gas: 1035949)
+[PASS] test_RevertWhen_CallerUnauthorizedAllStreams_MaliciousThirdParty() (gas: 24292)
+[PASS] test_RevertWhen_CallerUnauthorizedAllStreams_Recipient() (gas: 24346)
+[PASS] test_RevertWhen_CallerUnauthorizedSomeStreams_MaliciousThirdParty() (gas: 318800)
+[PASS] test_RevertWhen_CallerUnauthorizedSomeStreams_Recipient() (gas: 24347)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 17727)
+Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 7.03ms (2.03ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:IsAllowedToHook_LockupLinear_Integration_Concrete_Test
+[PASS] test_IsAllowedToHook() (gas: 44193)
+[PASS] test_IsAllowedToHook_GivenProvidedAddressIsNotAllowedToHook() (gas: 13235)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.88ms (54.96µs CPU time)
+
+Ran 4 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:IsCancelable_LockupLinear_Integration_Concrete_Test
+[PASS] test_IsCancelable() (gas: 393921)
+[PASS] test_IsCancelable_Cold() (gas: 258841)
+[PASS] test_IsCancelable_StreamCancelable() (gas: 252086)
+[PASS] test_RevertGiven_Null() (gas: 11179)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 5.09ms (368.29µs CPU time)
+
+Ran 5 tests for test/integration/fuzz/lockup-tranched/withdraw.t.sol:Withdraw_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_Withdraw(uint256,address,uint128) (runs: 50, μ: 112174, ~: 112349)
+[PASS] testFuzz_Withdraw_CallerApprovedOperator(address) (runs: 50, μ: 124432, ~: 124432)
+[PASS] testFuzz_Withdraw_StreamHasBeenCanceled(uint256,address,uint128) (runs: 50, μ: 151742, ~: 151503)
+[PASS] testFuzz_Withdraw_TrancheFuzzing(((uint128,uint40)[],uint256,address)) (runs: 50, μ: 3818136, ~: 4157376)
+[PASS] testFuzz_Withdraw_UnknownCaller(address) (runs: 50, μ: 79614, ~: 79614)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 230.91ms (225.97ms CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:IsCold_LockupLinear_Integration_Concrete_Test
+[PASS] test_IsCold_StatusCanceled() (gas: 293557)
+[PASS] test_IsCold_StatusDepleted() (gas: 262756)
+[PASS] test_IsCold_StatusPending() (gas: 252620)
+[PASS] test_IsCold_StatusSettled() (gas: 258932)
+[PASS] test_IsCold_StatusStreaming() (gas: 259480)
+[PASS] test_RevertGiven_Null() (gas: 11223)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 5.31ms (575.08µs CPU time)
+
+Ran 9 tests for test/integration/concrete/lockup-dynamic/withdrawable-amount-of/withdrawableAmountOf.t.sol:WithdrawableAmountOf_LockupDynamic_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11190)
+[PASS] test_WithdrawableAmountOf() (gas: 348600)
+[PASS] test_WithdrawableAmountOf_NoPreviousWithdrawals() (gas: 318531)
+[PASS] test_WithdrawableAmountOf_StartTimeInThePresent() (gas: 307645)
+[PASS] test_WithdrawableAmountOf_StatusDepleted() (gas: 314171)
+[PASS] test_WithdrawableAmountOf_StatusPending() (gas: 304411)
+[PASS] test_WithdrawableAmountOf_StatusSettled() (gas: 310949)
+[PASS] test_WithdrawableAmountOf_StreamHasBeenCanceled_StatusCanceled() (gas: 349475)
+[PASS] test_WithdrawableAmountOf_StreamHasBeenCanceled_StatusDepleted() (gas: 351488)
+Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 6.06ms (1.20ms CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:IsDepleted_LockupLinear_Integration_Concrete_Test
+[PASS] test_IsDepleted() (gas: 262579)
+[PASS] test_IsDepleted_StreamNotDepleted() (gas: 251434)
+[PASS] test_RevertGiven_Null() (gas: 11200)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 4.96ms (244.08µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:IsStream_LockupLinear_Integration_Concrete_Test
+[PASS] test_IsStream() (gas: 251156)
+[PASS] test_IsStream_Null() (gas: 11026)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.81ms (109.17µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:IsTransferable_LockupLinear_Integration_Concrete_Test
+[PASS] test_IsTransferable_Stream() (gas: 251411)
+[PASS] test_RevertGiven_Null() (gas: 11199)
+[PASS] test_RevertGiven_StreamTransferNotEnabled() (gas: 393261)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 4.98ms (264.58µs CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:IsWarm_LockupLinear_Integration_Concrete_Test
+[PASS] test_IsWarm_StatusCanceled() (gas: 293497)
+[PASS] test_IsWarm_StatusDepleted() (gas: 262713)
+[PASS] test_IsWarm_StatusPending() (gas: 252472)
+[PASS] test_IsWarm_StatusSettled() (gas: 258909)
+[PASS] test_IsWarm_StatusStreaming() (gas: 259438)
+[PASS] test_RevertGiven_Null() (gas: 11202)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 5.30ms (565.00µs CPU time)
+
+Ran 3 tests for test/integration/fuzz/lockup-dynamic/streamedAmountOf.t.sol:StreamedAmountOf_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_StreamedAmountOf_Calculation((uint128,uint64,uint40)[],uint40) (runs: 50, μ: 4116554, ~: 4276668)
+[PASS] testFuzz_StreamedAmountOf_Monotonicity((uint128,uint64,uint40)[],uint40,uint40) (runs: 50, μ: 4177635, ~: 4031570)
+[PASS] testFuzz_StreamedAmountOf_OneSegment((uint128,uint64,uint40),uint40) (runs: 50, μ: 276942, ~: 270555)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 363.35ms (358.41ms CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-linear/LockupLinear.t.sol:WithdrawMultiple_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawMultiple(uint256,uint128) (runs: 50, μ: 2046015, ~: 2045967)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 132.10ms (127.08ms CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-dynamic/withdrawableAmountOf.t.sol:WithdrawableAmountOf_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawableAmountOf(uint40,uint128) (runs: 50, μ: 316170, ~: 303122)
+[PASS] testFuzz_WithdrawableAmountOf_NoPreviousWithdrawals(uint40) (runs: 50, μ: 289967, ~: 279595)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 58.38ms (53.01ms CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:IsWarm_LockupTranched_Integration_Concrete_Test
+[PASS] test_IsWarm_StatusCanceled() (gas: 370302)
+[PASS] test_IsWarm_StatusDepleted() (gas: 341055)
+[PASS] test_IsWarm_StatusPending() (gas: 326890)
+[PASS] test_IsWarm_StatusSettled() (gas: 334276)
+[PASS] test_IsWarm_StatusStreaming() (gas: 334488)
+[PASS] test_RevertGiven_Null() (gas: 11167)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 301.06ms (678.13µs CPU time)
+
+Ran 5 tests for test/integration/fuzz/lockup-dynamic/withdraw.t.sol:Withdraw_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_Withdraw(uint256,address,uint128) (runs: 50, μ: 118736, ~: 99049)
+[PASS] testFuzz_Withdraw_CallerApprovedOperator(address) (runs: 50, μ: 147320, ~: 147320)
+[PASS] testFuzz_Withdraw_SegmentFuzing(((uint128,uint64,uint40)[],uint256,address)) (runs: 50, μ: 4258353, ~: 4757372)
+[PASS] testFuzz_Withdraw_StreamHasBeenCanceled(uint256,address,uint128) (runs: 50, μ: 162325, ~: 162231)
+[PASS] testFuzz_Withdraw_UnknownCaller(address) (runs: 50, μ: 102502, ~: 102502)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 264.65ms (251.07ms CPU time)
+
+Ran 10 tests for test/integration/concrete/lockup-linear/streamed-amount-of/streamedAmountOf.t.sol:StreamedAmountOf_LockupLinear_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11235)
+[PASS] test_StreamedAmountOf_CliffTimeInTheFuture() (gas: 22636)
+[PASS] test_StreamedAmountOf_CliffTimeInThePast() (gas: 29330)
+[PASS] test_StreamedAmountOf_CliffTimeInThePresent() (gas: 30214)
+[PASS] test_StreamedAmountOf_CliffTimeZero() (gas: 181922)
+[PASS] test_StreamedAmountOf_StatusDepleted() (gas: 66738)
+[PASS] test_StreamedAmountOf_StatusPending() (gas: 23163)
+[PASS] test_StreamedAmountOf_StatusSettled() (gas: 29698)
+[PASS] test_StreamedAmountOf_StreamHasBeenCanceled_StatusCanceled() (gas: 81762)
+[PASS] test_StreamedAmountOf_StreamHasBeenCanceled_StatusDepleted() (gas: 105308)
+Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 5.39ms (529.17µs CPU time)
+
+Ran 20 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:Withdraw_LockupLinear_Integration_Concrete_Test
+[PASS] test_Cancel_RecipientReturnsInvalidSelector() (gas: 295838)
+[PASS] test_RevertGiven_Null() (gas: 18974)
+[PASS] test_RevertGiven_StreamDepleted() (gas: 64581)
+[PASS] test_RevertWhen_CallerFormerRecipient() (gas: 63946)
+[PASS] test_RevertWhen_CallerSender() (gas: 31229)
+[PASS] test_RevertWhen_CallerUnknown() (gas: 28952)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 20650)
+[PASS] test_RevertWhen_Overdraw() (gas: 34083)
+[PASS] test_RevertWhen_ToZeroAddress() (gas: 20551)
+[PASS] test_RevertWhen_WithdrawAmountZero() (gas: 21834)
+[PASS] test_Withdraw() (gas: 310590)
+[PASS] test_Withdraw_CallerApprovedOperator() (gas: 95218)
+[PASS] test_Withdraw_CallerRecipient1() (gas: 70715)
+[PASS] test_Withdraw_CallerRecipient2() (gas: 63327)
+[PASS] test_Withdraw_CallerUnknown() (gas: 66258)
+[PASS] test_Withdraw_EndTimeNotInTheFuture() (gas: 73174)
+[PASS] test_Withdraw_RecipientNotAllowedToHook() (gas: 268273)
+[PASS] test_Withdraw_RecipientReentrant() (gas: 316114)
+[PASS] test_Withdraw_RecipientReverting() (gas: 294926)
+[PASS] test_Withdraw_StreamHasBeenCanceled() (gas: 112680)
+Suite result: ok. 20 passed; 0 failed; 0 skipped; finished in 6.65ms (1.71ms CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-tranched/LockupTranched.t.sol:CancelMultiple_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_CancelMultiple(uint256,uint40) (runs: 50, μ: 1191289, ~: 1193098)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 93.31ms (64.83ms CPU time)
+
+Ran 3 tests for test/unit/concrete/nft-descriptor/stringifyFractionalAmount.t.sol:StringifyFractionalAmount_Unit_Concrete_Test
+[PASS] test_FractionalAmount_LeadingZero() (gas: 18791)
+[PASS] test_FractionalAmount_NoLeadingZero() (gas: 30786)
+[PASS] test_FractionalAmount_Zero() (gas: 9982)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 14.52ms (175.42µs CPU time)
+
+Ran 14 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:Cancel_LockupTranched_Integration_Concrete_Test
+[PASS] test_Cancel() (gas: 394956)
+[PASS] test_Cancel_RecipientNotAllowedToHook() (gas: 346449)
+[PASS] test_Cancel_RecipientReentrant() (gas: 414976)
+[PASS] test_Cancel_RecipientReturnsInvalidSelector() (gas: 368294)
+[PASS] test_Cancel_RecipientReverting() (gas: 367378)
+[PASS] test_Cancel_StatusPending() (gas: 81724)
+[PASS] test_RevertGiven_Null() (gas: 11258)
+[PASS] test_RevertGiven_StatusCanceled() (gas: 86799)
+[PASS] test_RevertGiven_StatusDepleted() (gas: 73400)
+[PASS] test_RevertGiven_StatusSettled() (gas: 36138)
+[PASS] test_RevertGiven_StreamNotCancelable() (gas: 275521)
+[PASS] test_RevertWhen_CallerUnauthorized_MaliciousThirdParty() (gas: 19218)
+[PASS] test_RevertWhen_CallerUnauthorized_Recipient() (gas: 19196)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 12785)
+Suite result: ok. 14 passed; 0 failed; 0 skipped; finished in 6.37ms (1.43ms CPU time)
+
+Ran 2 tests for test/unit/concrete/nft-descriptor/stringifyPercentage.t.sol:StringifyPercentage_Unit_Concrete_Test
+[PASS] test_StringifyPercentage_FractionalPart() (gas: 37471)
+[PASS] test_StringifyPercentage_NoFractionalPart() (gas: 32180)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 5.30ms (220.17µs CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-tranched/streamedAmountOf.t.sol:StreamedAmountOf_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_StreamedAmountOf_Calculation((uint128,uint40)[],uint40) (runs: 50, μ: 3933477, ~: 4038071)
+[PASS] testFuzz_StreamedAmountOf_Monotonicity((uint128,uint40)[],uint40,uint40) (runs: 50, μ: 3374630, ~: 3290230)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 329.09ms (324.21ms CPU time)
+
+Ran 1 test for test/unit/concrete/nft-descriptor/stringifyCardType.t.sol:StringifyCardType_Unit_Concrete_Test
+[PASS] test_StringifyCardType() (gas: 18898)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 23.47ms (168.13µs CPU time)
+
+Ran 8 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:RefundableAmountOf_LockupLinear_Integration_Concrete_Test
+[PASS] test_RefundableAmountOf_StatusDepleted() (gas: 262746)
+[PASS] test_RefundableAmountOf_StatusPending() (gas: 258514)
+[PASS] test_RefundableAmountOf_StatusSettled() (gas: 258785)
+[PASS] test_RefundableAmountOf_StatusStreaming() (gas: 260344)
+[PASS] test_RefundableAmountOf_StreamHasBeenCanceled_StatusCanceled() (gas: 293382)
+[PASS] test_RefundableAmountOf_StreamHasBeenCanceled_StatusDepleted() (gas: 296518)
+[PASS] test_RefundableAmountOf_StreamNotCancelable() (gas: 399205)
+[PASS] test_RevertGiven_Null() (gas: 11225)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 5.67ms (901.12µs CPU time)
+
+Ran 1 test for test/unit/concrete/nft-descriptor/stringifyStatus.t.sol:StringifyStatus_Unit_Concrete_Test
+[PASS] test_StringifyStatus() (gas: 23654)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 29.60ms (218.58µs CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-tranched/LockupTranched.t.sol:Cancel_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_Cancel(uint256,uint128) (runs: 50, μ: 436243, ~: 437677)
+[PASS] testFuzz_Cancel_StatusPending(uint256) (runs: 50, μ: 82367, ~: 82589)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 56.11ms (51.21ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:GetAsset_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetAsset() (gas: 305953)
+[PASS] test_RevertGiven_Null() (gas: 11160)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.92ms (128.87µs CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-linear/LockupLinear.t.sol:RefundableAmountOf_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_RefundableAmountOf(uint256) (runs: 50, μ: 34381, ~: 34505)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 8.04ms (3.26ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:GetDepositedAmount_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetDepositedAmount() (gas: 309210)
+[PASS] test_RevertGiven_Null() (gas: 11145)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.90ms (130.92µs CPU time)
+
+Ran 8 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:Renounce_LockupLinear_Integration_Concrete_Test
+[PASS] test_Renounce() (gas: 535160)
+[PASS] test_RevertGiven_Null() (gas: 11214)
+[PASS] test_RevertGiven_StatusCanceled() (gas: 80594)
+[PASS] test_RevertGiven_StatusDepleted() (gas: 65627)
+[PASS] test_RevertGiven_StatusSettled() (gas: 27145)
+[PASS] test_RevertGiven_StreamNotCancelable() (gas: 495260)
+[PASS] test_RevertWhen_CallerNotSender() (gas: 219636)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 211084)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 5.75ms (935.92µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:GetEndTime_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetEndTime() (gas: 309140)
+[PASS] test_RevertGiven_Null() (gas: 11134)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.89ms (130.63µs CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-dynamic/create-with-durations/createWithDurations.t.sol:CreateWithDurations_LockupDynamic_Integration_Concrete_Test
+[PASS] test_CreateWithDurations() (gas: 357589)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 32254)
+[PASS] test_RevertWhen_DurationsZero() (gas: 56061)
+[PASS] test_RevertWhen_SegmentCountTooHigh() (gas: 243950577)
+[PASS] test_RevertWhen_TimestampsCalculationsOverflows_SegmentTimestampsNotOrdered() (gas: 45887)
+[PASS] test_RevertWhen_TimestampsCalculationsOverflows_StartTimeNotLessThanFirstSegmentTimestamp() (gas: 44510)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 251.65ms (246.86ms CPU time)
+
+Ran 7 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:GetRefundedAmount_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetRefundedAmount_StatusDepleted() (gas: 341069)
+[PASS] test_GetRefundedAmount_StatusPending() (gas: 328539)
+[PASS] test_GetRefundedAmount_StatusSettled() (gas: 333817)
+[PASS] test_GetRefundedAmount_StatusStreaming() (gas: 333788)
+[PASS] test_GetRefundedAmount_StreamHasBeenCanceled_StatusCanceled() (gas: 371181)
+[PASS] test_GetRefundedAmount_StreamHasBeenCanceled_StatusDepleted() (gas: 372953)
+[PASS] test_RevertGiven_Null() (gas: 11212)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 5.79ms (821.42µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:GetRecipient_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetRecipient() (gas: 15435)
+[PASS] test_RevertGiven_NFTBurned() (gas: 78310)
+[PASS] test_RevertGiven_Null() (gas: 11157)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 4.97ms (133.12µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:GetSender_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetSender() (gas: 305982)
+[PASS] test_RevertGiven_Null() (gas: 11168)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.90ms (128.00µs CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-dynamic/createWithDurations.t.sol:CreateWithDurations_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_CreateWithDurations((uint128,uint64,uint40)[]) (runs: 50, μ: 4414285, ~: 3915447)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 289.22ms (284.37ms CPU time)
+
+Ran 4 tests for test/integration/concrete/lockup-linear/create-with-durations/createWithDurations.t.sol:CreateWithDurations_LockupLinear_Integration_Concrete_Test
+[PASS] test_CreateWithDurations() (gas: 290706)
+[PASS] test_RevertWhen_CliffDurationCalculationOverflows() (gas: 33463)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 28143)
+[PASS] test_RevertWhen_TotalDurationCalculationOverflows() (gas: 28021)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 5.15ms (349.96µs CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-linear/createWithDurations.t.sol:CreateWithDurations_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_CreateWithDurations((uint40,uint40)) (runs: 50, μ: 287751, ~: 289216)
+[PASS] testFuzz_RevertWhen_TotalDurationCalculationOverflows((uint40,uint40)) (runs: 50, μ: 29753, ~: 29728)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 20.07ms (15.33ms CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-tranched/create-with-durations/createWithDurations.t.sol:CreateWithDurations_LockupTranched_Integration_Concrete_Test
+[PASS] test_CreateWithDurations() (gas: 387206)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 31786)
+[PASS] test_RevertWhen_DurationsZero() (gas: 59271)
+[PASS] test_RevertWhen_TimestampsCalculationsOverflows_StartTimeNotLessThanFirstTrancheTimestamp() (gas: 47043)
+[PASS] test_RevertWhen_TimestampsCalculationsOverflows_TrancheTimestampsNotOrdered() (gas: 47276)
+[PASS] test_RevertWhen_TrancheCountTooHigh() (gas: 140337825)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 156.67ms (137.98ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:TransferFrom_LockupDynamic_Integration_Concrete_Test
+[PASS] test_RevertGiven_StreamNotTransferable() (gas: 284066)
+[PASS] test_TransferFrom() (gas: 297349)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 5.07ms (234.63µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:WasCanceled_LockupDynamic_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11141)
+[PASS] test_WasCanceled() (gas: 317637)
+[PASS] test_WasCanceled_StreamNotCanceled() (gas: 300429)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.01ms (251.04µs CPU time)
+
+Ran 5 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:WithdrawHooks_LockupDynamic_Integration_Concrete_Test
+[PASS] test_WithdrawHooks_CallerApprovedOperator() (gas: 360344)
+[PASS] test_WithdrawHooks_CallerRecipient() (gas: 325734)
+[PASS] test_WithdrawHooks_CallerSender() (gas: 331724)
+[PASS] test_WithdrawHooks_CallerUnknown() (gas: 331455)
+[PASS] test_WithdrawHooks_GivenSameSenderAndRecipient() (gas: 300862)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 5.84ms (969.79µs CPU time)
+
+Ran 7 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:WithdrawMaxAndTransfer_LockupDynamic_Integration_Concrete_Test
+[PASS] test_RevertGiven_NFTBurned() (gas: 69912)
+[PASS] test_RevertGiven_Null() (gas: 13513)
+[PASS] test_RevertGiven_StreamNotTransferable() (gas: 251767)
+[PASS] test_RevertWhen_CallerNotCurrentRecipient() (gas: 19061)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 15043)
+[PASS] test_WithdrawMaxAndTransfer() (gas: 156044)
+[PASS] test_WithdrawMaxAndTransfer_WithdrawableAmountZero() (gas: 95376)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 5.46ms (596.29µs CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-dynamic/LockupDynamic.t.sol:WithdrawMaxAndTransfer_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawMaxAndTransfer(uint256,address) (runs: 50, μ: 140033, ~: 155197)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 31.57ms (19.32ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:WithdrawMax_LockupDynamic_Integration_Concrete_Test
+[PASS] test_WithdrawMax() (gas: 132391)
+[PASS] test_WithdrawMax_EndTimeNotInTheFuture() (gas: 76945)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 5.28ms (383.71µs CPU time)
+
+Ran 8 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:Renounce_LockupDynamic_Integration_Concrete_Test
+[PASS] test_Renounce() (gas: 674926)
+[PASS] test_RevertGiven_Null() (gas: 11192)
+[PASS] test_RevertGiven_StatusCanceled() (gas: 87704)
+[PASS] test_RevertGiven_StatusDepleted() (gas: 63260)
+[PASS] test_RevertGiven_StatusSettled() (gas: 24925)
+[PASS] test_RevertGiven_StreamNotCancelable() (gas: 635210)
+[PASS] test_RevertWhen_CallerNotSender() (gas: 268466)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 260088)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 5.96ms (1.03ms CPU time)
+
+Ran 6 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:StatusOf_LockupDynamic_Integration_Concrete_Test
+[PASS] test_RevertGiven_Null() (gas: 11092)
+[PASS] test_StatusOf() (gas: 323648)
+[PASS] test_StatusOf_AssetsFullyWithdrawn() (gas: 313473)
+[PASS] test_StatusOf_RefundableAmountNotZero() (gas: 307846)
+[PASS] test_StatusOf_StartTimeInTheFuture() (gas: 301614)
+[PASS] test_StatusOf_StreamCanceled() (gas: 347731)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 5.49ms (683.09µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:SetNFTDescriptor_LockupDynamic_Integration_Concrete_Test
+[PASS] test_RevertWhen_CallerNotAdmin() (gas: 16599)
+[PASS] test_SetNFTDescriptor_NewNFTDescriptor() (gas: 6699008)
+[PASS] test_SetNFTDescriptor_SameNFTDescriptor() (gas: 2150259)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 17.63ms (12.79ms CPU time)
+
+Ran 8 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:RefundableAmountOf_LockupDynamic_Integration_Concrete_Test
+[PASS] test_RefundableAmountOf_StatusDepleted() (gas: 313471)
+[PASS] test_RefundableAmountOf_StatusPending() (gas: 307388)
+[PASS] test_RefundableAmountOf_StatusSettled() (gas: 307657)
+[PASS] test_RefundableAmountOf_StatusStreaming() (gas: 314469)
+[PASS] test_RefundableAmountOf_StreamHasBeenCanceled_StatusCanceled() (gas: 347584)
+[PASS] test_RefundableAmountOf_StreamHasBeenCanceled_StatusDepleted() (gas: 350768)
+[PASS] test_RefundableAmountOf_StreamNotCancelable() (gas: 493834)
+[PASS] test_RevertGiven_Null() (gas: 11225)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 5.81ms (1.02ms CPU time)
+
+Ran 20 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:Withdraw_LockupDynamic_Integration_Concrete_Test
+[PASS] test_Cancel_RecipientReturnsInvalidSelector() (gas: 360580)
+[PASS] test_RevertGiven_Null() (gas: 18974)
+[PASS] test_RevertGiven_StreamDepleted() (gas: 62236)
+[PASS] test_RevertWhen_CallerFormerRecipient() (gas: 63946)
+[PASS] test_RevertWhen_CallerSender() (gas: 31229)
+[PASS] test_RevertWhen_CallerUnknown() (gas: 28952)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 20650)
+[PASS] test_RevertWhen_Overdraw() (gas: 31887)
+[PASS] test_RevertWhen_ToZeroAddress() (gas: 20551)
+[PASS] test_RevertWhen_WithdrawAmountZero() (gas: 21834)
+[PASS] test_Withdraw() (gas: 388355)
+[PASS] test_Withdraw_CallerApprovedOperator() (gas: 112337)
+[PASS] test_Withdraw_CallerRecipient1() (gas: 87834)
+[PASS] test_Withdraw_CallerRecipient2() (gas: 80446)
+[PASS] test_Withdraw_CallerUnknown() (gas: 83377)
+[PASS] test_Withdraw_EndTimeNotInTheFuture() (gas: 70998)
+[PASS] test_Withdraw_RecipientNotAllowedToHook() (gas: 346043)
+[PASS] test_Withdraw_RecipientReentrant() (gas: 407010)
+[PASS] test_Withdraw_RecipientReverting() (gas: 359668)
+[PASS] test_Withdraw_StreamHasBeenCanceled() (gas: 129859)
+Suite result: ok. 20 passed; 0 failed; 0 skipped; finished in 7.35ms (2.39ms CPU time)
+
+Ran 4 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:AllowToHook_LockupLinear_Integration_Concrete_Test
+[PASS] test_AllowToHook() (gas: 46382)
+[PASS] test_RevertWhen_CallerNotAdmin() (gas: 16551)
+[PASS] test_RevertWhen_ProvidedAddressNoCode() (gas: 17161)
+[PASS] test_RevertWhen_ProvidedAddressUnsupportedInterface() (gas: 28283)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 4.96ms (157.71µs CPU time)
+
+Ran 2 tests for test/integration/fuzz/lockup-dynamic/LockupDynamic.t.sol:WithdrawMax_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawMax(uint256) (runs: 50, μ: 118644, ~: 119324)
+[PASS] testFuzz_WithdrawMax_EndTimeNotInTheFuture(uint256) (runs: 50, μ: 79557, ~: 79647)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 43.40ms (28.75ms CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-dynamic/LockupDynamic.t.sol:RefundableAmountOf_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_RefundableAmountOf(uint256) (runs: 50, μ: 47291, ~: 32131)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 10.17ms (5.32ms CPU time)
+
+Ran 11 tests for test/integration/concrete/lockup-linear/LockupLinear.t.sol:Burn_LockupLinear_Integration_Concrete_Test
+[PASS] test_Burn_CallerApprovedOperator() (gas: 90351)
+[PASS] test_Burn_CallerNFTOwner() (gas: 80821)
+[PASS] test_Burn_NonTransferableNFT() (gas: 80810)
+[PASS] test_RevertGiven_NFTDoesNotExist() (gas: 82143)
+[PASS] test_RevertGiven_Null() (gas: 11218)
+[PASS] test_RevertGiven_StatusCanceled() (gas: 86045)
+[PASS] test_RevertGiven_StatusPending() (gas: 14204)
+[PASS] test_RevertGiven_StatusSettled() (gas: 19443)
+[PASS] test_RevertGiven_StatusStreaming() (gas: 19370)
+[PASS] test_RevertWhen_CallerUnauthorized() (gas: 76309)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 12740)
+Suite result: ok. 11 passed; 0 failed; 0 skipped; finished in 5.48ms (589.71µs CPU time)
+
+Ran 10 tests for test/integration/concrete/lockup-dynamic/LockupDynamic.t.sol:WithdrawMultiple_LockupDynamic_Integration_Concrete_Test
+[PASS] test_RevertGiven_AllStatusesDepleted() (gas: 73492)
+[PASS] test_RevertGiven_OnlyNull() (gas: 20672)
+[PASS] test_RevertGiven_SomeNull() (gas: 125633)
+[PASS] test_RevertGiven_SomeStatusesDepleted() (gas: 82995)
+[PASS] test_RevertWhen_ArrayCountsNotEqual() (gas: 10459)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 27325)
+[PASS] test_RevertWhen_SomeAmountsOverdraw() (gas: 173318)
+[PASS] test_RevertWhen_SomeAmountsZero() (gas: 92198)
+[PASS] test_WithdrawMultiple() (gas: 272322)
+[PASS] test_WithdrawMultiple_ArrayCountsZero() (gas: 6503)
+Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 6.32ms (1.21ms CPU time)
+
+Ran 1 test for test/integration/fuzz/lockup-dynamic/LockupDynamic.t.sol:WithdrawMultiple_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_WithdrawMultiple(uint256,uint128) (runs: 50, μ: 2723193, ~: 2722963)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 162.84ms (157.76ms CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/get-cliff-time/getCliffTime.t.sol:GetCliffTime_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetCliffTime() (gas: 232735)
+[PASS] test_RevertGiven_Null() (gas: 11199)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.89ms (122.58µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/get-segments/getSegments.t.sol:GetSegments_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetSegments() (gas: 285140)
+[PASS] test_RevertGiven_Null() (gas: 13188)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.91ms (155.42µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-dynamic/get-stream/getStream.t.sol:GetStream_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetStream() (gas: 278704)
+[PASS] test_GetStream_StatusSettled() (gas: 64100)
+[PASS] test_RevertGiven_Null() (gas: 15311)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.19ms (335.38µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-linear/get-stream/getStream.t.sol:GetStream_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetStream() (gas: 52546)
+[PASS] test_GetStream_StatusSettled() (gas: 54885)
+[PASS] test_RevertGiven_Null() (gas: 14040)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.01ms (206.83µs CPU time)
+
+Ran 3 tests for test/integration/concrete/lockup-tranched/get-stream/getStream.t.sol:GetStream_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetStream() (gas: 305234)
+[PASS] test_GetStream_StatusSettled() (gas: 68409)
+[PASS] test_RevertGiven_Null() (gas: 15245)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 5.20ms (349.67µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-dynamic/get-timestamps/getTimestamps.t.sol:GetTimestamps_LockupDynamic_Integration_Concrete_Test
+[PASS] test_GetTimestamps() (gas: 279551)
+[PASS] test_RevertGiven_Null() (gas: 12321)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.88ms (130.29µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-linear/get-timestamps/getTimestamps.t.sol:GetTimestamps_LockupLinear_Integration_Concrete_Test
+[PASS] test_GetTimestamps() (gas: 231266)
+[PASS] test_RevertGiven_Null() (gas: 12489)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.83ms (122.29µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/get-timestamps/getTimestamps.t.sol:GetTimestamps_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetTimestamps() (gas: 304965)
+[PASS] test_RevertGiven_Null() (gas: 12321)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.90ms (138.88µs CPU time)
+
+Ran 2 tests for test/integration/concrete/lockup-tranched/get-tranches/getTranches.t.sol:GetTranches_LockupTranched_Integration_Concrete_Test
+[PASS] test_GetTranches() (gas: 311727)
+[PASS] test_RevertGiven_Null() (gas: 13191)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 4.93ms (162.50µs CPU time)
+
+Ran 5 tests for test/unit/concrete/nft-descriptor/hourglass.t.sol:Hourglass_Unit_Concrete_Test
+[PASS] test_Hourglass_Canceled() (gas: 93585)
+[PASS] test_Hourglass_Depleted() (gas: 228957)
+[PASS] test_Hourglass_Pending() (gas: 93646)
+[PASS] test_Hourglass_Settled() (gas: 228817)
+[PASS] test_Hourglass_Streaming() (gas: 93487)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 7.07ms (2.04ms CPU time)
+
+Ran 1 test for test/integration/fuzz/nft-descriptor/isAllowedCharacter.t.sol:IsAllowedCharacter_Integration_Fuzz_Test
+[PASS] testFuzz_IsAllowedCharacter(string) (runs: 50, μ: 11263, ~: 11171)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 7.86ms (2.88ms CPU time)
+
+Ran 4 tests for test/integration/concrete/nft-descriptor/map-symbol/mapSymbol.t.sol:MapSymbol_Integration_Concrete_Test
+[PASS] test_MapSymbol_LockupDynamic() (gas: 19700)
+[PASS] test_MapSymbol_LockupLinear() (gas: 19407)
+[PASS] test_MapSymbol_LockupTranched() (gas: 20013)
+[PASS] test_RevertGiven_UnknownNFT() (gas: 930995)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 5.14ms (188.67µs CPU time)
+
+Ran 13 tests for test/integration/concrete/lockup-linear/create-with-timestamps/createWithTimestamps.t.sol:CreateWithTimestamps_LockupLinear_Integration_Concrete_Test
+[PASS] test_CreateWithTimestamps() (gas: 288841)
+[PASS] test_CreateWithTimestamps_AssetMissingReturnValue() (gas: 295355)
+[PASS] test_CreateWithTimestamps_StartTimeLessThanEndTime() (gas: 246745)
+[PASS] test_RevertGiven_EndTimeNotInTheFuture() (gas: 33540)
+[PASS] test_RevertWhen_AssetNotContract() (gas: 178823)
+[PASS] test_RevertWhen_BrokerFeeTooHigh() (gas: 29001)
+[PASS] test_RevertWhen_CliffTimeNotLessThanEndTime() (gas: 34628)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 28527)
+[PASS] test_RevertWhen_DepositAmountZero() (gas: 26206)
+[PASS] test_RevertWhen_RecipientZeroAddress() (gas: 126955)
+[PASS] test_RevertWhen_StartTimeGreaterThanCliffTime() (gas: 34599)
+[PASS] test_RevertWhen_StartTimeNotLessThanEndTime() (gas: 33656)
+[PASS] test_RevertWhen_StartTimeZero() (gas: 32926)
+Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 16.67ms (11.82ms CPU time)
+
+Ran 4 tests for test/integration/fuzz/lockup-linear/createWithTimestamps.t.sol:CreateWithTimestamps_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_CreateWithTimestamps(address,(address,address,uint128,address,bool,bool,(uint40,uint40,uint40),(address,uint256))) (runs: 50, μ: 404458, ~: 413434)
+[PASS] testFuzz_RevertWhen_BrokerFeeTooHigh((address,uint256)) (runs: 50, μ: 28143, ~: 28457)
+[PASS] testFuzz_RevertWhen_CliffTimeNotLessThanEndTime(uint40,uint40) (runs: 50, μ: 34979, ~: 35043)
+[PASS] testFuzz_RevertWhen_StartTimeNotLessThanCliffTime(uint40) (runs: 50, μ: 35544, ~: 35625)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 42.25ms (31.78ms CPU time)
+
+Ran 16 tests for test/integration/concrete/lockup-tranched/create-with-timestamps/createWithTimestamps.t.sol:CreateWithTimestamps_LockupTranched_Integration_Concrete_Test
+[PASS] test_CreateWithTimestamps() (gas: 378468)
+[PASS] test_CreateWithTimestamps_AssetMissingReturnValue() (gas: 385047)
+[PASS] test_RevertGiven_EndTimeNotInTheFuture() (gas: 41973)
+[PASS] test_RevertWhen_AssetNotContract() (gas: 254341)
+[PASS] test_RevertWhen_BrokerFeeTooHigh() (gas: 38014)
+[PASS] test_RevertWhen_DelegateCalled() (gas: 32307)
+[PASS] test_RevertWhen_DepositAmountNotEqualToTrancheAmountsSum() (gas: 38675)
+[PASS] test_RevertWhen_DepositAmountZero() (gas: 35259)
+[PASS] test_RevertWhen_RecipientZeroAddress() (gas: 199565)
+[PASS] test_RevertWhen_StartTimeEqualToFirstTrancheTimestamp() (gas: 46918)
+[PASS] test_RevertWhen_StartTimeGreaterThanFirstTrancheTimestamp() (gas: 46967)
+[PASS] test_RevertWhen_StartTimeZero() (gas: 35666)
+[PASS] test_RevertWhen_TrancheAmountsSumOverflows() (gas: 45546)
+[PASS] test_RevertWhen_TrancheCountTooHigh() (gas: 13343151)
+[PASS] test_RevertWhen_TrancheCountZero() (gas: 34047)
+[PASS] test_RevertWhen_TrancheTimestampsNotOrdered() (gas: 46175)
+Suite result: ok. 16 passed; 0 failed; 0 skipped; finished in 44.84ms (39.96ms CPU time)
+
+Ran 19 tests for test/invariant/LockupLinear.t.sol:LockupLinear_Invariant_Test
+[PASS] invariant_CliffTimeGtStartTimeOrZero() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_ContractBalance() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountGteStreamedAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountGteWithdrawableAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountGteWithdrawnAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountNotZero() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_EndTimeGtCliffTime() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_EndTimeGtStartTime() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_NextStreamId() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StartTimeNotZero() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusCanceled() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusDepleted() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusPending() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusSettled() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusSettled_GetStream() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusStreaming() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusTransitions() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StreamedAmountGteWithdrawableAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StreamedAmountGteWithdrawnAmount() (runs: 20, calls: 400, reverts: 0)
+Suite result: ok. 19 passed; 0 failed; 0 skipped; finished in 2.08s (2.35s CPU time)
+
+Ran 6 tests for test/integration/fuzz/lockup-dynamic/createWithTimestamps.t.sol:CreateWithTimestamps_LockupDynamic_Integration_Fuzz_Test
+[PASS] testFuzz_CreateWithTimestamps(address,(address,address,uint128,address,bool,bool,uint40,(uint128,uint64,uint40)[],(address,uint256))) (runs: 50, μ: 4017174, ~: 3705001)
+[PASS] testFuzz_RevertWhen_BrokerFeeTooHigh((address,uint256)) (runs: 50, μ: 34411, ~: 34141)
+[PASS] testFuzz_RevertWhen_DepositAmountNotEqualToSegmentAmountsSum(uint128) (runs: 50, μ: 39048, ~: 38835)
+[PASS] testFuzz_RevertWhen_SegmentAmountsSumOverflows(uint128,uint128) (runs: 50, μ: 44245, ~: 44305)
+[PASS] testFuzz_RevertWhen_SegmentCountTooHigh(uint256) (runs: 50, μ: 40386695, ~: 38334929)
+[PASS] testFuzz_RevertWhen_StartTimeNotLessThanFirstSegmentTimestamp(uint40) (runs: 50, μ: 44255, ~: 44105)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 2.90s (2.90s CPU time)
+
+Ran 3 tests for test/unit/concrete/nft-descriptor/generateDescription.t.sol:GenerateDescription_Unit_Concrete_Test
+[PASS] test_GenerateDescription() (gas: 31890)
+[PASS] test_GenerateDescription_Empty() (gas: 18262)
+[PASS] test_GenerateDescription_NonTransferable() (gas: 30993)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 10.25ms (206.58µs CPU time)
+
+Ran 2 tests for test/unit/concrete/nft-descriptor/generateName.t.sol:GenerateName_Unit_Concrete_Test
+[PASS] test_GenerateName() (gas: 62233)
+[PASS] test_GenerateName_Empty() (gas: 21687)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 49.33ms (935.38µs CPU time)
+
+Ran 3 tests for test/unit/concrete/nft-descriptor/generateSVG.t.sol:GenerateSVG_Unit_Concrete_Test
+[PASS] test_GenerateSVG_Depleted() (gas: 198540)
+[PASS] test_GenerateSVG_Pending() (gas: 194496)
+[PASS] test_GenerateSVG_Streaming() (gas: 204457)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 7.11ms (1.62ms CPU time)
+
+Ran 1 test for test/integration/concrete/nft-descriptor/generateAccentColor.t.sol:GenerateAccentColor_Integration_Concrete_Test
+[PASS] test_GenerateAccentColor() (gas: 15276)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 5.03ms (45.38µs CPU time)
+
+Ran 2 tests for test/unit/concrete/nft-descriptor/generateAttributes.t.sol:GenerateAttributes_Unit_Concrete_Test
+[PASS] test_GenerateAttributes() (gas: 13729)
+[PASS] test_GenerateAttributes_Empty() (gas: 12991)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 5.12ms (71.75µs CPU time)
+
+Ran 3 tests for test/integration/fuzz/lockup-linear/streamedAmountOf.t.sol:StreamedAmountOf_LockupLinear_Integration_Fuzz_Test
+[PASS] testFuzz_StreamedAmountOf_Calculation(uint40,uint128) (runs: 50, μ: 253926, ~: 253873)
+[PASS] testFuzz_StreamedAmountOf_CliffTimeInTheFuture(uint40) (runs: 50, μ: 30200, ~: 30392)
+[PASS] testFuzz_StreamedAmountOf_Monotonicity(uint40,uint40,uint128) (runs: 50, μ: 261959, ~: 262245)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 3.99s (60.46ms CPU time)
+
+Ran 18 tests for test/invariant/LockupDynamic.t.sol:LockupDynamic_Invariant_Test
+[PASS] invariant_ContractBalance() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountGteStreamedAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountGteWithdrawableAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountGteWithdrawnAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountNotZero() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_EndTimeGtStartTime() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_NextStreamId() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_SegmentTimestampsOrdered() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StartTimeNotZero() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusCanceled() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusDepleted() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusPending() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusSettled() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusSettled_GetStream() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusStreaming() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusTransitions() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StreamedAmountGteWithdrawableAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StreamedAmountGteWithdrawnAmount() (runs: 20, calls: 400, reverts: 0)
+Suite result: ok. 18 passed; 0 failed; 0 skipped; finished in 4.35s (14.16s CPU time)
+
+Ran 6 tests for test/integration/fuzz/lockup-tranched/createWithTimestamps.t.sol:CreateWithTimestamps_LockupTranched_Integration_Fuzz_Test
+[PASS] testFuzz_CreateWithTimestamps(address,(address,address,uint128,address,bool,bool,uint40,(uint128,uint40)[],(address,uint256))) (runs: 50, μ: 3953030, ~: 3651646)
+[PASS] testFuzz_RevertWhen_BrokerFeeTooHigh((address,uint256)) (runs: 50, μ: 37106, ~: 36855)
+[PASS] testFuzz_RevertWhen_DepositAmountNotEqualToTrancheAmountsSum(uint128) (runs: 50, μ: 40453, ~: 40757)
+[PASS] testFuzz_RevertWhen_StartTimeNotLessThanFirstTrancheTimestamp(uint40) (runs: 50, μ: 47265, ~: 47211)
+[PASS] testFuzz_RevertWhen_TrancheAmountsSumOverflows(uint128,uint128) (runs: 50, μ: 47434, ~: 47459)
+[PASS] testFuzz_RevertWhen_TrancheCountTooHigh(uint256) (runs: 50, μ: 315623047, ~: 266839491)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 6.50s (6.48s CPU time)
+
+Ran 18 tests for test/invariant/LockupTranched.t.sol:LockupTranched_Invariant_Test
+[PASS] invariant_ContractBalance() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountGteStreamedAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountGteWithdrawableAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountGteWithdrawnAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_DepositedAmountNotZero() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_EndTimeGtStartTime() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_NextStreamId() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StartTimeNotZero() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusCanceled() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusDepleted() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusPending() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusSettled() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusSettled_GetStream() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusStreaming() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StatusTransitions() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StreamedAmountGteWithdrawableAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_StreamedAmountGteWithdrawnAmount() (runs: 20, calls: 400, reverts: 0)
+[PASS] invariant_TrancheTimestampsOrdered() (runs: 20, calls: 400, reverts: 0)
+Suite result: ok. 18 passed; 0 failed; 0 skipped; finished in 8.14s (12.22s CPU time)
+
+Ran 8 tests for test/integration/concrete/lockup-tranched/LockupTranched.t.sol:RefundableAmountOf_LockupTranched_Integration_Concrete_Test
+[PASS] test_RefundableAmountOf_StatusDepleted() (gas: 341099)
+[PASS] test_RefundableAmountOf_StatusPending() (gas: 333914)
+[PASS] test_RefundableAmountOf_StatusSettled() (gas: 334175)
+[PASS] test_RefundableAmountOf_StatusStreaming() (gas: 335200)
+[PASS] test_RefundableAmountOf_StreamHasBeenCanceled_StatusCanceled() (gas: 370210)
+[PASS] test_RefundableAmountOf_StreamHasBeenCanceled_StatusDepleted() (gas: 373354)
+[PASS] test_RefundableAmountOf_StreamNotCancelable() (gas: 542732)
+[PASS] test_RevertGiven_Null() (gas: 11225)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 5.33ms (1.62ms CPU time)
+
+Ran 195 test suites in 8.54s (33.01s CPU time): 856 tests passed, 16 failed, 0 skipped (872 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/fork/NFTDescriptor.t.sol:NFTDescriptor_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/DAI.t.sol:DAI_LockupDynamic_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/DAI.t.sol:DAI_LockupLinear_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/DAI.t.sol:DAI_LockupTranched_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/EURS.t.sol:EURS_LockupDynamic_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/EURS.t.sol:EURS_LockupLinear_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/EURS.t.sol:EURS_LockupTranched_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/SHIB.t.sol:SHIB_LockupDynamic_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/SHIB.t.sol:SHIB_LockupLinear_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/SHIB.t.sol:SHIB_LockupTranched_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDC.t.sol:USDC_LockupDynamic_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDC.t.sol:USDC_LockupLinear_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDC.t.sol:USDC_LockupTranched_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDT.t.sol:USDT_LockupDynamic_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDT.t.sol:USDT_LockupLinear_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDT.t.sol:USDT_LockupTranched_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered a total of 16 failing tests, 856 tests succeeded

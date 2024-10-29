@@ -1,0 +1,225 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/fork/assets/USDC.t.sol:USDC_CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.22ms (0.00ns CPU time)
+
+Ran 1 test for test/utils/BaseScript.t.sol:BaseScript_Test
+[PASS] test_ConstructCreate2Salt() (gas: 27784)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.92ms (208.71µs CPU time)
+
+Ran 3 tests for test/utils/Precompiles.t.sol:Precompiles_Test
+[PASS] test_DeployBatchLockup() (gas: 4108)
+[PASS] test_DeployMerkleLockupFactory() (gas: 4108)
+[PASS] test_DeployPeriphery() (gas: 4131)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 3.97ms (63.71µs CPU time)
+
+Ran 1 test for test/fork/assets/USDC.t.sol:USDC_CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 5.87ms (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/USDC.t.sol:USDC_CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 545.92µs (0.00ns CPU time)
+
+Ran 1 test for test/integration/merkle-lockup/ll/constructor/constructor.t.sol:Constructor_MerkleLL_Integration_Test
+[PASS] test_Constructor() (gas: 1198249)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 6.70ms (228.42µs CPU time)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-timestamps-ld/createWithTimestampsLD.t.sol:CreateWithTimestampsLD_Integration_Test
+[PASS] test_BatchCreateWithTimestamps() (gas: 2032684)
+[PASS] test_RevertWhen_BatchSizeZero() (gas: 15296)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 6.73ms (1.11ms CPU time)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-durations-ld/createWithDurationsLD.t.sol:CreateWithDurationsLD_Integration_Test
+[PASS] test_BatchCreateWithDurations() (gas: 2047273)
+[PASS] test_RevertWhen_BatchSizeZero() (gas: 15297)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 6.72ms (1.16ms CPU time)
+
+Ran 1 test for test/fork/assets/USDC.t.sol:USDC_MerkleLL_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 604.25µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/USDC.t.sol:USDC_MerkleLT_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 609.21µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/USDT.t.sol:USDT_CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 552.63µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/USDT.t.sol:USDT_CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 516.42µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/USDT.t.sol:USDT_CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 525.33µs (0.00ns CPU time)
+
+Ran 1 test for test/fork/assets/USDT.t.sol:USDT_MerkleLL_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 601.75µs (0.00ns CPU time)
+
+Ran 2 tests for test/integration/merkle-lockup/lt/get-first-claim-time/getFirstClaimTime.t.sol:GetFirstClaimTime_Integration_Test
+[PASS] test_GetFirstClaimTime() (gas: 339930)
+[PASS] test_GetFirstClaimTime_BeforeFirstClaim() (gas: 10542)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 8.23ms (469.63µs CPU time)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-durations-lt/createWithDurationsLT.t.sol:CreateWithDurationsLT_Integration_Test
+[PASS] test_BatchCreateWithDurations() (gas: 2031648)
+[PASS] test_RevertWhen_BatchSizeZero() (gas: 15253)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 10.35ms (2.31ms CPU time)
+
+Ran 1 test for test/fork/assets/USDT.t.sol:USDT_MerkleLT_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 609.25µs (0.00ns CPU time)
+
+Ran 1 test for test/integration/merkle-lockup/lt/constructor/constructor.t.sol:Constructor_MerkleLT_Integration_Test
+[PASS] test_Constructor() (gas: 1574365)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 6.81ms (264.46µs CPU time)
+
+Ran 3 tests for test/integration/merkle-lockup/lt/has-claimed/hasClaimed.t.sol:HasClaimed_Integration_Test
+[PASS] test_HasClaimed() (gas: 341153)
+[PASS] test_HasClaimed_IndexNotInTree() (gas: 11065)
+[PASS] test_HasClaimed_NotClaimed() (gas: 16276)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 12.24ms (204.79µs CPU time)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-timestamps-lt/createWithTimestampsLT.t.sol:CreateWithTimestampsLT_Integration_Test
+[PASS] test_BatchCreateWithTimestamps() (gas: 2017852)
+[PASS] test_RevertWhen_BatchSizeZero() (gas: 15252)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 7.33ms (1.05ms CPU time)
+
+Ran 3 tests for test/integration/merkle-lockup/ll/has-claimed/hasClaimed.t.sol:HasClaimed_Integration_Test
+[PASS] test_HasClaimed() (gas: 286706)
+[PASS] test_HasClaimed_IndexNotInTree() (gas: 11087)
+[PASS] test_HasClaimed_NotClaimed() (gas: 16298)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 6.81ms (172.04µs CPU time)
+
+Ran 4 tests for test/integration/merkle-lockup/ll/has-expired/hasExpired.t.sol:HasExpired_Integration_Test
+[PASS] test_HasExpired_ExpirationEqualToBlockTimestamp() (gas: 14580)
+[PASS] test_HasExpired_ExpirationGreaterThanBlockTimestamp() (gas: 14671)
+[PASS] test_HasExpired_ExpirationLessThanBlockTimestamp() (gas: 8817)
+[PASS] test_HasExpired_ExpirationZero() (gas: 1187735)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 6.59ms (239.83µs CPU time)
+
+Ran 4 tests for test/integration/merkle-lockup/lt/has-expired/hasExpired.t.sol:HasExpired_Integration_Test
+[PASS] test_HasExpired_ExpirationEqualToBlockTimestamp() (gas: 14558)
+[PASS] test_HasExpired_ExpirationGreaterThanBlockTimestamp() (gas: 14649)
+[PASS] test_HasExpired_ExpirationLessThanBlockTimestamp() (gas: 8795)
+[PASS] test_HasExpired_ExpirationZero() (gas: 1562247)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 6.50ms (275.00µs CPU time)
+
+Ran 4 tests for test/integration/merkle-lockup/factory/is-percentages-sum-100/isPercentagesSum100.t.sol:IsPercentagesSum100_Integration_Test
+[PASS] test_IsPercentagesSum100() (gas: 17480)
+[PASS] test_RevertWhen_SumOverflow() (gas: 17056)
+[PASS] test_TotalPercentageGreaterThanOneHundred() (gas: 17673)
+[PASS] test_TotalPercentageLessThanOneHundred() (gas: 17673)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 6.37ms (131.58µs CPU time)
+
+Ran 7 tests for test/integration/merkle-lockup/ll/claim/claim.t.sol:Claim_Integration_Test
+[PASS] test_Claim() (gas: 320455)
+[PASS] test_RevertGiven_AlreadyClaimed() (gas: 298250)
+[PASS] test_RevertGiven_CampaignExpired() (gas: 17926)
+[PASS] test_RevertWhen_InvalidAmount() (gas: 41564)
+[PASS] test_RevertWhen_InvalidIndex() (gas: 41684)
+[PASS] test_RevertWhen_InvalidMerkleProof() (gas: 42932)
+[PASS] test_RevertWhen_InvalidRecipient() (gas: 40281)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 6.96ms (651.50µs CPU time)
+
+Ran 2 tests for test/integration/merkle-lockup/ll/get-first-claim-time/getFirstClaimTime.t.sol:GetFirstClaimTime_Integration_Test
+[PASS] test_GetFirstClaimTime() (gas: 285395)
+[PASS] test_GetFirstClaimTime_BeforeFirstClaim() (gas: 10476)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 12.65ms (138.88µs CPU time)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-timestamps-ll/createWithTimestamps.t.sol:CreateWithTimestampsLL_Integration_Test
+[PASS] test_BatchCreateWithTimestamps() (gas: 1516933)
+[PASS] test_RevertWhen_BatchSizeZero() (gas: 15193)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 14.85ms (813.46µs CPU time)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-durations-ll/createWithDurationsLL.t.sol:CreateWithDurationsLL_Integration_Test
+[PASS] test_BatchCreateWithDurations() (gas: 1518104)
+[PASS] test_RevertWhen_BatchSizeZero() (gas: 15194)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 20.65ms (906.63µs CPU time)
+
+Ran 3 tests for test/integration/merkle-lockup/factory/create-merkle-ll/createMerkleLL.t.sol:CreateMerkleLL_Integration_Test
+[PASS] testFuzz_CreateMerkleLL(address,uint40) (runs: 20, μ: 1245920, ~: 1245920)
+[PASS] test_RevertGiven_CreatedAlready() (gas: 8937393460516730689)
+[PASS] test_RevertWhen_CampaignNameTooLong() (gas: 72333)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 14.65ms (8.60ms CPU time)
+
+Ran 6 tests for test/integration/merkle-lockup/lt/clawback/clawback.t.sol:Clawback_Integration_Test
+[PASS] testFuzz_Clawback(address) (runs: 20, μ: 375512, ~: 375512)
+[PASS] test_Clawback() (gas: 358029)
+[PASS] test_Clawback_BeforeFirstClaim() (gas: 35887)
+[PASS] test_Clawback_GracePeriod() (gas: 356651)
+[PASS] test_RevertGiven_CampaignNotExpired() (gas: 346550)
+[PASS] test_RevertWhen_CallerNotAdmin() (gas: 16516)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 11.68ms (6.06ms CPU time)
+
+Ran 6 tests for test/integration/merkle-lockup/ll/clawback/clawback.t.sol:Clawback_Integration_Test
+[PASS] testFuzz_Clawback(address) (runs: 20, μ: 321043, ~: 321043)
+[PASS] test_Clawback() (gas: 303560)
+[PASS] test_Clawback_BeforeFirstClaim() (gas: 35887)
+[PASS] test_Clawback_GracePeriod() (gas: 302182)
+[PASS] test_RevertGiven_CampaignNotExpired() (gas: 292081)
+[PASS] test_RevertWhen_CallerNotAdmin() (gas: 16516)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 11.12ms (5.74ms CPU time)
+
+Ran 10 tests for test/integration/merkle-lockup/lt/claim/claim.t.sol:Claim_Integration_Test
+[PASS] test_Claim() (gas: 382483)
+[PASS] test_Claim_CalculatedAmountsSumNotEqualClaimAmount() (gas: 2148825)
+[PASS] test_RevertGiven_AlreadyClaimed() (gas: 352722)
+[PASS] test_RevertGiven_CampaignExpired() (gas: 17951)
+[PASS] test_RevertWhen_InvalidAmount() (gas: 41567)
+[PASS] test_RevertWhen_InvalidIndex() (gas: 41687)
+[PASS] test_RevertWhen_InvalidMerkleProof() (gas: 42935)
+[PASS] test_RevertWhen_InvalidRecipient() (gas: 40284)
+[PASS] test_RevertWhen_TotalPercentageGreaterThanOneHundred() (gas: 1591103)
+[PASS] test_RevertWhen_TotalPercentageLessThanOneHundred() (gas: 1591103)
+Suite result: ok. 10 passed; 0 failed; 0 skipped; finished in 19.37ms (1.98ms CPU time)
+
+Ran 3 tests for test/integration/merkle-lockup/factory/create-merkle-lt/createMerkleLT.t.sol:CreateMerkleLT_Integration_Test
+[PASS] testFuzz_CreateMerkleLT(address,uint40) (runs: 20, μ: 1634914, ~: 1634914)
+[PASS] test_RevertGiven_CreatedAlready() (gas: 8937393460516730798)
+[PASS] test_RevertWhen_CampaignNameTooLong() (gas: 78253)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 17.58ms (11.55ms CPU time)
+
+Ran 2 tests for test/utils/MerkleBuilder.t.sol:MerkleBuilder_Test
+[PASS] testFuzz_ComputeLeaf(uint256,address,uint128) (runs: 20, μ: 4315, ~: 4315)
+[PASS] testFuzz_ComputeLeaves((uint256,address,uint128)[]) (runs: 20, μ: 334507, ~: 336154)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 34.12ms (33.93ms CPU time)
+
+Ran 34 test suites in 197.52ms (272.54ms CPU time): 77 tests passed, 10 failed, 0 skipped (87 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/fork/assets/USDC.t.sol:USDC_CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDC.t.sol:USDC_CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDC.t.sol:USDC_CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDC.t.sol:USDC_MerkleLL_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDC.t.sol:USDC_MerkleLT_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDT.t.sol:USDT_CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDT.t.sol:USDT_CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDT.t.sol:USDT_CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDT.t.sol:USDT_MerkleLL_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered 1 failing test in test/fork/assets/USDT.t.sol:USDT_MerkleLT_Fork_Test
+[FAIL: setup failed: vm.createSelectFork: Failed to resolve env var `MAINNET_RPC_URL` in `${MAINNET_RPC_URL}`: environment variable not found] setUp() (gas: 0)
+
+Encountered a total of 10 failing tests, 77 tests succeeded
