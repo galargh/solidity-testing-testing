@@ -1,0 +1,153 @@
+Compiling 34 files with Solc 0.8.12
+Solc 0.8.12 finished in 1.84s
+Compiler run successful with warnings:
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/Multicall.t.sol:44:3:
+   |
+44 |   function testGetEthBalance(address addr) public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/Multicall.t.sol:48:3:
+   |
+48 |   function testGetBlockHash(uint256 blockNumber) public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/Multicall.t.sol:52:3:
+   |
+52 |   function testGetLastBlockHash() public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/Multicall.t.sol:58:3:
+   |
+58 |   function testGetCurrentBlockTimestamp() public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/Multicall.t.sol:62:3:
+   |
+62 |   function testGetCurrentBlockDifficulty() public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/Multicall.t.sol:66:3:
+   |
+66 |   function testGetCurrentBlockGasLimit() public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/Multicall.t.sol:70:3:
+   |
+70 |   function testGetCurrentBlockCoinbase() public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/Multicall2.t.sol:90:3:
+   |
+90 |   function testGetBlockHash(uint256 blockNumber) public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/Multicall2.t.sol:94:3:
+   |
+94 |   function testGetBlockNumber() public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/Multicall2.t.sol:98:3:
+   |
+98 |   function testGetCurrentBlockCoinbase() public {
+   |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall2.t.sol:102:3:
+    |
+102 |   function testGetCurrentBlockDifficulty() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall2.t.sol:106:3:
+    |
+106 |   function testGetCurrentBlockGasLimit() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall2.t.sol:110:3:
+    |
+110 |   function testGetCurrentBlockTimestamp() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall2.t.sol:114:3:
+    |
+114 |   function testGetEthBalance(address addr) public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall2.t.sol:118:3:
+    |
+118 |   function testGetLastBlockHash() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall3.t.sol:163:3:
+    |
+163 |   function testGetBlockHash(uint256 blockNumber) public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall3.t.sol:167:3:
+    |
+167 |   function testGetBlockNumber() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall3.t.sol:171:3:
+    |
+171 |   function testGetCurrentBlockCoinbase() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall3.t.sol:175:3:
+    |
+175 |   function testGetCurrentBlockDifficulty() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall3.t.sol:179:3:
+    |
+179 |   function testGetCurrentBlockGasLimit() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall3.t.sol:183:3:
+    |
+183 |   function testGetCurrentBlockTimestamp() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall3.t.sol:187:3:
+    |
+187 |   function testGetEthBalance(address addr) public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall3.t.sol:191:3:
+    |
+191 |   function testGetLastBlockHash() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall3.t.sol:197:3:
+    |
+197 |   function testGetBasefee() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> src/test/Multicall3.t.sol:201:3:
+    |
+201 |   function testGetChainId() public {
+    |   ^ (Relevant source part starts here and spans across multiple lines).
+

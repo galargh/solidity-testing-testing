@@ -1,0 +1,9 @@
+Compiling 176 files with Solc 0.8.24
+Solc 0.8.24 finished in 141.84s
+Compiler run successful with warnings:
+Warning (2018): Function state mutability can be restricted to view
+  --> lib/solenv/src/Solenv.sol:14:5:
+   |
+14 |     function _envExists(string memory key) private returns (bool) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+

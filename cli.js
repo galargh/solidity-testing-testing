@@ -47,7 +47,7 @@ const repositories = JSON.parse(fs.readFileSync(path.join(__dirname, 'repositori
 const repositoriesToClone = argv.org !== undefined && argv.repo !== undefined ? repositories.filter((r) => r.org === argv.org && r.repo === argv.repo) : repositories;
 
 for (const repository of repositoriesToClone) {
-  const { org, repo, packageManager, hardhatConfig } = repository;
+  const { org, repo, packageManager, hardhatConfig, env } = repository;
   const executable = packageManager === undefined || packageManager === 'npm' ? 'npx' : packageManager;
 
   switch (argv._[0]) {
@@ -58,16 +58,16 @@ for (const repository of repositoriesToClone) {
       init(org, repo, packageManager, hardhatConfig);
       break;
     case 'build:hardhat':
-      run(org, repo, [executable, 'hardhat3', 'compile']);
+      run(org, repo, [executable, 'hardhat3', 'compile'], env);
       break;
     case 'build:forge':
-      run(org, repo, ['forge', 'build']);
+      run(org, repo, ['forge', 'build'], env);
       break;
     case 'test:hardhat':
-      run(org, repo, packageManager, [executable, 'hardhat3', 'test', 'solidity']);
+      run(org, repo, packageManager, [executable, 'hardhat3', 'test', 'solidity'], env);
       break;
     case 'test:forge':
-      run(org, repo, ['forge', 'test']);
+      run(org, repo, ['forge', 'test'], env);
       break;
     default:
       throw new Error(`Invalid command: ${argv._[0]}`);
@@ -144,10 +144,27 @@ function init(org, repo, packageManager, hardhatConfig) {
     packageJson.type = 'module';
     fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(packageJson, null, 2));
   }
+  if (fs.existsSync(path.join(dir, '.gitmodules'))) {
+    const gitmodules = fs.readFileSync(path.join(dir, '.gitmodules'), 'utf8');
+    const submodules = gitmodules.split(/\[submodule "([^"]+)"\]/g).slice(1)
+      .map((config) => {
+        const lines = config.split('\n').map((line) => line.trim());
+        const path = lines.find((line) => line.startsWith('path = '))?.slice(7);
+        const url = lines.find((line) => line.startsWith('url = '))?.slice(6);
+        const branch = lines.find((line) => line.startsWith('branch = '))?.slice(9);
+        return { path, url, branch };
+      })
+      .filter((submodule) => submodule.path !== undefined && submodule.url !== undefined)
+      .filter((submodule) => submodule.path.startsWith('lib/') && submodule.url.startsWith('https://github.com/'))
+      .map((submodule) => ({path: submodule.path.slice(4), url: submodule.url.slice(19), branch: submodule.branch}));
+    for (const submodule of submodules) {
+      spawnSync('forge', ['install', '--no-git', `${submodule.path}=${submodule.url}${submodule.branch ? `@${submodule.branch}` : ''}`], { cwd: dir, stdio: 'inherit' });
+    }
+  }
   return;
 }
 
-function run(org, repo, command) {
+function run(org, repo, command, env) {
   console.log(`Running ${command.join(' ')} in ${org}/${repo}...`);
   const dir = path.join(__dirname, 'repositories', org, repo);
   if (!fs.existsSync(dir)) {
@@ -173,7 +190,10 @@ function run(org, repo, command) {
   }
   const outputFD = fs.openSync(outputFile, 'w');
   const errorFD = fs.openSync(errorFile, 'w');
-  spawnSync(command[0] , command.slice(1), { cwd: dir, stdio: ['inherit', outputFD, errorFD] });
+  spawnSync(command[0] , command.slice(1), { cwd: dir, stdio: ['inherit', outputFD, errorFD], env: {
+    ...process.env,
+    ...(env ?? {})
+  } });
   fs.closeSync(outputFD);
   fs.closeSync(errorFD);
 }
