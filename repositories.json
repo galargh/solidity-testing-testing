@@ -1,0 +1,104 @@
+[
+  {
+    "org": "foundry-rs",
+    "repo": "forge-std",
+    "scripts": {
+      "forge": "forge build && forge test"
+    }
+  }, {
+    "org": "transmissions11",
+    "repo": "solmate",
+    "scripts": {
+      "forge": "forge build && forge test"
+    }
+  }, {
+    "org": "Vectorized",
+    "repo": "solady",
+    "scripts": {
+      "forge": "forge build && forge test"
+    }
+  }, {
+    "org": "Uniswap",
+    "repo": "UniswapX",
+    "scripts": {
+      "forge": "forge build && forge test"
+    }
+  }, {
+    "org": "sablier-labs",
+    "repo": "v2-core",
+    "scripts": {
+      "bun": "bun install",
+      "forge": "forge build && forge test"
+    },
+    "env": {
+      "RPC_URL_MAINNET": "https://eth-mainnet.g.alchemy.com/v2/<api-key>"
+    }
+  }, {
+    "org": "sablier-labs",
+    "repo": "v2-periphery",
+    "scripts": {
+      "bun": "bun install",
+      "forge": "forge build && forge test"
+    },
+    "env": {
+      "RPC_URL_MAINNET": "https://eth-mainnet.g.alchemy.com/v2/<api-key>"
+    }
+  }, {
+    "org": "PaulRBerg",
+    "repo": "prb-math",
+    "scripts": {
+      "bun": "bun install",
+      "forge": "forge build && forge test"
+    }
+  }, {
+    "org": "PaulRBerg",
+    "repo": "prb-proxy",
+    "scripts": {
+      "bun": "bun install",
+      "forge": "forge build && forge test"
+    }
+  }, {
+    "org": "PaulRBerg",
+    "repo": "prb-test",
+    "scripts": {
+      "forge": "forge build && forge test"
+    }
+  }, {
+    "org": "ProjectOpenSea",
+    "repo": "seaport",
+    "scripts": {
+      "forge": "npm run test:forge"
+    }
+  }, {
+    "org": "kalidao",
+    "repo": "keep",
+    "scripts": {
+      "forge": "forge build && forge test"
+    }
+  }, {
+    "org": "SoulWallet",
+    "repo": "soul-wallet-contract",
+    "scripts": {
+      "forge": "forge build && forge test"
+    }
+  }, {
+    "org": "pancakeswap",
+    "repo": "pancake-v4-core",
+    "scripts": {
+      "yarn": "yarn install",
+      "forge": "forge build && forge test --isolate"
+    }
+  }, {
+    "org": "pcaversaccio",
+    "repo": "createx",
+    "scripts": {
+      "forge": "forge build && forge test"
+    }
+  }, {
+    "org": "mds1",
+    "repo": "multicall",
+    "scripts": {
+      "forge": "forge build && forge test"
+    }
+  }
+]
