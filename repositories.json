@@ -1,45 +1,27 @@
 [
   {
     "org": "foundry-rs",
-    "repo": "forge-std",
-    "scripts": {
-      "forge": "forge build && forge test"
-    }
+    "repo": "forge-std"
   }, {
     "org": "transmissions11",
-    "repo": "solmate",
-    "scripts": {
-      "forge": "forge build && forge test"
-    }
+    "repo": "solmate"
   }, {
     "org": "Vectorized",
-    "repo": "solady",
-    "scripts": {
-      "forge": "forge build && forge test"
-    }
+    "repo": "solady"
   }, {
     "org": "Uniswap",
-    "repo": "UniswapX",
-    "scripts": {
-      "forge": "forge build && forge test"
-    }
+    "repo": "UniswapX"
   }, {
     "org": "sablier-labs",
     "repo": "v2-core",
     "packageManager": "bun",
-    "scripts": {
-      "forge": "forge build && forge test"
-    },
     "env": {
       "RPC_URL_MAINNET": "https://eth-mainnet.g.alchemy.com/v2/<api-key>"
     }
   }, {
     "org": "sablier-labs",
     "repo": "v2-periphery",
-    "scripts": {
-      "bun": "bun install",
-      "forge": "forge build && forge test"
-    },
+    "packageManager": "bun",
     "env": {
       "RPC_URL_MAINNET": "https://eth-mainnet.g.alchemy.com/v2/<api-key>"
     }
@@ -47,58 +29,37 @@
     "org": "PaulRBerg",
     "repo": "prb-math",
     "packageManager": "bun",
-    "scripts": {
-      "forge": "forge build && forge test"
+    "hardhatConfig": {
+      "paths": {
+        "sources": ["src", "test"]
+      },
+      "solidity": "0.8.26"
     }
   }, {
     "org": "PaulRBerg",
     "repo": "prb-proxy",
-    "packageManager": "bun",
-    "scripts": {
-      "forge": "forge build && forge test"
-    }
+    "packageManager": "bun"
   }, {
     "org": "PaulRBerg",
-    "repo": "prb-test",
-    "scripts": {
-      "forge": "forge build && forge test"
-    }
+    "repo": "prb-test"
   }, {
     "org": "ProjectOpenSea",
-    "repo": "seaport",
-    "scripts": {
-      "forge": "npm run test:forge"
-    }
+    "repo": "seaport"
   }, {
     "org": "kalidao",
-    "repo": "keep",
-    "scripts": {
-      "forge": "forge build && forge test"
-    }
+    "repo": "keep"
   }, {
     "org": "SoulWallet",
-    "repo": "soul-wallet-contract",
-    "scripts": {
-      "forge": "forge build && forge test"
-    }
+    "repo": "soul-wallet-contract"
   }, {
     "org": "pancakeswap",
     "repo": "pancake-v4-core",
-    "packageManager": "yarn",
-    "scripts": {
-      "forge": "forge build && forge test --isolate"
-    }
+    "packageManager": "yarn"
   }, {
     "org": "pcaversaccio",
-    "repo": "createx",
-    "scripts": {
-      "forge": "forge build && forge test"
-    }
+    "repo": "createx"
   }, {
     "org": "mds1",
-    "repo": "multicall",
-    "scripts": {
-      "forge": "forge build && forge test"
-    }
+    "repo": "multicall"
   }
 ]

@@ -1,12 +1,9 @@
-const config = {
-  paths: {
-    sources: {
-      solidity: [
-        "src",
-        "test"
-      ],
-    },
+export default {
+  "paths": {
+    "sources": [
+      "src",
+      "test"
+    ]
   },
+  "solidity": "0.8.26"
 };
-
-export default config;
