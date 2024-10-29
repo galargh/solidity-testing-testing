@@ -1,0 +1,12 @@
+cache
+out
+node_modules
+.env
+.env.prod
+.idea
+package-lock.json
+yarn.lock
+*.log
+
+docs/node_modules
+docs/.next

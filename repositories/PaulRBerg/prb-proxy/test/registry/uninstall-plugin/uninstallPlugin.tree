@@ -1,0 +1,10 @@
+uninstallPlugin.t.sol
+├── when the caller doesn't own a proxy
+│  └── it should revert
+└── when the caller owns a proxy
+   ├── when the plugin is unknown
+   │  └── it should revert
+   └── when the plugin is known
+      ├── it should uninstall the plugin
+      ├── it should remove the methods from the reverse mapping
+      └── it should emit an {UninstallPlugin} event
