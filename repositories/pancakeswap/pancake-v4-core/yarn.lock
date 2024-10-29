@@ -230,17 +230,17 @@
     "@ignored/edr-linux-x64-musl" "0.6.4-alpha.0"
     "@ignored/edr-win32-x64-msvc" "0.6.4-alpha.0"
 
-"@ignored/hardhat-vnext-errors@^3.0.0-next.6":
-  version "3.0.0-next.6"
-  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-errors/-/hardhat-vnext-errors-3.0.0-next.6.tgz#47a5ec3d8e6f7151cd576c765a3701aed516a321"
-  integrity sha512-oxuYfyCVGyVoL6saMZKjKfMz4/wsdG38ukaATT151zyhmGZ3HHrb2hR+hpqeKImbBmUB+c60uGYiYXNd6hb/QQ==
+"@ignored/hardhat-vnext-errors@^3.0.0-next.7":
+  version "3.0.0-next.7"
+  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-errors/-/hardhat-vnext-errors-3.0.0-next.7.tgz#f39a24360ce563fcabfe262202aba4cb988596f4"
+  integrity sha512-PnuTY66IDjHvPVWexc9CAC49I6DjHIoUmFyIoKxovLES/IIA5vMO3iRaU6PcShL3Rys3jnkUExJ7p4IZoX4e5A==
   dependencies:
-    "@ignored/hardhat-vnext-utils" "^3.0.0-next.6"
+    "@ignored/hardhat-vnext-utils" "^3.0.0-next.7"
 
-"@ignored/hardhat-vnext-utils@^3.0.0-next.6":
-  version "3.0.0-next.6"
-  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-utils/-/hardhat-vnext-utils-3.0.0-next.6.tgz#94baff59dffe6d8522f9ec6b5a809dc3481c00f3"
-  integrity sha512-YjJcIgl0RHHnBRCXSGgDCSLCtijdaLC8cJI2lUT31uOE74VzJFESPUcj8b0GIJMiEu4HlRh4QwUn6fAlqA4AuA==
+"@ignored/hardhat-vnext-utils@^3.0.0-next.7":
+  version "3.0.0-next.7"
+  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-utils/-/hardhat-vnext-utils-3.0.0-next.7.tgz#244bd5ae7d4afc7e9d53ed70076412b0cc2e3963"
+  integrity sha512-y81bBeTp2XtqHhQRI30O0nu6KbE90fQ8mRTuhCs1mnHZuk55veuX9r6HQ/Bah//bl7QNN/5TnQWef6zSRQY83g==
   dependencies:
     debug "^4.1.1"
     env-paths "^2.2.0"
@@ -249,23 +249,23 @@
     rfdc "^1.3.1"
     undici "^6.16.1"
 
-"@ignored/hardhat-vnext-zod-utils@^3.0.0-next.6":
-  version "3.0.0-next.6"
-  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-zod-utils/-/hardhat-vnext-zod-utils-3.0.0-next.6.tgz#80ca54f21de74f99c6bc11b942a8efbf5765c9e5"
-  integrity sha512-4sVBolerF696oO8uw8v2uhik/GZSdZsn/r+STK6zGngHeivIBH9a3zzbtcDl9VUIXzllSkqtJqiT5EaAden9bg==
-  dependencies:
-    "@ignored/hardhat-vnext-utils" "^3.0.0-next.6"
-
-"@ignored/hardhat-vnext@^3.0.0-next.7":
+"@ignored/hardhat-vnext-zod-utils@^3.0.0-next.7":
   version "3.0.0-next.7"
-  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext/-/hardhat-vnext-3.0.0-next.7.tgz#903b265a35ae76b660e499eb4bfdc8beef3ff020"
-  integrity sha512-4Kku4whAC0uKZlNcnTHiSq/CwYAcsAvVfwTC7R8grhSNZAA5uIWIducXmeOpECHG4v2GYtQVo2jS4rFrPVUyig==
+  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-zod-utils/-/hardhat-vnext-zod-utils-3.0.0-next.7.tgz#922a521cc615e83fb4d6d51f4445352e3eabd141"
+  integrity sha512-+p8NpjpZkVV0I+czrSbjMr1O4xyI1eE85I++pdzrmP+ljqK/1htEHX6uEOL0mP2KP+aiRgBcV9VCsXAq9g3/fQ==
+  dependencies:
+    "@ignored/hardhat-vnext-utils" "^3.0.0-next.7"
+
+"@ignored/hardhat-vnext@^3.0.0-next.8":
+  version "3.0.0-next.8"
+  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext/-/hardhat-vnext-3.0.0-next.8.tgz#2633fc999290a4b12ff03df2f0351a6cd9550b31"
+  integrity sha512-MVZm/E+EaFFGo+WV92Q7Piq/xBG6YHWdKnYFhpvYCAi6hOYiStLxaoqkUTIgRSpUJJUjbFpJYhdFP2eDimC1HQ==
   dependencies:
     "@ignored/edr" "0.6.4-alpha.0"
     "@ignored/edr-optimism" "^0.6.4"
-    "@ignored/hardhat-vnext-errors" "^3.0.0-next.6"
-    "@ignored/hardhat-vnext-utils" "^3.0.0-next.6"
-    "@ignored/hardhat-vnext-zod-utils" "^3.0.0-next.6"
+    "@ignored/hardhat-vnext-errors" "^3.0.0-next.7"
+    "@ignored/hardhat-vnext-utils" "^3.0.0-next.7"
+    "@ignored/hardhat-vnext-zod-utils" "^3.0.0-next.7"
     "@nomicfoundation/solidity-analyzer" "^0.1.0"
     "@sentry/node" "^5.18.1"
     adm-zip "^0.4.16"

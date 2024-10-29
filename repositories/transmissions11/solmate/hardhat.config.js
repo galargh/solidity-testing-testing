@@ -2,5 +2,10 @@ export default {
   "paths": {
     "sources": "src"
   },
-  "solidity": "0.8.15"
+  "solidity": {
+    "version": "0.8.15",
+    "remappings": [
+      "ds-test/=lib/ds-test/src/"
+    ]
+  }
 };

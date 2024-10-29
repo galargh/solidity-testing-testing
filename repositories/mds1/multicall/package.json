@@ -4,7 +4,8 @@
   "description": "<div align=\"center\">",
   "main": "hardhat.config.js",
   "directories": {
-    "example": "examples"
+    "example": "examples",
+    "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@ignored/hardhat-vnext": "^3.0.0-next.7"
+    "@ignored/hardhat-vnext": "^3.0.0-next.8"
   },
   "type": "module",
   "dependencies": {

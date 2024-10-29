@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@ignored/hardhat-vnext':
-        specifier: 3.0.0-next.7
-        version: 3.0.0-next.7
+        specifier: 3.0.0-next.8
+        version: 3.0.0-next.8
       prettier:
         specifier: ^2.8.8
         version: 2.8.8
@@ -243,19 +243,19 @@ packages:
     resolution: {integrity: sha512-VTMK5h61xFjAvFxww3+2ajMYRLgZfpMwVDazcKZX/LAwfQxM8KaH5i6jP6JM8srCGJtm2wf3pFgI3Ass2moQvg==}
     engines: {node: '>= 18'}
 
-  '@ignored/hardhat-vnext-errors@3.0.0-next.6':
-    resolution: {integrity: sha512-oxuYfyCVGyVoL6saMZKjKfMz4/wsdG38ukaATT151zyhmGZ3HHrb2hR+hpqeKImbBmUB+c60uGYiYXNd6hb/QQ==}
+  '@ignored/hardhat-vnext-errors@3.0.0-next.7':
+    resolution: {integrity: sha512-PnuTY66IDjHvPVWexc9CAC49I6DjHIoUmFyIoKxovLES/IIA5vMO3iRaU6PcShL3Rys3jnkUExJ7p4IZoX4e5A==}
 
-  '@ignored/hardhat-vnext-utils@3.0.0-next.6':
-    resolution: {integrity: sha512-YjJcIgl0RHHnBRCXSGgDCSLCtijdaLC8cJI2lUT31uOE74VzJFESPUcj8b0GIJMiEu4HlRh4QwUn6fAlqA4AuA==}
+  '@ignored/hardhat-vnext-utils@3.0.0-next.7':
+    resolution: {integrity: sha512-y81bBeTp2XtqHhQRI30O0nu6KbE90fQ8mRTuhCs1mnHZuk55veuX9r6HQ/Bah//bl7QNN/5TnQWef6zSRQY83g==}
 
-  '@ignored/hardhat-vnext-zod-utils@3.0.0-next.6':
-    resolution: {integrity: sha512-4sVBolerF696oO8uw8v2uhik/GZSdZsn/r+STK6zGngHeivIBH9a3zzbtcDl9VUIXzllSkqtJqiT5EaAden9bg==}
+  '@ignored/hardhat-vnext-zod-utils@3.0.0-next.7':
+    resolution: {integrity: sha512-+p8NpjpZkVV0I+czrSbjMr1O4xyI1eE85I++pdzrmP+ljqK/1htEHX6uEOL0mP2KP+aiRgBcV9VCsXAq9g3/fQ==}
     peerDependencies:
       zod: ^3.23.8
 
-  '@ignored/hardhat-vnext@3.0.0-next.7':
-    resolution: {integrity: sha512-4Kku4whAC0uKZlNcnTHiSq/CwYAcsAvVfwTC7R8grhSNZAA5uIWIducXmeOpECHG4v2GYtQVo2jS4rFrPVUyig==}
+  '@ignored/hardhat-vnext@3.0.0-next.8':
+    resolution: {integrity: sha512-MVZm/E+EaFFGo+WV92Q7Piq/xBG6YHWdKnYFhpvYCAi6hOYiStLxaoqkUTIgRSpUJJUjbFpJYhdFP2eDimC1HQ==}
     hasBin: true
 
   '@noble/curves@1.4.2':
@@ -871,13 +871,13 @@ snapshots:
       '@ignored/edr-linux-x64-musl': 0.6.4-alpha.0
       '@ignored/edr-win32-x64-msvc': 0.6.4-alpha.0
 
-  '@ignored/hardhat-vnext-errors@3.0.0-next.6':
+  '@ignored/hardhat-vnext-errors@3.0.0-next.7':
     dependencies:
-      '@ignored/hardhat-vnext-utils': 3.0.0-next.6
+      '@ignored/hardhat-vnext-utils': 3.0.0-next.7
     transitivePeerDependencies:
       - supports-color
 
-  '@ignored/hardhat-vnext-utils@3.0.0-next.6':
+  '@ignored/hardhat-vnext-utils@3.0.0-next.7':
     dependencies:
       debug: 4.3.7
       env-paths: 2.2.1
@@ -888,20 +888,20 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@ignored/hardhat-vnext-zod-utils@3.0.0-next.6(zod@3.23.8)':
+  '@ignored/hardhat-vnext-zod-utils@3.0.0-next.7(zod@3.23.8)':
     dependencies:
-      '@ignored/hardhat-vnext-utils': 3.0.0-next.6
+      '@ignored/hardhat-vnext-utils': 3.0.0-next.7
       zod: 3.23.8
     transitivePeerDependencies:
       - supports-color
 
-  '@ignored/hardhat-vnext@3.0.0-next.7':
+  '@ignored/hardhat-vnext@3.0.0-next.8':
     dependencies:
       '@ignored/edr': 0.6.4-alpha.0
       '@ignored/edr-optimism': 0.6.4
-      '@ignored/hardhat-vnext-errors': 3.0.0-next.6
-      '@ignored/hardhat-vnext-utils': 3.0.0-next.6
-      '@ignored/hardhat-vnext-zod-utils': 3.0.0-next.6(zod@3.23.8)
+      '@ignored/hardhat-vnext-errors': 3.0.0-next.7
+      '@ignored/hardhat-vnext-utils': 3.0.0-next.7
+      '@ignored/hardhat-vnext-zod-utils': 3.0.0-next.7(zod@3.23.8)
       '@nomicfoundation/solidity-analyzer': 0.1.2
       '@sentry/node': 5.30.0
       adm-zip: 0.4.16

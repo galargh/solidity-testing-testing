@@ -13,7 +13,8 @@ export default {
       "forge-std/=lib/forge-std/src/",
       "openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/",
       "permit2/=lib/permit2/",
-      "solmate/=lib/solmate/"
+      "solmate/=lib/solmate/",
+      "solarray/=lib/solarray/src/"
     ]
   }
 };

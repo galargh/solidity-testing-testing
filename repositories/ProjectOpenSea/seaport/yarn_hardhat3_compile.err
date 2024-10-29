@@ -1,0 +1,12 @@
+warning ../../../package.json: No license field
+WARNING: Inline task action found in plugin "builtin:solidity" for task "compile". Use file:// URLs in production.
+DeclarationError: Identifier not found or not unique.
+  --> test/foundry/utils/BaseOrderTest.sol:56:5:
+   |
+56 |     Account offerer1;
+   |     ^^^^^^^
+
+
+Error HHE1230: Compilation failed
+
+For more info go to https://hardhat.org/HHE1230 or run Hardhat with --show-stack-traces

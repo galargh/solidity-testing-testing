@@ -1,0 +1,113 @@
+WARNING: Inline task action found in plugin "builtin:solidity" for task "compile". Use file:// URLs in production.
+Warning: Contract code size is 113744 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/PRBTestMock.t.sol:6:1:
+  |
+6 | contract PRBTestMock is PRBTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 113774 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/PRBTestMock.t.sol:6:1:
+  |
+6 | contract PRBTestMock is PRBTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 115018 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/PRBTest.t.sol:7:1:
+  |
+7 | contract PRBTest_Test is PRBTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 120078 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-almost-eq/assertAlmostEq.t.sol:8:1:
+  |
+8 | contract AssertAlmostEq_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 127479 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-contains/assertContains.t.sol:6:1:
+  |
+6 | contract AssertContains_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 49479 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-eq/assertEq.t.sol:8:1:
+  |
+8 | contract AssertEq_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 163399 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-eq/assertEq.t.sol:8:1:
+  |
+8 | contract AssertEq_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 116608 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-false/assertFalse.t.sol:6:1:
+  |
+6 | contract AssertFalse_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 119653 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-gt/assertGt.t.sol:6:1:
+  |
+6 | contract AssertGt_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 119653 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-gte/assertGte.t.sol:6:1:
+  |
+6 | contract AssertGte_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 119653 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-lt/assertLt.t.sol:6:1:
+  |
+6 | contract AssertLt_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 119653 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-lte/assertLte.t.sol:6:1:
+  |
+6 | contract AssertLte_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 44264 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-not-eq/assertNotEq.t.sol:8:1:
+  |
+8 | contract AssertNotEq_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 158184 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-not-eq/assertNotEq.t.sol:8:1:
+  |
+8 | contract AssertNotEq_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 116608 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/assert-true/assertTrue.t.sol:6:1:
+  |
+6 | contract AssertTrue_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 115864 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/fail/fail.t.sol:6:1:
+  |
+6 | contract Fail_Test is PRBTest_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+

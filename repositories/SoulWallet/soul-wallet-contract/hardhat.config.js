@@ -15,7 +15,9 @@ export default {
       "@solenv=lib/solenv/src/",
       "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
       "@account-abstraction/=lib/account-abstraction/",
-      "@crypto-lib/=lib/crypto-lib/src/"
+      "@crypto-lib/=lib/crypto-lib/src/",
+      "forge-std/=lib/forge-std/src/",
+      "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/"
     ]
   }
 };

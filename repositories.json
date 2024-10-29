@@ -17,7 +17,10 @@
       "paths": {
         "sources": "src"
       },
-      "solidity": "0.8.15"
+      "solidity": {
+        "version": "0.8.15",
+        "remappings": ["ds-test/=lib/ds-test/src/"]
+      }
     }
   }, {
     "org": "Vectorized",
@@ -41,7 +44,7 @@
       },
       "solidity": {
         "version": "0.8.24",
-        "remappings": ["ds-test/=lib/forge-std/lib/ds-test/src/", "forge-gas-snapshot/=lib/forge-gas-snapshot/src/", "forge-std/=lib/forge-std/src/", "openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/", "permit2/=lib/permit2/", "solmate/=lib/solmate/"]
+        "remappings": ["ds-test/=lib/forge-std/lib/ds-test/src/", "forge-gas-snapshot/=lib/forge-gas-snapshot/src/", "forge-std/=lib/forge-std/src/", "openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/", "permit2/=lib/permit2/", "solmate/=lib/solmate/", "solarray/=lib/solarray/src/"]
       }
     }
   }, {
@@ -129,7 +132,7 @@
       },
       "solidity": {
         "version":"0.8.18",
-        "remappings": ["@std/=lib/forge-std/src/", "@solady/=lib/solady/"]
+        "remappings": ["@std/=lib/forge-std/src/", "@solady/=lib/solady/", "ds-test/=lib/forge-std/lib/ds-test/src/", "forge-std/=lib/forge-std/src/"]
       }
     }
   }, {
@@ -142,7 +145,7 @@
       },
       "solidity": {
         "version": "0.8.24",
-        "remappings": ["@soulwallet-core/=lib/soulwallet-core/", "@source/=contracts/", "@arbitrum/nitro-contracts=lib/nitro-contracts/", "@solady=lib/solady/", "@solenv=lib/solenv/src/", "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/", "@account-abstraction/=lib/account-abstraction/", "@crypto-lib/=lib/crypto-lib/src/"]
+        "remappings": ["@soulwallet-core/=lib/soulwallet-core/", "@source/=contracts/", "@arbitrum/nitro-contracts=lib/nitro-contracts/", "@solady=lib/solady/", "@solenv=lib/solenv/src/", "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/", "@account-abstraction/=lib/account-abstraction/", "@crypto-lib/=lib/crypto-lib/src/", "forge-std/=lib/forge-std/src/", "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/"]
       }
     }
   }, {
@@ -155,7 +158,7 @@
       },
       "solidity": {
         "version": "0.8.26",
-        "remappings": ["ds-test/=lib/forge-std/lib/ds-test/src/", "forge-std/=lib/forge-std/src/", "@openzeppelin/=lib/openzeppelin-contracts/", "solmate/=lib/solmate/"]
+        "remappings": ["ds-test/=lib/forge-std/lib/ds-test/src/", "forge-std/=lib/forge-std/src/", "@openzeppelin/=lib/openzeppelin-contracts/", "solmate/=lib/solmate/", "forge-gas-snapshot/=lib/forge-gas-snapshot/src/"]
       }
     }
   }, {
@@ -178,7 +181,10 @@
       "paths": {
         "sources": "src"
       },
-      "solidity": "0.8.12"
+      "solidity": {
+        "version": "0.8.12",
+        "remappings": ["forge-std/=lib/forge-std/src/"]
+      }
     }
   }
 ]
