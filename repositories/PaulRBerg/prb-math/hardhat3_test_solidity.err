@@ -1,0 +1,2 @@
+WARNING: Inline task action found in plugin "builtin:solidity-tests" for task "test solidity". Use file:// URLs in production.
+WARNING: Inline task action found in plugin "builtin:solidity" for task "compile". Use file:// URLs in production.

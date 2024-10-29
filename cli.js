@@ -63,7 +63,7 @@ for (const repository of repositoriesToClone) {
       run(org, repo, packageManager, ['forge', 'build']);
       break;
     case 'test:hardhat':
-      run(org, repo, packageManager, ['hardhat3', 'test:solidity']);
+      run(org, repo, packageManager, ['hardhat3', 'test', 'solidity']);
       break;
     case 'test:forge':
       run(org, repo, packageManager, ['forge', 'test']);
@@ -165,7 +165,7 @@ function run(org, repo, packageManager, command) {
   const outputFD = fs.openSync(outputFile, 'w');
   const errorFD = fs.openSync(errorFile, 'w');
   const executable = packageManager === undefined || packageManager === 'npm' ? 'npx' : packageManager;
-  spawnSync(executable , ['hardhat3', 'compile'], { cwd: dir, stdio: ['inherit', outputFD, errorFD] });
+  spawnSync(executable , command, { cwd: dir, stdio: ['inherit', outputFD, errorFD] });
   fs.closeSync(outputFD);
   fs.closeSync(errorFD);
 }
