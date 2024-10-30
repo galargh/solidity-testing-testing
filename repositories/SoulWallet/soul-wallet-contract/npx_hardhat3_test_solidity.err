@@ -1,0 +1,12 @@
+WARNING: Inline task action found in plugin "builtin:solidity-tests" for task "test solidity". Use file:// URLs in production.
+WARNING: Inline task action found in plugin "builtin:solidity" for task "compile". Use file:// URLs in production.
+CompilerError: Stack too deep. Try compiling with `--via-ir` (cli) or the equivalent `viaIR: true` (standard JSON) while enabling the optimizer. Otherwise, try removing local variables.
+   --> contracts/modules/socialRecovery/base/BaseSocialRecovery.sol:319:84:
+    |
+319 |                         abi.encodeWithSelector(IERC1271.isValidSignature.selector, digest, dynamicData)
+    |                                                                                    ^^^^^^
+
+
+Error HHE1230: Compilation failed
+
+For more info go to https://hardhat.org/HHE1230 or run Hardhat with --show-stack-traces

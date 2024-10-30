@@ -1,0 +1,3 @@
+yarn run v1.22.19
+$ repositories/pancakeswap/pancake-v4-core/node_modules/.bin/hardhat3 test solidity
+Done in 4.90s.

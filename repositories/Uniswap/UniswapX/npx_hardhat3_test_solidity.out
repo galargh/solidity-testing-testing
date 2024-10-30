@@ -1,0 +1,323 @@
+Running Solidity tests
+
+Ran 1 tests for test/fill-macros/DirectTakerFillMacro.t.sol:DirectFillerFillMacroTest (v0.8.24)
+✘ Failed(1): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/reactors/DutchOrderReactor.t.sol:DutchOrderReactorTest (v0.8.24)
+✘ Failed(2): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/script/DeployDutch.t.sol:DeployDutchTest (v0.8.24)
+✘ Failed(3): testDeploy() (duration: 0 ms, consumedGas: 8214)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/script/DeployExclusiveDutch.t.sol:DeployExclusiveDutchTest (v0.8.24)
+✘ Failed(4): testDeploy() (duration: 0 ms, consumedGas: 8214)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/base/EthOutput.t.sol:EthOutputDirectFillerTest (v0.8.24)
+✘ Failed(5): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/base/EthOutput.t.sol:EthOutputMockFillContractTest (v0.8.24)
+✘ Failed(6): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/reactors/ExclusiveDutchOrderReactor.t.sol:ExclusiveDutchOrderReactorTest (v0.8.24)
+✘ Failed(7): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/validation-contracts/ExclusiveFillerValidation.t.sol:ExclusiveFillerValidationTest (v0.8.24)
+✘ Failed(8): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/script/DeployPriorityOrderReactor.t.sol:DeployPriorityOrderReactorTest (v0.8.24)
+✘ Failed(9): testDeploy() (duration: 0 ms, consumedGas: 9806)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 2 ms)
+
+Ran 1 tests for test/reactors/LimitOrderReactor.t.sol:LimitOrderReactorTest (v0.8.24)
+✘ Failed(10): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/lib/NonLinearDutchDecayLib.t.sol:NonlinearDutchDecayLibTest (v0.8.24)
+✘ Failed(11): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 2 tests for test/base/BlockNumberish.t.sol:BlockNumberishTest (v0.8.24)
+✔ Passed: test_getBlockNumberSyscall() (duration: 0 ms, consumedGas: 176278)
+✔ Passed: test_getBlockNumber() (duration: 0 ms, consumedGas: 147584)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 84 ms)
+
+Ran 4 tests for test/lib/CosignerLib.t.sol:CosignerLibTest (v0.8.24)
+✔ Passed: testVerifyCosignature() (duration: 0 ms, consumedGas: 19154)
+✔ Passed: testRevertsInvalidData() (duration: 0 ms, consumedGas: 19896)
+✔ Passed: testRevertsInvalidCosignature() (duration: 0 ms, consumedGas: 18269)
+✔ Passed: testRevertsAddressZeroSigner() (duration: 0 ms, consumedGas: 23963)
+✔ Suite Passed: 4 tests, 4 passed, 0 failed, 0 skipped (duration: 84 ms)
+
+Ran 1 tests for test/reactors/PriorityOrderReactor.t.sol:PriorityOrderReactorTest (v0.8.24)
+✘ Failed(12): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/base/ProtocolFees.t.sol:ProtocolFeesGasComparisonTest (v0.8.24)
+✘ Failed(13): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 11 tests for test/lib/PriorityFeeLib.t.sol:PriorityFeeLibTest (v0.8.24)
+✔ Passed: testScaleRevertsOnLargeOutput() (duration: 0 ms, consumedGas: 5433)
+✔ Passed: testScaleOutputWithZeroMpsPerPriorityFeeWei_fuzz(uint256) (duration: 7 ms, runs: 256, meanGas: 5153, medianGas: 5153)
+✔ Passed: testScaleOutputPriorityFee_fuzz(uint256,uint256) (duration: 10 ms, runs: 256, meanGas: 6887, medianGas: 7004)
+✔ Passed: testScaleOutputNoPriorityFee() (duration: 0 ms, consumedGas: 4960)
+✔ Passed: testScaleOutputLowPriorityFee() (duration: 0 ms, consumedGas: 6094)
+✔ Passed: testScaleLargeOutputShortCircuit() (duration: 0 ms, consumedGas: 5319)
+✔ Passed: testScaleInputWithZeroMpsPerPriorityFeeWei_fuzz(uint256) (duration: 7 ms, runs: 256, meanGas: 6057, medianGas: 6057)
+✔ Passed: testScaleInputPriorityFee_fuzz(uint256) (duration: 19 ms, runs: 256, meanGas: 6591, medianGas: 6268)
+✔ Passed: testScaleInputPriorityFeeOverMax() (duration: 0 ms, consumedGas: 5921)
+✔ Passed: testScaleInputNoPriorityFee() (duration: 0 ms, consumedGas: 5337)
+✔ Passed: testScaleInputLowPriorityFee() (duration: 0 ms, consumedGas: 6511)
+✔ Suite Passed: 11 tests, 11 passed, 0 failed, 0 skipped (duration: 121 ms)
+
+Ran 1 tests for test/executors/SwapRouter02Executor.t.sol:SwapRouter02ExecutorTest (v0.8.24)
+✘ Failed(14): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/integration/SwapRouter02ExecutorIntegration.t.sol:SwapRouter02IntegrationTest (v0.8.24)
+✘ Failed(15): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 17 tests for test/lib/MathExt.t.sol:MathExtTest (v0.8.24)
+✔ Passed: testSubUintFromUintUnderflow() (duration: 0 ms, consumedGas: 3620)
+✔ Passed: testSubUintFromUintRange(uint256,uint256) (duration: 10 ms, runs: 256, meanGas: 5311, medianGas: 5311)
+✔ Passed: testSubUintFromUintOverflow() (duration: 0 ms, consumedGas: 3664)
+✔ Passed: testSubUintFromUintNegativeUint(uint256,uint256) (duration: 10 ms, runs: 256, meanGas: 5567, medianGas: 5568)
+✔ Passed: testSubUintFromUint() (duration: 0 ms, consumedGas: 5848)
+✔ Passed: testSubNegIntFromUintRange(uint256,uint256) (duration: 7 ms, runs: 256, meanGas: 5736, medianGas: 5738)
+✔ Passed: testSubIntFromUintRange(uint256,uint256) (duration: 10 ms, runs: 256, meanGas: 5739, medianGas: 5739)
+✔ Passed: testSubIntFromUintOverflow() (duration: 0 ms, consumedGas: 3435)
+✔ Passed: testSubIntFromUintNegativeUint() (duration: 0 ms, consumedGas: 3356)
+✔ Passed: testSubIntFromUint() (duration: 0 ms, consumedGas: 5502)
+✔ Passed: testBoundedSubNegIntFromUintRange(uint256,uint256) (duration: 8 ms, runs: 256, meanGas: 6194, medianGas: 6198)
+✔ Passed: testBoundedSubIntFromUintRange(uint256,uint256) (duration: 10 ms, runs: 256, meanGas: 5937, medianGas: 5937)
+✔ Passed: testBoundedSubIntFromUintOverflow() (duration: 0 ms, consumedGas: 3841)
+✔ Passed: testBoundedSubIntFromUintNegativeUint() (duration: 0 ms, consumedGas: 3455)
+✔ Passed: testBoundedSub(uint128,int128,uint256,uint256) (duration: 29 ms, runs: 256, meanGas: 5952, medianGas: 6122)
+✔ Passed: testBoundValueInBounds(uint256,uint256,uint256) (duration: 39 ms, runs: 256, meanGas: 5154, medianGas: 5154)
+✔ Passed: testBound(uint256,uint256,uint256) (duration: 10 ms, runs: 256, meanGas: 5257, medianGas: 5261)
+✔ Suite Passed: 17 tests, 17 passed, 0 failed, 0 skipped (duration: 126 ms)
+
+Ran 1 tests for test/reactors/V2DutchOrderReactor.t.sol:V2DutchOrderTest (v0.8.24)
+✘ Failed(16): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/reactors/V3DutchOrderReactor.t.sol:V3DutchOrderTest (v0.8.24)
+✘ Failed(17): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 3 tests for test/lib/Uint16Array.t.sol:Uint16ArrayTest (v0.8.24)
+✔ Passed: testToUint16ArrayRevert() (duration: 0 ms, consumedGas: 5923)
+✔ Passed: testGetElementRevert() (duration: 0 ms, consumedGas: 6279)
+✔ Passed: testGetElement(uint16,uint16) (duration: 17 ms, runs: 256, meanGas: 9213, medianGas: 6721)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 17 ms)
+
+Ran 7 tests for test/lib/ResolvedOrderLib.t.sol:ResolvedOrderLibTest (v0.8.24)
+✔ Passed: testValidationContractValid() (duration: 0 ms, consumedGas: 579028)
+✔ Passed: testValidationContractInvalid() (duration: 0 ms, consumedGas: 562151)
+✔ Passed: testValid() (duration: 0 ms, consumedGas: 83192)
+✔ Passed: testInvalidReactor() (duration: 0 ms, consumedGas: 65976)
+✔ Passed: testExclusiveFillerValidationValidFillerPastTimestamp() (duration: 0 ms, consumedGas: 387745)
+✔ Passed: testExclusiveFillerValidationInvalidFillerPastTimestamp() (duration: 0 ms, consumedGas: 387676)
+✔ Passed: testExclusiveFillerValidationInvalidFiller() (duration: 0 ms, consumedGas: 389144)
+✔ Suite Passed: 7 tests, 7 passed, 0 failed, 0 skipped (duration: 1930 ms)
+
+Ran 18 tests for test/base/ProtocolFees.t.sol:ProtocolFeesTest (v0.8.24)
+✔ Passed: testTakeInputTokenFees() (duration: 0 ms, consumedGas: 92419)
+✔ Passed: testTakeInputFeesTooMuch() (duration: 0 ms, consumedGas: 91181)
+✔ Passed: testTakeInputFees() (duration: 0 ms, consumedGas: 99938)
+✔ Passed: testTakeInputAndOutputFees() (duration: 0 ms, consumedGas: 116499)
+✔ Passed: testTakeFeesWithInterfaceFee() (duration: 0 ms, consumedGas: 102730)
+✔ Passed: testTakeFeesTooMuch() (duration: 0 ms, consumedGas: 89770)
+✔ Passed: testTakeFeesNoFees() (duration: 0 ms, consumedGas: 57544)
+✔ Passed: testTakeFeesMultipleOutputTokensWithInterfaceFeeChangeOrder() (duration: 0 ms, consumedGas: 122812)
+✔ Passed: testTakeFeesMultipleOutputTokensWithInterfaceFeeBothFeesChangeOrder() (duration: 0 ms, consumedGas: 155742)
+✔ Passed: testTakeFeesMultipleOutputTokensWithInterfaceFeeBothFees() (duration: 0 ms, consumedGas: 155605)
+✔ Passed: testTakeFeesMultipleOutputTokensWithInterfaceFee() (duration: 0 ms, consumedGas: 122791)
+✔ Passed: testTakeFeesMultipleOutputTokens() (duration: 0 ms, consumedGas: 134944)
+✔ Passed: testTakeFeesInvalidFeeToken() (duration: 0 ms, consumedGas: 885609)
+✔ Passed: testTakeFeesFuzzOutputs(uint128,uint128[],uint256) (duration: 1892 ms, runs: 256, meanGas: 1195764, medianGas: 1132892)
+✔ Passed: testTakeFeesDuplicate() (duration: 0 ms, consumedGas: 993206)
+✔ Passed: testTakeFees() (duration: 0 ms, consumedGas: 92420)
+✔ Passed: testSetFeeControllerOnlyOwner() (duration: 0 ms, consumedGas: 20402)
+✔ Passed: testSetFeeController() (duration: 0 ms, consumedGas: 26794)
+✔ Suite Passed: 18 tests, 18 passed, 0 failed, 0 skipped (duration: 1931 ms)
+
+Ran 4 tests for test/lib/EIP712.t.sol:EIP712Test (v0.8.24)
+✔ Passed: test_V3DutchOutputHash() (duration: 0 ms, consumedGas: 13513)
+✔ Passed: test_V3DutchInputHash() (duration: 0 ms, consumedGas: 6166)
+✔ Passed: test_OrderTypeHash() (duration: 0 ms, consumedGas: 10456)
+✔ Passed: test_NonlinearDutchDecayHash() (duration: 0 ms, consumedGas: 6698)
+✔ Suite Passed: 4 tests, 4 passed, 0 failed, 0 skipped (duration: 2015 ms)
+
+Ran 12 tests for test/lib/DutchDecayLib.t.sol:DutchDecayLibTest (v0.8.24)
+✔ Passed: testDutchDecayOverflow() (duration: 0 ms, consumedGas: 3788)
+✔ Passed: testDutchDecayNoDecayYetNegative() (duration: 0 ms, consumedGas: 5474)
+✔ Passed: testDutchDecayNoDecayYet() (duration: 0 ms, consumedGas: 5540)
+✔ Passed: testDutchDecayNoDecay(uint256,uint256,uint256) (duration: 16 ms, runs: 256, meanGas: 4477, medianGas: 4477)
+✔ Passed: testDutchDecayNegative(int256,int256,uint256,uint256) (duration: 63 ms, runs: 256, meanGas: 6441, medianGas: 6426)
+✔ Passed: testDutchDecayNegative() (duration: 0 ms, consumedGas: 13415)
+✔ Passed: testDutchDecayInvalidTimes(uint256,uint256,uint256,uint256) (duration: 23 ms, runs: 256, meanGas: 5031, medianGas: 5031)
+✔ Passed: testDutchDecayFullyDecayedNegative() (duration: 0 ms, consumedGas: 5471)
+✔ Passed: testDutchDecayFullyDecayed() (duration: 0 ms, consumedGas: 5427)
+✔ Passed: testDutchDecayDivByZero() (duration: 0 ms, consumedGas: 3349)
+✔ Passed: testDutchDecayBounded(int256,int256,uint256,uint256) (duration: 31 ms, runs: 256, meanGas: 6458, medianGas: 6449)
+✔ Passed: testDutchDecay() (duration: 0 ms, consumedGas: 12882)
+✔ Suite Passed: 12 tests, 12 passed, 0 failed, 0 skipped (duration: 2017 ms)
+
+Ran 10 tests for test/lib/OrderQuoter.t.sol:OrderQuoterTest (v0.8.24)
+✔ Passed: testQuoteLimitOrderInsufficientBalance() (duration: 0 ms, consumedGas: 154731)
+✔ Passed: testQuoteLimitOrderDeadlinePassed() (duration: 0 ms, consumedGas: 125287)
+✔ Passed: testQuoteLimitOrder() (duration: 0 ms, consumedGas: 213389)
+✔ Passed: testQuoteDutchOrderEndBeforeStart() (duration: 0 ms, consumedGas: 108216)
+✔ Passed: testQuoteDutchOrderAfterOutputDecay() (duration: 0 ms, consumedGas: 226543)
+✔ Passed: testQuoteDutchOrderAfterInputDecay() (duration: 0 ms, consumedGas: 226678)
+✔ Passed: testQuoteDutchOrder() (duration: 0 ms, consumedGas: 224139)
+✔ Passed: testGetReactorMockOrder() (duration: 0 ms, consumedGas: 15455)
+✔ Passed: testGetReactorLimitOrder() (duration: 0 ms, consumedGas: 22850)
+✔ Passed: testGetReactorDutchOrder() (duration: 0 ms, consumedGas: 22082)
+✔ Suite Passed: 10 tests, 10 passed, 0 failed, 0 skipped (duration: 2010 ms)
+
+Ran 20 tests for test/lib/ExclusivityLib.t.sol:ExclusivityLibTest (v0.8.24)
+✔ Passed: testTimestampExclusivity(address) (duration: 26 ms, runs: 256, meanGas: 11645, medianGas: 11645)
+✔ Passed: testNoExclusivity(address,uint256,uint256) (duration: 18 ms, runs: 256, meanGas: 11260, medianGas: 11260)
+✔ Passed: testHandleExclusiveOverrideTimetampRoundUp() (duration: 0 ms, consumedGas: 37041)
+✔ Passed: testHandleExclusiveOverrideTimetampPassWindowPassed(address,address,uint256,uint128) (duration: 59 ms, runs: 256, meanGas: 39432, medianGas: 39432)
+✔ Passed: testHandleExclusiveOverrideTimestampStrict(address,address,uint128) (duration: 26 ms, runs: 256, meanGas: 34112, medianGas: 34112)
+✔ Passed: testHandleExclusiveOverrideTimestampPassNoExclusivity(address,uint256,uint128) (duration: 54 ms, runs: 256, meanGas: 37572, medianGas: 37572)
+✔ Passed: testHandleExclusiveOverrideTimestampPass(address,uint256,uint128) (duration: 75 ms, runs: 256, meanGas: 37652, medianGas: 37652)
+✔ Passed: testHandleExclusiveOverrideTimestampAppliedMultiOutput(address,address,uint256,uint128[]) (duration: 852 ms, runs: 256, meanGas: 874704, medianGas: 885536)
+✔ Passed: testHandleExclusiveOverrideTimestampApplied(address,address,uint256,uint128) (duration: 62 ms, runs: 256, meanGas: 39826, medianGas: 39826)
+✔ Passed: testHandleExclusiveOverrideTimestamp() (duration: 0 ms, consumedGas: 37084)
+✔ Passed: testHandleExclusiveOverrideBlockStrict(address,address,uint128) (duration: 26 ms, runs: 256, meanGas: 36460, medianGas: 36460)
+✔ Passed: testHandleExclusiveOverrideBlockRoundUp() (duration: 0 ms, consumedGas: 39482)
+✔ Passed: testHandleExclusiveOverrideBlockPassWindowPassed(address,address,uint256,uint128) (duration: 58 ms, runs: 256, meanGas: 41830, medianGas: 41830)
+✔ Passed: testHandleExclusiveOverrideBlockPassNoExclusivity(address,uint256,uint128) (duration: 74 ms, runs: 256, meanGas: 39992, medianGas: 39992)
+✔ Passed: testHandleExclusiveOverrideBlockPass(address,uint256,uint128) (duration: 43 ms, runs: 256, meanGas: 40004, medianGas: 40004)
+✔ Passed: testHandleExclusiveOverrideBlockAppliedMultiOutput(address,address,uint256,uint128[]) (duration: 869 ms, runs: 256, meanGas: 917743, medianGas: 922073)
+✔ Passed: testHandleExclusiveOverrideBlockApplied(address,address,uint256,uint128) (duration: 62 ms, runs: 256, meanGas: 42202, medianGas: 42202)
+✔ Passed: testHandleExclusiveOverrideBlock() (duration: 0 ms, consumedGas: 39481)
+✔ Passed: testExclusivityPeriodOver(address,uint256,uint256) (duration: 30 ms, runs: 256, meanGas: 11701, medianGas: 11701)
+✔ Passed: testExclusivityFail(address,address,uint256,uint256) (duration: 15 ms, runs: 256, meanGas: 12986, medianGas: 12986)
+✔ Suite Passed: 20 tests, 20 passed, 0 failed, 0 skipped (duration: 2015 ms)
+
+Ran 36 tests for test/reactors/BaseDutchOrderReactor.t.sol:BaseDutchOrderReactorTest (v0.8.24)
+✔ Passed: test_dutch_validateOutputDecayIncorrectAmounts() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_validateInputDecayIncorrectAmounts() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_validateEndTimeAfterDeadline() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_validateDutchEndTimeEqualStart() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_validateDutchEndTimeBeforeStart() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_validateDutchEndTimeAfterStart() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveStartTimeEqualsNow() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveStartAmountLessThanEndAmount() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveOutputNotStarted() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveOutputHalfwayDecayed() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveOutputFullyDecayed() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveMultipleDutchOutputs() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveInputNotStarted() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveInputHalfwayDecayed() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveInputFullyDecayed() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveFirstDecay() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_resolveEndTimeAfterNow() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_dutch_fuzzDecayNeverOutOfBounds(uint128,uint128,uint128,uint128,uint128) (duration: 4 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_nonceReuse() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeWithFee(uint128,uint128,uint256,uint8) (duration: 4 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeWithFee() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeValidationContractFail(uint128,uint128,uint256) (duration: 3 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeValidationContract(uint128,uint128,uint256) (duration: 5 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeValidationContract() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeTwoReactorsAtOnce() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeSignatureReplay() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeNativeOutput(uint128,uint128,uint256) (duration: 3 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeNativeOutput() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeInvalidReactor(address,uint128,uint128,uint256) (duration: 4 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeDeadlinePassed(uint128,uint128,uint256) (duration: 4 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeBatchNativeOutput() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeBatchMultipleOutputsDifferentTokens() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeBatchMultipleOutputs() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeBatch() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_execute(uint128,uint128,uint256) (duration: 6 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_execute() (duration: 0 ms, consumedGas: 0)
+✔ Suite Passed: 36 tests, 36 passed, 0 failed, 0 skipped (duration: 2017 ms)
+
+Ran 18 tests for test/base/BaseReactor.t.sol:BaseReactorTest (v0.8.24)
+✔ Passed: test_base_nonceReuse() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeWithFee(uint128,uint128,uint256,uint8) (duration: 3 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeWithFee() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeValidationContractFail(uint128,uint128,uint256) (duration: 8 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeValidationContract(uint128,uint128,uint256) (duration: 6 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeValidationContract() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeTwoReactorsAtOnce() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeSignatureReplay() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeNativeOutput(uint128,uint128,uint256) (duration: 11 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeNativeOutput() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeInvalidReactor(address,uint128,uint128,uint256) (duration: 7 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeDeadlinePassed(uint128,uint128,uint256) (duration: 4 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_executeBatchNativeOutput() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeBatchMultipleOutputsDifferentTokens() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeBatchMultipleOutputs() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_executeBatch() (duration: 0 ms, consumedGas: 0)
+✔ Passed: test_base_execute(uint128,uint128,uint256) (duration: 3 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Passed: test_base_execute() (duration: 0 ms, consumedGas: 0)
+✔ Suite Passed: 18 tests, 18 passed, 0 failed, 0 skipped (duration: 2017 ms)
+
+✘ Run Failed: 179 tests, 162 passed, 17 failed, 0 skipped (duration: 16390 ms)
+
+Failure (1): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (2): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (3): testDeploy()
+Reason: unknown cheatcode with selector 0x7fb5297f; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+
+Failure (4): testDeploy()
+Reason: unknown cheatcode with selector 0x7fb5297f; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+
+Failure (5): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (6): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (7): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (8): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (9): testDeploy()
+Reason: unknown cheatcode with selector 0x7fb5297f; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+
+Failure (10): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (11): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (12): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (13): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (14): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (15): setUp()
+Reason: setup failed: environment variable "FOUNDRY_RPC_URL" not found
+
+Failure (16): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands
+
+Failure (17): setUp()
+Reason: FFI is disabled; add the `--ffi` flag to allow tests to call external commands

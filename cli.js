@@ -64,7 +64,7 @@ for (const repository of repositoriesToClone) {
       run(org, repo, ['forge', 'build'], env);
       break;
     case 'test:hardhat':
-      run(org, repo, packageManager, [executable, 'hardhat3', 'test', 'solidity'], env);
+      run(org, repo, [executable, 'hardhat3', 'test', 'solidity'], env);
       break;
     case 'test:forge':
       run(org, repo, ['forge', 'test'], env);
