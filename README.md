@@ -35,7 +35,7 @@ If you want to rerun any of the commands, you can use the `--force` flag.
 
 ## Analysis
 
-| Repository | Forge Build | Hardhat Build | Forge Test | Hardhat Test |
+| Repository | Forge Build | Forge Test | Hardhat Build | Hardhat Test |
 | ---------- | ---------- | ------------- | ---------- | ------------ |
 | foundry-rs/forge-std | ✅ | ✅ (272) | ✅ | ❌ (184/267) |
 | kalidao/keep | ✅ | ✅ (134) | ✅ | ❌ (129/134) |
