@@ -5,9 +5,17 @@
 [codecov]: https://codecov.io/gh/sablier-labs/v2-periphery
 [codecov-badge]: https://codecov.io/gh/sablier-labs/v2-periphery/branch/main/graph/badge.svg
 [discord]: https://discord.gg/bSwRCwWRsT
-[discord-badge]: https://dcbadge.vercel.app/api/server/bSwRCwWRsT?style=flat
+[discord-badge]: https://img.shields.io/discord/659709894315868191
 [foundry]: https://getfoundry.sh/
 [foundry-badge]: https://img.shields.io/badge/Built%20with-Foundry-FFDB1C.svg
+
+## ⚠️ Archived
+
+This repository has been archived and is no longer maintained. For the latest contracts and updates, please visit the
+following repos:
+
+1. [Lockup Repo](https://github.com/sablier-labs/lockup/)
+2. [Airdrop Repo](https://github.com/sablier-labs/airdrops/)
 
 This repository contains the peripheral smart contracts of the Sablier V2 Protocol. For lower-level logic, see the
 [sablier-labs/v2-core](https://github.com/sablier-labs/v2-core) repository.

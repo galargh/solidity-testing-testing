@@ -18,6 +18,7 @@ import {BinPoolParametersHelper} from "../../../src/pool-bin/libraries/BinPoolPa
 import {BinTestHelper} from "../helpers/BinTestHelper.sol";
 import {IProtocolFeeController} from "../../../src/interfaces/IProtocolFeeController.sol";
 import {MockProtocolFeeController} from "../../../src/test/fee/MockProtocolFeeController.sol";
+import {Constants} from "../../../src/pool-bin/libraries/Constants.sol";
 
 contract BinPoolSwapTest is BinTestHelper {
     using PackedUint128Math for bytes32;
@@ -57,6 +58,7 @@ contract BinPoolSwapTest is BinTestHelper {
         addLiquidityToBin(key, poolManager, bob, activeId, 1e18, 1e18, 1e18, 1e18, "");
 
         BalanceDelta delta = poolManager.swap(key, true, -int128(1e18), "");
+        vm.snapshotGasLastCall("test_exactInputSingleBin_SwapForY");
         assertEq(delta.amount0(), -int128(1e18));
         assertEq(delta.amount1(), 997000000000000000);
     }
@@ -66,6 +68,7 @@ contract BinPoolSwapTest is BinTestHelper {
         addLiquidityToBin(key, poolManager, bob, activeId, 1e18, 1e18, 1e18, 1e18, "");
 
         BalanceDelta delta = poolManager.swap(key, false, -int128(1e18), "");
+        vm.snapshotGasLastCall("test_exactInputSingleBin_SwapForX");
         assertEq(delta.amount0(), 997000000000000000);
         assertEq(delta.amount1(), -1e18);
     }
@@ -75,6 +78,7 @@ contract BinPoolSwapTest is BinTestHelper {
         addLiquidityToBin(key, poolManager, bob, activeId, 1e18, 1e18, 1e18, 1e18, "");
 
         BalanceDelta delta = poolManager.swap(key, true, 1e18, "");
+        vm.snapshotGasLastCall("test_exactOutputSingleBin_SwapForY");
         assertEq(delta.amount0(), -1003009027081243732);
         assertEq(delta.amount1(), 1e18);
     }
@@ -84,6 +88,7 @@ contract BinPoolSwapTest is BinTestHelper {
         addLiquidityToBin(key, poolManager, bob, activeId, 1e18, 1e18, 1e18, 1e18, "");
 
         BalanceDelta delta = poolManager.swap(key, false, 1e18, "");
+        vm.snapshotGasLastCall("test_exactOutputSingleBin_SwapForX");
         assertEq(delta.amount0(), 1e18);
         assertEq(delta.amount1(), -1003009027081243732);
     }
@@ -93,6 +98,7 @@ contract BinPoolSwapTest is BinTestHelper {
         addLiquidity(key, poolManager, bob, activeId, 1e18, 1e18, 10, 10);
 
         BalanceDelta delta = poolManager.swap(key, true, -1e18, "");
+        vm.snapshotGasLastCall("test_exactInputMultipleBin");
         assertEq(delta.amount0(), -1e18);
         assertEq(delta.amount1(), 992555250358834498);
     }
@@ -102,8 +108,30 @@ contract BinPoolSwapTest is BinTestHelper {
         addLiquidity(key, poolManager, bob, activeId, 1e18, 1e18, 10, 10);
 
         BalanceDelta delta = poolManager.swap(key, true, 1e18, "");
+        vm.snapshotGasLastCall("test_exactOutputMultipleBin");
         assertEq(delta.amount0(), -1007534624899920784);
         assertEq(delta.amount1(), 1e18);
+    }
+
+    /// @dev Attempt to swap with scenario that a bin has 0 liquidity (add/remove liqudiity)
+    /// however the bin might still be in TreeMath due to min share locked up
+    function testGas_exactOutputMultipleBin_WithEmptyBins() public {
+        poolManager.initialize(key, activeId);
+        // add liquidity to 10 bins
+        addLiquidity(key, poolManager, bob, activeId, 2e18, 2e18, 10, 10);
+        uint256 bobBal;
+
+        /// remove 3 bin of liquidity from left and right
+        for (uint24 i = 1; i < 4; i++) {
+            bobBal = poolManager.getPosition(key.toId(), bob, activeId + i, 0).share;
+            removeLiquidityFromBin(key, poolManager, bob, activeId + i, bobBal, "");
+
+            bobBal = poolManager.getPosition(key.toId(), bob, activeId - i, 0).share;
+            removeLiquidityFromBin(key, poolManager, bob, activeId - i, bobBal, "");
+        }
+
+        poolManager.swap(key, true, 1e18, "");
+        vm.snapshotGasLastCall("testGas_exactOutputMultipleBin_WithEmptyBins");
     }
 
     function test_SwapWithProtocolFee_ExactIn_SwapForY() public {
@@ -151,7 +179,7 @@ contract BinPoolSwapTest is BinTestHelper {
         assertEq(delta.amount0(), 996501000000000000);
         assertEq(delta.amount1(), -1e18);
 
-        // // after swap, verify 0.05% fee
+        // after swap, verify 0.05% fee
         assertEq(poolManager.protocolFeesAccrued(key.currency0), 0);
         assertEq(poolManager.protocolFeesAccrued(key.currency1), 0.0005 * 1e18);
     }
@@ -232,6 +260,28 @@ contract BinPoolSwapTest is BinTestHelper {
 
         vm.expectRevert(BinPool.BinPool__InsufficientAmountUnSpecified.selector);
         poolManager.swap(key, false, -int128(amountIn), "0x");
+    }
+
+    function test_revert_swapMaxLiquidityPerBinfuzz(int128 amountSpecified) external {
+        vm.assume(amountSpecified != 0);
+
+        // Add liquidity to the point where it is close to the max liquidity per bin
+        poolManager.initialize(key, activeId);
+        addLiquidity(
+            key,
+            poolManager,
+            bob,
+            activeId,
+            // when price is 1:1, then Constants.MAX_LIQUIDITY_PER_BIN >> 128 / 2 is the threshold
+            (Constants.MAX_LIQUIDITY_PER_BIN >> 128) / 2,
+            (Constants.MAX_LIQUIDITY_PER_BIN >> 128) / 2,
+            1,
+            1
+        );
+
+        // arbitrary amount of token will trigger the revert
+        vm.expectRevert(BinPool.BinPool__MaxLiquidityPerBinExceeded.selector);
+        poolManager.swap(key, false, amountSpecified, "0x");
     }
 
     function test_revert_SwapOutOfLiquidity() external {

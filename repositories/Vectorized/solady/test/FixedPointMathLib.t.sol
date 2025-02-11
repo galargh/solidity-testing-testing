@@ -1065,10 +1065,20 @@ contract FixedPointMathLibTest is SoladyTest {
         return FixedPointMathLib.fullMulDiv(x, y, d);
     }
 
+    function fullMulDivN(uint256 x, uint256 y, uint8 n) public pure returns (uint256) {
+        return FixedPointMathLib.fullMulDivN(x, y, n);
+    }
+
     function testFullMulDiv() public {
         assertEq(FixedPointMathLib.fullMulDiv(0, 0, 1), 0);
         assertEq(FixedPointMathLib.fullMulDiv(4, 4, 2), 8);
         assertEq(FixedPointMathLib.fullMulDiv(2 ** 200, 2 ** 200, 2 ** 200), 2 ** 200);
+    }
+
+    function testFullMulDivN() public {
+        assertEq(FixedPointMathLib.fullMulDivN(0, 0, 0), 0);
+        assertEq(FixedPointMathLib.fullMulDivN(4, 4, 1), 8);
+        assertEq(FixedPointMathLib.fullMulDivN(2 ** 200, 2 ** 200, 200), 2 ** 200);
     }
 
     function testFullMulDivUnchecked() public {
@@ -1149,6 +1159,19 @@ contract FixedPointMathLibTest is SoladyTest {
         assertEq(actualA, expectedA);
         assertEq(actualB, expectedB);
         return q;
+    }
+
+    function testFullMulDivN(uint256 a, uint256 b, uint8 n) public {
+        (bool success0, bytes memory result0) = address(this).staticcall(
+            abi.encodeWithSignature("fullMulDiv(uint256,uint256,uint256)", a, b, 1 << n)
+        );
+        (bool success1, bytes memory result1) = address(this).staticcall(
+            abi.encodeWithSignature("fullMulDivN(uint256,uint256,uint8)", a, b, n)
+        );
+        assertEq(success0, success1);
+        if (success0) {
+            assertEq(abi.decode(result0, (uint256)), abi.decode(result1, (uint256)));
+        }
     }
 
     function testFullMulDivUp(uint256 a, uint256 b, uint256 d) public {
@@ -2118,5 +2141,77 @@ contract FixedPointMathLibTest is SoladyTest {
 
     function testIsEven(uint256 x) public {
         assertEq(FixedPointMathLib.isEven(x), x % 2 == 0);
+    }
+
+    function testFullMulEqEquivalence(uint256 a, uint256 b, uint256 x, uint256 y) public {
+        assertEq(_fullMulEqOriginal(a, b, x, y), FixedPointMathLib.fullMulEq(a, b, x, y));
+    }
+
+    function _fullMulEqOriginal(uint256 a, uint256 b, uint256 x, uint256 y)
+        internal
+        pure
+        returns (bool result)
+    {
+        /// @solidity memory-safe-assembly
+        assembly {
+            let xy := mul(x, y)
+            let z := mulmod(x, y, not(0))
+            let ab := mul(a, b)
+            let c := mulmod(a, b, not(0))
+            result := and(eq(xy, ab), eq(sub(z, add(xy, lt(z, xy))), sub(c, add(ab, lt(c, ab)))))
+        }
+    }
+
+    function testInvMod(uint256 a, uint256 p) public {
+        uint256 x = FixedPointMathLib.invMod(a, p);
+        if (x != 0) {
+            assertEq(mulmod(a, x, p), 1);
+        }
+    }
+
+    function testInvMod() public {
+        uint256 a = 0xe1b81abec8db239a5c843eff0a1c4472b02982433bb3f538d4e20eb8463330dc;
+        uint256 n = 0x4b4ecedb4964a40fe416b16c7bd8b46092040ec42ef0aa69e59f09872f105cf3;
+        uint256 x = 0x164a3ce484b95d23ce8552368f477627a85a1fce9882c3011eb38eda8bcc0dd2;
+        assertEq(FixedPointMathLib.invMod(a, n), x);
+        assertEq(FixedPointMathLib.invMod(a, 0), 0);
+    }
+
+    function testSaturatingAdd(uint256 x, uint256 y) public view {
+        bytes memory data = abi.encodeWithSignature("add(uint256,uint256)", x, y);
+        (bool success,) = address(this).staticcall(data);
+        uint256 expected = !success ? type(uint256).max : x + y;
+        assert(FixedPointMathLib.saturatingAdd(x, y) == expected);
+    }
+
+    function testSaturatingAdd() public view {
+        testSaturatingAdd(123, 456);
+    }
+
+    function check_SaturatingAddEquivalence(uint256 x, uint256 y) public view {
+        testSaturatingAdd(x, y);
+    }
+
+    function add(uint256 x, uint256 y) public pure returns (uint256) {
+        return x + y;
+    }
+
+    function testSaturatingMul(uint256 x, uint256 y) public view {
+        bytes memory data = abi.encodeWithSignature("mul(uint256,uint256)", x, y);
+        (bool success,) = address(this).staticcall(data);
+        uint256 expected = !success ? type(uint256).max : x * y;
+        assert(FixedPointMathLib.saturatingMul(x, y) == expected);
+    }
+
+    function check_SaturatingMulEquivalence(uint256 x, uint256 y) public view {
+        testSaturatingMul(x, y);
+    }
+
+    function testSaturatingMul() public view {
+        testSaturatingMul(123, 456);
+    }
+
+    function mul(uint256 x, uint256 y) public pure returns (uint256) {
+        return x * y;
     }
 }

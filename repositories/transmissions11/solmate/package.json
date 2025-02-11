@@ -1,7 +1,7 @@
 {
   "name": "solmate",
   "license": "AGPL-3.0-only",
-  "version": "6.2.0",
+  "version": "6.8.0",
   "description": "Modern, opinionated and gas optimized building blocks for smart contract development.",
   "files": [
     "src/**/*.sol"
@@ -11,12 +11,10 @@
     "url": "git+https://github.com/transmissions11/solmate.git"
   },
   "devDependencies": {
-    "@ignored/hardhat-vnext": "^3.0.0-next.8",
     "prettier": "^2.3.1",
     "prettier-plugin-solidity": "^1.0.0-beta.13"
   },
   "scripts": {
     "lint": "prettier --write **.sol"
-  },
-  "type": "module"
+  }
 }

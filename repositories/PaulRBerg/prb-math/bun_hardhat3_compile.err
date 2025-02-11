@@ -1,1 +1,0 @@
-WARNING: Inline task action found in plugin "builtin:solidity" for task "compile". Use file:// URLs in production.

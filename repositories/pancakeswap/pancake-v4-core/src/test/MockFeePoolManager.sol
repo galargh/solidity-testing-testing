@@ -23,7 +23,7 @@ contract MockFeePoolManager is ProtocolFees {
         uint24 protocolFee;
     }
 
-    constructor(IVault vault, uint256 controllerGasLimit) ProtocolFees(vault) {}
+    constructor(IVault vault) ProtocolFees(vault) {}
 
     function initialize(PoolKey memory key) external {
         PoolId id = key.toId();
@@ -58,7 +58,6 @@ contract MockFeePoolManager is ProtocolFees {
         PoolId id = key.toId();
         Slot0 memory slot0 = pools[id];
 
-        // Similar to uni-v4 logic (deduct protocolFee portion first)
         uint24 protocolFee = isSwap ? slot0.protocolFee : 0;
 
         if (protocolFee > 0) {

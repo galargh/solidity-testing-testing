@@ -36,6 +36,9 @@ abstract contract LBFuzzer is LBHelper, BinTestHelper {
     Currency currency0;
     Currency currency1;
 
+    /// @dev when a bin has supply for the first time, 1e3 share will be locked up
+    uint256 constant MINIMUM_SHARE = 1e3;
+
     function setUp() public virtual override {
         super.setUp();
 
@@ -73,13 +76,13 @@ abstract contract LBFuzzer is LBHelper, BinTestHelper {
         public
         returns (ILBPair lbPair, PoolKey memory key_, uint16 boundBinStep, uint24 boundActiveId)
     {
-        boundBinStep = uint16(bound(binStep, manager.MIN_BIN_STEP(), manager.MAX_BIN_STEP()));
+        boundBinStep = uint16(bound(binStep, manager.MIN_BIN_STEP(), manager.maxBinStep()));
         boundActiveId = _getBoundId(boundBinStep, activeId);
 
         // lb init
         lbPair = ILBPair(lbFactory.createLBPair(address(token0), address(token1), boundActiveId, boundBinStep));
 
-        // v4#bin init
+        // bin init
         key_ = PoolKey({
             currency0: currency0,
             currency1: currency1,
@@ -110,7 +113,7 @@ abstract contract LBFuzzer is LBHelper, BinTestHelper {
         (, bytes32 amountsLeft, uint256[] memory liquidityMinted) =
             lbPair.mint(address(this), mintParams.liquidityConfigs, address(this));
 
-        // calc v4 positon share before mint
+        // calc positon share before mint
         uint256[] memory sharesBefore = new uint256[](liquidityMinted.length);
         for (uint256 i = 0; i < liquidityMinted.length; i++) {
             uint24 id = uint24(uint256(mintParams.liquidityConfigs[i]));
@@ -118,7 +121,7 @@ abstract contract LBFuzzer is LBHelper, BinTestHelper {
             sharesBefore[i] = positionInfo.share;
         }
 
-        // v4#bin mint
+        // bin mint
         BalanceDelta delta = liquidityHelper.mint(key, mintParams, "");
 
         // check
@@ -135,15 +138,24 @@ abstract contract LBFuzzer is LBHelper, BinTestHelper {
         for (uint256 i = 0; i < liquidityMinted.length; i++) {
             uint24 id = uint24(uint256(mintParams.liquidityConfigs[i]));
             BinPosition.Info memory positionInfoAfter = manager.getPosition(key.toId(), address(liquidityHelper), id, 0);
-            assertEq(
-                liquidityMinted[i], positionInfoAfter.share - sharesBefore[i], "Expecting to mint same liquidity !"
-            );
+            if (sharesBefore[i] == 0) {
+                // first mint, so positionInfoAfter.share has MINIMUM_SHARE lesser
+                assertEq(
+                    liquidityMinted[i],
+                    positionInfoAfter.share - sharesBefore[i] + MINIMUM_SHARE,
+                    "Expecting to mint same liquidity !"
+                );
+            } else {
+                assertEq(
+                    liquidityMinted[i], positionInfoAfter.share - sharesBefore[i], "Expecting to mint same liquidity !"
+                );
+            }
         }
     }
 
     function swap(ILBPair lbPair, PoolKey memory key, bool swapForY, uint128 amountIn) public {
         amountIn = uint128(bound(amountIn, 0.1 ether, 10000 ether));
-        // v4#bin swap
+        // bin swap
         BinSwapHelper.TestSettings memory testSettings =
             BinSwapHelper.TestSettings({withdrawTokens: true, settleUsingTransfer: true});
 

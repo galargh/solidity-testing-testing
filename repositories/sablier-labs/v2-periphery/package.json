@@ -15,7 +15,6 @@
     "@sablier/v2-core": "1.2.0"
   },
   "devDependencies": {
-    "@ignored/hardhat-vnext": "^3.0.0-next.8",
     "forge-std": "github:foundry-rs/forge-std#v1.8.2",
     "prettier": "^3.3.2",
     "solady": "0.0.208",
@@ -71,6 +70,5 @@
     "test": "forge test",
     "test:lite": "FOUNDRY_PROFILE=lite forge test",
     "test:optimized": "bun run build:optimized && FOUNDRY_PROFILE=test-optimized forge test"
-  },
-  "type": "module"
+  }
 }

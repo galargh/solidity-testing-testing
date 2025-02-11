@@ -48,6 +48,10 @@ library CLPool {
     /// @notice Thrown by donate if there is currently 0 liquidity, since the fees will not go to any liquidity providers
     error NoLiquidityToReceiveFees();
 
+    /// @notice The state of a pool
+    /// @dev feeGrowthGlobal can be artificially inflated
+    /// For pools with a single liquidity position, actors can donate to themselves to freely inflate feeGrowthGlobal
+    /// atomically donating and collecting fees in the same lockAcquired callback may make the inflated value more extreme
     struct State {
         CLSlot0 slot0;
         /// @dev accumulated lp fees
@@ -232,8 +236,7 @@ library CLPool {
             });
         }
 
-        /// @dev If amountSpecified is the output, also given amountSpecified cant be 0,
-        /// then the tx will always revert if the swap fee is 100%
+        /// @dev a swap fee totaling 100% makes exact output swaps impossible since the input is entirely consumed by the fee
         if (state.swapFee >= LPFeeLibrary.ONE_HUNDRED_PERCENT_FEE) {
             if (!exactInput) {
                 revert InvalidFeeForExactOut();

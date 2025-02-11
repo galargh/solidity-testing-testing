@@ -2,7 +2,6 @@
 pragma solidity ^0.8.24;
 
 import "forge-std/Test.sol";
-import {GasSnapshot} from "forge-gas-snapshot/GasSnapshot.sol";
 import {MockERC20} from "solmate/src/test/utils/mocks/MockERC20.sol";
 import {LPFeeLibrary} from "../../src/libraries/LPFeeLibrary.sol";
 import {IVault} from "../../src/interfaces/IVault.sol";
@@ -41,7 +40,7 @@ import {BinHelper} from "../../src/pool-bin/libraries/BinHelper.sol";
 import {Pausable} from "@openzeppelin/contracts/utils/Pausable.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
-contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
+contract BinPoolManagerTest is Test, BinTestHelper {
     using SafeCast for uint256;
     using PackedUint128Math for bytes32;
     using PackedUint128Math for uint128;
@@ -111,7 +110,7 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
     }
 
     function test_bytecodeSize() public {
-        snapSize("BinPoolManagerBytecodeSize", address(poolManager));
+        vm.snapshotValue("BinPoolManagerBytecodeSize", address(poolManager).code.length);
 
         // forge coverage will run with '--ir-minimum' which set optimizer run to min
         // thus we do not want to revert for forge coverage case
@@ -120,14 +119,20 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         }
     }
 
+    function test_initcodeHash() public {
+        vm.snapshotValue(
+            "binPoolManager initcode hash (without constructor params, as uint256)",
+            uint256(keccak256(type(BinPoolManager).creationCode))
+        );
+    }
+
     function testInitialize_gasCheck_withoutHooks() public {
-        snapStart("BinPoolManagerTest#testInitialize_gasCheck_withoutHooks");
         poolManager.initialize(key, activeId);
-        snapEnd();
+        vm.snapshotGasLastCall("testInitialize_gasCheck_withoutHooks");
     }
 
     function test_FuzzInitializePool(uint16 binStep) public {
-        binStep = uint16(bound(binStep, poolManager.MIN_BIN_STEP(), poolManager.MAX_BIN_STEP()));
+        binStep = uint16(bound(binStep, poolManager.MIN_BIN_STEP(), poolManager.maxBinStep()));
 
         uint16 bitMap = 0x0008; // after mint call
         MockBinHooks mockHooks = new MockBinHooks();
@@ -337,12 +342,10 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
             hooks: IHooks(address(0)),
             poolManager: IPoolManager(address(poolManager)),
             fee: uint24(3000), // 3000 = 0.3%
-            parameters: poolParam.setBinStep(poolManager.MAX_BIN_STEP() + 1) // binStep
+            parameters: poolParam.setBinStep(poolManager.maxBinStep() + 1) // binStep
         });
 
-        vm.expectRevert(
-            abi.encodeWithSelector(IBinPoolManager.BinStepTooLarge.selector, poolManager.MAX_BIN_STEP() + 1)
-        );
+        vm.expectRevert(abi.encodeWithSelector(IBinPoolManager.BinStepTooLarge.selector, poolManager.maxBinStep() + 1));
         poolManager.initialize(key, activeId);
     }
 
@@ -362,14 +365,12 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         bytes32 pFee = uint128(0).encode(uint128(0));
         emit IBinPoolManager.Mint(key.toId(), address(binLiquidityHelper), ids, 0, amounts, compositionFee, pFee);
 
-        snapStart("BinPoolManagerTest#testGasMintOneBin-1");
         binLiquidityHelper.mint(key, mintParams, "");
-        snapEnd();
+        vm.snapshotGasLastCall("testGasMintOneBin-1");
 
         // mint on same pool again
-        snapStart("BinPoolManagerTest#testGasMintOneBin-2");
         binLiquidityHelper.mint(key, mintParams, "");
-        snapEnd();
+        vm.snapshotGasLastCall("testGasMintOneBin-2");
     }
 
     function testGasMintNneBins() public {
@@ -379,13 +380,11 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         token1.mint(address(this), 10 ether);
         (IBinPoolManager.MintParams memory mintParams,) = _getMultipleBinMintParams(activeId, 2 ether, 2 ether, 5, 5);
 
-        snapStart("BinPoolManagerTest#testGasMintNneBins-1");
         binLiquidityHelper.mint(key, mintParams, "");
-        snapEnd();
+        vm.snapshotGasLastCall("testGasMintNneBins-1");
 
-        snapStart("BinPoolManagerTest#testGasMintNneBins-2");
         binLiquidityHelper.mint(key, mintParams, ""); // cheaper in gas as TreeMath initialized
-        snapEnd();
+        vm.snapshotGasLastCall("testGasMintNneBins-2");
     }
 
     function testMintNativeCurrency() public {
@@ -412,9 +411,8 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         emit IBinPoolManager.Mint(key.toId(), address(binLiquidityHelper), ids, 0, amounts, compositionFee, pFee);
 
         // 1 ether as add 1 ether in native currency
-        snapStart("BinPoolManagerTest#testMintNativeCurrency");
         binLiquidityHelper.mint{value: 1 ether}(key, mintParams, "");
-        snapEnd();
+        vm.snapshotGasLastCall("testMintNativeCurrency");
     }
 
     function testMintAndBurnWithSalt() public {
@@ -460,9 +458,17 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         for (uint256 i = 0; i < binIds.length; i++) {
             (uint128 binReserveX, uint128 binReserveY,,) = poolManager.getBin(key.toId(), binIds[i]);
 
-            // make sure the liquidity is added to the correct bin
-            assertEq(binReserveX, 0 ether);
-            assertEq(binReserveY, 0 ether);
+            // should have 1 token left due to min liquidity
+            if (binIds[i] < activeId) {
+                assertEq(binReserveX, 0);
+                assertEq(binReserveY, 1);
+            } else if (binIds[i] > activeId) {
+                assertEq(binReserveX, 1);
+                assertEq(binReserveY, 0);
+            } else {
+                assertEq(binReserveX, 1);
+                assertEq(binReserveY, 1);
+            }
 
             BinPosition.Info memory position =
                 poolManager.getPosition(key.toId(), address(binLiquidityHelper), binIds[i], salt);
@@ -482,6 +488,7 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         token0.mint(address(this), 30 ether);
         token1.mint(address(this), 30 ether);
 
+        // mint for salt1
         (IBinPoolManager.MintParams memory mintParams, uint24[] memory binIds) =
             _getMultipleBinMintParams(activeId, 2 ether, 2 ether, 5, 5, salt1);
         binLiquidityHelper.mint(key, mintParams, "");
@@ -516,6 +523,7 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         }
 
         {
+            // now mint for salt2
             (mintParams, binIds) = _getMultipleBinMintParams(activeId, 2 ether, 2 ether, 5, 5, salt2);
             binLiquidityHelper.mint(key, mintParams, "");
 
@@ -544,11 +552,13 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
                 // only position with salt 0 should be empty
                 assertTrue(position0.share == 0);
                 assertTrue(position1.share != 0);
-                assertTrue(position1.share == position2.share);
+                // // 1e3 is MINIMUM_SHARE locked when added liquidity first
+                assertTrue(position1.share + 1e3 == position2.share);
             }
         }
 
         {
+            // now mint for salt0
             (mintParams, binIds) = _getMultipleBinMintParams(activeId, 2 ether, 2 ether, 5, 5, salt0);
             binLiquidityHelper.mint(key, mintParams, "");
 
@@ -574,9 +584,10 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
                 BinPosition.Info memory position2 =
                     poolManager.getPosition(key.toId(), address(binLiquidityHelper), binIds[i], salt2);
 
+                // 1e3 is MINIMUM_SHARE locked when added liquidity first
                 assertTrue(position0.share != 0);
-                assertTrue(position1.share == position0.share);
-                assertTrue(position1.share == position2.share);
+                assertTrue(position1.share + 1e3 == position0.share);
+                assertTrue(position1.share + 1e3 == position2.share);
             }
         }
 
@@ -591,13 +602,13 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
             // make sure the liquidity is added to the correct bin
             if (binIds[i] < activeId) {
                 assertEq(binReserveX, 0 ether);
-                assertEq(binReserveY, 0.4 ether * 2);
+                assertEq(binReserveY, 0.4 ether * 2 + 1);
             } else if (binIds[i] > activeId) {
-                assertEq(binReserveX, 0.4 ether * 2);
+                assertEq(binReserveX, 0.4 ether * 2 + 1);
                 assertEq(binReserveY, 0 ether);
             } else {
-                assertEq(binReserveX, 0.4 ether * 2);
-                assertEq(binReserveY, 0.4 ether * 2);
+                assertEq(binReserveX, 0.4 ether * 2 + 1);
+                assertEq(binReserveY, 0.4 ether * 2 + 1);
             }
 
             BinPosition.Info memory position0 =
@@ -630,13 +641,12 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         uint256[] memory ids = new uint256[](1);
         bytes32[] memory amounts = new bytes32[](1);
         ids[0] = activeId;
-        amounts[0] = uint128(1e18).encode(uint128(1e18));
+        amounts[0] = uint128(1e18 - 1).encode(uint128(1e18 - 1)); // -1 due to minshare locked up
         vm.expectEmit();
         emit IBinPoolManager.Burn(key.toId(), address(binLiquidityHelper), ids, 0, amounts);
 
-        snapStart("BinPoolManagerTest#testGasBurnOneBin");
         binLiquidityHelper.burn(key, burnParams, "");
-        snapEnd();
+        vm.snapshotGasLastCall("testGasBurnOneBin");
     }
 
     function testGasBurnHalfBin() public {
@@ -653,9 +663,8 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         IBinPoolManager.BurnParams memory burnParams =
             _getSingleBinBurnLiquidityParams(key, poolManager, activeId, address(binLiquidityHelper), 50);
 
-        snapStart("BinPoolManagerTest#testGasBurnHalfBin");
         binLiquidityHelper.burn(key, burnParams, "");
-        snapEnd();
+        vm.snapshotGasLastCall("testGasBurnHalfBin");
     }
 
     function testGasBurnNineBins() public {
@@ -671,9 +680,8 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         // burn on 9 binds
         IBinPoolManager.BurnParams memory burnParams =
             _getMultipleBinBurnLiquidityParams(key, poolManager, binIds, address(binLiquidityHelper), 100);
-        snapStart("BinPoolManagerTest#testGasBurnNineBins");
         binLiquidityHelper.burn(key, burnParams, "");
-        snapEnd();
+        vm.snapshotGasLastCall("BinPoolManagerTest");
     }
 
     function testBurnNativeCurrency() public {
@@ -699,13 +707,12 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         uint256[] memory ids = new uint256[](1);
         bytes32[] memory amounts = new bytes32[](1);
         ids[0] = activeId;
-        amounts[0] = uint128(1e18).encode(uint128(1e18));
+        amounts[0] = uint128(1e18 - 1).encode(uint128(1e18 - 1)); // -1 due to minshare locked up
         vm.expectEmit();
         emit IBinPoolManager.Burn(key.toId(), address(binLiquidityHelper), ids, 0, amounts);
 
-        snapStart("BinPoolManagerTest#testBurnNativeCurrency");
         binLiquidityHelper.burn(key, burnParams, "");
-        snapEnd();
+        vm.snapshotGasLastCall("testBurnNativeCurrency");
     }
 
     function testGasSwapSingleBin() public {
@@ -727,9 +734,8 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
             key.toId(), address(binSwapHelper), -1 ether, (1 ether * 997) / 1000, activeId, key.fee, 0
         );
 
-        snapStart("BinPoolManagerTest#testGasSwapSingleBin");
         binSwapHelper.swap(key, true, -int128(1 ether), testSettings, "");
-        snapEnd();
+        vm.snapshotGasLastCall("testGasSwapSingleBin");
     }
 
     function testGasSwapMultipleBins() public {
@@ -745,9 +751,8 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         token0.mint(address(this), 8 ether);
         BinSwapHelper.TestSettings memory testSettings =
             BinSwapHelper.TestSettings({withdrawTokens: true, settleUsingTransfer: true});
-        snapStart("BinPoolManagerTest#testGasSwapMultipleBins");
         binSwapHelper.swap(key, true, -int128(8 ether), testSettings, ""); // traverse over 4 bin
-        snapEnd();
+        vm.snapshotGasLastCall("testGasSwapMultipleBins");
     }
 
     function testGasSwapOverBigBinIdGate() public {
@@ -773,9 +778,9 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         token0.mint(address(this), 6 ether);
         BinSwapHelper.TestSettings memory testSettings =
             BinSwapHelper.TestSettings({withdrawTokens: true, settleUsingTransfer: true});
-        snapStart("BinPoolManagerTest#testGasSwapOverBigBinIdGate");
+
         binSwapHelper.swap(key, true, -int128(6 ether), testSettings, "");
-        snapEnd();
+        vm.snapshotGasLastCall("testGasSwapOverBigBinIdGate");
     }
 
     function testGasDonate() public {
@@ -791,9 +796,8 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         vm.expectEmit();
         emit IBinPoolManager.Donate(key.toId(), address(binDonateHelper), -10 ether, -10 ether, activeId);
 
-        snapStart("BinPoolManagerTest#testGasDonate");
         binDonateHelper.donate(key, 10 ether, 10 ether, "");
-        snapEnd();
+        vm.snapshotGasLastCall("testGasDonate");
     }
 
     function testSwapUseSurplusTokenAsInput() public {
@@ -873,9 +877,8 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
 
         // verify poolId.
         uint256 POOL_SLOT = 5;
-        snapStart("BinPoolManagerTest#testExtLoadPoolActiveId");
         bytes32 slot0Bytes = poolManager.extsload(keccak256(abi.encode(key.toId(), POOL_SLOT)));
-        snapEnd();
+        vm.snapshotGasLastCall("testExtLoadPoolActiveId");
 
         uint24 ativeIdExtsload;
         assembly {
@@ -923,10 +926,9 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         // Call setProtocolFee, verify event and state updated
         vm.expectEmit();
         emit ProtocolFeeUpdated(key.toId(), newProtocolFee);
-        snapStart("BinPoolManagerTest#testSetProtocolFee");
         vm.prank(address(feeController));
         poolManager.setProtocolFee(key, newProtocolFee);
-        snapEnd();
+        vm.snapshotGasLastCall("testSetProtocolFee");
 
         (, protocolFee,) = poolManager.getSlot0(key.toId());
         assertEq(protocolFee, newProtocolFee);
@@ -939,7 +941,7 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         emit SetMaxBinStep(binStep);
         poolManager.setMaxBinStep(binStep);
 
-        assertEq(poolManager.MAX_BIN_STEP(), binStep);
+        assertEq(poolManager.maxBinStep(), binStep);
     }
 
     function testGas_SetMaxBinStep() public {
@@ -947,11 +949,10 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
 
         vm.expectEmit();
         emit SetMaxBinStep(binStep);
-        snapStart("BinPoolManagerTest#testFuzz_SetMaxBinStep");
         poolManager.setMaxBinStep(binStep);
-        snapEnd();
+        vm.snapshotGasLastCall("testGas_SetMaxBinStep");
 
-        assertEq(poolManager.MAX_BIN_STEP(), binStep);
+        assertEq(poolManager.maxBinStep(), binStep);
     }
 
     function testSetMaxBinStep() public {
@@ -971,7 +972,7 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         emit IBinPoolManager.SetMinBinSharesForDonate(minShare);
         poolManager.setMinBinSharesForDonate(minShare);
 
-        assertEq(poolManager.MIN_BIN_SHARE_FOR_DONATE(), minShare);
+        assertEq(poolManager.minBinShareForDonate(), minShare);
     }
 
     function testMinBinSharesForDonate_OnlyOwner() public {
@@ -1067,9 +1068,8 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         emit DynamicLPFeeUpdated(key.toId(), _lpFee);
 
         vm.prank(address(binFeeManagerHook));
-        snapStart("BinPoolManagerTest#testFuzzUpdateDynamicLPFee");
         poolManager.updateDynamicLPFee(key, _lpFee);
-        snapEnd();
+        vm.snapshotGasLastCall("testGasUpdateDynamicLPFee");
 
         (,, uint24 swapFee) = poolManager.getSlot0(key.toId());
         assertEq(swapFee, _lpFee);
@@ -1168,10 +1168,9 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         IBinPoolManager.MintParams memory mintParams = _getSingleBinMintParams(activeId, 1 ether, 1 ether);
         binLiquidityHelper.mint(key, mintParams, "");
 
-        snapStart("BinPoolManagerTest#testGasGetBin");
         (uint128 reserveX, uint128 reserveY, uint256 liquidity, uint256 shares) =
             poolManager.getBin(key.toId(), activeId);
-        snapEnd();
+        vm.snapshotGasLastCall("testGasGetBin");
 
         assertEq(reserveX, 1e18);
         assertEq(reserveY, 1e18);
@@ -1181,6 +1180,69 @@ contract BinPoolManagerTest is Test, GasSnapshot, BinTestHelper {
         uint256 binLiquidity = binReserves.getLiquidity(activeId.getPriceFromId(binStep));
         assertEq(liquidity, binLiquidity);
         assertEq(shares, liquidity);
+    }
+
+    function test_getNextNonEmptyBin() public {
+        poolManager.initialize(key, activeId);
+
+        // add 1 eth of tokenX and 1 eth to activeId - 2 to active + 2 bins
+        token0.mint(address(this), 10 ether);
+        token1.mint(address(this), 10 ether);
+        (IBinPoolManager.MintParams memory mintParams,) = _getMultipleBinMintParams(activeId, 2 ether, 2 ether, 3, 3);
+        binLiquidityHelper.mint(key, mintParams, "");
+
+        // swapForY is true, means search for bin to the left as tokenY reside on the left side of the bin
+        bool swapForY = true;
+        for (uint24 i = 0; i < 5; i++) {
+            // [-2, -1, activeId, 1, 2] are bins initialized due to liqudiity adding above
+            uint24 nextEmptyBin = poolManager.getNextNonEmptyBin(key.toId(), swapForY, activeId + 3 - i);
+            assertEq(nextEmptyBin, activeId + 2 - i);
+        }
+
+        IBinPoolManager.BurnParams memory burnParams;
+
+        // burn activeId-1
+        burnParams = _getSingleBinBurnLiquidityParams(key, poolManager, activeId - 1, address(binLiquidityHelper), 100);
+        binLiquidityHelper.burn(key, burnParams, "");
+
+        // as activeId-1 bin is empty now, verify the next non empty bin to the left of activeId is activeId-2
+        assertEq(poolManager.getNextNonEmptyBin(key.toId(), true, activeId), activeId - 2);
+
+        // burn activeId+1
+        burnParams = _getSingleBinBurnLiquidityParams(key, poolManager, activeId + 1, address(binLiquidityHelper), 100);
+        binLiquidityHelper.burn(key, burnParams, "");
+
+        // as activeId+1 bin is empty now, verify the next non empty bin to the left of activeId+2 is activeId
+        assertEq(poolManager.getNextNonEmptyBin(key.toId(), true, activeId + 2), activeId);
+    }
+
+    function test_getNextNonEmptyBin_AddRemoveAddLiquidity() public {
+        // initialize
+        poolManager.initialize(key, activeId);
+
+        // mint, verify activeId is in treeMath
+        token0.mint(address(this), 2 ether);
+        token1.mint(address(this), 2 ether);
+        IBinPoolManager.MintParams memory mintParams = _getSingleBinMintParams(activeId, 1 ether, 1 ether);
+        binLiquidityHelper.mint(key, mintParams, "");
+        assertEq(poolManager.getNextNonEmptyBin(key.toId(), true, activeId + 1), activeId);
+
+        // remove, verify activeId not in treeMath
+        IBinPoolManager.BurnParams memory burnParams;
+        burnParams = _getSingleBinBurnLiquidityParams(key, poolManager, activeId, address(binLiquidityHelper), 100);
+        binLiquidityHelper.burn(key, burnParams, "");
+        assertEq(poolManager.getNextNonEmptyBin(key.toId(), true, activeId + 1), type(uint24).max);
+
+        // mint, verify activeId in treeMath again
+        binLiquidityHelper.mint(key, mintParams, "");
+        assertEq(poolManager.getNextNonEmptyBin(key.toId(), true, activeId + 1), activeId);
+    }
+
+    function test_getNextNonEmptyBin_NoBinWithLiqudiity() public {
+        poolManager.initialize(key, activeId);
+
+        assertEq(poolManager.getNextNonEmptyBin(key.toId(), true, activeId), type(uint24).max);
+        assertEq(poolManager.getNextNonEmptyBin(key.toId(), false, activeId), 0);
     }
 
     receive() external payable {}

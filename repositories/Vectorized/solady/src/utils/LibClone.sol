@@ -588,7 +588,7 @@ library LibClone {
         }
     }
 
-    /// @dev Returns the initialization code hash of the clone of `implementation`
+    /// @dev Returns the initialization code of the clone of `implementation`
     /// using immutable arguments encoded in `args`.
     function initCode(address implementation, bytes memory args)
         internal
@@ -670,7 +670,8 @@ library LibClone {
         assembly {
             args := mload(0x40)
             let n := and(0xffffffffff, sub(extcodesize(instance), 0x2d))
-            extcodecopy(instance, add(args, 0x20), add(start, 0x2d), add(n, 0x20))
+            let l := sub(n, and(0xffffff, mul(lt(start, n), start)))
+            extcodecopy(instance, args, add(start, 0x0d), add(l, 0x40))
             mstore(args, mul(sub(n, start), lt(start, n))) // Store the length.
             mstore(0x40, add(args, add(0x40, mload(args)))) // Allocate memory.
         }
@@ -1144,7 +1145,8 @@ library LibClone {
         assembly {
             args := mload(0x40)
             let n := and(0xffffffffff, sub(extcodesize(instance), 0x3d))
-            extcodecopy(instance, add(args, 0x20), add(start, 0x3d), add(n, 0x20))
+            let l := sub(n, and(0xffffff, mul(lt(start, n), start)))
+            extcodecopy(instance, args, add(start, 0x1d), add(l, 0x40))
             mstore(args, mul(sub(n, start), lt(start, n))) // Store the length.
             mstore(0x40, add(args, add(0x40, mload(args)))) // Allocate memory.
         }
@@ -1467,7 +1469,7 @@ library LibClone {
         instance = deployDeterministicERC1967I(0, implementation, args, salt);
     }
 
-    /// @dev Deploys a deterministic ERC1967I proxy with `implementation`,`args`,  and `salt`.
+    /// @dev Deploys a deterministic ERC1967I proxy with `implementation`, `args`, and `salt`.
     /// Deposits `value` ETH during deployment.
     function deployDeterministicERC1967I(
         uint256 value,
@@ -1506,7 +1508,7 @@ library LibClone {
         return createDeterministicERC1967I(0, implementation, args, salt);
     }
 
-    /// @dev Creates a deterministic ERC1967I proxy with `implementation`,`args` and `salt`.
+    /// @dev Creates a deterministic ERC1967I proxy with `implementation`, `args` and `salt`.
     /// Deposits `value` ETH during deployment.
     /// Note: This method is intended for use in ERC4337 factories,
     /// which are expected to NOT revert if the proxy is already deployed.
@@ -1556,7 +1558,7 @@ library LibClone {
         }
     }
 
-    /// @dev Returns the initialization code of the ERC1967I proxy of `implementation`and `args`.
+    /// @dev Returns the initialization code of the ERC1967I proxy of `implementation` and `args`.
     function initCodeERC1967I(address implementation, bytes memory args)
         internal
         pure
@@ -1611,7 +1613,7 @@ library LibClone {
         }
     }
 
-    /// @dev Returns the address of the ERC1967I proxy of `implementation`, 'args` with `salt` by `deployer`.
+    /// @dev Returns the address of the ERC1967I proxy of `implementation`, `args` with `salt` by `deployer`.
     /// Note: The returned result has dirty upper 96 bits. Please clean if used in assembly.
     function predictDeterministicAddressERC1967I(
         address implementation,
@@ -1644,7 +1646,8 @@ library LibClone {
         assembly {
             args := mload(0x40)
             let n := and(0xffffffffff, sub(extcodesize(instance), 0x52))
-            extcodecopy(instance, add(args, 0x20), add(start, 0x52), add(n, 0x20))
+            let l := sub(n, and(0xffffff, mul(lt(start, n), start)))
+            extcodecopy(instance, args, add(start, 0x32), add(l, 0x40))
             mstore(args, mul(sub(n, start), lt(start, n))) // Store the length.
             mstore(0x40, add(mload(args), add(args, 0x40))) // Allocate memory.
         }
@@ -2239,7 +2242,8 @@ library LibClone {
         assembly {
             args := mload(0x40)
             let n := and(0xffffffffff, sub(extcodesize(instance), 0x52))
-            extcodecopy(instance, add(args, 0x20), add(start, 0x52), add(n, 0x20))
+            let l := sub(n, and(0xffffff, mul(lt(start, n), start)))
+            extcodecopy(instance, args, add(start, 0x32), add(l, 0x40))
             mstore(args, mul(sub(n, start), lt(start, n))) // Store the length.
             mstore(0x40, add(args, add(0x40, mload(args)))) // Allocate memory.
         }
@@ -2741,7 +2745,8 @@ library LibClone {
         assembly {
             args := mload(0x40)
             let n := and(0xffffffffff, sub(extcodesize(instance), 0x57))
-            extcodecopy(instance, add(args, 0x20), add(start, 0x57), add(n, 0x20))
+            let l := sub(n, and(0xffffff, mul(lt(start, n), start)))
+            extcodecopy(instance, args, add(start, 0x37), add(l, 0x40))
             mstore(args, mul(sub(n, start), lt(start, n))) // Store the length.
             mstore(0x40, add(args, add(0x40, mload(args)))) // Allocate memory.
         }
@@ -2844,6 +2849,15 @@ library LibClone {
                 mstore(0x00, 0x0c4549ef) // `SaltDoesNotStartWith()`.
                 revert(0x1c, 0x04)
             }
+        }
+    }
+
+    /// @dev Returns the `bytes32` at `offset` in `args`, without any bounds checks.
+    /// To load an address, you can use `address(bytes20(argLoad(args, offset)))`.
+    function argLoad(bytes memory args, uint256 offset) internal pure returns (bytes32 result) {
+        /// @solidity memory-safe-assembly
+        assembly {
+            result := mload(add(add(args, 0x20), offset))
         }
     }
 }

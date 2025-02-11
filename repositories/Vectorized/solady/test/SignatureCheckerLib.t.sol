@@ -57,9 +57,13 @@ contract SignatureCheckerLibTest is SoladyTest {
     }
 
     function testSignatureCheckerOnWalletWithMatchingSignerAndSignature() public {
-        _checkSignatureBothModes(
-            address(mockERC1271Wallet), TEST_SIGNED_MESSAGE_HASH, SIGNATURE, true
-        );
+        address signer = address(mockERC1271Wallet);
+        bytes32 hash = TEST_SIGNED_MESSAGE_HASH;
+        bytes memory signature = SIGNATURE;
+        _checkSignature(true, signer, hash, signature, true);
+        _checkSignature(false, signer, hash, signature, true);
+        vm.etch(signer, "");
+        _checkSignature(false, signer, hash, signature, false);
     }
 
     function testSignatureCheckerOnWalletWithInvalidSigner() public {
@@ -342,14 +346,20 @@ contract SignatureCheckerLibTest is SoladyTest {
         assertEq(SignatureCheckerLib.toEthSignedMessageHash(s), ECDSA.toEthSignedMessageHash(s));
     }
 
-    function _etchNicksFactory() internal returns (address nicksFactory) {
-        nicksFactory = 0x4e59b44847b379578588920cA78FbF26c0B4956C;
-        if (nicksFactory.code.length != 0) {
-            vm.etch(
-                nicksFactory,
-                hex"7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe03601600081602082378035828234f58015156039578182fd5b8082525050506014600cf3"
-            );
+    function testSignatureCheckerPassthrough(bytes calldata signature) public {
+        bytes32 hash = keccak256(signature);
+        mockERC1271Wallet.setUseSignaturePassthrough(true);
+        if (_randomChance(8)) {
+            _misalignFreeMemoryPointer();
+            _brutalizeMemory();
         }
+        address signer = address(mockERC1271Wallet);
+        assertEq(SignatureCheckerLib.isValidSignatureNowCalldata(signer, hash, signature), true);
+        assertEq(SignatureCheckerLib.isValidSignatureNow(signer, hash, signature), true);
+
+        hash = bytes32(uint256(hash) ^ 1);
+        assertEq(SignatureCheckerLib.isValidSignatureNowCalldata(signer, hash, signature), false);
+        assertEq(SignatureCheckerLib.isValidSignatureNow(signer, hash, signature), false);
     }
 
     bytes32 private constant _ERC6492_DETECTION_SUFFIX =
@@ -372,7 +382,7 @@ contract SignatureCheckerLibTest is SoladyTest {
     }
 
     function _erc6492TestTemps() internal returns (_ERC6492TestTemps memory t) {
-        t.factory = _etchNicksFactory();
+        t.factory = _NICKS_FACTORY;
         assertGt(t.factory.code.length, 0);
         (t.eoa, t.privateKey) = _randomSigner();
         t.initcode = abi.encodePacked(type(MockERC1271Wallet).creationCode, uint256(uint160(t.eoa)));
@@ -386,6 +396,9 @@ contract SignatureCheckerLibTest is SoladyTest {
         {
             (uint8 v, bytes32 r, bytes32 s) = vm.sign(t.privateKey, t.digest);
             t.innerSignature = abi.encodePacked(r, s, v);
+        }
+        if (_randomChance(2)) {
+            t.innerSignature = _makeShortSignature(t.innerSignature);
         }
         t.signature = abi.encode(t.factory, t.factoryCalldata, t.innerSignature);
         t.signature = abi.encodePacked(t.signature, _ERC6492_DETECTION_SUFFIX);
@@ -409,7 +422,62 @@ contract SignatureCheckerLibTest is SoladyTest {
         }
     }
 
+    function testERC6492OnEOA() public {
+        this.testERC6492OnEOA(bytes32(0));
+    }
+
+    function testERC6492AllowSideEffectsOnEOA() public {
+        this.testERC6492AllowSideEffectsOnEOA(bytes32(0));
+    }
+
+    function testERC6492OnEOA(bytes32) public {
+        _ERC6492TestTemps memory t;
+        t.digest = keccak256("hehe");
+        (t.eoa, t.privateKey) = _randomSigner();
+        {
+            (uint8 v, bytes32 r, bytes32 s) = vm.sign(t.privateKey, t.digest);
+            t.signature = abi.encodePacked(r, s, v);
+        }
+        if (_randomChance(2)) {
+            t.signature = _makeShortSignature(t.signature);
+        }
+        bool result = SignatureCheckerLib.isValidERC6492SignatureNow(t.eoa, t.digest, t.signature);
+        assertTrue(result);
+        result = SignatureCheckerLib.isValidERC6492SignatureNow(
+            t.eoa, t.digest, abi.encodePacked(t.signature, " ")
+        );
+        assertFalse(result);
+        vm.etch(t.eoa, hex"00");
+        result = SignatureCheckerLib.isValidERC6492SignatureNow(t.eoa, t.digest, t.signature);
+        assertFalse(result);
+    }
+
+    function testERC6492AllowSideEffectsOnEOA(bytes32) public {
+        _ERC6492TestTemps memory t;
+        t.digest = keccak256("hehe");
+        (t.eoa, t.privateKey) = _randomSigner();
+        {
+            (uint8 v, bytes32 r, bytes32 s) = vm.sign(t.privateKey, t.digest);
+            t.signature = abi.encodePacked(r, s, v);
+        }
+        if (_randomChance(2)) {
+            t.signature = _makeShortSignature(t.signature);
+        }
+        bool result = SignatureCheckerLib.isValidERC6492SignatureNowAllowSideEffects(
+            t.eoa, t.digest, t.signature
+        );
+        assertTrue(result);
+        result = SignatureCheckerLib.isValidERC6492SignatureNowAllowSideEffects(
+            t.eoa, t.digest, abi.encodePacked(t.signature, " ")
+        );
+        assertFalse(result);
+        vm.etch(t.eoa, hex"00");
+        result = SignatureCheckerLib.isValidERC6492SignatureNow(t.eoa, t.digest, t.signature);
+        assertFalse(result);
+    }
+
     function testERC6492AllowSideEffectsPostDeploy() public {
+        _etchERC6492Verifier();
         _ERC6492TestTemps memory t = _erc6492TestTemps();
         (bool success,) = t.factory.call(t.factoryCalldata);
         require(success);
@@ -428,16 +496,17 @@ contract SignatureCheckerLibTest is SoladyTest {
     }
 
     function testERC6492AllowSideEffectsPreDeploy() public {
+        _etchERC6492Verifier();
         _ERC6492TestTemps memory t = _erc6492TestTemps();
         t.result = SignatureCheckerLib.isValidERC6492SignatureNowAllowSideEffects(
             t.smartAccount, t.digest, t.innerSignature
         );
         assertFalse(t.result);
-        // This should return false, as the function does NOT do ECDSA fallback.
+        // This should return true now, as the function does have an ECDSA fallback.
         t.result = SignatureCheckerLib.isValidERC6492SignatureNowAllowSideEffects(
             t.eoa, t.digest, t.innerSignature
         );
-        assertFalse(t.result);
+        assertTrue(t.result);
         assertEq(t.smartAccount.code.length, 0);
         t.result = SignatureCheckerLib.isValidERC6492SignatureNowAllowSideEffects(
             t.smartAccount, t.digest, t.signature
@@ -459,16 +528,28 @@ contract SignatureCheckerLibTest is SoladyTest {
         assertEq(MockERC1271Wallet(t.smartAccount).signer(), t.eoa);
     }
 
+    function _etchERC6492Verifier() internal returns (address verifier) {
+        _ERC6492TestTemps memory t;
+        t.initcode =
+            hex"6040600b3d3960403df3fe36383d373d3d6020515160208051013d3d515af160203851516084018038385101606037303452813582523838523490601c34355afa34513060e01b141634f3";
+        t.factory = _NICKS_FACTORY;
+        t.salt = 0x0000000000000000000000000000000000000000ebfa269e1c28e801a0dc87e2;
+        verifier = LibClone.predictDeterministicAddress(keccak256(t.initcode), t.salt, t.factory);
+        assertEq(_nicksCreate2(0, t.salt, t.initcode), verifier);
+        assertGt(verifier.code.length, 0);
+        emit LogBytes32(keccak256(t.initcode));
+        emit LogBytes(verifier.code);
+    }
+
     function _etchERC6492RevertingVerifier() internal returns (address revertingVerifier) {
         _ERC6492TestTemps memory t;
         t.initcode =
             hex"6040600b3d3960403df3fe36383d373d3d6020515160208051013d3d515af160203851516084018038385101606037303452813582523838523490601c34355afa34513060e01b141634fd";
-        t.factory = _etchNicksFactory();
+        t.factory = _NICKS_FACTORY;
         t.salt = 0x000000000000000000000000000000000000000068f35e1510740001fd13984a;
-        (bool success,) = t.factory.call(abi.encodePacked(t.salt, t.initcode));
         revertingVerifier =
             LibClone.predictDeterministicAddress(keccak256(t.initcode), t.salt, t.factory);
-        assertTrue(success);
+        assertEq(_nicksCreate2(0, t.salt, t.initcode), revertingVerifier);
         assertGt(revertingVerifier.code.length, 0);
         emit LogBytes32(keccak256(t.initcode));
         emit LogBytes(revertingVerifier.code);
@@ -506,9 +587,9 @@ contract SignatureCheckerLibTest is SoladyTest {
             t.smartAccount, t.digest, t.innerSignature
         );
         assertFalse(t.result);
-        // This should return false, as the function does NOT do ECDSA fallback.
+        // This should return true now, as the function does have an ECDSA fallback.
         t.result = SignatureCheckerLib.isValidERC6492SignatureNow(t.eoa, t.digest, t.innerSignature);
-        assertFalse(t.result);
+        assertTrue(t.result);
         assertEq(t.smartAccount.code.length, 0);
         t.result =
             SignatureCheckerLib.isValidERC6492SignatureNow(t.smartAccount, t.digest, t.signature);
@@ -538,9 +619,9 @@ contract SignatureCheckerLibTest is SoladyTest {
             t.smartAccount, t.digest, t.innerSignature
         );
         assertFalse(t.result);
-        // This should return false, as the function does NOT do ECDSA fallback.
+        // This should return true now, as the function does have an ECDSA fallback.
         t.result = SignatureCheckerLib.isValidERC6492SignatureNow(t.eoa, t.digest, t.innerSignature);
-        assertFalse(t.result);
+        assertTrue(t.result);
         assertEq(t.smartAccount.code.length, 0);
         // Without the reverting verifier, the function will simply return false.
         t.result =
@@ -551,5 +632,87 @@ contract SignatureCheckerLibTest is SoladyTest {
             SignatureCheckerLib.isValidERC6492SignatureNow(t.smartAccount, t.digest, t.signature);
         assertFalse(t.result);
         assertEq(t.smartAccount.code.length, 0);
+    }
+
+    function check_EcrecoverTrickEquivalance(bool success, uint256 signer, uint256 recovered)
+        public
+        pure
+    {
+        uint256 rds = success ? 0x20 : 0x00;
+        bool expected = rds == 0x20 && address(uint160(signer)) == address(uint160(recovered));
+        bool optimized;
+        /// @solidity memory-safe-assembly
+        assembly {
+            optimized := gt(rds, shl(96, xor(signer, recovered)))
+        }
+        assert(optimized == expected);
+    }
+
+    function testEcrecoverTrickEquivalance(bool success, uint256 signer, uint256 recovered)
+        public
+        pure
+    {
+        check_EcrecoverTrickEquivalance(success, signer, recovered);
+    }
+
+    function check_EcrecoverLoopTrick(uint256 n) public pure {
+        bool isValid;
+        bool memoryIsSafe;
+        /// @solidity memory-safe-assembly
+        assembly {
+            let r := and(0x100, n)
+            n := and(0xff, n)
+            let signature := mload(0x40)
+            mstore(signature, n)
+            mstore(0x40, add(n, add(0x20, signature)))
+            if iszero(n) { if r { signature := 0x60 } }
+            for { let m := mload(0x40) } 1 {} {
+                switch mload(signature)
+                case 64 {
+                    mstore(0x40, not(0))
+                    mstore(0x60, not(0))
+                }
+                case 65 {
+                    mstore(0x40, not(0))
+                    mstore(0x60, not(0))
+                }
+                default { break }
+                isValid := 1
+                mstore(0x40, m)
+                mstore(0x60, 0)
+                break
+            }
+            memoryIsSafe := and(iszero(mload(0x60)), lt(mload(0x40), 0xffffffff))
+        }
+        assert(memoryIsSafe);
+        assert(isValid == (n == 64 || n == 65));
+    }
+
+    function testEcrecoverLoopTrick(uint256 n) public pure {
+        check_EcrecoverLoopTrick(n);
+    }
+
+    function _makeShortSignature(bytes memory signature)
+        internal
+        pure
+        returns (bytes memory result)
+    {
+        require(signature.length == 65);
+        /// @solidity memory-safe-assembly
+        assembly {
+            result := mload(0x40)
+            let r := mload(add(signature, 0x20))
+            let s := mload(add(signature, 0x40))
+            let v := byte(0, mload(add(signature, 0x60)))
+            let vs := 0
+            switch v
+            case 27 { vs := shr(1, shl(1, s)) }
+            case 28 { vs := or(shl(255, 1), shr(1, shl(1, s))) }
+            default { invalid() }
+            mstore(result, 0x40) // Length.
+            mstore(add(result, 0x20), r)
+            mstore(add(result, 0x40), vs)
+            mstore(0x40, add(result, 0x60)) // Allocate memory.
+        }
     }
 }

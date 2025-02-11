@@ -2,7 +2,6 @@
 pragma solidity ^0.8.20;
 
 import {Test} from "forge-std/Test.sol";
-import {GasSnapshot} from "forge-gas-snapshot/GasSnapshot.sol";
 import {MockERC20} from "solmate/src/test/utils/mocks/MockERC20.sol";
 
 import {IVault, Vault} from "../../src/Vault.sol";
@@ -15,7 +14,7 @@ import {PoolKey} from "../../src/types/PoolKey.sol";
 import {IHooks} from "../../src/interfaces/IHooks.sol";
 import {NativeERC20} from "../helpers/NativeERC20.sol";
 
-contract VaultSyncTest is Test, TokenFixture, GasSnapshot, NoIsolate {
+contract VaultSyncTest is Test, TokenFixture, NoIsolate {
     Vault public vault;
     FakePoolManager public fakePoolManager;
     PoolKey public poolKey;
@@ -124,8 +123,8 @@ contract VaultSyncTest is Test, TokenFixture, GasSnapshot, NoIsolate {
         assertEq(amount, 10 ether);
     }
 
-    function test_sync_NoLock() public {
-        vm.expectRevert(abi.encodeWithSelector(IVault.NoLocker.selector));
+    function test_sync() public {
+        // it's ok to sync without lock
         vault.sync(currency0);
     }
 

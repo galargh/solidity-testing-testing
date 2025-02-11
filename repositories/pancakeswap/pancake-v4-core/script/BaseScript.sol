@@ -26,4 +26,10 @@ abstract contract BaseScript is Script {
 
         return decodedData;
     }
+
+    /// @notice must be implemented by the inheriting contract to make sure eth deployment salt is unique
+    /// since the deployment salt will be the only factor to decide the address of the newly deployed contract
+    function getDeploymentSalt() public pure virtual returns (bytes32) {
+        revert("Deployment salt not set !");
+    }
 }

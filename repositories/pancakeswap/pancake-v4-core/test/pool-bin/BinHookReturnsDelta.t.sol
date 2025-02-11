@@ -2,7 +2,6 @@
 pragma solidity ^0.8.24;
 
 import "forge-std/Test.sol";
-import {GasSnapshot} from "forge-gas-snapshot/GasSnapshot.sol";
 import {MockERC20} from "solmate/src/test/utils/mocks/MockERC20.sol";
 import {IVault} from "../../src/interfaces/IVault.sol";
 import {IPoolManager} from "../../src/interfaces/IPoolManager.sol";
@@ -28,7 +27,7 @@ import {BinTestHelper} from "./helpers/BinTestHelper.sol";
 import {Hooks} from "../../src/libraries/Hooks.sol";
 import {BinReturnsDeltaHook} from "./helpers/BinReturnsDeltaHook.sol";
 
-contract BinHookReturnsDelta is Test, GasSnapshot, BinTestHelper {
+contract BinHookReturnsDelta is Test, BinTestHelper {
     using SafeCast for uint256;
     using PackedUint128Math for bytes32;
     using PackedUint128Math for uint128;
@@ -127,11 +126,11 @@ contract BinHookReturnsDelta is Test, GasSnapshot, BinTestHelper {
         binLiquidityHelper.burn(key, burnParams, "");
 
         (uint128 reserveXAfter, uint128 reserveYAfter,,) = poolManager.getBin(key.toId(), activeId);
-
-        assertEq(reserveXAfter, 0);
-        assertEq(reserveYAfter, 0);
-        assertEq(token0.balanceOf(address(binReturnsDeltaHook)), 0.1 ether);
-        assertEq(token1.balanceOf(address(binReturnsDeltaHook)), 0.1 ether);
+        // reserve non zero due to min liquidity (1e3) locked up in the bin
+        assertEq(reserveXAfter, 1);
+        assertEq(reserveYAfter, 1);
+        assertEq(token0.balanceOf(address(binReturnsDeltaHook)), 0.1 ether - 1);
+        assertEq(token1.balanceOf(address(binReturnsDeltaHook)), 0.1 ether - 1);
     }
 
     function testSwap_noSwap_specifyInput() external {

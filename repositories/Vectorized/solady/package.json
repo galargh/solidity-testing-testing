@@ -1,7 +1,7 @@
 {
   "name": "solady",
   "license": "MIT",
-  "version": "0.0.260",
+  "version": "0.1.7",
   "description": "Optimized Solidity snippets.",
   "files": [
     "src/**/*.sol",
@@ -13,9 +13,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vectorized/solady.git"
-  },
-  "devDependencies": {
-    "@ignored/hardhat-vnext": "^3.0.0-next.8"
-  },
-  "type": "module"
+  }
 }

@@ -369,6 +369,13 @@
     ]
   },
   {
+    "name": "Plume",
+    "chainId": 98865,
+    "urls": [
+      "https://explorer.plumenetwork.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
     "name": "XDC Network",
     "chainId": 50,
     "urls": [
@@ -380,6 +387,97 @@
     "chainId": 4162,
     "urls": [
       "https://explorerl2.sx.technology/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Lisk",
+    "chainId": 1135,
+    "urls": [
+      "https://blockscout.lisk.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Metal L2",
+    "chainId": 1750,
+    "urls": [
+      "https://explorer.metall2.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Superseed",
+    "chainId": 5330,
+    "urls": [
+      "https://explorer.superseed.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Sonic",
+    "chainId": 146,
+    "urls": [
+      "https://sonicscan.org/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "EVM on Flow",
+    "chainId": 747,
+    "urls": [
+      "https://evm.flowscan.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Ink",
+    "chainId": 57073,
+    "urls": [
+      "https://explorer.inkonchain.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Morph",
+    "chainId": 2818,
+    "urls": [
+      "https://explorer.morphl2.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Shape",
+    "chainId": 360,
+    "urls": [
+      "https://shapescan.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Etherlink",
+    "chainId": 42793,
+    "urls": [
+      "https://explorer.etherlink.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Soneium",
+    "chainId": 1868,
+    "urls": [
+      "https://soneium.blockscout.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Swellchain",
+    "chainId": 1923,
+    "urls": [
+      "https://explorer.swellnetwork.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Hemi",
+    "chainId": 43111,
+    "urls": [
+      "https://explorer.hemi.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Berachain",
+    "chainId": 80094,
+    "urls": [
+      "https://berascan.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
     ]
   },
   {
@@ -560,7 +658,7 @@
   },
   {
     "name": "Linea Sepolia Testnet",
-    "chainId": 59140,
+    "chainId": 59141,
     "urls": [
       "https://sepolia.lineascan.build/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
     ]
@@ -746,6 +844,105 @@
     "chainId": 79479957,
     "urls": [
       "https://explorerl2.toronto.sx.technology/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Lisk Sepolia Testnet",
+    "chainId": 4202,
+    "urls": [
+      "https://sepolia-blockscout.lisk.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Metal L2 Sepolia Testnet",
+    "chainId": 1740,
+    "urls": [
+      "https://testnet.explorer.metall2.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Superseed Sepolia Testnet",
+    "chainId": 53302,
+    "urls": [
+      "https://sepolia-explorer.superseed.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Story Testnet (Odyssey)",
+    "chainId": 1516,
+    "urls": [
+      "https://odyssey.storyscan.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed",
+      "https://repo.sourcify.dev/contracts/partial_match/1516/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed/"
+    ]
+  },
+  {
+    "name": "Sonic Testnet (Blaze)",
+    "chainId": 57054,
+    "urls": [
+      "https://testnet.sonicscan.org/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "EVM on Flow Testnet",
+    "chainId": 545,
+    "urls": [
+      "https://evm-testnet.flowscan.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Ink Sepolia Testnet",
+    "chainId": 763373,
+    "urls": [
+      "https://explorer-sepolia.inkonchain.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Morph Holešky Testnet",
+    "chainId": 2810,
+    "urls": [
+      "https://explorer-holesky.morphl2.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Shape Sepolia Testnet",
+    "chainId": 11011,
+    "urls": [
+      "https://explorer-sepolia.shape.network/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Etherlink Testnet (Ghostnet)",
+    "chainId": 128123,
+    "urls": [
+      "https://testnet.explorer.etherlink.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Soneium Sepolia Testnet (Minato)",
+    "chainId": 1946,
+    "urls": [
+      "https://soneium-minato.blockscout.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Swellchain Sepolia Testnet",
+    "chainId": 1924,
+    "urls": [
+      "https://swell-testnet-explorer.alt.technology/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Hemi Sepolia Testnet",
+    "chainId": 743111,
+    "urls": [
+      "https://testnet.explorer.hemi.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
+    ]
+  },
+  {
+    "name": "Berachain Testnet (bArtio)",
+    "chainId": 80084,
+    "urls": [
+      "https://bartio.beratrail.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed"
     ]
   }
 ]

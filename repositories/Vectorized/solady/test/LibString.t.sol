@@ -4,7 +4,50 @@ pragma solidity ^0.8.4;
 import "./utils/SoladyTest.sol";
 import {LibString} from "../src/utils/LibString.sol";
 
+contract SimpleStringSetAndGet {
+    string public x;
+
+    function setX(string calldata x_) public {
+        x = x_;
+    }
+}
+
+contract SimpleStringSetAndGetWithStringStorage {
+    LibString.StringStorage internal _x;
+
+    function setX(string calldata x_) public {
+        LibString.setCalldata(_x, x_);
+    }
+
+    function x() public view returns (string memory) {
+        return LibString.get(_x);
+    }
+}
+
 contract LibStringTest is SoladyTest {
+    function testSimpleStringSetAndGetGas() public {
+        _testSimpleStringSetAndGet(new SimpleStringSetAndGet());
+        _testSimpleStringSetAndGet(
+            SimpleStringSetAndGet(address(new SimpleStringSetAndGetWithStringStorage()))
+        );
+    }
+
+    function _testSimpleStringSetAndGet(SimpleStringSetAndGet ss) internal {
+        _testSimpleStringSetAndGet(ss, string(new bytes(512)));
+        _testSimpleStringSetAndGet(ss, "123456789012345678901234567890");
+        _testSimpleStringSetAndGet(ss, "1234567890123456789012345678901");
+        _testSimpleStringSetAndGet(ss, "12345678901234567890123456789012");
+        _testSimpleStringSetAndGet(ss, "123456789012345678901234567890123");
+        _testSimpleStringSetAndGet(
+            ss, "123456789012345678901234567890123456789012345678901234567890"
+        );
+    }
+
+    function _testSimpleStringSetAndGet(SimpleStringSetAndGet ss, string memory s) internal {
+        ss.setX(s);
+        assertEq(ss.x(), s);
+    }
+
     function testToStringZero() public {
         assertEq(LibString.toString(uint256(0)), "0");
     }
@@ -1529,6 +1572,104 @@ contract LibStringTest is SoladyTest {
         LibString.toSmallString("123456789012345678901234567890123");
     }
 
+    function testSetAndGetStringStorage() public {
+        string memory emptyString;
+        _testSetAndGetStringStorage(emptyString);
+        _testSetAndGetStringStorage("");
+        _testSetAndGetStringStorage("a");
+        _testSetAndGetStringStorage("ab");
+        unchecked {
+            for (uint256 i = 0; i != 300; ++i) {
+                _testSetAndGetStringStorage(_randomUniformString(i), false);
+            }
+        }
+    }
+
+    function testSetAndGetStringStorage(bytes32) public {
+        vm.pauseGasMetering();
+        if (_randomChance(32)) {
+            assertTrue(LibString.isEmpty(_getStringStorage()));
+            assertEq(LibString.length(_getStringStorage()), 0);
+            assertEq(_get(_getStringStorage()), "");
+        }
+        if (_randomChance(2)) _testSetAndGetStringStorage(string(_randomBytes()));
+        if (_randomChance(16)) _testSetAndGetStringStorage(string(_randomBytes()));
+        if (_randomChance(32)) {
+            _testSetAndGetStringStorage(_randomUniformString(_randomUniform() & 0xfff));
+        }
+        vm.resumeGasMetering();
+    }
+
+    function testSetAndGetStringStorage2(string memory s) public {
+        _testSetAndGetStringStorage(s);
+    }
+
+    function testSetAndGetStringStorageCalldata(string calldata s) public {
+        LibString.setCalldata(_getStringStorage(), s);
+        assertEq(LibString.get(_getStringStorage()), s);
+    }
+
+    function _testSetAndGetStringStorage(string memory s) internal {
+        _testSetAndGetStringStorage(s, _randomChance(8));
+    }
+
+    function _testSetAndGetStringStorage(string memory s0, bool writeTo1) internal {
+        _set(_getStringStorage(0), s0);
+        string memory s1;
+        if (writeTo1) {
+            s1 = string(_randomBytes());
+            _set(_getStringStorage(1), s1);
+            if (_randomChance(16)) {
+                _misalignFreeMemoryPointer();
+                _brutalizeMemory();
+            }
+        }
+        assertEq(_get(_getStringStorage(0)), s0);
+        if (writeTo1) {
+            assertEq(_get(_getStringStorage(1)), s1);
+            if (_randomChance(16)) _testClear(_getStringStorage(0));
+            if (_randomChance(16)) _testClear(_getStringStorage(1));
+        }
+    }
+
+    function _testClear(LibString.StringStorage storage $) internal {
+        if (_randomChance(2)) {
+            LibString.clear($);
+        } else {
+            delete $._spacer;
+        }
+        assertEq(LibString.get($), "");
+        assertTrue(LibString.isEmpty($));
+    }
+
+    function _set(LibString.StringStorage storage $, string memory s) internal {
+        LibString.set($, s);
+        assertEq(LibString.length($), bytes(s).length);
+        assertEq(LibString.isEmpty($), bytes(s).length == 0);
+    }
+
+    function _get(LibString.StringStorage storage $) internal returns (string memory result) {
+        result = LibString.get($);
+        _checkMemory(result);
+        assertEq(LibString.isEmpty($), bytes(result).length == 0);
+        assertEq(LibString.length($), bytes(result).length);
+    }
+
+    function _getStringStorage() internal pure returns (LibString.StringStorage storage) {
+        return _getStringStorage(0);
+    }
+
+    function _getStringStorage(uint256 o)
+        internal
+        pure
+        returns (LibString.StringStorage storage $)
+    {
+        /// @solidity memory-safe-assembly
+        assembly {
+            $.slot := add(0x39be4c398aefe47a0e, o)
+        }
+    }
+
     function _lowerOriginal(string memory subject) internal pure returns (string memory result) {
         unchecked {
             uint256 n = bytes(subject).length;
@@ -1653,6 +1794,22 @@ contract LibStringTest is SoladyTest {
                     )
                 }
             }
+        }
+    }
+
+    function _randomUniformString(uint256 n) internal returns (string memory result) {
+        uint256 randomness = _randomUniform();
+        /// @solidity memory-safe-assembly
+        assembly {
+            result := mload(0x40)
+            mstore(0x20, randomness)
+            let o := add(result, 0x20)
+            for { let i := 0 } lt(i, n) { i := add(i, 0x20) } {
+                mstore(0x00, i)
+                mstore(add(o, i), keccak256(0x00, 0x40))
+            }
+            mstore(result, n)
+            mstore(0x40, add(o, n))
         }
     }
 
