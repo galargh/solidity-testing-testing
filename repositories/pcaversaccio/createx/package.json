@@ -221,5 +221,6 @@
       "secp256k1",
       "sharp"
     ]
-  }
+  },
+  "type": "module"
 }
