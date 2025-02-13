@@ -37,7 +37,7 @@ If you want to rerun any of the commands, you can use the `--force` flag.
 
 | Repository | Forge Build | Forge Test | Hardhat Build | Hardhat Test |
 | ---------- | ---------- | ------------- | ---------- | ------------ |
-| foundry-rs/forge-std | ✅ | ✅ (164) | ✅ | ❌ (141/158) |
+| foundry-rs/forge-std | ✅ | ✅ (164) | ✅ | ❌ (162/168) |
 | transmissions11/solmate | ✅ | ✅ (568) | ✅ | ❌ (565/570) |
 | Vectorized/solady | ✅ | ✅ (1472) | ✅ | ❌ (0/0) |
 | Uniswap/UniswapX | ❌ | ❌ (0/0) | ❌ | ❌ (0/0) |
