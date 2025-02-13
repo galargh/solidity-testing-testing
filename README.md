@@ -37,21 +37,21 @@ If you want to rerun any of the commands, you can use the `--force` flag.
 
 | Repository | Forge Build | Forge Test | Hardhat Build | Hardhat Test |
 | ---------- | ---------- | ------------- | ---------- | ------------ |
-| foundry-rs/forge-std | ✅ | ✅ (272) | ✅ | ❌ (184/267) |
-| kalidao/keep | ✅ | ✅ (134) | ✅ | ❌ (129/134) |
-| mds1/multicall | ✅ | ✅ | ✅ | ✅ |
-| pancakeswap/pancake-v4-core | ✅ | ✅ | ❌ | ❓ |
-| PaulRBerg/prb-math | ✅ | ✅ | ✅ | ✅ |
-| PaulRBerg/prb-proxy | ✅ | ✅ | ✅ | ✅ |
-| PaulRBerg/prb-test | ✅ | ✅ | ✅ | ✅ |
-| pcaversaccio/createx | ✅ | ❌ (112/129) | ✅ | ❌ (112/130) |
-| ProjectOpenSea/seaport | ❌ | ❓ | ❌ | ❓ |
-| sablier-labs/v2-core | ✅ | ✅ | ❌ | ❓ |
-| sablier-labs/v2-periphery | ✅ | ❌ (77/87) | ✅ | ❌ (81/92) |
-| SoulWallet/soul-wallet-contract | ✅ | ✅ | ❌ | ❓ |
-| transmissions11/solmate | ✅ | ✅ (568) | ✅ | ❌ (290/570) |
-| Uniswap/UniswapX | ✅ | ✅ (427) | ✅ | ❌ (162/179) |
-| Vectorized/solady | ✅ | ✅ | ❌ | ❓ |
+| foundry-rs/forge-std | ✅ | ✅ (164) | ✅ | ❌ (141/158) |
+| transmissions11/solmate | ✅ | ✅ (568) | ✅ | ❌ (565/570) |
+| Vectorized/solady | ✅ | ✅ (1472) | ✅ | ❌ (0/0) |
+| Uniswap/UniswapX | ❌ | ❌ (0/0) | ❌ | ❌ (0/0) |
+| sablier-labs/v2-core | ✅ | ❌ (575/590) | ✅ | ❌ (0/0) |
+| sablier-labs/v2-periphery | ✅ | ❌ (0/0) | ✅ | ❌ (81/94) |
+| PaulRBerg/prb-math | ✅ | ❌ (0/0) | ✅ | ✅ (314) |
+| PaulRBerg/prb-proxy | ✅ | ❌ (0/0) | ✅ | ✅ (103) |
+| PaulRBerg/prb-test | ✅ | ✅ (192) | ✅ | ✅ (192) |
+| ProjectOpenSea/seaport | ❌ | ❌ (0/0) | ❌ | ❌ (0/0) |
+| kalidao/keep | ✅ | ✅ (134) | ✅ | ❌ (0/0) |
+| SoulWallet/soul-wallet-contract | ❌ | ❌ (0/0) | ❌ | ❌ (0/0) |
+| pancakeswap/pancake-v4-core | ❌ | ❌ (731/827) | ❌ | ❌ (0/0) |
+| pcaversaccio/createx | ✅ | ❌ (0/0) | ✅ | ❌ (112/131) |
+| mds1/multicall | ❌ | ❌ (0/0) | ✅ | ✅ (45) |
 
 ### Issues
 

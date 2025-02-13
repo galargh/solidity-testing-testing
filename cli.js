@@ -46,6 +46,11 @@ const repositories = JSON.parse(fs.readFileSync(path.join(__dirname, 'repositori
 
 const repositoriesToClone = argv.org !== undefined && argv.repo !== undefined ? repositories.filter((r) => r.org === argv.org && r.repo === argv.repo) : repositories;
 
+if (argv._[0] === 'report') {
+  console.log('| Repository | Forge Build | Forge Test | Hardhat Build | Hardhat Test |');
+  console.log('| ---------- | ---------- | ------------- | ---------- | ------------ |');
+}
+
 for (const repository of repositoriesToClone) {
   const { org, repo, packageManager, hardhatConfig, env } = repository;
   const executable = packageManager === undefined || packageManager === 'npm' ? 'npx' : packageManager;
@@ -68,6 +73,9 @@ for (const repository of repositoriesToClone) {
       break;
     case 'test:forge':
       run(org, repo, ['forge', 'test'], env);
+      break;
+    case 'report':
+      report(org, repo, executable);
       break;
     default:
       throw new Error(`Invalid command: ${argv._[0]}`);
@@ -196,4 +204,50 @@ function run(org, repo, command, env) {
   } });
   fs.closeSync(outputFD);
   fs.closeSync(errorFD);
+}
+
+function report(org, repo, executable) {
+  const forgeBuildOutput = read(org, repo, ['forge', 'build'], 'out');
+  const forgeBuildSuccess = forgeBuildOutput.match(/Compiler run successful!/);
+
+  const forgeTestOutput = read(org, repo, ['forge', 'test'], 'out');
+  const forgeTestSummary = forgeTestOutput.match(/Ran (\d+) test suites in (\d+\.\d+)s \((\d+\.\d+)s CPU time\): (\d+) tests passed, (\d+) failed, (\d+) skipped \((\d+) total tests\)/);
+  let forgeTestPassed = 0;
+  let forgeTestFailed = 0;
+  if (forgeTestSummary !== null) {
+    forgeTestPassed = Number(forgeTestSummary[4]);
+    forgeTestFailed = Number(forgeTestSummary[5]);
+  }
+
+  const hardhatCompileOutput = read(org, repo, [executable, 'hardhat3', 'compile'], 'out');
+  const hardhatCompileSuccess = hardhatCompileOutput.match(/Compiled (\d+) Solidity files with solc (\d+\.\d+)/);
+
+  const hardhatTestOutput = read(org, repo, [executable, 'hardhat3', 'test', 'solidity'], 'out');
+  const hardhatTestSummary = hardhatTestOutput.match(/Run (Failed|Passed): (\d+) tests, (\d+) passed, (\d+) failed, (\d+) skipped \(duration: (\d+) ms\)/);
+  let hardhatTestPassed = 0;
+  let hardhatTestFailed = 0;
+  if (hardhatTestSummary !== null) {
+    hardhatTestPassed = Number(hardhatTestSummary[3]);
+    hardhatTestFailed = Number(hardhatTestSummary[4]);
+  }
+
+  const repository = `${org}/${repo}`;
+  const forgeBuild = forgeBuildSuccess ? '✅' : '❌';
+  const forgeTest = forgeTestPassed > 0 && forgeTestFailed === 0 ? `✅ (${forgeTestPassed})` : `❌ (${forgeTestPassed}/${forgeTestPassed+forgeTestFailed})`;
+  const hardhatBuild = hardhatCompileSuccess ? '✅' : '❌';
+  const hardhatTest = hardhatTestPassed > 0 && hardhatTestFailed === 0 ? `✅ (${hardhatTestPassed})` : `❌ (${hardhatTestPassed}/${hardhatTestPassed+hardhatTestFailed})`;
+
+  console.log(`| ${repository} | ${forgeBuild} | ${forgeTest} | ${hardhatBuild} | ${hardhatTest} |`);
+}
+
+function read(org, repo, command, type) {
+  const dir = path.join(__dirname, 'repositories', org, repo);
+  if (!fs.existsSync(dir)) {
+    throw new Error(`Directory ${dir} does not exist`);
+  }
+  const file = path.join(dir, `${command.join('_')}.${type}`);
+  if (!fs.existsSync(file)) {
+    throw new Error(`File ${file} does not exist`);
+  }
+  return fs.readFileSync(file, 'utf8');
 }
