@@ -1,0 +1,12 @@
+warning ../../../package.json: No license field
+CompilerError: Stack too deep. Try compiling with `--via-ir` (cli) or the equivalent `viaIR: true` (standard JSON) while enabling the optimizer. Otherwise, try removing local variables.
+   --> src/pool-bin/libraries/BinPool.sol:180:63:
+    |
+180 |                             swapState.activeId.getPriceFromId(params.binStep)
+    |                                                               ^^^^^^
+
+
+Error HHE1232: Compilation failed
+
+For more info go to https://hardhat.org/HHE1232 or run Hardhat with --show-stack-traces
+error Command failed with exit code 1.

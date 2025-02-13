@@ -1,0 +1,619 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/internal/CreateX._efficientHash.t.sol:CreateX_EfficientHash_Internal_Test
+[PASS] testFuzz_MatchesTheOutputOfAHighLevelHashAndShouldNeverRevert(bytes32,bytes32) (runs: 256, μ: 9167, ~: 9167)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 5.09ms (4.55ms CPU time)
+
+Ran 3 tests for test/internal/CreateX._requireSuccessfulContractCreation_1Arg.t.sol:CreateX_RequireSuccessfulContractCreation_1Arg_Internal_Test
+[PASS] testFuzz_WhenTheNewContractAddressHasCode(address) (runs: 256, μ: 13437, ~: 13437)
+[PASS] testFuzz_WhenTheNewContractAddressHasNoCode(address) (runs: 257, μ: 15500, ~: 15530)
+[PASS] test_WhenTheNewContractAddressIsTheZeroAddress() (gas: 11067)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 14.29ms (13.74ms CPU time)
+
+Ran 2 tests for test/internal/CreateX._generateSalt.t.sol:CreateX_GenerateSalt_Internal_Test
+[PASS] testFuzz_NeverReverts(uint256) (runs: 257, μ: 19784, ~: 19784)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0xe9df497a0000000000000000000000000000000000000000000000000000000000000e8f0000000000000000000000007f9bca8e06957aaa57cc24cded0c06b18954c3a100000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000001a4a3d3a5eba510000000000000000000000001d036279ad0038dabf095b10850512a3cf1cbc7d000000000000000000000000000000000000000000000000000000000000001befbfbd5cf092919967c8ba3ac2bb2a20f09eb8a1d1a841f09f82ac0000000000 args=[3727, 0x7F9BCA8E06957aAa57CC24CDeD0C06B18954C3a1, "�\\𒑙gȺ:»* 𞸡ѨA🂬", 7399976227224145 [7.399e15], 0x1d036279ad0038daBF095B10850512a3cf1CbC7D]] testFuzz_ShouldBeAFunctionOfMultipleBlockPropertiesAndTheCaller(uint256,address,string,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 3727
+
+Traces:
+  [7365] CreateX_GenerateSalt_Internal_Test::testFuzz_ShouldBeAFunctionOfMultipleBlockPropertiesAndTheCaller(3727, 0x7F9BCA8E06957aAa57CC24CDeD0C06B18954C3a1, "�\\𒑙gȺ:»* 𞸡ѨA🂬", 7399976227224145 [7.399e15], 0x1d036279ad0038daBF095B10850512a3cf1CbC7D)
+    ├─ [0] console::log("Bound result", 3727) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+Suite result: FAILED. 1 passed; 1 failed; 0 skipped; finished in 11.93ms (11.60ms CPU time)
+
+Ran 3 tests for test/internal/CreateX._requireSuccessfulContractInitialisation.t.sol:CreateX_RequireSuccessfulContractInitialisation_Internal_Test
+[PASS] testFuzz_WhenTheImplementationAddressHasCode(bytes,address) (runs: 256, μ: 14354, ~: 14283)
+[PASS] testFuzz_WhenTheImplementationAddressHasNoCode(bytes,address) (runs: 257, μ: 17398, ~: 17225)
+[PASS] testFuzz_WhenTheSuccessBooleanIsFalse(bytes,address) (runs: 257, μ: 13443, ~: 13235)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 18.63ms (18.32ms CPU time)
+
+Ran 2 tests for test/public/CREATE/CreateX.computeCreateAddress_2Args.t.sol:CreateX_ComputeCreateAddress_2Args_Public_Test
+[PASS] testFuzz_WhenTheNonceValueDoesNotExceed18446744073709551614(address,uint64) (runs: 256, μ: 2418787, ~: 2418811)
+[PASS] testFuzz_WhenTheNonceValueExceeds18446744073709551614(address,uint256) (runs: 257, μ: 37383, ~: 37705)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 29.37ms (28.83ms CPU time)
+
+Ran 1 test for test/public/CREATE3/CreateX.computeCreate3Address_2Args.t.sol:CreateX_ComputeCreate3Address_2Args_Public_Test
+[PASS] testFuzz_ReturnsThe20ByteAddressWhereAContractWillBeStoredAndShouldNeverRevert(bytes32,address) (runs: 256, μ: 2451883, ~: 2451883)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 29.44ms (28.79ms CPU time)
+
+Ran 4 tests for test/internal/CreateX._requireSuccessfulContractCreation_2Args.t.sol:CreateX_RequireSuccessfulContractCreation_2Args_Internal_Test
+[PASS] testFuzz_WhenTheNewContractAddressHasCode(address) (runs: 257, μ: 13632, ~: 13632)
+[PASS] testFuzz_WhenTheNewContractAddressHasNoCode(bool,address) (runs: 257, μ: 15647, ~: 15739)
+[PASS] testFuzz_WhenTheSuccessBooleanIsFalse(address) (runs: 257, μ: 11407, ~: 11407)
+[PASS] test_WhenTheNewContractAddressIsTheZeroAddress() (gas: 11267)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 17.62ms (16.95ms CPU time)
+
+Ran 1 test for test/public/CREATE2/CreateX.computeCreate2Address_3Args.t.sol:CreateX_ComputeCreate2Address_3Args_Public_Test
+[PASS] testFuzz_ReturnsThe20ByteAddressWhereAContractWillBeStoredAndShouldNeverRevert(bytes32,address) (runs: 256, μ: 2421119, ~: 2421119)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 38.66ms (38.12ms CPU time)
+
+Ran 2 tests for test/public/CREATE/CreateX.computeCreateAddress_1Arg.t.sol:CreateX_ComputeCreateAddress_1Arg_Public_Test
+[PASS] testFuzz_WhenTheNonceValueDoesNotExceed18446744073709551614(uint64) (runs: 257, μ: 2415823, ~: 2415804)
+[PASS] testFuzz_WhenTheNonceValueExceeds18446744073709551614(uint256) (runs: 257, μ: 37240, ~: 37548)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 27.32ms (27.02ms CPU time)
+
+Ran 1 test for test/public/CREATE3/CreateX.computeCreate3Address_1Arg.t.sol:CreateX_ComputeCreate3Address_1Arg_Public_Test
+[PASS] testFuzz_ReturnsThe20ByteAddressWhereAContractWillBeStoredAndShouldNeverRevert(bytes32) (runs: 257, μ: 2451219, ~: 2451219)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 20.08ms (19.79ms CPU time)
+
+Ran 8 tests for test/internal/CreateX._guard.t.sol:CreateX_Guard_Internal_Test
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltDoNotEqualTheCallerOrTheZeroAddress(address,bytes32) (runs: 257, μ: 33826, ~: 33827)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltDoNotEqualTheCallerOrTheZeroAddressAndWhenTheSaltValueIsGeneratedPseudorandomly(address,uint256,address,string,uint64) (runs: 257, μ: 42255, ~: 42061)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltEquals0x00(address,bytes32) (runs: 257, μ: 33276, ~: 33276)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltEquals0x01(address,bytes32) (runs: 257, μ: 33178, ~: 33178)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltIsGreaterThan0x01(address,bytes32) (runs: 257, μ: 36000, ~: 35753)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x00(address,bytes32) (runs: 257, μ: 34130, ~: 34285)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x01(address,bytes32) (runs: 257, μ: 33704, ~: 33704)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltIsGreaterThan0x01(address,bytes32) (runs: 257, μ: 36289, ~: 36004)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 57.89ms (57.56ms CPU time)
+
+Ran 1 test for test/public/CREATE2/CreateX.computeCreate2Address_2Args.t.sol:CreateX_ComputeCreate2Address_2Args_Public_Test
+[PASS] testFuzz_ReturnsThe20ByteAddressWhereAContractWillBeStoredAndShouldNeverRevert(bytes32) (runs: 257, μ: 2420525, ~: 2420525)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 61.83ms (61.54ms CPU time)
+
+Ran 3 tests for test/public/CREATE2/CreateX.deployCreate2Clone_3Args.t.sol:CreateX_DeployCreate2Clone_3Args_Public_Test
+[PASS] testFuzz_WhenTheEIP1167MinimalProxyContractCreationFails(address,uint256,bytes32,uint64) (runs: 257, μ: 797538385, ~: 1040431267)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x100e7399000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5c4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f0000000000000000000000000000000000000000000000000034fdbc072dccb800000000000000000000000026c85cf48750e79a345e49f45078d109e5a0d54e args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 0xc4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f, 14915682805075128 [1.491e16], 0x26C85CF48750E79A345E49F45078d109E5A0D54e]] testFuzz_WhenTheEIP1167MinimalProxyContractIsSuccessfullyCreatedAndWhenTheEIP1167MinimalProxyInitialisationCallIsSuccessful(address,uint256,bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 25541
+
+Traces:
+  [12301] CreateX_DeployCreate2Clone_3Args_Public_Test::testFuzz_WhenTheEIP1167MinimalProxyContractIsSuccessfullyCreatedAndWhenTheEIP1167MinimalProxyInitialisationCallIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 0xc4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f, 14915682805075128 [1.491e16], 0x26C85CF48750E79A345E49F45078d109E5A0D54e)
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 51082 [5.108e4])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheEIP1167MinimalProxyInitialisationCallIsUnsuccessful(address,uint256,bytes32,uint64) (runs: 257, μ: 82332, ~: 91023)
+Suite result: FAILED. 2 passed; 1 failed; 0 skipped; finished in 31.22ms (57.74ms CPU time)
+
+Ran 3 tests for test/public/CREATE/CreateX.deployCreate.t.sol:CreateX_DeployCreate_Public_Test
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(uint64,uint256) (runs: 257, μ: 1040430201, ~: 1040430230)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(uint64,uint256) (runs: 257, μ: 1004873, ~: 1005233)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(uint64,uint256) (runs: 257, μ: 52556, ~: 52420)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 78.09ms (77.56ms CPU time)
+
+Ran 3 tests for test/public/CREATE2/CreateX.deployCreate2Clone_2Args.t.sol:CreateX_DeployCreate2Clone_2Args_Public_Test
+[PASS] testFuzz_WhenTheEIP1167MinimalProxyContractCreationFails(address,uint256,uint64) (runs: 256, μ: 1040431864, ~: 1040431827)
+[PASS] testFuzz_WhenTheEIP1167MinimalProxyContractIsSuccessfullyCreatedAndWhenTheEIP1167MinimalProxyInitialisationCallIsSuccessful(address,uint256,uint64,address) (runs: 257, μ: 312479, ~: 313914)
+[PASS] testFuzz_WhenTheEIP1167MinimalProxyInitialisationCallIsUnsuccessful(address,uint256,uint64) (runs: 257, μ: 93438, ~: 93943)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 131.87ms (131.32ms CPU time)
+
+Ran 6 tests for test/public/CREATE2/CreateX.deployCreate2AndInit_4Args_CustomiseSalt.t.sol:CreateX_DeployCreate2AndInit_4Args_CustomiseSalt_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x79a400b0000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 67946720113827
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [48675] CreateX_DeployCreate2AndInit_4Args_CustomiseSalt_Public_Test::testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09)
+    ├─ [0] console::log("Bound result", 67946720113827 [6.794e13]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(CreateX: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], 67946720113827 [6.794e13])
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::deal(CreateX_DeployCreate2AndInit_4Args_CustomiseSalt_Public_Test: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1)
+    │   └─ ← [Return] 
+    ├─ [0] 0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA::fallback{value: 1}()
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(CreateX_DeployCreate2AndInit_4Args_CustomiseSalt_Public_Test: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 79228162514264337593543950335 [7.922e28])
+    │   └─ ← [Return] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 797538449, ~: 1040430949)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x62dd31ba000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [14201] CreateX_DeployCreate2AndInit_4Args_CustomiseSalt_Public_Test::testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09)
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 67929, ~: 74384)
+[PASS] testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 893066, ~: 1004061)
+[PASS] testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),bytes32,uint64) (runs: 257, μ: 926747, ~: 1039308)
+Suite result: FAILED. 4 passed; 2 failed; 0 skipped; finished in 151.17ms (149.78ms CPU time)
+
+Ran 4 tests for test/public/CREATE3/CreateX.deployCreate3_1Arg.t.sol:CreateX_DeployCreate3_1Arg_Public_Test
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,uint256) (runs: 257, μ: 1024177252, ~: 1024177236)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0xe0a9a562000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000000000000000000000000000000000000000000000000000004b0000000000000000000000008df964fb20678ee568ec7a7e12a5ea8ff71dd9bb args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 75, 0x8df964fb20678Ee568EC7A7e12a5Ea8FF71dD9bb]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 25541
+
+Traces:
+  [12086] CreateX_DeployCreate3_1Arg_Public_Test::testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 75, 0x8df964fb20678Ee568EC7A7e12a5Ea8FF71dD9bb)
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,uint256) (runs: 257, μ: 112338, ~: 112937)
+[PASS] testFuzz_WhenTheProxyContractCreationFails(address,uint256) (runs: 257, μ: 1040441110, ~: 1040441095)
+Suite result: FAILED. 3 passed; 1 failed; 0 skipped; finished in 74.86ms (74.25ms CPU time)
+
+Ran 9 tests for test/internal/CreateX._parseSalt.t.sol:CreateX_ParseSalt_Internal_Test
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltDoNotEqualTheCallerOrTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x00(address,bytes32) (runs: 257, μ: 32948, ~: 32948)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltDoNotEqualTheCallerOrTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x01(address,bytes32) (runs: 257, μ: 32906, ~: 32906)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltDoNotEqualTheCallerOrTheZeroAddressAndWhenThe21stByteOfTheSaltIsGreaterThan0x01(address,bytes32) (runs: 257, μ: 32667, ~: 32647)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltEquals0x00(address,bytes32) (runs: 257, μ: 32565, ~: 32565)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltEquals0x01(address,bytes32) (runs: 257, μ: 32438, ~: 32438)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltIsGreaterThan0x01(address,bytes32) (runs: 257, μ: 32628, ~: 32313)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x00(address,bytes32) (runs: 257, μ: 32977, ~: 32977)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x01(address,bytes32) (runs: 257, μ: 32919, ~: 32919)
+[PASS] testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltIsGreaterThan0x01(address,bytes32) (runs: 257, μ: 33055, ~: 32743)
+Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 96.84ms (96.49ms CPU time)
+
+Ran 3 tests for test/public/CREATE2/CreateX.deployCreate2_2Args.t.sol:CreateX_DeployCreate2_2Args_Public_Test
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,bytes32,uint64,uint256) (runs: 257, μ: 785392103, ~: 1040431065)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x5fc3daee000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5c4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f0000000000000000000000000000000000000000000000000034fdbc072dccb800000000000000000000000026c85cf48750e79a345e49f45078d109e5a0d54e args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 0xc4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f, 14915682805075128 [1.491e16], 0x26C85CF48750E79A345E49F45078d109E5A0D54e]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 25541
+
+Traces:
+  [12303] CreateX_DeployCreate2_2Args_Public_Test::testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 0xc4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f, 14915682805075128 [1.491e16], 0x26C85CF48750E79A345E49F45078d109E5A0D54e)
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 51082 [5.108e4])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,bytes32,uint64,uint256) (runs: 257, μ: 61953, ~: 67525)
+Suite result: FAILED. 2 passed; 1 failed; 0 skipped; finished in 42.63ms (41.80ms CPU time)
+
+Ran 3 tests for test/public/CREATE2/CreateX.deployCreate2_1Arg.t.sol:CreateX_DeployCreate2_1Arg_Public_Test
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,uint256) (runs: 256, μ: 1040431845, ~: 1040431823)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,uint64,address) (runs: 257, μ: 2465115, ~: 2465164)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,uint256) (runs: 257, μ: 69939, ~: 70470)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 196.11ms (195.30ms CPU time)
+
+Ran 3 tests for test/public/CREATE/CreateX.deployCreateClone.t.sol:CreateX_DeployCreateClone_Public_Test
+[PASS] testFuzz_WhenTheEIP1167MinimalProxyContractCreationFails(uint64,uint256) (runs: 257, μ: 1040430299, ~: 1040430338)
+[PASS] testFuzz_WhenTheEIP1167MinimalProxyContractIsSuccessfullyCreatedAndWhenTheEIP1167MinimalProxyInitialisationCallIsSuccessful(uint64,uint256) (runs: 257, μ: 110443, ~: 110520)
+[PASS] testFuzz_WhenTheEIP1167MinimalProxyInitialisationCallIsUnsuccessful(uint64,uint256) (runs: 257, μ: 74888, ~: 74983)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 66.10ms (65.77ms CPU time)
+
+Ran 7 tests for test/public/CREATE3/CreateX.deployCreate3AndInit_4Args_CustomiseSalt.t.sol:CreateX_DeployCreate3AndInit_4Args_CustomiseSalt_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x79a400b0000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 67946720113827
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [48617] CreateX_DeployCreate3AndInit_4Args_CustomiseSalt_Public_Test::testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09)
+    ├─ [0] console::log("Bound result", 67946720113827 [6.794e13]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(CreateX: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], 67946720113827 [6.794e13])
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::deal(CreateX_DeployCreate3AndInit_4Args_CustomiseSalt_Public_Test: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1)
+    │   └─ ← [Return] 
+    ├─ [0] 0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA::fallback{value: 1}()
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(CreateX_DeployCreate3AndInit_4Args_CustomiseSalt_Public_Test: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 79228162514264337593543950335 [7.922e28])
+    │   └─ ← [Return] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 805008397, ~: 1024176568)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x62dd31ba000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [14155] CreateX_DeployCreate3AndInit_4Args_CustomiseSalt_Public_Test::testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09)
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 104902, ~: 119235)
+[PASS] testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 919404, ~: 1057832)
+[PASS] testFuzz_WhenTheProxyContractCreationFails(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 834047511, ~: 1040440946)
+[PASS] testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),bytes32,uint64) (runs: 257, μ: 946960, ~: 1093069)
+Suite result: FAILED. 5 passed; 2 failed; 0 skipped; finished in 236.83ms (235.87ms CPU time)
+
+Ran 4 tests for test/public/CREATE3/CreateX.deployCreate3_2Args.t.sol:CreateX_DeployCreate3_2Args_Public_Test
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,uint256,bytes32,uint64) (runs: 257, μ: 805001966, ~: 1024176464)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x5fc3daee000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5c4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f0000000000000000000000000000000000000000000000000034fdbc072dccb800000000000000000000000026c85cf48750e79a345e49f45078d109e5a0d54e args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 0xc4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f, 14915682805075128 [1.491e16], 0x26C85CF48750E79A345E49F45078d109E5A0D54e]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 25541
+
+Traces:
+  [12291] CreateX_DeployCreate3_2Args_Public_Test::testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 0xc4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f, 14915682805075128 [1.491e16], 0x26C85CF48750E79A345E49F45078d109E5A0D54e)
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 51082 [5.108e4])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,uint256,bytes32,uint64) (runs: 257, μ: 95017, ~: 110102)
+[PASS] testFuzz_WhenTheProxyContractCreationFails(address,uint256,bytes32,uint64) (runs: 257, μ: 813805411, ~: 1040440311)
+Suite result: FAILED. 3 passed; 1 failed; 0 skipped; finished in 87.00ms (86.33ms CPU time)
+
+Ran 7 tests for test/public/CREATE3/CreateX.deployCreate3AndInit_3Args.t.sol:CreateX_DeployCreate3AndInit_3Args_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0xc45c578d000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd611286400000000000000000000000000000000000000000000000000000000000001d90000000000000000000000001d5d2a39b8bc134026c85cf48750e79a345e49f4 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 473
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [48576] CreateX_DeployCreate3AndInit_3Args_Public_Test::testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4)
+    ├─ [0] console::log("Bound result", 473) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(CreateX: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], 473)
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::deal(CreateX_DeployCreate3AndInit_3Args_Public_Test: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 1)
+    │   └─ ← [Return] 
+    ├─ [0] 0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA::fallback{value: 1}()
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(CreateX_DeployCreate3AndInit_3Args_Public_Test: [0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496], 79228162514264337593543950335 [7.922e28])
+    │   └─ ← [Return] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256)) (runs: 257, μ: 1024177398, ~: 1024177406)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x80b9f987000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd611286400000000000000000000000000000000000000000000000000000000000001d90000000000000000000000001d5d2a39b8bc134026c85cf48750e79a345e49f4 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [14113] CreateX_DeployCreate3AndInit_3Args_Public_Test::testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4)
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256)) (runs: 257, μ: 122304, ~: 122399)
+[PASS] testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256)) (runs: 257, μ: 1060530, ~: 1060982)
+[PASS] testFuzz_WhenTheProxyContractCreationFails(address,(uint256,uint256)) (runs: 257, μ: 1040441795, ~: 1040441769)
+[PASS] testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),uint256) (runs: 257, μ: 1095925, ~: 1096571)
+Suite result: FAILED. 5 passed; 2 failed; 0 skipped; finished in 208.91ms (263.26ms CPU time)
+
+Ran 6 tests for test/public/CREATE/CreateX.deployCreateAndInit_3Args.t.sol:CreateX_DeployCreateAndInit_3Args_Public_Test
+[PASS] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(uint64,(uint256,uint256),uint256) (runs: 257, μ: 1077040, ~: 1076911)
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(uint64,(uint256,uint256)) (runs: 257, μ: 1040431421, ~: 1040431404)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(uint64,(uint256,uint256)) (runs: 257, μ: 1019872, ~: 1020010)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(uint64,(uint256,uint256)) (runs: 257, μ: 62134, ~: 62137)
+[PASS] testFuzz_WhenTheInitialisationCallIsUnsuccessful(uint64,(uint256,uint256)) (runs: 257, μ: 992515, ~: 992641)
+[PASS] testFuzz_WhenTheRefundTransactionIsUnsuccessful(uint64,(uint256,uint256),uint256) (runs: 257, μ: 1028709, ~: 1029029)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 266.64ms (266.05ms CPU time)
+
+Ran 1 test for test/invariants/CreateX_Invariants.t.sol:CreateX_Invariants
+[PASS] statefulFuzz_EtherBalance() (runs: 256, calls: 3840, reverts: 3837)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 228.30ms (227.98ms CPU time)
+
+Ran 7 tests for test/public/CREATE3/CreateX.deployCreate3AndInit_5Args.t.sol:CreateX_DeployCreate3AndInit_5Args_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x79a400b0000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 67946720113827
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [39961] CreateX_DeployCreate3AndInit_5Args_Public_Test::testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09)
+    ├─ [0] console::log("Bound result", 67946720113827 [6.794e13]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(CreateX: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], 67946720113827 [6.794e13])
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 840872416, ~: 1024176651)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x62dd31ba000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [14155] CreateX_DeployCreate3AndInit_5Args_Public_Test::testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09)
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 106909, ~: 119386)
+[PASS] testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 905110, ~: 1060042)
+[PASS] testFuzz_WhenTheProxyContractCreationFails(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 797625168, ~: 1040440959)
+[PASS] testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),bytes32,uint64) (runs: 257, μ: 952837, ~: 1093215)
+Suite result: FAILED. 5 passed; 2 failed; 0 skipped; finished in 210.71ms (193.74ms CPU time)
+
+Ran 7 tests for test/public/CREATE3/CreateX.deployCreate3AndInit_4Args_CustomiseRefundAddress.t.sol:CreateX_DeployCreate3AndInit_4Args_CustomiseRefundAddress_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0xc45c578d000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd611286400000000000000000000000000000000000000000000000000000000000001d90000000000000000000000001d5d2a39b8bc134026c85cf48750e79a345e49f4 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 473
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [39920] CreateX_DeployCreate3AndInit_4Args_CustomiseRefundAddress_Public_Test::testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4)
+    ├─ [0] console::log("Bound result", 473) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(CreateX: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], 473)
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256)) (runs: 257, μ: 1024177418, ~: 1024177413)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x80b9f987000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd611286400000000000000000000000000000000000000000000000000000000000001d90000000000000000000000001d5d2a39b8bc134026c85cf48750e79a345e49f4 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [14113] CreateX_DeployCreate3AndInit_4Args_CustomiseRefundAddress_Public_Test::testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4)
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256)) (runs: 257, μ: 122480, ~: 122537)
+[PASS] testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256)) (runs: 257, μ: 1062967, ~: 1063234)
+[PASS] testFuzz_WhenTheProxyContractCreationFails(address,(uint256,uint256)) (runs: 257, μ: 1040441789, ~: 1040441783)
+[PASS] testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),uint256) (runs: 257, μ: 1096196, ~: 1096711)
+Suite result: FAILED. 5 passed; 2 failed; 0 skipped; finished in 273.19ms (239.83ms CPU time)
+
+Ran 6 tests for test/public/CREATE2/CreateX.deployCreate2AndInit_5Args.t.sol:CreateX_DeployCreate2AndInit_5Args_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x79a400b0000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 67946720113827
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [40019] CreateX_DeployCreate2AndInit_5Args_Public_Test::testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09)
+    ├─ [0] console::log("Bound result", 67946720113827 [6.794e13]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(CreateX: [0x5615dEB798BB3E4dFa0139dFa1b3D433Cc23b72f], 67946720113827 [6.794e13])
+    │   └─ ← [Return] 
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 842068849, ~: 1040430981)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x62dd31ba000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+Logs:
+  Bound result 25541
+  Bound result 11016036667618306148
+
+Traces:
+  [14201] CreateX_DeployCreate2AndInit_5Args_Public_Test::testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09)
+    ├─ [0] console::log("Bound result", 25541 [2.554e4]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] console::log("Bound result", 11016036667618306148 [1.101e19]) [staticcall]
+    │   └─ ← [Stop] 
+    ├─ [0] VM::deal(0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 22032073335236663378 [2.203e19])
+    │   └─ ← [Return] 
+    ├─ [0] VM::assume(true) [staticcall]
+    │   └─ ← [Return] 
+    ├─ [0] VM::snapshotState()
+    │   └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+    └─ ← [Revert] unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version
+
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 68321, ~: 74498)
+[PASS] testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256),bytes32,uint64) (runs: 257, μ: 861011, ~: 1006274)
+[PASS] testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),bytes32,uint64) (runs: 257, μ: 873088, ~: 1039415)
+Suite result: FAILED. 4 passed; 2 failed; 0 skipped; finished in 472.21ms (144.34ms CPU time)
+
+Ran 6 tests for test/public/CREATE/CreateX.deployCreateAndInit_4Args.t.sol:CreateX_DeployCreateAndInit_4Args_Public_Test
+[PASS] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(uint64,(uint256,uint256),uint256) (runs: 257, μ: 1078461, ~: 1078689)
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(uint64,(uint256,uint256)) (runs: 257, μ: 1040430156, ~: 1040430128)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(uint64,(uint256,uint256)) (runs: 257, μ: 1018773, ~: 1018867)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(uint64,(uint256,uint256)) (runs: 257, μ: 59955, ~: 59996)
+[PASS] testFuzz_WhenTheInitialisationCallIsUnsuccessful(uint64,(uint256,uint256)) (runs: 257, μ: 990770, ~: 991052)
+[PASS] testFuzz_WhenTheRefundTransactionIsUnsuccessful(uint64,(uint256,uint256),uint256) (runs: 257, μ: 1027097, ~: 1027547)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 308.29ms (248.30ms CPU time)
+
+Ran 6 tests for test/public/CREATE2/CreateX.deployCreate2AndInit_4Args_CustomiseRefundAddress.t.sol:CreateX_DeployCreate2AndInit_4Args_CustomiseRefundAddress_Public_Test
+[PASS] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address,uint256) (runs: 257, μ: 2632601, ~: 2633286)
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256)) (runs: 257, μ: 1040431792, ~: 1040431800)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address) (runs: 257, μ: 2572887, ~: 2573622)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256)) (runs: 257, μ: 77413, ~: 77391)
+[PASS] testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256)) (runs: 257, μ: 1009100, ~: 1009231)
+[PASS] testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),uint256) (runs: 257, μ: 1042137, ~: 1042006)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 254.00ms (475.25ms CPU time)
+
+Ran 6 tests for test/public/CREATE2/CreateX.deployCreate2AndInit_3Args.t.sol:CreateX_DeployCreate2AndInit_3Args_Public_Test
+[PASS] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address,uint256) (runs: 257, μ: 2613256, ~: 2613709)
+[PASS] testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256)) (runs: 257, μ: 1040431809, ~: 1040431785)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address) (runs: 257, μ: 2572254, ~: 2572784)
+[PASS] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256)) (runs: 257, μ: 77241, ~: 77273)
+[PASS] testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256)) (runs: 257, μ: 1006708, ~: 1006999)
+[PASS] testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),uint256) (runs: 257, μ: 1042077, ~: 1041886)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 396.82ms (491.38ms CPU time)
+
+Ran 32 test suites in 508.47ms (4.14s CPU time): 112 tests passed, 17 failed, 0 skipped (129 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/internal/CreateX._generateSalt.t.sol:CreateX_GenerateSalt_Internal_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0xe9df497a0000000000000000000000000000000000000000000000000000000000000e8f0000000000000000000000007f9bca8e06957aaa57cc24cded0c06b18954c3a100000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000001a4a3d3a5eba510000000000000000000000001d036279ad0038dabf095b10850512a3cf1cbc7d000000000000000000000000000000000000000000000000000000000000001befbfbd5cf092919967c8ba3ac2bb2a20f09eb8a1d1a841f09f82ac0000000000 args=[3727, 0x7F9BCA8E06957aAa57CC24CDeD0C06B18954C3a1, "�\\𒑙gȺ:»* 𞸡ѨA🂬", 7399976227224145 [7.399e15], 0x1d036279ad0038daBF095B10850512a3cf1CbC7D]] testFuzz_ShouldBeAFunctionOfMultipleBlockPropertiesAndTheCaller(uint256,address,string,uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered 2 failing tests in test/public/CREATE2/CreateX.deployCreate2AndInit_4Args_CustomiseSalt.t.sol:CreateX_DeployCreate2AndInit_4Args_CustomiseSalt_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x79a400b0000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x62dd31ba000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered 2 failing tests in test/public/CREATE2/CreateX.deployCreate2AndInit_5Args.t.sol:CreateX_DeployCreate2AndInit_5Args_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x79a400b0000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x62dd31ba000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered 1 failing test in test/public/CREATE2/CreateX.deployCreate2Clone_3Args.t.sol:CreateX_DeployCreate2Clone_3Args_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x100e7399000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5c4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f0000000000000000000000000000000000000000000000000034fdbc072dccb800000000000000000000000026c85cf48750e79a345e49f45078d109e5a0d54e args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 0xc4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f, 14915682805075128 [1.491e16], 0x26C85CF48750E79A345E49F45078d109E5A0D54e]] testFuzz_WhenTheEIP1167MinimalProxyContractIsSuccessfullyCreatedAndWhenTheEIP1167MinimalProxyInitialisationCallIsSuccessful(address,uint256,bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered 1 failing test in test/public/CREATE2/CreateX.deployCreate2_2Args.t.sol:CreateX_DeployCreate2_2Args_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x5fc3daee000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5c4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f0000000000000000000000000000000000000000000000000034fdbc072dccb800000000000000000000000026c85cf48750e79a345e49f45078d109e5a0d54e args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 0xc4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f, 14915682805075128 [1.491e16], 0x26C85CF48750E79A345E49F45078d109E5A0D54e]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered 2 failing tests in test/public/CREATE3/CreateX.deployCreate3AndInit_3Args.t.sol:CreateX_DeployCreate3AndInit_3Args_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0xc45c578d000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd611286400000000000000000000000000000000000000000000000000000000000001d90000000000000000000000001d5d2a39b8bc134026c85cf48750e79a345e49f4 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address) (runs: 0, μ: 0, ~: 0)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x80b9f987000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd611286400000000000000000000000000000000000000000000000000000000000001d90000000000000000000000001d5d2a39b8bc134026c85cf48750e79a345e49f4 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered 2 failing tests in test/public/CREATE3/CreateX.deployCreate3AndInit_4Args_CustomiseRefundAddress.t.sol:CreateX_DeployCreate3AndInit_4Args_CustomiseRefundAddress_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0xc45c578d000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd611286400000000000000000000000000000000000000000000000000000000000001d90000000000000000000000001d5d2a39b8bc134026c85cf48750e79a345e49f4 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address) (runs: 0, μ: 0, ~: 0)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x80b9f987000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd611286400000000000000000000000000000000000000000000000000000000000001d90000000000000000000000001d5d2a39b8bc134026c85cf48750e79a345e49f4 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 473, 0x1d5D2a39B8bC134026c85cF48750e79A345E49f4]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered 2 failing tests in test/public/CREATE3/CreateX.deployCreate3AndInit_4Args_CustomiseSalt.t.sol:CreateX_DeployCreate3AndInit_4Args_CustomiseSalt_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x79a400b0000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x62dd31ba000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered 2 failing tests in test/public/CREATE3/CreateX.deployCreate3AndInit_5Args.t.sol:CreateX_DeployCreate3AndInit_5Args_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x79a400b0000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x62dd31ba000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000008ddf9550abd54f79c9b0223d67e22bab2098e0d2fbd61128648ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a00000000000000000000000000000000000000000000000000003dcc141db4a3000000000000000000000000118e19ed09c5513dff451d036279ad0038dabf09 args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, Values({ constructorAmount: 25541 [2.554e4], initCallAmount: 890553590326743892660212153938936220224808922801836697659492 [8.905e59] }), 0x8ee568ec7a7e12a5ea8ff71dd9bb63e61d5d2a39b8bc134026c85cf48750e79a, 67946720113827 [6.794e13], 0x118e19ED09C5513dff451D036279Ad0038dABf09]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered 1 failing test in test/public/CREATE3/CreateX.deployCreate3_1Arg.t.sol:CreateX_DeployCreate3_1Arg_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0xe0a9a562000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5000000000000000000000000000000000000000000000000000000000000004b0000000000000000000000008df964fb20678ee568ec7a7e12a5ea8ff71dd9bb args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 75, 0x8df964fb20678Ee568EC7A7e12a5Ea8FF71dD9bb]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered 1 failing test in test/public/CREATE3/CreateX.deployCreate3_2Args.t.sol:CreateX_DeployCreate3_2Args_Public_Test
+[FAIL: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `forge` version; counterexample: calldata=0x5fc3daee000000000000000000000000d8e1d47eb8a09bed8f1c25477f9bca8e06957aaa00000000000000000000000000000000000000000000000000000000000063c5c4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f0000000000000000000000000000000000000000000000000034fdbc072dccb800000000000000000000000026c85cf48750e79a345e49f45078d109e5a0d54e args=[0xD8E1D47Eb8A09bEd8f1c25477F9Bca8e06957AaA, 25541 [2.554e4], 0xc4135f173145acb94a9c7e0f4b2bc9ab8df964fb20678ee568ec7a7e12a5ea8f, 14915682805075128 [1.491e16], 0x26C85CF48750E79A345E49F45078d109E5A0D54e]] testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,bytes32,uint64,address) (runs: 0, μ: 0, ~: 0)
+
+Encountered a total of 17 failing tests, 112 tests succeeded

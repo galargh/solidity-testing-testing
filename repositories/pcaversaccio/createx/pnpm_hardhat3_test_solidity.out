@@ -1,0 +1,401 @@
+
+WARNING: You are using Node.js 22.7.0 which is not supported by Hardhat.
+Please upgrade to 22.10.0 or a later version.
+
+Running Solidity tests
+
+Ran 1 tests for test/invariants/CreateX_Invariants.t.sol:CreateXHandler (v0.8.23)
+✘ Failed(1): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/public/CREATE3/CreateX.computeCreate3Address_2Args.t.sol:CreateX_ComputeCreate3Address_2Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_ReturnsThe20ByteAddressWhereAContractWillBeStoredAndShouldNeverRevert(bytes32,address) (duration: 53 ms, runs: 256, meanGas: 2804480, medianGas: 2804480)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 56 ms)
+
+Ran 1 tests for test/public/CREATE3/CreateX.computeCreate3Address_1Arg.t.sol:CreateX_ComputeCreate3Address_1Arg_Public_Test (v0.8.23)
+✔ Passed: testFuzz_ReturnsThe20ByteAddressWhereAContractWillBeStoredAndShouldNeverRevert(bytes32) (duration: 53 ms, runs: 256, meanGas: 2803578, medianGas: 2803578)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 56 ms)
+
+Ran 2 tests for test/public/CREATE/CreateX.computeCreateAddress_1Arg.t.sol:CreateX_ComputeCreateAddress_1Arg_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheNonceValueExceeds18446744073709551614(uint256) (duration: 32 ms, runs: 256, meanGas: 39454, medianGas: 39328)
+✔ Passed: testFuzz_WhenTheNonceValueDoesNotExceed18446744073709551614(uint64) (duration: 49 ms, runs: 256, meanGas: 2769327, medianGas: 2769303)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 61 ms)
+
+Ran 2 tests for test/public/CREATE/CreateX.computeCreateAddress_2Args.t.sol:CreateX_ComputeCreateAddress_2Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheNonceValueExceeds18446744073709551614(address,uint256) (duration: 13 ms, runs: 256, meanGas: 40045, medianGas: 40703)
+✔ Passed: testFuzz_WhenTheNonceValueDoesNotExceed18446744073709551614(address,uint64) (duration: 54 ms, runs: 256, meanGas: 2772606, medianGas: 2772620)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 63 ms)
+
+Ran 1 tests for test/public/CREATE2/CreateX.computeCreate2Address_2Args.t.sol:CreateX_ComputeCreate2Address_2Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_ReturnsThe20ByteAddressWhereAContractWillBeStoredAndShouldNeverRevert(bytes32) (duration: 84 ms, runs: 256, meanGas: 2773363, medianGas: 2773363)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 87 ms)
+
+Ran 1 tests for test/public/CREATE2/CreateX.computeCreate2Address_3Args.t.sol:CreateX_ComputeCreate2Address_3Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_ReturnsThe20ByteAddressWhereAContractWillBeStoredAndShouldNeverRevert(bytes32,address) (duration: 89 ms, runs: 256, meanGas: 2774255, medianGas: 2774255)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 93 ms)
+
+Ran 7 tests for test/public/CREATE3/CreateX.deployCreate3AndInit_3Args.t.sol:CreateX_DeployCreate3AndInit_3Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),uint256) (duration: 102 ms, runs: 256, meanGas: 1569839, medianGas: 1569670)
+✔ Passed: testFuzz_WhenTheProxyContractCreationFails(address,(uint256,uint256)) (duration: 74 ms, runs: 256, meanGas: 8937393460516747660, medianGas: 8937393460516747645)
+✔ Passed: testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256)) (duration: 96 ms, runs: 256, meanGas: 1533087, medianGas: 1533209)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256)) (duration: 37 ms, runs: 256, meanGas: 134557, medianGas: 134664)
+✘ Failed(2): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address) (duration: 35 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256)) (duration: 44 ms, runs: 256, meanGas: 134856, medianGas: 134761)
+✘ Failed(3): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address) (duration: 26 ms, runs: 0, meanGas: 0, medianGas: 0)
+✘ Suite Failed: 7 tests, 5 passed, 2 failed, 0 skipped (duration: 383 ms)
+
+Ran 7 tests for test/public/CREATE3/CreateX.deployCreate3AndInit_4Args_CustomiseRefundAddress.t.sol:CreateX_DeployCreate3AndInit_4Args_CustomiseRefundAddress_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),uint256) (duration: 92 ms, runs: 256, meanGas: 1570648, medianGas: 1570738)
+✔ Passed: testFuzz_WhenTheProxyContractCreationFails(address,(uint256,uint256)) (duration: 75 ms, runs: 256, meanGas: 8937393460516747642, medianGas: 8937393460516747642)
+✔ Passed: testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256)) (duration: 87 ms, runs: 256, meanGas: 1535640, medianGas: 1535799)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256)) (duration: 41 ms, runs: 256, meanGas: 135100, medianGas: 135254)
+✘ Failed(4): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address) (duration: 21 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256)) (duration: 47 ms, runs: 256, meanGas: 135184, medianGas: 135351)
+✘ Failed(5): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address) (duration: 31 ms, runs: 0, meanGas: 0, medianGas: 0)
+✘ Suite Failed: 7 tests, 5 passed, 2 failed, 0 skipped (duration: 379 ms)
+
+Ran 3 tests for test/public/CREATE2/CreateX.deployCreate2_2Args.t.sol:CreateX_DeployCreate2_2Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,bytes32,uint64,uint256) (duration: 23 ms, runs: 256, meanGas: 68102, medianGas: 74518)
+✘ Failed(6): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,bytes32,uint64,address) (duration: 21 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,bytes32,uint64,uint256) (duration: 26 ms, runs: 256, meanGas: 66470, medianGas: 74050)
+✘ Suite Failed: 3 tests, 2 passed, 1 failed, 0 skipped (duration: 399 ms)
+
+Ran 3 tests for test/public/CREATE2/CreateX.deployCreate2Clone_3Args.t.sol:CreateX_DeployCreate2Clone_3Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheEIP1167MinimalProxyInitialisationCallIsUnsuccessful(address,uint256,bytes32,uint64) (duration: 35 ms, runs: 256, meanGas: 88203, medianGas: 98442)
+✘ Failed(7): testFuzz_WhenTheEIP1167MinimalProxyContractIsSuccessfullyCreatedAndWhenTheEIP1167MinimalProxyInitialisationCallIsSuccessful(address,uint256,bytes32,uint64,address) (duration: 28 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_WhenTheEIP1167MinimalProxyContractCreationFails(address,uint256,bytes32,uint64) (duration: 30 ms, runs: 256, meanGas: 7645660811926430071, medianGas: 8937393460516731682)
+✘ Suite Failed: 3 tests, 2 passed, 1 failed, 0 skipped (duration: 400 ms)
+
+Ran 3 tests for test/public/CREATE2/CreateX.deployCreate2Clone_2Args.t.sol:CreateX_DeployCreate2Clone_2Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheEIP1167MinimalProxyInitialisationCallIsUnsuccessful(address,uint256,uint64) (duration: 38 ms, runs: 256, meanGas: 102893, medianGas: 102422)
+✔ Passed: testFuzz_WhenTheEIP1167MinimalProxyContractIsSuccessfullyCreatedAndWhenTheEIP1167MinimalProxyInitialisationCallIsSuccessful(address,uint256,uint64,address) (duration: 93 ms, runs: 256, meanGas: 339219, medianGas: 339353)
+✔ Passed: testFuzz_WhenTheEIP1167MinimalProxyContractCreationFails(address,uint256,uint64) (duration: 37 ms, runs: 256, meanGas: 8937393460516732296, medianGas: 8937393460516732264)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 401 ms)
+
+Ran 3 tests for test/public/CREATE2/CreateX.deployCreate2_1Arg.t.sol:CreateX_DeployCreate2_1Arg_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,uint256) (duration: 38 ms, runs: 256, meanGas: 78387, medianGas: 77836)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,uint64,address) (duration: 275 ms, runs: 256, meanGas: 3518304, medianGas: 3519177)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,uint256) (duration: 29 ms, runs: 256, meanGas: 78488, medianGas: 77927)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 575 ms)
+
+Ran 4 tests for test/public/CREATE3/CreateX.deployCreate3_1Arg.t.sol:CreateX_DeployCreate3_1Arg_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheProxyContractCreationFails(address,uint256) (duration: 67 ms, runs: 256, meanGas: 8937393460516746876, medianGas: 8937393460516746863)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,uint256) (duration: 34 ms, runs: 256, meanGas: 121203, medianGas: 121231)
+✘ Failed(8): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,uint64,address) (duration: 14 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,uint256) (duration: 31 ms, runs: 256, meanGas: 121483, medianGas: 122079)
+✘ Suite Failed: 4 tests, 3 passed, 1 failed, 0 skipped (duration: 175 ms)
+
+Ran 6 tests for test/public/CREATE2/CreateX.deployCreate2AndInit_4Args_CustomiseSalt.t.sol:CreateX_DeployCreate2AndInit_4Args_CustomiseSalt_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),bytes32,uint64) (duration: 127 ms, runs: 256, meanGas: 1307786, medianGas: 1502137)
+✔ Passed: testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256),bytes32,uint64) (duration: 95 ms, runs: 256, meanGas: 1251082, medianGas: 1465497)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256),bytes32,uint64) (duration: 37 ms, runs: 256, meanGas: 77044, medianGas: 83665)
+✘ Failed(9): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (duration: 32 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256),bytes32,uint64) (duration: 37 ms, runs: 256, meanGas: 77915, medianGas: 84217)
+✘ Failed(10): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (duration: 55 ms, runs: 0, meanGas: 0, medianGas: 0)
+✘ Suite Failed: 6 tests, 4 passed, 2 failed, 0 skipped (duration: 643 ms)
+
+Ran 6 tests for test/public/CREATE2/CreateX.deployCreate2AndInit_4Args_CustomiseRefundAddress.t.sol:CreateX_DeployCreate2AndInit_4Args_CustomiseRefundAddress_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),uint256) (duration: 89 ms, runs: 256, meanGas: 1507562, medianGas: 1507162)
+✔ Passed: testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256)) (duration: 110 ms, runs: 256, meanGas: 1472641, medianGas: 1472794)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256)) (duration: 46 ms, runs: 256, meanGas: 88925, medianGas: 88932)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address) (duration: 302 ms, runs: 256, meanGas: 3636926, medianGas: 3637034)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256)) (duration: 45 ms, runs: 256, meanGas: 89135, medianGas: 89086)
+✔ Passed: testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address,uint256) (duration: 303 ms, runs: 256, meanGas: 3698834, medianGas: 3698341)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 645 ms)
+
+Ran 1 tests for test/internal/CreateX._efficientHash.t.sol:CreateX_EfficientHash_Internal_Test (v0.8.23)
+✔ Passed: testFuzz_MatchesTheOutputOfAHighLevelHashAndShouldNeverRevert(bytes32,bytes32) (duration: 8 ms, runs: 256, meanGas: 11035, medianGas: 11035)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 9 ms)
+
+Ran 7 tests for test/public/CREATE3/CreateX.deployCreate3AndInit_4Args_CustomiseSalt.t.sol:CreateX_DeployCreate3AndInit_4Args_CustomiseSalt_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),bytes32,uint64) (duration: 87 ms, runs: 256, meanGas: 1365811, medianGas: 1564419)
+✔ Passed: testFuzz_WhenTheProxyContractCreationFails(address,(uint256,uint256),bytes32,uint64) (duration: 70 ms, runs: 256, meanGas: 7261632186669964472, medianGas: 8937393460516746827)
+✔ Passed: testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256),bytes32,uint64) (duration: 87 ms, runs: 256, meanGas: 1338968, medianGas: 1527504)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256),bytes32,uint64) (duration: 30 ms, runs: 256, meanGas: 118791, medianGas: 128992)
+✘ Failed(11): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (duration: 27 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256),bytes32,uint64) (duration: 34 ms, runs: 256, meanGas: 118259, medianGas: 129678)
+✘ Failed(12): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (duration: 57 ms, runs: 0, meanGas: 0, medianGas: 0)
+✘ Suite Failed: 7 tests, 5 passed, 2 failed, 0 skipped (duration: 186 ms)
+
+Ran 4 tests for test/public/CREATE3/CreateX.deployCreate3_2Args.t.sol:CreateX_DeployCreate3_2Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheProxyContractCreationFails(address,uint256,bytes32,uint64) (duration: 64 ms, runs: 256, meanGas: 7750395891541937380, medianGas: 8937393460516746083)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,uint256,bytes32,uint64) (duration: 30 ms, runs: 256, meanGas: 100697, medianGas: 117283)
+✘ Failed(13): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,bytes32,uint64,address) (duration: 19 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,uint256,bytes32,uint64) (duration: 28 ms, runs: 256, meanGas: 101033, medianGas: 117503)
+✘ Suite Failed: 4 tests, 3 passed, 1 failed, 0 skipped (duration: 186 ms)
+
+Ran 2 tests for test/internal/CreateX._generateSalt.t.sol:CreateX_GenerateSalt_Internal_Test (v0.8.23)
+✘ Failed(14): testFuzz_ShouldBeAFunctionOfMultipleBlockPropertiesAndTheCaller(uint256,address,string,uint64,address) (duration: 25 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_NeverReverts(uint256) (duration: 70 ms, runs: 256, meanGas: 27685, medianGas: 27685)
+✘ Suite Failed: 2 tests, 1 passed, 1 failed, 0 skipped (duration: 89 ms)
+
+Ran 8 tests for test/internal/CreateX._guard.t.sol:CreateX_Guard_Internal_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltIsGreaterThan0x01(address,bytes32) (duration: 18 ms, runs: 256, meanGas: 39199, medianGas: 38530)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x01(address,bytes32) (duration: 32 ms, runs: 256, meanGas: 37118, medianGas: 37118)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x00(address,bytes32) (duration: 23 ms, runs: 256, meanGas: 38536, medianGas: 38536)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltIsGreaterThan0x01(address,bytes32) (duration: 84 ms, runs: 256, meanGas: 38947, medianGas: 38341)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltEquals0x01(address,bytes32) (duration: 41 ms, runs: 256, meanGas: 36903, medianGas: 36903)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltEquals0x00(address,bytes32) (duration: 49 ms, runs: 256, meanGas: 36657, medianGas: 36657)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltDoNotEqualTheCallerOrTheZeroAddressAndWhenTheSaltValueIsGeneratedPseudorandomly(address,uint256,address,string,uint64) (duration: 48 ms, runs: 256, meanGas: 48352, medianGas: 48019)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltDoNotEqualTheCallerOrTheZeroAddress(address,bytes32) (duration: 58 ms, runs: 256, meanGas: 36703, medianGas: 36704)
+✔ Suite Passed: 8 tests, 8 passed, 0 failed, 0 skipped (duration: 154 ms)
+
+Ran 9 tests for test/internal/CreateX._parseSalt.t.sol:CreateX_ParseSalt_Internal_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltIsGreaterThan0x01(address,bytes32) (duration: 15 ms, runs: 256, meanGas: 35686, medianGas: 34892)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x01(address,bytes32) (duration: 12 ms, runs: 256, meanGas: 35721, medianGas: 35721)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x00(address,bytes32) (duration: 19 ms, runs: 256, meanGas: 35885, medianGas: 35885)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltIsGreaterThan0x01(address,bytes32) (duration: 12 ms, runs: 256, meanGas: 35041, medianGas: 34411)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltEquals0x01(address,bytes32) (duration: 15 ms, runs: 256, meanGas: 35219, medianGas: 35219)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltEqualsTheCallerAndWhenThe21stByteOfTheSaltEquals0x00(address,bytes32) (duration: 11 ms, runs: 256, meanGas: 35315, medianGas: 35315)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltDoNotEqualTheCallerOrTheZeroAddressAndWhenThe21stByteOfTheSaltIsGreaterThan0x01(address,bytes32) (duration: 16 ms, runs: 256, meanGas: 34276, medianGas: 34245)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltDoNotEqualTheCallerOrTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x01(address,bytes32) (duration: 18 ms, runs: 256, meanGas: 35200, medianGas: 35200)
+✔ Passed: testFuzz_WhenTheFirst20BytesOfTheSaltDoNotEqualTheCallerOrTheZeroAddressAndWhenThe21stByteOfTheSaltEquals0x00(address,bytes32) (duration: 18 ms, runs: 256, meanGas: 35312, medianGas: 35312)
+✔ Suite Passed: 9 tests, 9 passed, 0 failed, 0 skipped (duration: 73 ms)
+
+Ran 6 tests for test/public/CREATE/CreateX.deployCreateAndInit_3Args.t.sol:CreateX_DeployCreateAndInit_3Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheRefundTransactionIsUnsuccessful(uint64,(uint256,uint256),uint256) (duration: 84 ms, runs: 256, meanGas: 1488770, medianGas: 1489251)
+✔ Passed: testFuzz_WhenTheInitialisationCallIsUnsuccessful(uint64,(uint256,uint256)) (duration: 69 ms, runs: 256, meanGas: 1450204, medianGas: 1450314)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(uint64,(uint256,uint256)) (duration: 27 ms, runs: 256, meanGas: 68328, medianGas: 68202)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(uint64,(uint256,uint256)) (duration: 91 ms, runs: 256, meanGas: 1486754, medianGas: 1486935)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(uint64,(uint256,uint256)) (duration: 22 ms, runs: 256, meanGas: 68259, medianGas: 68262)
+✔ Passed: testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(uint64,(uint256,uint256),uint256) (duration: 93 ms, runs: 256, meanGas: 1545836, medianGas: 1546289)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 356 ms)
+
+Ran 6 tests for test/public/CREATE2/CreateX.deployCreate2AndInit_5Args.t.sol:CreateX_DeployCreate2AndInit_5Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),bytes32,uint64) (duration: 90 ms, runs: 256, meanGas: 1338466, medianGas: 1503219)
+✔ Passed: testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256),bytes32,uint64) (duration: 95 ms, runs: 256, meanGas: 1268585, medianGas: 1467987)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256),bytes32,uint64) (duration: 53 ms, runs: 256, meanGas: 79538, medianGas: 84764)
+✘ Failed(15): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (duration: 37 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256),bytes32,uint64) (duration: 53 ms, runs: 256, meanGas: 77077, medianGas: 84265)
+✘ Failed(16): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (duration: 71 ms, runs: 0, meanGas: 0, medianGas: 0)
+✘ Suite Failed: 6 tests, 4 passed, 2 failed, 0 skipped (duration: 834 ms)
+
+Ran 3 tests for test/public/CREATE/CreateX.deployCreateClone.t.sol:CreateX_DeployCreateClone_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheEIP1167MinimalProxyInitialisationCallIsUnsuccessful(uint64,uint256) (duration: 29 ms, runs: 256, meanGas: 81578, medianGas: 81114)
+✔ Passed: testFuzz_WhenTheEIP1167MinimalProxyContractIsSuccessfullyCreatedAndWhenTheEIP1167MinimalProxyInitialisationCallIsSuccessful(uint64,uint256) (duration: 27 ms, runs: 256, meanGas: 119492, medianGas: 119184)
+✔ Passed: testFuzz_WhenTheEIP1167MinimalProxyContractCreationFails(uint64,uint256) (duration: 23 ms, runs: 256, meanGas: 8937393460516730668, medianGas: 8937393460516730724)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 190 ms)
+
+Ran 6 tests for test/public/CREATE2/CreateX.deployCreate2AndInit_3Args.t.sol:CreateX_DeployCreate2AndInit_3Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),uint256) (duration: 123 ms, runs: 256, meanGas: 1507338, medianGas: 1506861)
+✔ Passed: testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256)) (duration: 107 ms, runs: 256, meanGas: 1470285, medianGas: 1470358)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256)) (duration: 45 ms, runs: 256, meanGas: 88454, medianGas: 88496)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address) (duration: 301 ms, runs: 256, meanGas: 3635349, medianGas: 3635716)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256)) (duration: 63 ms, runs: 256, meanGas: 88536, medianGas: 88650)
+✔ Passed: testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address,uint256) (duration: 353 ms, runs: 256, meanGas: 3680090, medianGas: 3680428)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 839 ms)
+
+Ran 7 tests for test/public/CREATE3/CreateX.deployCreate3AndInit_5Args.t.sol:CreateX_DeployCreate3AndInit_5Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheRefundTransactionIsUnsuccessful((uint256,uint256),bytes32,uint64) (duration: 84 ms, runs: 256, meanGas: 1385859, medianGas: 1564702)
+✔ Passed: testFuzz_WhenTheProxyContractCreationFails(address,(uint256,uint256),bytes32,uint64) (duration: 66 ms, runs: 256, meanGas: 7191808800259682083, medianGas: 8937393460516746871)
+✔ Passed: testFuzz_WhenTheInitialisationCallIsUnsuccessful(address,(uint256,uint256),bytes32,uint64) (duration: 82 ms, runs: 256, meanGas: 1287361, medianGas: 1529991)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(address,(uint256,uint256),bytes32,uint64) (duration: 33 ms, runs: 256, meanGas: 120522, medianGas: 129634)
+✘ Failed(17): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (duration: 35 ms, runs: 0, meanGas: 0, medianGas: 0)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(address,(uint256,uint256),bytes32,uint64) (duration: 40 ms, runs: 256, meanGas: 116626, medianGas: 129554)
+✘ Failed(18): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address) (duration: 48 ms, runs: 0, meanGas: 0, medianGas: 0)
+✘ Suite Failed: 7 tests, 5 passed, 2 failed, 0 skipped (duration: 366 ms)
+
+Ran 1 tests for test/mocks/ERC20MockPayable.sol:ERC20MockPayable (v0.8.23)
+✘ Failed(19): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 4 tests for test/internal/CreateX._requireSuccessfulContractCreation_2Args.t.sol:CreateX_RequireSuccessfulContractCreation_2Args_Internal_Test (v0.8.23)
+✔ Passed: test_WhenTheNewContractAddressIsTheZeroAddress() (duration: 0 ms, consumedGas: 12419)
+✔ Passed: testFuzz_WhenTheSuccessBooleanIsFalse(address) (duration: 8 ms, runs: 256, meanGas: 12703, medianGas: 12703)
+✔ Passed: testFuzz_WhenTheNewContractAddressHasNoCode(bool,address) (duration: 12 ms, runs: 256, meanGas: 17725, medianGas: 17793)
+✔ Passed: testFuzz_WhenTheNewContractAddressHasCode(address) (duration: 10 ms, runs: 256, meanGas: 15401, medianGas: 15401)
+✔ Suite Passed: 4 tests, 4 passed, 0 failed, 0 skipped (duration: 13 ms)
+
+Ran 3 tests for test/public/CREATE/CreateX.deployCreate.t.sol:CreateX_DeployCreate_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(uint64,uint256) (duration: 15 ms, runs: 256, meanGas: 55581, medianGas: 56189)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(uint64,uint256) (duration: 165 ms, runs: 256, meanGas: 1467643, medianGas: 1467115)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(uint64,uint256) (duration: 140 ms, runs: 256, meanGas: 55586, medianGas: 54997)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 194 ms)
+
+Ran 6 tests for test/public/CREATE/CreateX.deployCreateAndInit_4Args.t.sol:CreateX_DeployCreateAndInit_4Args_Public_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheRefundTransactionIsUnsuccessful(uint64,(uint256,uint256),uint256) (duration: 165 ms, runs: 256, meanGas: 1487111, medianGas: 1487779)
+✔ Passed: testFuzz_WhenTheInitialisationCallIsUnsuccessful(uint64,(uint256,uint256)) (duration: 134 ms, runs: 256, meanGas: 1448580, medianGas: 1448700)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithAZeroLength(uint64,(uint256,uint256)) (duration: 33 ms, runs: 256, meanGas: 65885, medianGas: 65829)
+✔ Passed: testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(uint64,(uint256,uint256)) (duration: 179 ms, runs: 256, meanGas: 1485213, medianGas: 1485376)
+✔ Passed: testFuzz_WhenTheInitCodeFailsToDeployARuntimeBytecode(uint64,(uint256,uint256)) (duration: 27 ms, runs: 256, meanGas: 65863, medianGas: 65891)
+✔ Passed: testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(uint64,(uint256,uint256),uint256) (duration: 170 ms, runs: 256, meanGas: 1546812, medianGas: 1547410)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 197 ms)
+
+Ran 3 tests for test/internal/CreateX._requireSuccessfulContractCreation_1Arg.t.sol:CreateX_RequireSuccessfulContractCreation_1Arg_Internal_Test (v0.8.23)
+✔ Passed: test_WhenTheNewContractAddressIsTheZeroAddress() (duration: 0 ms, consumedGas: 12044)
+✔ Passed: testFuzz_WhenTheNewContractAddressHasNoCode(address) (duration: 13 ms, runs: 256, meanGas: 17320, medianGas: 17330)
+✔ Passed: testFuzz_WhenTheNewContractAddressHasCode(address) (duration: 12 ms, runs: 256, meanGas: 15066, medianGas: 15066)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 16 ms)
+
+Ran 3 tests for test/internal/CreateX._requireSuccessfulContractInitialisation.t.sol:CreateX_RequireSuccessfulContractInitialisation_Internal_Test (v0.8.23)
+✔ Passed: testFuzz_WhenTheSuccessBooleanIsFalse(bytes,address) (duration: 16 ms, runs: 256, meanGas: 15793, medianGas: 15603)
+✔ Passed: testFuzz_WhenTheImplementationAddressHasNoCode(bytes,address) (duration: 19 ms, runs: 256, meanGas: 20256, medianGas: 20067)
+✔ Passed: testFuzz_WhenTheImplementationAddressHasCode(bytes,address) (duration: 17 ms, runs: 256, meanGas: 16739, medianGas: 16683)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 20 ms)
+
+Ran 1 tests for test/invariants/CreateX_Invariants.t.sol:CreateX_Invariants (v0.8.23)
+✔ Passed: statefulFuzz_EtherBalance() (duration: 7407 ms, runs: 256, calls: 128000, reverts: 127945)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 7416 ms)
+
+✘ Run Failed: 131 tests, 112 passed, 19 failed, 0 skipped (duration: 15555 ms)
+
+Failure (1): setUp()
+Reason: EvmError: Revert
+
+Failure (2): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0x80b9f98700000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 1, 0x0000000000000000000000000000000000000002
+
+Failure (3): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 1
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0xc45c578d000000000000000000000000000000000000000000000000000000000000000b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001
+  args: 0x000000000000000000000000000000000000000b, Values({ constructorAmount: 0, initCallAmount: 0 }), 1, 0x0000000000000000000000000000000000000001
+
+Failure (4): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0x80b9f98700000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 1, 0x0000000000000000000000000000000000000002
+
+Failure (5): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 1
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0xc45c578d00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 1, 0x0000000000000000000000000000000000000002
+
+Failure (6): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 0
+Counterexample:
+  calldata: 0x5fc3daee00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, 0, 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (7): testFuzz_WhenTheEIP1167MinimalProxyContractIsSuccessfullyCreatedAndWhenTheEIP1167MinimalProxyInitialisationCallIsSuccessful(address,uint256,bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 0
+Counterexample:
+  calldata: 0x100e739900000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, 0, 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (8): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 0
+Counterexample:
+  calldata: 0xe0a9a5620000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, 0, 1, 0x0000000000000000000000000000000000000002
+
+Failure (9): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0x62dd31ba000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (10): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 1
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0x79a400b0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (11): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0x62dd31ba000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (12): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 1
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0x79a400b0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (13): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLength(address,uint256,bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 0
+Counterexample:
+  calldata: 0x5fc3daee00000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, 0, 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (14): testFuzz_ShouldBeAFunctionOfMultipleBlockPropertiesAndTheCaller(uint256,address,string,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 1
+Counterexample:
+  calldata: 0xe9df497a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  args: 0, 0x0000000000000000000000000000000000000100, "", 1, 0x0000000000000000000000000000000000000000
+
+Failure (15): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0x62dd31ba000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (16): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 1
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0x79a400b0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (17): testFuzz_WhenTheInitCodeSuccessfullyCreatesARuntimeBytecodeWithANonZeroLengthAndWhenTheInitialisationCallIsSuccessful(address,(uint256,uint256),bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0x62dd31ba000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (18): testFuzz_WhenTheCreateXContractHasANonZeroBalanceAndWhenTheRefundTransactionIsSuccessful(address,(uint256,uint256),bytes32,uint64,address)
+Reason: unknown cheatcode with selector 0x9cd23835; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+Decoded Logs:
+  Bound result 1
+  Bound result 0
+  Bound result 0
+Counterexample:
+  calldata: 0x79a400b0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002
+  args: 0x0000000000000000000000000000000000000001, Values({ constructorAmount: 0, initCallAmount: 0 }), 0x0000000000000000000000000000000000000000000000000000000000000000, 1, 0x0000000000000000000000000000000000000002
+
+Failure (19): setUp()
+Reason: EvmError: Revert
+

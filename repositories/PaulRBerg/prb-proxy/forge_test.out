@@ -1,0 +1,163 @@
+No files changed, compilation skipped
+
+Ran 2 tests for test/proxy/receive/receive.t.sol:Receive_Test
+[PASS] test_Receive() (gas: 14522)
+[PASS] test_RevertWhen_CallDataNonEmpty() (gas: 20389)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 883.96µs (64.88µs CPU time)
+
+Ran 1 test for test/utils/Precompiles.t.sol:Precompiles_Test
+[PASS] test_DeployPRBProxyRegistry() (gas: 4732)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.19ms (427.21µs CPU time)
+
+Ran 2 tests for test/registry/get-permission-by-owner/getPermissionByOwner.t.sol:GetPermissionByOwner_Test
+[PASS] test_GetPermissionByOwner() (gas: 41082)
+[PASS] test_GetPermissionByOwner_EnvoyDoesNotHavePermission() (gas: 14670)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 812.08µs (45.96µs CPU time)
+
+Ran 6 tests for test/registry/set-permission/setPermission.t.sol:SetPermission_Test
+[PASS] test_RevertWhen_CallerDoesNotHaveProxy() (gas: 17767)
+[PASS] test_SetPermission_PermissionNotSetPreviously() (gas: 520393)
+[PASS] test_SetPermission_ResetPermission() (gas: 525080)
+[PASS] test_SetPermission_ResetPermission_Event() (gas: 528973)
+[PASS] test_SetPermission_UnsetPermission() (gas: 505195)
+[PASS] test_SetPermission_UnsetPermission_Event() (gas: 509095)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 919.63µs (398.25µs CPU time)
+
+Ran 2 tests for test/registry/get-permission-by-proxy/getPermissionByProxy.t.sol:GetPermissionByProxy_Test
+[PASS] test_GetPermissionByProxy() (gas: 44283)
+[PASS] test_GetPermissionByProxy_EnvoyDoesNotHavePermission() (gas: 17893)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 607.54µs (47.67µs CPU time)
+
+Ran 5 tests for test/registry/uninstall-plugin/uninstallPlugin.t.sol:UninstallPlugin_Test
+[PASS] test_RevertWhen_CallerDoesNotHaveProxy() (gas: 15418)
+[PASS] test_RevertWhen_PluginUnknown() (gas: 495063)
+[PASS] test_UninstallPlugin() (gas: 525667)
+[PASS] test_UninstallPlugin_Event() (gas: 528486)
+[PASS] test_UninstallPlugin_ReverseMapping() (gas: 522980)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 943.63µs (417.50µs CPU time)
+
+Ran 13 tests for test/proxy/run-plugin/runPlugin.t.sol:RunPlugin_Test
+[PASS] test_RevertWhen_Error_CustomError() (gas: 192668)
+[PASS] test_RevertWhen_Error_EmptyRevertStatement() (gas: 192555)
+[PASS] test_RevertWhen_Error_ReasonString() (gas: 193934)
+[PASS] test_RevertWhen_Error_Require() (gas: 192490)
+[PASS] test_RevertWhen_Panic_ArithmeticOverflow() (gas: 169580)
+[PASS] test_RevertWhen_Panic_DivisionByZero() (gas: 169480)
+[PASS] test_RevertWhen_Panic_FailedAssertion() (gas: 169490)
+[PASS] test_RevertWhen_Panic_IndexOOB() (gas: 169650)
+[PASS] test_RevertWhen_PluginNotInstalled() (gas: 17156)
+[PASS] test_RunPlugin() (gas: 123115)
+[PASS] test_RunPlugin_Event() (gas: 129827)
+[PASS] test_RunPlugin_PluginReceivesEther() (gas: 318354)
+[PASS] test_RunPlugin_PluginSelfDestructs() (gas: 108733)
+Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 2.40ms (1.80ms CPU time)
+
+Ran 1 test for test/registry/version/version.t.sol:Version_Test
+[PASS] test_Version() (gas: 7361)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 513.38µs (20.17µs CPU time)
+
+Ran 2 tests for test/registry/get-methods-by-owner/getMethodsByOwner.t.sol:GetMethodsByOwner_Test
+[PASS] test_GetMethodsByOwner() (gas: 119172)
+[PASS] test_GetMethodsByOwner_Unknown() (gas: 13665)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 640.50µs (79.25µs CPU time)
+
+Ran 2 tests for test/registry/get-plugin-by-owner/getPluginByOwner.t.sol:GetPluginByOwner_Test
+[PASS] test_GetPluginByOwner() (gas: 114671)
+[PASS] test_GetPluginByOwner_Uninstalled() (gas: 10343)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 1.63ms (340.54µs CPU time)
+
+Ran 2 tests for test/registry/get-methods-by-proxy/getMethodsByProxy.t.sol:GetMethodsByProxy_Test
+[PASS] test_GetMethodsByProxy() (gas: 122569)
+[PASS] test_GetMethodsByProxy_Unknown() (gas: 16895)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 1.62ms (214.29µs CPU time)
+
+Ran 2 tests for test/registry/get-plugin-by-proxy/getPluginByProxy.t.sol:GetPluginByProxy_Test
+[PASS] test_GetPluginByProxy() (gas: 117890)
+[PASS] test_GetPluginByProxy_Uninstalled() (gas: 13628)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 935.75µs (67.04µs CPU time)
+
+Ran 7 tests for test/registry/install-plugin/installPlugin.t.sol:InstallPlugin_Test
+[PASS] test_InstallPlugin() (gas: 598009)
+[PASS] test_InstallPlugin_Event() (gas: 600601)
+[PASS] test_InstallPlugin_ReverseMapping() (gas: 598361)
+[PASS] test_RevertWhen_CallerDoesNotHaveProxy() (gas: 15416)
+[PASS] test_RevertWhen_MethodCollisions() (gas: 578366)
+[PASS] test_RevertWhen_PluginAlreadyInstalled() (gas: 597804)
+[PASS] test_RevertWhen_PluginDoesNotImplementAnyMethod() (gas: 496206)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 2.02ms (1.46ms CPU time)
+
+Ran 6 tests for test/registry/deploy-and-execute/deployAndExecute.t.sol:DeployAndExecute_Test
+[PASS] testFuzz_DeployAndExecute_Event_DeployProxy(address) (runs: 1000, μ: 500993, ~: 500993)
+[PASS] testFuzz_DeployAndExecute_Event_Execute(address) (runs: 1000, μ: 507414, ~: 507414)
+[PASS] testFuzz_DeployAndExecute_ProxyAddress(address) (runs: 1000, μ: 498839, ~: 498839)
+[PASS] testFuzz_DeployAndExecute_ProxyOwner(address) (runs: 1000, μ: 494191, ~: 494191)
+[PASS] testFuzz_DeployAndExecute_UpdateProxies(address) (runs: 1000, μ: 499939, ~: 499939)
+[PASS] test_RevertWhen_OwnerHasProxy() (gas: 479735)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 407.43ms (639.85ms CPU time)
+
+Ran 5 tests for test/registry/deploy/deploy.t.sol:Deploy_Test
+[PASS] testFuzz_Deploy_Event(address) (runs: 1000, μ: 478516, ~: 478516)
+[PASS] testFuzz_Deploy_ProxyAddress(address) (runs: 1000, μ: 476346, ~: 476346)
+[PASS] testFuzz_Deploy_ProxyOwner(address) (runs: 1000, μ: 471785, ~: 471785)
+[PASS] testFuzz_Deploy_UpdateProxies(address) (runs: 1000, μ: 477493, ~: 477493)
+[PASS] test_RevertWhen_OwnerHasProxy() (gas: 470377)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 528.14ms (416.34ms CPU time)
+
+Ran 5 tests for test/registry/deploy-for/deployFor.t.sol:DeployFor_Test
+[PASS] testFuzz_DeployFor_Event(address,address) (runs: 1000, μ: 478874, ~: 478874)
+[PASS] testFuzz_DeployFor_ProxyAddress(address,address) (runs: 1000, μ: 476699, ~: 476699)
+[PASS] testFuzz_DeployFor_ProxyOwner(address,address) (runs: 1000, μ: 472049, ~: 472049)
+[PASS] testFuzz_DeployFor_UpdateProxies(address,address) (runs: 1000, μ: 477784, ~: 477784)
+[PASS] test_RevertWhen_OwnerHasProxy() (gas: 470684)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 528.16ms (447.72ms CPU time)
+
+Ran 8 tests for test/registry/deploy-and-install-plugin/deployAndInstallPlugin.t.sol:DeployAndInstallPlugin_Test
+[PASS] testFuzz_DeployAndInstallPlugin_Event_DeployProxy(address) (runs: 1000, μ: 581987, ~: 581987)
+[PASS] testFuzz_DeployAndInstallPlugin_Event_InstallPlugin(address) (runs: 1000, μ: 585530, ~: 585530)
+[PASS] testFuzz_DeployAndInstallPlugin_Plugin(address) (runs: 1000, μ: 580008, ~: 580008)
+[PASS] testFuzz_DeployAndInstallPlugin_PluginReverseMapping(address) (runs: 1000, μ: 580471, ~: 580471)
+[PASS] testFuzz_DeployAndInstallPlugin_ProxyAddress(address) (runs: 1000, μ: 579747, ~: 579747)
+[PASS] testFuzz_DeployAndInstallPlugin_ProxyOwner(address) (runs: 1000, μ: 575118, ~: 575118)
+[PASS] testFuzz_DeployAndInstallPlugin_UpdateProxies(address) (runs: 1000, μ: 580798, ~: 580798)
+[PASS] test_RevertWhen_OwnerHasProxy() (gas: 472696)
+Suite result: ok. 8 passed; 0 failed; 0 skipped; finished in 528.19ms (1.05s CPU time)
+
+Ran 9 tests for test/registry/deploy-and-execute-and-install-plugin/deployAndExecuteAndInstallPlugin.t.sol:DeployAndExecuteAndInstallPlugin_Test
+[PASS] testFuzz_DeployAndExecuteAndInstallPlugin_Event_DeployProxy(address) (runs: 1000, μ: 604286, ~: 604286)
+[PASS] testFuzz_DeployAndExecuteAndInstallPlugin_Event_Execute(address) (runs: 1000, μ: 610791, ~: 610791)
+[PASS] testFuzz_DeployAndExecuteAndInstallPlugin_Event_InstallPlugin(address) (runs: 1000, μ: 607910, ~: 607910)
+[PASS] testFuzz_DeployAndExecuteAndInstallPlugin_Plugin(address) (runs: 1000, μ: 602414, ~: 602414)
+[PASS] testFuzz_DeployAndExecuteAndInstallPlugin_PluginReverseMapping(address) (runs: 1000, μ: 602854, ~: 602854)
+[PASS] testFuzz_DeployAndExecuteAndInstallPlugin_ProxyAddress(address) (runs: 1000, μ: 602143, ~: 602143)
+[PASS] testFuzz_DeployAndExecuteAndInstallPlugin_ProxyOwner(address) (runs: 1000, μ: 597474, ~: 597474)
+[PASS] testFuzz_DeployAndExecuteAndInstallPlugin_UpdateProxies(address) (runs: 1000, μ: 603227, ~: 603227)
+[PASS] test_RevertWhen_OwnerHasProxy() (gas: 482019)
+Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 528.26ms (1.26s CPU time)
+
+Ran 23 tests for test/proxy/execute/execute.t.sol:Execute_Test
+[PASS] testFuzz_Execute_Event(uint256) (runs: 1000, μ: 76471, ~: 76471)
+[PASS] testFuzz_Execute_ReturnAddress(address) (runs: 1000, μ: 68783, ~: 68783)
+[PASS] testFuzz_Execute_ReturnBytes32(bytes32) (runs: 1000, μ: 68606, ~: 68606)
+[PASS] testFuzz_Execute_ReturnBytesArray(bytes) (runs: 1000, μ: 77046, ~: 75370)
+[PASS] testFuzz_Execute_ReturnString(string) (runs: 1000, μ: 76610, ~: 75395)
+[PASS] testFuzz_Execute_ReturnStruct((uint256,uint256,uint256)) (runs: 1000, μ: 72839, ~: 72839)
+[PASS] testFuzz_Execute_ReturnUint256(uint256) (runs: 1000, μ: 68563, ~: 68563)
+[PASS] testFuzz_Execute_ReturnUint256Array(uint256[]) (runs: 1000, μ: 378286, ~: 382983)
+[PASS] testFuzz_Execute_ReturnUint8(uint8) (runs: 1000, μ: 68548, ~: 68548)
+[PASS] test_Execute_EtherSent() (gas: 23109)
+[PASS] test_Execute_TargetSelfDestructs() (gas: 27075)
+[PASS] test_RevertWhen_Error_CustomError() (gas: 20160)
+[PASS] test_RevertWhen_Error_EmptyRevertStatement() (gas: 19804)
+[PASS] test_RevertWhen_Error_NotPayable() (gas: 26334)
+[PASS] test_RevertWhen_Error_ReasonString() (gas: 21321)
+[PASS] test_RevertWhen_Error_Require() (gas: 19738)
+[PASS] test_RevertWhen_NoPermission() (gas: 29137)
+[PASS] test_RevertWhen_Panic_ArithmeticOverflow() (gas: 21112)
+[PASS] test_RevertWhen_Panic_DivisionByZero() (gas: 21100)
+[PASS] test_RevertWhen_Panic_FailedAssertion() (gas: 20978)
+[PASS] test_RevertWhen_Panic_IndexOOB() (gas: 21238)
+[PASS] test_RevertWhen_PermissionDifferentTarget() (gas: 61711)
+[PASS] test_RevertWhen_TargetNotContract(address) (runs: 1000, μ: 15053, ~: 15061)
+Suite result: ok. 23 passed; 0 failed; 0 skipped; finished in 908.45ms (1.24s CPU time)
+
+Ran 19 test suites in 920.06ms (3.44s CPU time): 103 tests passed, 0 failed, 0 skipped (103 total tests)

@@ -1,0 +1,5 @@
+warning ../../../package.json: No license field
+Error HHE100: An internal invariant was violated: File already present
+
+For more info go to https://hardhat.org/HHE100 or run Hardhat with --show-stack-traces
+error Command failed with exit code 1.

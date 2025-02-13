@@ -1,0 +1,264 @@
+
+WARNING: You are using Node.js 22.7.0 which is not supported by Hardhat.
+Please upgrade to 22.10.0 or a later version.
+
+Running Solidity tests
+
+Ran 1 tests for test/utils/BaseScript.t.sol:BaseScript_Test (v0.8.26)
+✘ Failed(1): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 2 ms)
+
+Ran 7 tests for test/integration/merkle-lockup/ll/claim/claim.t.sol:Claim_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_InvalidRecipient() (duration: 0 ms, consumedGas: 46309)
+✔ Passed: test_RevertWhen_InvalidMerkleProof() (duration: 0 ms, consumedGas: 49094)
+✔ Passed: test_RevertWhen_InvalidIndex() (duration: 0 ms, consumedGas: 47464)
+✔ Passed: test_RevertWhen_InvalidAmount() (duration: 0 ms, consumedGas: 47429)
+✔ Passed: test_RevertGiven_CampaignExpired() (duration: 0 ms, consumedGas: 20660)
+✔ Passed: test_RevertGiven_AlreadyClaimed() (duration: 0 ms, consumedGas: 313418)
+✔ Passed: test_Claim() (duration: 0 ms, consumedGas: 338321)
+✔ Suite Passed: 7 tests, 7 passed, 0 failed, 0 skipped (duration: 13 ms)
+
+Ran 1 tests for test/integration/merkle-lockup/ll/constructor/constructor.t.sol:Constructor_MerkleLL_Integration_Test (v0.8.26)
+✔ Passed: test_Constructor() (duration: 0 ms, consumedGas: 1666513)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 11 ms)
+
+Ran 1 tests for test/integration/merkle-lockup/lt/constructor/constructor.t.sol:Constructor_MerkleLT_Integration_Test (v0.8.26)
+✔ Passed: test_Constructor() (duration: 0 ms, consumedGas: 2176856)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 9 ms)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-durations-ld/createWithDurationsLD.t.sol:CreateWithDurationsLD_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_BatchSizeZero() (duration: 0 ms, consumedGas: 16964)
+✔ Passed: test_BatchCreateWithDurations() (duration: 1 ms, consumedGas: 2197461)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 11 ms)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-durations-ll/createWithDurationsLL.t.sol:CreateWithDurationsLL_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_BatchSizeZero() (duration: 0 ms, consumedGas: 16910)
+✔ Passed: test_BatchCreateWithDurations() (duration: 1 ms, consumedGas: 1620794)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 14 ms)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-timestamps-ld/createWithTimestampsLD.t.sol:CreateWithTimestampsLD_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_BatchSizeZero() (duration: 0 ms, consumedGas: 17030)
+✔ Passed: test_BatchCreateWithTimestamps() (duration: 1 ms, consumedGas: 2186123)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 10 ms)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-durations-lt/createWithDurationsLT.t.sol:CreateWithDurationsLT_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_BatchSizeZero() (duration: 0 ms, consumedGas: 16920)
+✔ Passed: test_BatchCreateWithDurations() (duration: 1 ms, consumedGas: 2163560)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 11 ms)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-timestamps-ll/createWithTimestamps.t.sol:CreateWithTimestampsLL_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_BatchSizeZero() (duration: 0 ms, consumedGas: 16976)
+✔ Passed: test_BatchCreateWithTimestamps() (duration: 1 ms, consumedGas: 1624393)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 11 ms)
+
+Ran 2 tests for test/integration/batch-lockup/create-with-timestamps-lt/createWithTimestampsLT.t.sol:CreateWithTimestampsLT_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_BatchSizeZero() (duration: 0 ms, consumedGas: 16986)
+✔ Passed: test_BatchCreateWithTimestamps() (duration: 1 ms, consumedGas: 2153015)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 10 ms)
+
+Ran 1 tests for test/utils/Defaults.sol:Defaults (v0.8.26)
+✘ Failed(2): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/fork/batch-lockup/createWithTimestampsLL.t.sol:CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test (v0.8.26)
+✔ Passed: testForkFuzz_CreateWithTimestampsLL((uint128,(uint40,uint40,uint40),address,address,uint128)) (duration: 4 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 4 ms)
+
+Ran 1 tests for test/mocks/erc20/ERC20Mock.sol:ERC20Mock (v0.8.26)
+✘ Failed(3): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 2 tests for test/integration/merkle-lockup/lt/get-first-claim-time/getFirstClaimTime.t.sol:GetFirstClaimTime_Integration_Test (v0.8.26)
+✔ Passed: test_GetFirstClaimTime_BeforeFirstClaim() (duration: 0 ms, consumedGas: 11069)
+✔ Passed: test_GetFirstClaimTime() (duration: 0 ms, consumedGas: 351096)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 9 ms)
+
+Ran 2 tests for test/integration/merkle-lockup/ll/get-first-claim-time/getFirstClaimTime.t.sol:GetFirstClaimTime_Integration_Test (v0.8.26)
+✔ Passed: test_GetFirstClaimTime_BeforeFirstClaim() (duration: 0 ms, consumedGas: 11003)
+✔ Passed: test_GetFirstClaimTime() (duration: 0 ms, consumedGas: 295031)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 10 ms)
+
+Ran 3 tests for test/integration/merkle-lockup/lt/has-claimed/hasClaimed.t.sol:HasClaimed_Integration_Test (v0.8.26)
+✔ Passed: test_HasClaimed_NotClaimed() (duration: 0 ms, consumedGas: 17371)
+✔ Passed: test_HasClaimed_IndexNotInTree() (duration: 0 ms, consumedGas: 11932)
+✔ Passed: test_HasClaimed() (duration: 0 ms, consumedGas: 352977)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 9 ms)
+
+Ran 4 tests for test/integration/merkle-lockup/ll/has-expired/hasExpired.t.sol:HasExpired_Integration_Test (v0.8.26)
+✔ Passed: test_HasExpired_ExpirationZero() (duration: 0 ms, consumedGas: 1656983)
+✔ Passed: test_HasExpired_ExpirationLessThanBlockTimestamp() (duration: 0 ms, consumedGas: 9187)
+✔ Passed: test_HasExpired_ExpirationGreaterThanBlockTimestamp() (duration: 0 ms, consumedGas: 15598)
+✔ Passed: test_HasExpired_ExpirationEqualToBlockTimestamp() (duration: 0 ms, consumedGas: 15467)
+✔ Suite Passed: 4 tests, 4 passed, 0 failed, 0 skipped (duration: 10 ms)
+
+Ran 3 tests for test/integration/merkle-lockup/ll/has-claimed/hasClaimed.t.sol:HasClaimed_Integration_Test (v0.8.26)
+✔ Passed: test_HasClaimed_NotClaimed() (duration: 0 ms, consumedGas: 17371)
+✔ Passed: test_HasClaimed_IndexNotInTree() (duration: 0 ms, consumedGas: 11932)
+✔ Passed: test_HasClaimed() (duration: 0 ms, consumedGas: 296978)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 12 ms)
+
+Ran 1 tests for test/fork/batch-lockup/createWithTimestampsLT.t.sol:CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test (v0.8.26)
+✔ Passed: testForkFuzz_CreateWithTimestampsLT((uint128,address,address,uint128,uint40,(uint128,uint40)[])) (duration: 29 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 29 ms)
+
+Ran 1 tests for test/fork/batch-lockup/createWithTimestampsLD.t.sol:CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test (v0.8.26)
+✔ Passed: testForkFuzz_CreateWithTimestampsLD((uint128,address,address,uint128,uint40,(uint128,uint64,uint40)[])) (duration: 37 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 37 ms)
+
+Ran 4 tests for test/integration/merkle-lockup/lt/has-expired/hasExpired.t.sol:HasExpired_Integration_Test (v0.8.26)
+✔ Passed: test_HasExpired_ExpirationZero() (duration: 0 ms, consumedGas: 2163117)
+✔ Passed: test_HasExpired_ExpirationLessThanBlockTimestamp() (duration: 0 ms, consumedGas: 9165)
+✔ Passed: test_HasExpired_ExpirationGreaterThanBlockTimestamp() (duration: 0 ms, consumedGas: 15576)
+✔ Passed: test_HasExpired_ExpirationEqualToBlockTimestamp() (duration: 0 ms, consumedGas: 15445)
+✔ Suite Passed: 4 tests, 4 passed, 0 failed, 0 skipped (duration: 10 ms)
+
+Ran 4 tests for test/integration/merkle-lockup/factory/is-percentages-sum-100/isPercentagesSum100.t.sol:IsPercentagesSum100_Integration_Test (v0.8.26)
+✔ Passed: test_TotalPercentageLessThanOneHundred() (duration: 0 ms, consumedGas: 22213)
+✔ Passed: test_TotalPercentageGreaterThanOneHundred() (duration: 0 ms, consumedGas: 22146)
+✔ Passed: test_RevertWhen_SumOverflow() (duration: 0 ms, consumedGas: 21207)
+✔ Passed: test_IsPercentagesSum100() (duration: 0 ms, consumedGas: 21870)
+✔ Suite Passed: 4 tests, 4 passed, 0 failed, 0 skipped (duration: 9 ms)
+
+Ran 1 tests for test/fork/assets/USDC.t.sol:USDC_CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test (v0.8.26)
+✘ Failed(4): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/fork/assets/USDC.t.sol:USDC_CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test (v0.8.26)
+✘ Failed(5): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 3 ms)
+
+Ran 3 tests for test/utils/Precompiles.t.sol:Precompiles_Test (v0.8.26)
+✔ Passed: test_DeployPeriphery() (duration: 0 ms, consumedGas: 4547)
+✔ Passed: test_DeployMerkleLockupFactory() (duration: 0 ms, consumedGas: 4569)
+✔ Passed: test_DeployBatchLockup() (duration: 0 ms, consumedGas: 4524)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 6 ms)
+
+Ran 1 tests for test/fork/assets/USDC.t.sol:USDC_CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test (v0.8.26)
+✘ Failed(6): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/fork/assets/USDC.t.sol:USDC_MerkleLL_Fork_Test (v0.8.26)
+✘ Failed(7): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/fork/assets/USDC.t.sol:USDC_MerkleLT_Fork_Test (v0.8.26)
+✘ Failed(8): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/fork/assets/USDT.t.sol:USDT_CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test (v0.8.26)
+✘ Failed(9): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/fork/assets/USDT.t.sol:USDT_CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test (v0.8.26)
+✘ Failed(10): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 6 tests for test/integration/merkle-lockup/ll/clawback/clawback.t.sol:Clawback_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_CallerNotAdmin() (duration: 0 ms, consumedGas: 18114)
+✔ Passed: test_RevertGiven_CampaignNotExpired() (duration: 0 ms, consumedGas: 303506)
+✔ Passed: test_Clawback_GracePeriod() (duration: 0 ms, consumedGas: 315170)
+✔ Passed: test_Clawback_BeforeFirstClaim() (duration: 0 ms, consumedGas: 39347)
+✔ Passed: test_Clawback() (duration: 0 ms, consumedGas: 317130)
+✔ Passed: testFuzz_Clawback(address) (duration: 58 ms, runs: 256, meanGas: 334903, medianGas: 334903)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 71 ms)
+
+Ran 1 tests for test/fork/assets/USDT.t.sol:USDT_CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test (v0.8.26)
+✘ Failed(11): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/fork/assets/USDT.t.sol:USDT_MerkleLL_Fork_Test (v0.8.26)
+✘ Failed(12): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/fork/assets/USDT.t.sol:USDT_MerkleLT_Fork_Test (v0.8.26)
+✘ Failed(13): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/fork/merkle-lockup/MerkleLL.t.sol:MerkleLL_Fork_Test (v0.8.26)
+✔ Passed: testForkFuzz_MerkleLL((address,uint40,(uint256,uint256,uint128)[],uint256)) (duration: 35 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 35 ms)
+
+Ran 1 tests for test/fork/merkle-lockup/MerkleLT.t.sol:MerkleLT_Fork_Test (v0.8.26)
+✔ Passed: testForkFuzz_MerkleLT((address,uint40,(uint256,uint256,uint128)[],uint256)) (duration: 34 ms, runs: 256, meanGas: 0, medianGas: 0)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 35 ms)
+
+Ran 3 tests for test/integration/merkle-lockup/factory/create-merkle-ll/createMerkleLL.t.sol:CreateMerkleLL_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_CampaignNameTooLong() (duration: 0 ms, consumedGas: 87585)
+✔ Passed: test_RevertGiven_CreatedAlready() (duration: 1 ms, consumedGas: 8937393460516731141)
+✔ Passed: testFuzz_CreateMerkleLL(address,uint40) (duration: 116 ms, runs: 256, meanGas: 1720632, medianGas: 1720632)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 128 ms)
+
+Ran 10 tests for test/integration/merkle-lockup/lt/claim/claim.t.sol:Claim_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_TotalPercentageLessThanOneHundred() (duration: 0 ms, consumedGas: 2195408)
+✔ Passed: test_RevertWhen_TotalPercentageGreaterThanOneHundred() (duration: 0 ms, consumedGas: 2195431)
+✔ Passed: test_RevertWhen_InvalidRecipient() (duration: 1 ms, consumedGas: 46343)
+✔ Passed: test_RevertWhen_InvalidMerkleProof() (duration: 0 ms, consumedGas: 49128)
+✔ Passed: test_RevertWhen_InvalidIndex() (duration: 0 ms, consumedGas: 47498)
+✔ Passed: test_RevertWhen_InvalidAmount() (duration: 0 ms, consumedGas: 47463)
+✔ Passed: test_RevertGiven_CampaignExpired() (duration: 0 ms, consumedGas: 20694)
+✔ Passed: test_RevertGiven_AlreadyClaimed() (duration: 0 ms, consumedGas: 369451)
+✔ Passed: test_Claim_CalculatedAmountsSumNotEqualClaimAmount() (duration: 1 ms, consumedGas: 2823970)
+✔ Passed: test_Claim() (duration: 0 ms, consumedGas: 405826)
+✔ Suite Passed: 10 tests, 10 passed, 0 failed, 0 skipped (duration: 131 ms)
+
+Ran 6 tests for test/integration/merkle-lockup/lt/clawback/clawback.t.sol:Clawback_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_CallerNotAdmin() (duration: 0 ms, consumedGas: 18114)
+✔ Passed: test_RevertGiven_CampaignNotExpired() (duration: 0 ms, consumedGas: 359505)
+✔ Passed: test_Clawback_GracePeriod() (duration: 0 ms, consumedGas: 371169)
+✔ Passed: test_Clawback_BeforeFirstClaim() (duration: 0 ms, consumedGas: 39347)
+✔ Passed: test_Clawback() (duration: 0 ms, consumedGas: 373129)
+✔ Passed: testFuzz_Clawback(address) (duration: 70 ms, runs: 256, meanGas: 390902, medianGas: 390902)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 131 ms)
+
+Ran 3 tests for test/integration/merkle-lockup/factory/create-merkle-lt/createMerkleLT.t.sol:CreateMerkleLT_Integration_Test (v0.8.26)
+✔ Passed: test_RevertWhen_CampaignNameTooLong() (duration: 0 ms, consumedGas: 99086)
+✔ Passed: test_RevertGiven_CreatedAlready() (duration: 0 ms, consumedGas: 8937393460516731367)
+✔ Passed: testFuzz_CreateMerkleLT(address,uint40) (duration: 153 ms, runs: 256, meanGas: 2245329, medianGas: 2245407)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 172 ms)
+
+Ran 2 tests for test/utils/MerkleBuilder.t.sol:MerkleBuilder_Test (v0.8.26)
+✔ Passed: testFuzz_ComputeLeaves((uint256,address,uint128)[]) (duration: 459 ms, runs: 256, meanGas: 566912, medianGas: 566914)
+✔ Passed: testFuzz_ComputeLeaf(uint256,address,uint128) (duration: 8 ms, runs: 256, meanGas: 6028, medianGas: 6028)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 459 ms)
+
+✘ Run Failed: 94 tests, 81 passed, 13 failed, 0 skipped (duration: 1417 ms)
+
+Failure (1): setUp()
+Reason: unknown cheatcode with selector 0x6229498b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+
+Failure (2): setUp()
+Reason: EvmError: Revert
+
+Failure (3): setUp()
+Reason: EvmError: Revert
+
+Failure (4): setUp()
+Reason: setup failed: invalid rpc url: mainnet
+
+Failure (5): setUp()
+Reason: setup failed: invalid rpc url: mainnet
+
+Failure (6): setUp()
+Reason: setup failed: invalid rpc url: mainnet
+
+Failure (7): setUp()
+Reason: setup failed: invalid rpc url: mainnet
+
+Failure (8): setUp()
+Reason: setup failed: invalid rpc url: mainnet
+
+Failure (9): setUp()
+Reason: setup failed: invalid rpc url: mainnet
+
+Failure (10): setUp()
+Reason: setup failed: invalid rpc url: mainnet
+
+Failure (11): setUp()
+Reason: setup failed: invalid rpc url: mainnet
+
+Failure (12): setUp()
+Reason: setup failed: invalid rpc url: mainnet
+
+Failure (13): setUp()
+Reason: setup failed: invalid rpc url: mainnet
+
