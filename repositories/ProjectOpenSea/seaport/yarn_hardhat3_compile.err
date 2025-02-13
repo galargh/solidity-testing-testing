@@ -1,0 +1,12 @@
+warning ../../../package.json: No license field
+DeclarationError: Identifier not found or not unique.
+  --> test/foundry/utils/BaseOrderTest.sol:56:5:
+   |
+56 |     Account offerer1;
+   |     ^^^^^^^
+
+
+Error HHE1232: Compilation failed
+
+For more info go to https://hardhat.org/HHE1232 or run Hardhat with --show-stack-traces
+error Command failed with exit code 1.
