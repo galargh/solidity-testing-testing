@@ -1,1 +1,13 @@
-[2m2025-02-13T11:31:58.352360Z[0m [31mERROR[0m [2mfoundry_compilers_artifacts_solc::sources[0m[2m:[0m [3merror[0m[2m=[0m"/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/Uniswap/UniswapX/lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol": No such file or directory (os error 2)
+Compiler run failed:
+Warning (3420): Source file does not specify required compiler version! Consider adding "pragma solidity ^0.8.24;"
+--> test/base/BlockNumberish.t.sol
+
+Warning (3420): Source file does not specify required compiler version! Consider adding "pragma solidity ^0.8.24;"
+--> test/lib/EIP712.t.sol
+
+Error (9582): Member "toTypedDataHash" not found or not visible after argument-dependent lookup in type(library ECDSA).
+  --> test/util/PermitSignature.sol:57:27:
+   |
+57 |         bytes32 msgHash = ECDSA.toTypedDataHash(
+   |                           ^^^^^^^^^^^^^^^^^^^^^
+

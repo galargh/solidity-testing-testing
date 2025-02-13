@@ -40,7 +40,7 @@ If you want to rerun any of the commands, you can use the `--force` flag.
 | foundry-rs/forge-std | ✅ | ✅ (164) | ✅ | ❌ (162/168) |
 | transmissions11/solmate | ✅ | ✅ (568) | ✅ | ❌ (565/570) |
 | Vectorized/solady | ✅ | ✅ (1472) | ✅ | ❌ (0/0) |
-| Uniswap/UniswapX | ❌ | ❌ (0/0) | ❌ | ❌ (0/0) |
+| Uniswap/UniswapX | ❌ | ❌ (0/0) | ✅ | ❌ (0/0) |
 | sablier-labs/v2-core | ✅ | ❌ (575/590) | ✅ | ❌ (0/0) |
 | sablier-labs/v2-periphery | ✅ | ❌ (0/0) | ✅ | ❌ (81/94) |
 | PaulRBerg/prb-math | ✅ | ❌ (0/0) | ✅ | ✅ (314) |

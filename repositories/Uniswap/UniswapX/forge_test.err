@@ -1,4 +1,2 @@
 Error: 
-failed to resolve file: "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/Uniswap/UniswapX/lib/openzeppelin-contracts/contracts/security/ReentrancyGuard.sol": No such file or directory (os error 2); check configured remappings
-	--> /Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/Uniswap/UniswapX/src/reactors/BaseReactor.sol
-	openzeppelin-contracts/security/ReentrancyGuard.sol
+Compilation failed
