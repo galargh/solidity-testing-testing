@@ -1,3 +1,0 @@
-Error HHE1202: The import "@account-abstraction/contracts/core/EntryPoint.sol from "test/soulwallet/base/SoulWalletInstence.sol" doesn't exist.
-
-For more info go to https://hardhat.org/HHE1202 or run Hardhat with --show-stack-traces

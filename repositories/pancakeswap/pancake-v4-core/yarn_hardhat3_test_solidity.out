@@ -1,7 +1,0 @@
-yarn run v1.22.19
-$ /Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/pancakeswap/pancake-v4-core/node_modules/.bin/hardhat3 test solidity
-
-WARNING: You are using Node.js 20.11.1 which is not supported by Hardhat.
-Please upgrade to 22.10.0 or a later version.
-
-info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

@@ -1,1 +1,0 @@
-[2m2025-02-14T14:28:44.876833Z[0m [31mERROR[0m [2mfoundry_compilers_artifacts_solc::sources[0m[2m:[0m [3merror[0m[2m=[0m"/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/SoulWallet/soul-wallet-contract/lib/account-abstraction/contracts/interfaces/IEntryPoint.sol": No such file or directory (os error 2)

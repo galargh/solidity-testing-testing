@@ -1,4 +1,0 @@
-Error: 
-failed to resolve file: "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/SoulWallet/soul-wallet-contract/lib/account-abstraction/contracts/interfaces/IEntryPoint.sol": No such file or directory (os error 2); check configured remappings
-	--> /Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/SoulWallet/soul-wallet-contract/contracts/factory/SoulWalletFactory.sol
-	@account-abstraction/contracts/interfaces/IEntryPoint.sol

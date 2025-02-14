@@ -73,13 +73,13 @@ for (const repository of repositoriesToClone) {
       report(org, repo, executable);
       break;
     case 'build:hardhat':
-      run(org, repo, [executable, 'hardhat3', 'compile'], env);
+      run(org, repo, [executable, 'hardhat', 'compile'], env);
       break;
     case 'build:forge':
       run(org, repo, ['forge', 'build'], env);
       break;
     case 'test:hardhat':
-      run(org, repo, [executable, 'hardhat3', 'test', 'solidity'], env);
+      run(org, repo, [executable, 'hardhat', 'test', 'solidity'], env);
       break;
     case 'test:forge':
       run(org, repo, ['forge', 'test'], env);
@@ -132,27 +132,28 @@ function init(org, repo, packageManager, hardhatConfig) {
       return;
     }
   }
+  const hardhatVersion = process.env.HARDHAT_VERSION ?? 'next';
   fs.writeFileSync(path.join(dir, 'hardhat.config.js'), jsHardhatConfig);
   switch (packageManager) {
     case 'bun':
       spawnSync('bun', ['install'], { cwd: dir, stdio: 'inherit' });
-      spawnSync('bun', ['add', '-d', '@ignored/hardhat-vnext@next'], { cwd: dir, stdio: 'inherit' });
+      spawnSync('bun', ['add', '-d', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, stdio: 'inherit' });
       break;
     case 'yarn':
       spawnSync('yarn', ['install'], { cwd: dir, sdtio: 'inherit' });
-      spawnSync('yarn', ['add', '-D', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('yarn', ['add', '-D', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     case 'npm':
       spawnSync('npm', ['install'], { cwd: dir, sdtio: 'inherit' });
-      spawnSync('npm', ['install', '--save-dev', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('npm', ['install', '--save-dev', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     case 'pnpm':
       spawnSync('pnpm', ['install'], { cwd: dir, sdtio: 'inherit' });
-      spawnSync('pnpm', ['add', '-D', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('pnpm', ['add', '-D', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     default:
       spawnSync('npm', ['init', '-y'], { cwd: dir, sdtio: 'inherit' });
-      spawnSync('npm', ['install', '--save-dev', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('npm', ['install', '--save-dev', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
   }
   const packageJson = JSON.parse(fs.readFileSync(path.join(dir, 'package.json'), 'utf8'));
   if (packageJson.type === undefined) {
@@ -185,21 +186,22 @@ function update(org, repo, packageManager) {
   if (!fs.existsSync(dir)) {
     throw new Error(`Directory ${dir} does not exist`);
   }
+  const hardhatVersion = process.env.HARDHAT_VERSION ?? 'next';
   switch (packageManager) {
     case 'bun':
-      spawnSync('bun', ['add', '-d', '@ignored/hardhat-vnext@next'], { cwd: dir, stdio: 'inherit' });
+      spawnSync('bun', ['add', '-d', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, stdio: 'inherit' });
       break;
     case 'yarn':
-      spawnSync('yarn', ['add', '-D', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('yarn', ['add', '-D', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     case 'npm':
-      spawnSync('npm', ['install', '--save-dev', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('npm', ['install', '--save-dev', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     case 'pnpm':
-      spawnSync('pnpm', ['add', '-D', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('pnpm', ['add', '-D', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     default:
-      spawnSync('npm', ['install', '--save-dev', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('npm', ['install', '--save-dev', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
   }
   return;
 }
@@ -239,35 +241,59 @@ function run(org, repo, command, env) {
 }
 
 function report(org, repo, executable) {
-  const forgeBuildOutput = read(org, repo, ['forge', 'build'], 'out');
-  const forgeBuildSuccess = forgeBuildOutput.match(/Compiler run successful!/);
-
-  const forgeTestOutput = read(org, repo, ['forge', 'test'], 'out');
-  const forgeTestSummary = forgeTestOutput.match(/Ran (\d+) test suites in (\d+\.\d+)s \((\d+\.\d+)s CPU time\): (\d+) tests passed, (\d+) failed, (\d+) skipped \((\d+) total tests\)/);
-  let forgeTestPassed = 0;
-  let forgeTestFailed = 0;
-  if (forgeTestSummary !== null) {
-    forgeTestPassed = Number(forgeTestSummary[4]);
-    forgeTestFailed = Number(forgeTestSummary[5]);
-  }
-
-  const hardhatCompileOutput = read(org, repo, [executable, 'hardhat3', 'compile'], 'out');
-  const hardhatCompileSuccess = hardhatCompileOutput.match(/Compiled (\d+) Solidity files with solc (\d+\.\d+)/);
-
-  const hardhatTestOutput = read(org, repo, [executable, 'hardhat3', 'test', 'solidity'], 'out');
-  const hardhatTestSummary = hardhatTestOutput.match(/Run (Failed|Passed): (\d+) tests, (\d+) passed, (\d+) failed, (\d+) skipped \(duration: (\d+) ms\)/);
-  let hardhatTestPassed = 0;
-  let hardhatTestFailed = 0;
-  if (hardhatTestSummary !== null) {
-    hardhatTestPassed = Number(hardhatTestSummary[3]);
-    hardhatTestFailed = Number(hardhatTestSummary[4]);
-  }
-
   const repository = `${org}/${repo}`;
-  const forgeBuild = forgeBuildSuccess ? '✅' : '❌';
-  const forgeTest = forgeTestPassed > 0 && forgeTestFailed === 0 ? `✅ (${forgeTestPassed})` : `❌ (${forgeTestPassed}/${forgeTestPassed+forgeTestFailed})`;
-  const hardhatBuild = hardhatCompileSuccess ? '✅' : '❌';
-  const hardhatTest = hardhatTestPassed > 0 && hardhatTestFailed === 0 ? `✅ (${hardhatTestPassed})` : `❌ (${hardhatTestPassed}/${hardhatTestPassed+hardhatTestFailed})`;
+
+  let forgeBuild;
+  try {
+    const forgeBuildOutput = read(org, repo, ['forge', 'build'], 'out');
+    const forgeBuildSuccess = forgeBuildOutput.match(/Compiler run successful!/);
+    forgeBuild = forgeBuildSuccess ? '✅' : '❌';
+  } catch (e) {
+    console.warn(e);
+    forgeBuild = '❓';
+  }
+
+  let forgeTest;
+  try {
+    const forgeTestOutput = read(org, repo, ['forge', 'test'], 'out');
+    const forgeTestSummary = forgeTestOutput.match(/Ran (\d+) test suites in (\d+\.\d+)s \((\d+\.\d+)s CPU time\): (\d+) tests passed, (\d+) failed, (\d+) skipped \((\d+) total tests\)/);
+    let forgeTestPassed = 0;
+    let forgeTestFailed = 0;
+    if (forgeTestSummary !== null) {
+      forgeTestPassed = Number(forgeTestSummary[4]);
+      forgeTestFailed = Number(forgeTestSummary[5]);
+    }
+    forgeTest = forgeTestPassed > 0 && forgeTestFailed === 0 ? `✅ (${forgeTestPassed})` : `❌ (${forgeTestPassed}/${forgeTestPassed+forgeTestFailed})`;
+  } catch (e) {
+    console.warn(e);
+    forgeTest = '❓';
+  }
+
+  let hardhatBuild;
+  try {
+    const hardhatCompileOutput = read(org, repo, [executable, 'hardhat', 'compile'], 'out');
+    const hardhatCompileSuccess = hardhatCompileOutput.match(/Compiled (\d+) Solidity files with solc (\d+\.\d+)/);
+    hardhatBuild = hardhatCompileSuccess ? '✅' : '❌';
+  } catch (e) {
+    console.warn(e);
+    hardhatBuild = '❓';
+  }
+
+  let hardhatTest;
+  try {
+    const hardhatTestOutput = read(org, repo, [executable, 'hardhat', 'test', 'solidity'], 'out');
+    const hardhatTestSummary = hardhatTestOutput.match(/Run (Failed|Passed): (\d+) tests, (\d+) passed, (\d+) failed, (\d+) skipped \(duration: (\d+) ms\)/);
+    let hardhatTestPassed = 0;
+    let hardhatTestFailed = 0;
+    if (hardhatTestSummary !== null) {
+      hardhatTestPassed = Number(hardhatTestSummary[3]);
+      hardhatTestFailed = Number(hardhatTestSummary[4]);
+    }
+    hardhatTest = hardhatTestPassed > 0 && hardhatTestFailed === 0 ? `✅ (${hardhatTestPassed})` : `❌ (${hardhatTestPassed}/${hardhatTestPassed+hardhatTestFailed})`;
+  } catch (e) {
+    console.warn(e);
+    hardhatTest = '❓';
+  }
 
   console.log(`| ${repository} | ${forgeBuild} | ${forgeTest} | ${hardhatBuild} | ${hardhatTest} |`);
 }

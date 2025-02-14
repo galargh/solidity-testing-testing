@@ -1,7 +1,7 @@
 export default {
   "paths": {
     "sources": "src",
-    "test": {
+    "tests": {
       "solidity": "test"
     }
   },

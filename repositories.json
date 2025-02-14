@@ -6,7 +6,7 @@
     "hardhatConfig": {
       "paths": {
         "sources": "src",
-        "test": {
+        "tests": {
           "solidity": "test"
         }
       },
@@ -48,7 +48,7 @@
     "hardhatConfig": {
       "paths": {
         "sources": "src",
-        "test": {
+        "tests": {
           "solidity": "test"
         }
       },
@@ -63,7 +63,7 @@
     "hardhatConfig": {
       "paths": {
         "sources": "src",
-        "test": {
+        "tests": {
           "solidity": "test"
         }
       },
@@ -79,7 +79,7 @@
     "hardhatConfig": {
       "paths": {
         "sources": "src",
-        "test": {
+        "tests": {
           "solidity": "test"
         }
       },
@@ -98,7 +98,7 @@
     "hardhatConfig": {
       "paths": {
         "sources": "src",
-        "test": {
+        "tests": {
           "solidity": "test"
         }
       },
@@ -117,7 +117,7 @@
     "hardhatConfig": {
       "paths": {
         "sources": "src",
-        "test": {
+        "tests": {
           "solidity": "test"
         }
       },
@@ -130,7 +130,7 @@
     "hardhatConfig": {
       "paths": {
         "sources": "src",
-        "test": {
+        "tests": {
           "solidity": "test"
         }
       },
@@ -143,7 +143,7 @@
     "hardhatConfig": {
       "paths": {
         "sources": "src",
-        "test": {
+        "tests": {
           "solidity": "test"
         }
       },
@@ -201,7 +201,7 @@
     "hardhatConfig": {
       "paths": {
         "sources": "src",
-        "test": {
+        "tests": {
           "solidity": "test"
         }
       },
@@ -220,7 +220,7 @@
     "hardhatConfig": {
       "paths": {
         "sources": "src",
-        "test": {
+        "tests": {
           "solidity": "test"
         }
       },

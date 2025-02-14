@@ -1,8 +1,0 @@
-
-WARNING: You are using Node.js 22.7.0 which is not supported by Hardhat.
-Please upgrade to 22.10.0 or a later version.
-
-Running Solidity tests
-
-✔ Run Passed: 0 tests, 0 passed, 0 failed, 0 skipped (duration: 0 ms)
-

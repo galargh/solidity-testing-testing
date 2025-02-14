@@ -2226,6 +2226,7 @@ To verify a deployed [`CreateX`](./src/CreateX.sol) contract on a block explorer
 - [Oasis Sapphire](https://explorer.oasis.io/mainnet/sapphire/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [World Chain](https://worldchain-mainnet.explorer.alchemy.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [Plume](https://explorer.plumenetwork.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
+- [Unichain](https://uniscan.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [XDC Network](https://xdcscan.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [SX Network](https://explorerl2.sx.technology/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [Lisk](https://blockscout.lisk.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
@@ -2241,6 +2242,8 @@ To verify a deployed [`CreateX`](./src/CreateX.sol) contract on a block explorer
 - [Swellchain](https://explorer.swellnetwork.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [Hemi](https://explorer.hemi.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [Berachain](https://berascan.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
+- [Corn Maizenet](https://cornscan.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
+- [Arena-Z](https://explorer.arena-z.gg/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 
 #### Ethereum Test Networks
 
@@ -2299,7 +2302,7 @@ To verify a deployed [`CreateX`](./src/CreateX.sol) contract on a block explorer
 - [Lisk Sepolia Testnet](https://sepolia-blockscout.lisk.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [Metal L2 Sepolia Testnet](https://testnet.explorer.metall2.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [Superseed Sepolia Testnet](https://sepolia-explorer.superseed.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
-- [Story Testnet (Odyssey)](https://odyssey.storyscan.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
+- [Story Testnet (Aeneid)](https://aeneid.storyscan.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [Sonic Testnet (Blaze)](https://testnet.sonicscan.org/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [EVM on Flow Testnet](https://evm-testnet.flowscan.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [Ink Sepolia Testnet](https://explorer-sepolia.inkonchain.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
@@ -2310,6 +2313,9 @@ To verify a deployed [`CreateX`](./src/CreateX.sol) contract on a block explorer
 - [Swellchain Sepolia Testnet](https://swell-testnet-explorer.alt.technology/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [Hemi Sepolia Testnet](https://testnet.explorer.hemi.xyz/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 - [Berachain Testnet (bArtio)](https://bartio.beratrail.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
+- [Monad Testnet](https://testnet.monadexplorer.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
+- [Corn Sepolia Testnet](https://testnet.cornscan.io/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
+- [Arena-Z Sepolia Testnet](https://arena-z.blockscout.com/address/0xba5Ed099633D3B313e4D5F7bdc1305d3c28ba5Ed)
 
 ## Integration With External Tooling
 

@@ -1,8 +1,0 @@
-
-WARNING: You are using Node.js 22.7.0 which is not supported by Hardhat.
-Please upgrade to 22.10.0 or a later version.
-
-Compiling your Solidity contracts
-Downloading solc 0.8.28
-Downloading solc 0.8.28 (WASM build)
-Compiled 102 Solidity files with solc 0.8.28 (evm target: cancun)
