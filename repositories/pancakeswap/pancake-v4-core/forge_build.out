@@ -1,5 +1,5 @@
 Compiling 238 files with Solc 0.8.26
-Solc 0.8.26 finished in 213.98s
+Solc 0.8.26 finished in 233.37s
 Compiler run successful with warnings:
 Warning (2519): This declaration shadows an existing declaration.
   --> test/pool-bin/helpers/BinCustomCurveHook.sol:99:34:

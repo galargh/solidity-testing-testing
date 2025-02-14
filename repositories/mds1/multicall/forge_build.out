@@ -1,5 +1,5 @@
 Compiling 29 files with Solc 0.8.12
-Solc 0.8.12 finished in 1.52s
+Solc 0.8.12 finished in 1.61s
 Compiler run successful with warnings:
 Warning (2018): Function state mutability can be restricted to view
   --> src/test/Multicall.t.sol:44:3:
