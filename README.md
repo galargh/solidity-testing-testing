@@ -156,3 +156,4 @@ It seems the vast majority of the Hardhat test failures could be fixed by provid
 ## Notes
 
 - use v4.9.6 of openzeppelin-contracts in Uniswap/UniswapX
+- use v0.7.0 of account-abstraction in SoulWallet/soul-wallet-contract

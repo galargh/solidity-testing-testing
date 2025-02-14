@@ -1,0 +1,135 @@
+Compiling 143 files with Solc 0.8.24
+Solc 0.8.24 finished in 24.25s
+Compiler run successful with warnings:
+Warning (3420): Source file does not specify required compiler version! Consider adding "pragma solidity ^0.8.24;"
+--> test/base/BlockNumberish.t.sol
+
+Warning (3420): Source file does not specify required compiler version! Consider adding "pragma solidity ^0.8.24;"
+--> test/lib/EIP712.t.sol
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/base/ProtocolFees.t.sol:80:5:
+   |
+80 |     function testTakeFeesNoFees() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+ --> test/lib/DutchDecayLib.t.sol:8:5:
+  |
+8 |     function testDutchDecayNoDecay(uint256 amount, uint256 decayStartTime, uint256 decayEndTime) public {
+  |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/lib/DutchDecayLib.t.sol:77:5:
+   |
+77 |     function testDutchDecayBounded(int256 startAmount, int256 endAmount, uint256 decayStartTime, uint256 decayEndTime)
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/lib/DutchDecayLib.t.sol:88:5:
+   |
+88 |     function testDutchDecayNegative(int256 startAmount, int256 endAmount, uint256 decayStartTime, uint256 decayEndTime)
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:15:5:
+   |
+15 |     function testSubIntFromUint() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:21:5:
+   |
+21 |     function testSubNegIntFromUintRange(uint256 a, uint256 b) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:27:5:
+   |
+27 |     function testSubIntFromUintRange(uint256 a, uint256 b) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:48:5:
+   |
+48 |     function testBoundedSub(uint128 a, int128 b, uint256 max, uint256 min) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:55:5:
+   |
+55 |     function testBoundedSubNegIntFromUintRange(uint256 a, uint256 b) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:61:5:
+   |
+61 |     function testBoundedSubIntFromUintRange(uint256 a, uint256 b) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:68:5:
+   |
+68 |     function testBoundedSubIntFromUintNegativeUint() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:72:5:
+   |
+72 |     function testBoundedSubIntFromUintOverflow() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:78:5:
+   |
+78 |     function testSubUintFromUint() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:84:5:
+   |
+84 |     function testSubUintFromUintRange(uint256 a, uint256 b) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/MathExt.t.sol:90:5:
+   |
+90 |     function testSubUintFromUintNegativeUint(uint256 a, uint256 b) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+   --> test/lib/MathExt.t.sol:111:5:
+    |
+111 |     function testBound(uint256 value, uint256 min, uint256 max) public {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+   --> test/lib/MathExt.t.sol:118:5:
+    |
+118 |     function testBoundValueInBounds(uint256 value, uint256 min, uint256 max) public {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> test/lib/OrderQuoter.t.sol:172:5:
+    |
+172 |     function testGetReactorLimitOrder() public {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> test/lib/OrderQuoter.t.sol:182:5:
+    |
+182 |     function testGetReactorDutchOrder() public {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> test/lib/OrderQuoter.t.sol:196:5:
+    |
+196 |     function testGetReactorMockOrder() public {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to pure
+  --> test/lib/Uint16Array.t.sol:19:5:
+   |
+19 |     function testGetElement(uint16 value, uint16 length) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+

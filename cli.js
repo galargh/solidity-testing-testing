@@ -246,7 +246,7 @@ function report(org, repo, executable) {
   let forgeBuild;
   try {
     const forgeBuildOutput = read(org, repo, ['forge', 'build'], 'out');
-    const forgeBuildSuccess = forgeBuildOutput.match(/Compiler run successful!/);
+    const forgeBuildSuccess = forgeBuildOutput.match(/Compiler run successful/);
     forgeBuild = forgeBuildSuccess ? '✅' : '❌';
   } catch (e) {
     console.warn(e);
