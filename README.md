@@ -26,6 +26,7 @@ The following commands are available:
 
 - `clone`: Clones the repository.
 - `init`: Initializes the repository.
+- `update`: Updates the hardhat dependency and config.
 - `build:hardhat`: Builds the repository with Hardhat.
 - `build:forge`: Builds the repository with Forge.
 - `test:hardhat`: Tests the repository with Hardhat.

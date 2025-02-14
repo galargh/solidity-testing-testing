@@ -28,12 +28,16 @@ const { argv } = yargs
   .alias('h', 'help')
   .example('$0 clone')
   .example('$0 init')
+  .example('$0 update')
+  .example('$0 report')
   .example('$0 build:hardhat')
   .example('$0 build:forge')
   .example('$0 test:hardhat')
   .example('$0 test:forge')
   .example('$0 clone --org foundry-rs --repo forge-std')
   .example('$0 init --org foundry-rs --repo forge-std')
+  .example('$0 update --org foundry-rs --repo forge-std')
+  .example('$0 report --org foundry-rs --repo forge-std')
   .example('$0 test:hardhat --org foundry-rs --repo forge-std')
   .example('$0 test:forge --org foundry-rs --repo forge-std');
 
@@ -62,6 +66,12 @@ for (const repository of repositoriesToClone) {
     case 'init':
       init(org, repo, packageManager, hardhatConfig);
       break;
+    case 'update':
+      update(org, repo, executable);
+      break;
+    case 'report':
+      report(org, repo, executable);
+      break;
     case 'build:hardhat':
       run(org, repo, [executable, 'hardhat3', 'compile'], env);
       break;
@@ -73,9 +83,6 @@ for (const repository of repositoriesToClone) {
       break;
     case 'test:forge':
       run(org, repo, ['forge', 'test'], env);
-      break;
-    case 'report':
-      report(org, repo, executable);
       break;
     default:
       throw new Error(`Invalid command: ${argv._[0]}`);
@@ -168,6 +175,31 @@ function init(org, repo, packageManager, hardhatConfig) {
     for (const submodule of submodules) {
       spawnSync('forge', ['install', '--no-git', `${submodule.path}=${submodule.url}${submodule.branch ? `@${submodule.branch}` : ''}`], { cwd: dir, stdio: 'inherit' });
     }
+  }
+  return;
+}
+
+function update(org, repo, packageManager) {
+  console.log(`Updating Hardhat in ${org}/${repo}...`);
+  const dir = path.join(__dirname, 'repositories', org, repo);
+  if (!fs.existsSync(dir)) {
+    throw new Error(`Directory ${dir} does not exist`);
+  }
+  switch (packageManager) {
+    case 'bun':
+      spawnSync('bun', ['add', '-d', '@ignored/hardhat-vnext@next'], { cwd: dir, stdio: 'inherit' });
+      break;
+    case 'yarn':
+      spawnSync('yarn', ['add', '-D', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      break;
+    case 'npm':
+      spawnSync('npm', ['install', '--save-dev', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      break;
+    case 'pnpm':
+      spawnSync('pnpm', ['add', '-D', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
+      break;
+    default:
+      spawnSync('npm', ['install', '--save-dev', '@ignored/hardhat-vnext@next'], { cwd: dir, sdtio: 'inherit' });
   }
   return;
 }

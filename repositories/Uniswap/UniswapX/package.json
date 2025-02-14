@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@ignored/hardhat-vnext": "^3.0.0-next.17"
+    "@ignored/hardhat-vnext": "^3.0.0-next.18"
   },
   "type": "module"
 }

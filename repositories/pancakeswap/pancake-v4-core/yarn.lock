@@ -134,113 +134,113 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.23.1.tgz#81fd50d11e2c32b2d6241470e3185b70c7b30699"
   integrity sha512-BHpFFeslkWrXWyUPnbKm+xYYVYruCinGcftSBaa8zoF9hZO4BcSCFUvHVTtzpIY6YzUnYtuEhZ+C9iEXjxnasg==
 
-"@ignored/edr-darwin-arm64@0.8.0-alpha.1":
-  version "0.8.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-darwin-arm64/-/edr-darwin-arm64-0.8.0-alpha.1.tgz#753e4af4069daca5cb1fa549f23ffb67407e4f0a"
-  integrity sha512-+c1EycflMeoT1g+heYCir7pyicrXue2luN1/Adx+lqaC5VsIuFm8vuo3BwiCqKuUx8Rd9qw6PGHRFMeWn0tOIA==
+"@ignored/edr-darwin-arm64@0.8.0-alpha.2":
+  version "0.8.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-darwin-arm64/-/edr-darwin-arm64-0.8.0-alpha.2.tgz#0765592c9f27008609fb893259ab79e02be10825"
+  integrity sha512-Ia5QHBc4zJBa6Dp9a0CEtGWRaiEryOF3tubqaO3WwVXYuicBxK39oBoeqM3BA9gzpNwLN3PI08kp8Vi7lyU7UA==
 
-"@ignored/edr-darwin-x64@0.8.0-alpha.1":
-  version "0.8.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-darwin-x64/-/edr-darwin-x64-0.8.0-alpha.1.tgz#5832b18469a32cc46746cf8b5a2f0132c11b4627"
-  integrity sha512-7rukXlljR2WQwM/E6FSNayWcaIj9wzcGvky88Cz8m2fys7QkwueHk2B0v1wHON8d3BhDjigDycz9XgRv/lLKrg==
+"@ignored/edr-darwin-x64@0.8.0-alpha.2":
+  version "0.8.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-darwin-x64/-/edr-darwin-x64-0.8.0-alpha.2.tgz#a0589b8aa098c2431fa106de4c343f2f28a18f35"
+  integrity sha512-oqi2QhryysRkGhI3v0daJbw9y77u46XINJJr81a8F+KjwY2S99TDs+NGyG8+t8HHBziqaLJ27OT+icrlCMNQ6Q==
 
-"@ignored/edr-linux-arm64-gnu@0.8.0-alpha.1":
-  version "0.8.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-linux-arm64-gnu/-/edr-linux-arm64-gnu-0.8.0-alpha.1.tgz#fe7c831c18329aec2009b1424f4423ed57b73a8d"
-  integrity sha512-IpJFsBKskGQuliddv6Q2daFkwvcOAZNr+nDW0vaeHdD7nfu3tnGjOxjDiQQMGqBNSvnkYi/HYHpbJMojmABwFw==
+"@ignored/edr-linux-arm64-gnu@0.8.0-alpha.2":
+  version "0.8.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-linux-arm64-gnu/-/edr-linux-arm64-gnu-0.8.0-alpha.2.tgz#7cd5015d053f8b9b01e16bea596260ae186fd8de"
+  integrity sha512-WwiDVxrQ6voN/Bs2REanTJsXr/pgxqM/PS1pBrsISaQZlDoXObeJDaGqLu//ldqhOjtDx1wV/ChyZYECJeUH/Q==
 
-"@ignored/edr-linux-arm64-musl@0.8.0-alpha.1":
-  version "0.8.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-linux-arm64-musl/-/edr-linux-arm64-musl-0.8.0-alpha.1.tgz#189011a5ddb663ed76b98320192030e5326fdc15"
-  integrity sha512-chOgO30XkWtOIpritpb+0ZOWuu5nVs0kZ2tvKbiVPMtcAbJBt19S3rVhGhfuDRCkcoQfONX4dwr1l6xTEJh4DQ==
+"@ignored/edr-linux-arm64-musl@0.8.0-alpha.2":
+  version "0.8.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-linux-arm64-musl/-/edr-linux-arm64-musl-0.8.0-alpha.2.tgz#304ffc05fa8744eee48cd6de9fbe6fb7b6eb903f"
+  integrity sha512-0CZC2knh4qtKZbCEkS6gCQ+YlsZkq5+fkFS1h8U+TKnuwDIdzC95GCg38LJuL2Jz/ZZqtjA+kBfIzMFjVvUa3g==
 
-"@ignored/edr-linux-x64-gnu@0.8.0-alpha.1":
-  version "0.8.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-linux-x64-gnu/-/edr-linux-x64-gnu-0.8.0-alpha.1.tgz#1c1158e694608b48a260883a9caf3cce806449ce"
-  integrity sha512-oASS70VCr2lbD1byUGj6k9s4DIQpiKyh0p5SlizJLDKwJfodfV/6GFCyP6VoVPsczfFL5cXLqsBxYDthytiikw==
+"@ignored/edr-linux-x64-gnu@0.8.0-alpha.2":
+  version "0.8.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-linux-x64-gnu/-/edr-linux-x64-gnu-0.8.0-alpha.2.tgz#2347d62f051bc9239c08ab8661f0ed4bdb16edd1"
+  integrity sha512-gvwfmLR2+UYtdv4wIkPvKR0Vky2BysLSADo2Zo8te5VpzP31oZjp8T7uh/GKnWx9kPRYICGoF6awfCGP/q+z2A==
 
-"@ignored/edr-linux-x64-musl@0.8.0-alpha.1":
-  version "0.8.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-linux-x64-musl/-/edr-linux-x64-musl-0.8.0-alpha.1.tgz#f437e7bf1438a40104cb2cd852605fdd10c033b7"
-  integrity sha512-QTmIoDnAXdBSXewrpx02ZYvJi41HePTpd80mxBWjMfhTZgI6tJ51ATl7U/clFcGBJvy4JGuiuVo6owI0gte7Pw==
+"@ignored/edr-linux-x64-musl@0.8.0-alpha.2":
+  version "0.8.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-linux-x64-musl/-/edr-linux-x64-musl-0.8.0-alpha.2.tgz#0cd511a81cfb552477be9d57f3b88fa6c0d4e6ae"
+  integrity sha512-9F1F0x+XfN6Hb/EYfDK4M/KIjGGeSdWnJqm5HkcGQjGjjTlvrzwis2P/qoWYBdcLmSGRb1Inc8FwD6emzJzCEQ==
 
-"@ignored/edr-optimism-darwin-arm64@0.6.5-alpha.2":
-  version "0.6.5-alpha.2"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-darwin-arm64/-/edr-optimism-darwin-arm64-0.6.5-alpha.2.tgz#6066cf4ac2ba99d47eb31532ed5f97862ce8bf03"
-  integrity sha512-AEZ41XN8KJlPRUc1cSW89SmDNsc1a8XgKA2rX6JrBJvw2rDWCF1yewnJ4Uiov15eA7ppCUSUuXpNiX/P5+EjKw==
+"@ignored/edr-optimism-darwin-arm64@0.6.5-alpha.3":
+  version "0.6.5-alpha.3"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-darwin-arm64/-/edr-optimism-darwin-arm64-0.6.5-alpha.3.tgz#837c7825d49453a8c4e2ed6c05ebd363f55e7d2a"
+  integrity sha512-bJPjKzEl5eYa7j4If7Sc2O1VsMMayNgB8Zj2sJ1gpAmOHFOkaRX1/Jk9G4OczbYIhJeBL8WsKdkS1owxkAwlfw==
 
-"@ignored/edr-optimism-darwin-x64@0.6.5-alpha.2":
-  version "0.6.5-alpha.2"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-darwin-x64/-/edr-optimism-darwin-x64-0.6.5-alpha.2.tgz#487341c8e4d81d2135f4df534e0afb85767233d1"
-  integrity sha512-PR6aUOgUbPrAaaTxU6/VeLL/OiKcIOzzH3/Ss444giJlTMYinoYeJhEOF1yeuPY65fReWJ55Iq3tLyzBj/bheA==
+"@ignored/edr-optimism-darwin-x64@0.6.5-alpha.3":
+  version "0.6.5-alpha.3"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-darwin-x64/-/edr-optimism-darwin-x64-0.6.5-alpha.3.tgz#791ebd8ffec03ed19f54197259b3438f221f23ed"
+  integrity sha512-TDQVomNH8qbUvBwugfbfpUp8hR8Naz7eDY8ZmNmVNTfXwPVLfUaecptQyleOnQDAYSAANCAcRhD6L5N0BEguUw==
 
-"@ignored/edr-optimism-linux-arm64-gnu@0.6.5-alpha.2":
-  version "0.6.5-alpha.2"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-linux-arm64-gnu/-/edr-optimism-linux-arm64-gnu-0.6.5-alpha.2.tgz#2dd028948c2d17cc1f08a32bd60e2c16c70c3ecb"
-  integrity sha512-72uUqsebdQd6VdbOe+kz1dsCNAgAX+NX2zeNJtryyXie0BrsKTRCHPwfWETg8ybqx8B7GPbx1pB4ubawSPknyw==
+"@ignored/edr-optimism-linux-arm64-gnu@0.6.5-alpha.3":
+  version "0.6.5-alpha.3"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-linux-arm64-gnu/-/edr-optimism-linux-arm64-gnu-0.6.5-alpha.3.tgz#c5b2b4b152d7ce1f8f6e9d81de79f819e779477b"
+  integrity sha512-DGFV8iE4fyfloK93wxKveBmeiLc4VBYvxYdkGzvg57kk6zZGcYgkArngGwp3ZpJVCVVgiZGh6WOPeWsKqMnsiA==
 
-"@ignored/edr-optimism-linux-arm64-musl@0.6.5-alpha.2":
-  version "0.6.5-alpha.2"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-linux-arm64-musl/-/edr-optimism-linux-arm64-musl-0.6.5-alpha.2.tgz#784b5dff350c3ad8ef508869e9248e907dc616ea"
-  integrity sha512-P5kAi8p+DnJQ5NkVYSNzptbG8Cy4ZEdSYCJgagUojGqK0dGjj4hQwpKtOahePD/fF6JtF+fG/g6MWEEe9NPnJg==
+"@ignored/edr-optimism-linux-arm64-musl@0.6.5-alpha.3":
+  version "0.6.5-alpha.3"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-linux-arm64-musl/-/edr-optimism-linux-arm64-musl-0.6.5-alpha.3.tgz#c26007fe13a1a53ad18cfe0720daa53e8c08afa2"
+  integrity sha512-py+JLrUCDkKWBy9It1O6HH4RMdkOvV9k0rUigC4ggIaRDnYgTACH1MSrHtL86qe5UTjqALcsvbsUDjhKMkNc8Q==
 
-"@ignored/edr-optimism-linux-x64-gnu@0.6.5-alpha.2":
-  version "0.6.5-alpha.2"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-linux-x64-gnu/-/edr-optimism-linux-x64-gnu-0.6.5-alpha.2.tgz#a89b4f19ae42407b6dc58971bd568f3921b91d00"
-  integrity sha512-CeRk0J/qKe0NCBQWcnhehk2rWUkBqwH44ipNQDwT5cw7ehv6tpgu9OqKV0hOJJOlQl/oGngaCaTzuIQtp9iGhg==
+"@ignored/edr-optimism-linux-x64-gnu@0.6.5-alpha.3":
+  version "0.6.5-alpha.3"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-linux-x64-gnu/-/edr-optimism-linux-x64-gnu-0.6.5-alpha.3.tgz#b098e42806a3eb0b634004564296df5bef893ee0"
+  integrity sha512-3CYkITGAEVSWxabAymqTNa52pYS+dfAVTSX8rSeqMMH40KBADknG/MgyHZcQ+JB2X14koAD/v/qd3r50CMqrGg==
 
-"@ignored/edr-optimism-linux-x64-musl@0.6.5-alpha.2":
-  version "0.6.5-alpha.2"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-linux-x64-musl/-/edr-optimism-linux-x64-musl-0.6.5-alpha.2.tgz#9ab56cb6e9f970d30174059c5557dfb733a1b616"
-  integrity sha512-nH9kjYPRILjmteCAUfzkws8HsAyl+8EfOmj8a+U29p8yIjtvJLy83hCQWU7Usxdg1e3modTJQqArERlmdKZN3Q==
+"@ignored/edr-optimism-linux-x64-musl@0.6.5-alpha.3":
+  version "0.6.5-alpha.3"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-linux-x64-musl/-/edr-optimism-linux-x64-musl-0.6.5-alpha.3.tgz#ae3208190ebdda039261175b9deb71a1523c1261"
+  integrity sha512-MLxeToQGYzpF0Rw7iajldDRiC6hZYSTzLTrLFj6PghW+7tvBr49cns/h6O/p2HxDyRPR2xdEezdOqz6dlf3OUg==
 
-"@ignored/edr-optimism-win32-x64-msvc@0.6.5-alpha.2":
-  version "0.6.5-alpha.2"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-win32-x64-msvc/-/edr-optimism-win32-x64-msvc-0.6.5-alpha.2.tgz#cb670ead9f1b60fd35577fb1b7fd4edbf31a17f4"
-  integrity sha512-dfbHzuOrVwET2ptIIWifZG0lLGynJhPhhXmjXDhCt2b2JZ0qpPgleuOjPW5oeSsrelwVcHQ4mFOFX/Fz4FCHCg==
+"@ignored/edr-optimism-win32-x64-msvc@0.6.5-alpha.3":
+  version "0.6.5-alpha.3"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism-win32-x64-msvc/-/edr-optimism-win32-x64-msvc-0.6.5-alpha.3.tgz#39d9468aa8cef549f4a6bbf1e70b28fc05557748"
+  integrity sha512-daMY9tdXowHJf3XD4EghQ/S9WOftv3gIPqMAz70qtxSXYfbRAqXpgwG4xMUH4wD6CD6AxAn6aILdVhGuJGMRXw==
 
-"@ignored/edr-optimism@0.6.5-alpha.2":
-  version "0.6.5-alpha.2"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism/-/edr-optimism-0.6.5-alpha.2.tgz#ed9cb9bc06f18ba80aa1c16d5aa925ed2e54b53d"
-  integrity sha512-AMgM23RRndJ63/pZ6T2tesqb/jg5cwgVgkeOPkVWCCtE74In6YQlsSgRItG7eemVkq+hkuXe14RwCIiJfi8KeQ==
+"@ignored/edr-optimism@0.6.5-alpha.3":
+  version "0.6.5-alpha.3"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-optimism/-/edr-optimism-0.6.5-alpha.3.tgz#d1b2ae5ff5088e3d58b0d6c3bae3e0d108019347"
+  integrity sha512-2AK+erQEDOrQixxUVaXNIwa/bF8CgGS/oFqf0lBjJlKkNNdO8XAuHFUQcdDoCu0+pJQWJv+Ysp8qRfiR8OxOGg==
   dependencies:
-    "@ignored/edr-optimism-darwin-arm64" "0.6.5-alpha.2"
-    "@ignored/edr-optimism-darwin-x64" "0.6.5-alpha.2"
-    "@ignored/edr-optimism-linux-arm64-gnu" "0.6.5-alpha.2"
-    "@ignored/edr-optimism-linux-arm64-musl" "0.6.5-alpha.2"
-    "@ignored/edr-optimism-linux-x64-gnu" "0.6.5-alpha.2"
-    "@ignored/edr-optimism-linux-x64-musl" "0.6.5-alpha.2"
-    "@ignored/edr-optimism-win32-x64-msvc" "0.6.5-alpha.2"
+    "@ignored/edr-optimism-darwin-arm64" "0.6.5-alpha.3"
+    "@ignored/edr-optimism-darwin-x64" "0.6.5-alpha.3"
+    "@ignored/edr-optimism-linux-arm64-gnu" "0.6.5-alpha.3"
+    "@ignored/edr-optimism-linux-arm64-musl" "0.6.5-alpha.3"
+    "@ignored/edr-optimism-linux-x64-gnu" "0.6.5-alpha.3"
+    "@ignored/edr-optimism-linux-x64-musl" "0.6.5-alpha.3"
+    "@ignored/edr-optimism-win32-x64-msvc" "0.6.5-alpha.3"
 
-"@ignored/edr-win32-x64-msvc@0.8.0-alpha.1":
-  version "0.8.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ignored/edr-win32-x64-msvc/-/edr-win32-x64-msvc-0.8.0-alpha.1.tgz#c7edeb2b4ffc9e34db9f98ffde3bb7bf443bd853"
-  integrity sha512-X9VcX18iVIo925eqgzsanDmg1rtbb8BFZrea6F52Rf8+G1uXKGsLcxiomxnMYgO8B3/BtGvw9q89qNrYmeFo0A==
+"@ignored/edr-win32-x64-msvc@0.8.0-alpha.2":
+  version "0.8.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ignored/edr-win32-x64-msvc/-/edr-win32-x64-msvc-0.8.0-alpha.2.tgz#fe44ad9bfb2c105b17752f0c45bd3605682f06bc"
+  integrity sha512-Mei/rdKYIVXHePZEpn+1A15EQQTsC4N8qHFxoqXVOu4UUjPoUBYAkh3ZbuvfyeNsWoDrPF7H+zhuwyR3BwHJWQ==
 
-"@ignored/edr@0.8.0-alpha.1":
-  version "0.8.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@ignored/edr/-/edr-0.8.0-alpha.1.tgz#a7b19cb36d0ed7cb5c70a64670ed4eb963550c49"
-  integrity sha512-15twEtiWg2h5MGaqQvQry9tN3dmhJ6wWhhmPJatTRZTl52PtTHTLN8g+2Z5k3oddCicdSYNmmnFR2+isf2aZsQ==
+"@ignored/edr@0.8.0-alpha.2":
+  version "0.8.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@ignored/edr/-/edr-0.8.0-alpha.2.tgz#1aba05c943d5790751f2d2668b5a261a4e4b1879"
+  integrity sha512-PYATPTMMhTgG7zRdGraQLCXyLrD+cHwm3XqGEjJZ0uRg4m02FGOvjLetAtc5Dq17COUDsMMAZ9o3vS3w9mSgYw==
   optionalDependencies:
-    "@ignored/edr-darwin-arm64" "0.8.0-alpha.1"
-    "@ignored/edr-darwin-x64" "0.8.0-alpha.1"
-    "@ignored/edr-linux-arm64-gnu" "0.8.0-alpha.1"
-    "@ignored/edr-linux-arm64-musl" "0.8.0-alpha.1"
-    "@ignored/edr-linux-x64-gnu" "0.8.0-alpha.1"
-    "@ignored/edr-linux-x64-musl" "0.8.0-alpha.1"
-    "@ignored/edr-win32-x64-msvc" "0.8.0-alpha.1"
+    "@ignored/edr-darwin-arm64" "0.8.0-alpha.2"
+    "@ignored/edr-darwin-x64" "0.8.0-alpha.2"
+    "@ignored/edr-linux-arm64-gnu" "0.8.0-alpha.2"
+    "@ignored/edr-linux-arm64-musl" "0.8.0-alpha.2"
+    "@ignored/edr-linux-x64-gnu" "0.8.0-alpha.2"
+    "@ignored/edr-linux-x64-musl" "0.8.0-alpha.2"
+    "@ignored/edr-win32-x64-msvc" "0.8.0-alpha.2"
 
-"@ignored/hardhat-vnext-errors@^3.0.0-next.16":
-  version "3.0.0-next.16"
-  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-errors/-/hardhat-vnext-errors-3.0.0-next.16.tgz#7563abd50d9fe1e2cb144e7faa3e5f66292a39c9"
-  integrity sha512-s37iZLBufvCHEACzaEC8U5ghEOQUEXtkZ/a2ZJI5vN43sfj+W1AzpLnGD2bup4vW1GyzJ8Tjwnuu9A/DcBEyXQ==
+"@ignored/hardhat-vnext-errors@^3.0.0-next.17":
+  version "3.0.0-next.17"
+  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-errors/-/hardhat-vnext-errors-3.0.0-next.17.tgz#3c5bad04fb8efaa684aee9eb59519a3c01c811de"
+  integrity sha512-m226tomR4wOiXyo6JzkpDqWi5RUZ2mQJotnhaDVLK2ZZ65CSR/1sv2tXQocpLbJFvuW+tzCCVLrDCdQMBGW5hA==
   dependencies:
-    "@ignored/hardhat-vnext-utils" "^3.0.0-next.16"
+    "@ignored/hardhat-vnext-utils" "^3.0.0-next.17"
 
-"@ignored/hardhat-vnext-utils@^3.0.0-next.16":
-  version "3.0.0-next.16"
-  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-utils/-/hardhat-vnext-utils-3.0.0-next.16.tgz#33e3ecfc6d97b23f0e15d04dd7f62c7972ba398b"
-  integrity sha512-3UjgriXzqyFfjdVfw6edfaH7QCgpNqSidgpHbbrYrZySVtfeCZTG+iHE/BNe6hvnZYY6e7z6XnrRmH27hoXyHw==
+"@ignored/hardhat-vnext-utils@^3.0.0-next.17":
+  version "3.0.0-next.17"
+  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-utils/-/hardhat-vnext-utils-3.0.0-next.17.tgz#a7f271481594e550ad99ab1d7ca1ccbd9a072158"
+  integrity sha512-U75K0BsTfSwFerc6cCm+voGEFcQXO8zv0FfuykPoyBFtnWI/iulY5keKrrkLBfwCNiD+20ysjEkLRca49xtrOA==
   dependencies:
     debug "^4.3.2"
     env-paths "^2.2.0"
@@ -249,23 +249,23 @@
     rfdc "^1.3.1"
     undici "^6.16.1"
 
-"@ignored/hardhat-vnext-zod-utils@^3.0.0-next.16":
-  version "3.0.0-next.16"
-  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-zod-utils/-/hardhat-vnext-zod-utils-3.0.0-next.16.tgz#cb43901c4d49b802b407f1e4a3ff16c231175f91"
-  integrity sha512-RMNcswQW34vxdN14BA7h0erRtaZGVCtJxxxLIJQkNaRtcFUYBlWaFa9oXSyqcLOPYTXTdc0HWS//5WhV5QYi7w==
-  dependencies:
-    "@ignored/hardhat-vnext-utils" "^3.0.0-next.16"
-
-"@ignored/hardhat-vnext@^3.0.0-next.17":
+"@ignored/hardhat-vnext-zod-utils@^3.0.0-next.17":
   version "3.0.0-next.17"
-  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext/-/hardhat-vnext-3.0.0-next.17.tgz#93537ad1ed4237afed1bd48953c92a09e9aa043f"
-  integrity sha512-MGxNled+eBdQuPiqK2p+KPiTan5gDwQ3TPCeD8CfZ05udvo/vsJ+PIteZaLWXiRFzY+kpmEbB3KzWvAP43fKnA==
+  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext-zod-utils/-/hardhat-vnext-zod-utils-3.0.0-next.17.tgz#e363efba42432dec1c5d4fedc96c28ca179d2242"
+  integrity sha512-iE53u3bUHj19Elr1dmN7jXSsLnv3BwHfOS9cI0ABfHjuxO10G3xIhxYciUQ56QKGnST9UGrLxVAMGiU3x7VBZQ==
   dependencies:
-    "@ignored/edr" "0.8.0-alpha.1"
-    "@ignored/edr-optimism" "0.6.5-alpha.2"
-    "@ignored/hardhat-vnext-errors" "^3.0.0-next.16"
-    "@ignored/hardhat-vnext-utils" "^3.0.0-next.16"
-    "@ignored/hardhat-vnext-zod-utils" "^3.0.0-next.16"
+    "@ignored/hardhat-vnext-utils" "^3.0.0-next.17"
+
+"@ignored/hardhat-vnext@^3.0.0-next.18":
+  version "3.0.0-next.18"
+  resolved "https://registry.yarnpkg.com/@ignored/hardhat-vnext/-/hardhat-vnext-3.0.0-next.18.tgz#87636b14cbbcf30d64511e4833ac484954964887"
+  integrity sha512-xowmRlLwnHg9x1ugY++w3ZKVzDVigvrQBkgHJyD2hNGuszpE1m/PAF+odel+aHOPvhL2aIMnQlzzJ0pdIcta7A==
+  dependencies:
+    "@ignored/edr" "0.8.0-alpha.2"
+    "@ignored/edr-optimism" "0.6.5-alpha.3"
+    "@ignored/hardhat-vnext-errors" "^3.0.0-next.17"
+    "@ignored/hardhat-vnext-utils" "^3.0.0-next.17"
+    "@ignored/hardhat-vnext-zod-utils" "^3.0.0-next.17"
     "@nomicfoundation/solidity-analyzer" "^0.1.1"
     "@sentry/node" "^5.18.1"
     adm-zip "^0.4.16"
