@@ -1,0 +1,131 @@
+Compiling 243 files with Solc 0.8.26
+Solc 0.8.26 finished in 215.71s
+Compiler run successful with warnings:
+Warning (2519): This declaration shadows an existing declaration.
+  --> test/pool-bin/helpers/BinCustomCurveHook.sol:99:34:
+   |
+99 |     function beforeSwap(address, PoolKey calldata key, bool swapForY, int128 amountSpecified, bytes calldata)
+   |                                  ^^^^^^^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+  --> test/pool-bin/helpers/BinCustomCurveHook.sol:23:5:
+   |
+23 |     PoolKey key;
+   |     ^^^^^^^^^^^
+
+Warning (2519): This declaration shadows an existing declaration.
+   --> test/pool-bin/BinPoolManager.t.sol:234:37:
+    |
+234 |     function test_fuzz_InvalidPrice(uint24 activeId, bool isLeft) public {
+    |                                     ^^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+  --> test/pool-bin/BinPoolManager.t.sol:67:5:
+   |
+67 |     uint24 activeId = 2 ** 23; // where token0 and token1 price is the same
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (2519): This declaration shadows an existing declaration.
+   --> test/pool-bin/BinPoolManager.t.sol:248:35:
+    |
+248 |     function test_fuzz_ValidPrice(uint24 activeId, bool isLeft) public {
+    |                                   ^^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+  --> test/pool-bin/BinPoolManager.t.sol:67:5:
+   |
+67 |     uint24 activeId = 2 ** 23; // where token0 and token1 price is the same
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (2519): This declaration shadows an existing declaration.
+   --> test/pool-cl/helpers/CLCustomCurveHook.sol:100:34:
+    |
+100 |     function beforeSwap(address, PoolKey calldata key, ICLPoolManager.SwapParams calldata param, bytes calldata)
+    |                                  ^^^^^^^^^^^^^^^^^^^^
+Note: The shadowed declaration is here:
+  --> test/pool-cl/helpers/CLCustomCurveHook.sol:24:5:
+   |
+24 |     PoolKey key;
+   |     ^^^^^^^^^^^
+
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+  --> test/pool-bin/helpers/BinCustomCurveHook.sol:74:74:
+   |
+74 |     function lockAcquired(bytes calldata callbackData) external returns (bytes memory) {
+   |                                                                          ^^^^^^^^^^^^
+
+Warning (6321): Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable.
+  --> test/pool-cl/helpers/CLCustomCurveHook.sol:75:74:
+   |
+75 |     function lockAcquired(bytes calldata callbackData) external returns (bytes memory) {
+   |                                                                          ^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+  --> src/test/pool-bin/MockBinDynamicFeeHook.sol:30:9:
+   |
+30 |         address sender,
+   |         ^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+  --> src/test/pool-bin/MockBinDynamicFeeHook.sol:31:9:
+   |
+31 |         PoolKey calldata key,
+   |         ^^^^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+  --> src/test/pool-bin/MockBinDynamicFeeHook.sol:32:9:
+   |
+32 |         IBinPoolManager.MintParams calldata params,
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (5667): Unused function parameter. Remove or comment out the variable name to silence this warning.
+  --> src/test/pool-bin/MockBinDynamicFeeHook.sol:33:9:
+   |
+33 |         bytes calldata hookData
+   |         ^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (2072): Unused local variable.
+  --> test/pool-bin/BinMintBurnFeeHook.t.sol:87:9:
+   |
+87 |         BalanceDelta delta = binLiquidityHelper.mint(key, mintParams, abi.encode(0));
+   |         ^^^^^^^^^^^^^^^^^^
+
+Warning (2072): Unused local variable.
+   --> test/pool-bin/BinMintBurnFeeHook.t.sol:105:9:
+    |
+105 |         BalanceDelta delta = binLiquidityHelper.mint(key, mintParams, abi.encode(0));
+    |         ^^^^^^^^^^^^^^^^^^
+
+Warning (2072): Unused local variable.
+  --> test/pool-cl/CLMintBurnFeeHook.t.sol:79:10:
+   |
+79 |         (BalanceDelta delta,) = router.modifyPosition(
+   |          ^^^^^^^^^^^^^^^^^^
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/pool-bin/MockBinDynamicFeeHook.sol:29:5:
+   |
+29 |     function beforeMint(
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/pool-bin/MockBinHooks.sol:36:5:
+   |
+36 |     function beforeInitialize(address, PoolKey calldata, uint24) external returns (bytes4) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> src/test/pool-bin/MockBinHooks.sol:41:5:
+   |
+41 |     function afterInitialize(address, PoolKey calldata, uint24) external override returns (bytes4) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/pool-cl/helpers/MockHooks.sol:38:5:
+   |
+38 |     function beforeInitialize(address, PoolKey calldata, uint160) external override returns (bytes4) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/pool-cl/helpers/MockHooks.sol:43:5:
+   |
+43 |     function afterInitialize(address, PoolKey calldata, uint160, int24) external override returns (bytes4) {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
