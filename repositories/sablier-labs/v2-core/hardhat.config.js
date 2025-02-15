@@ -33,7 +33,7 @@ export default {
         "./script/"
       ]
     },
-    "blockGasLimit": 9223372036854776000,
+    "blockGasLimit": BigInt(9223372036854776000),
     "fuzz": {
       "runs": 50,
       "maxTestRejects": 1000000

@@ -1,0 +1,9 @@
+yarn run v1.22.19
+$ /Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/pancakeswap/pancake-v4-core/node_modules/.bin/hardhat compile
+
+WARNING: You are using Node.js 20.11.1 which is not supported by Hardhat.
+Please upgrade to 22.10.0 or a later version.
+
+Compiling your Solidity contracts
+Compiled 84 Solidity files with solc 0.8.26 (evm target: cancun)
+Done in 0.83s.

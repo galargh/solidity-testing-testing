@@ -118,7 +118,9 @@ function init(org, repo, packageManager, hardhatConfig) {
   if (!fs.existsSync(dir)) {
     throw new Error(`Directory ${dir} does not exist`);
   }
-  const jsHardhatConfig = `export default ${JSON.stringify(hardhatConfig ?? {}, null, 2)};\n`;
+  const jsHardhatConfig = `export default ${JSON.stringify(hardhatConfig ?? {}, null, 2)};\n`
+    .replaceAll(/"blockGasLimit": (\d+)/g, (_, blockGasLimit) => `"blockGasLimit": BigInt(${blockGasLimit})`)
+    .replaceAll(/"blockTimestamp": (\d+)/g, (_, blockTimestamp) => `"blockTimestamp": BigInt(${blockTimestamp})`);
   if (fs.existsSync(path.join(dir, 'hardhat.config.js')) || fs.existsSync(path.join(dir, 'hardhat.config.ts'))) {
     if (argv.force) {
       if (fs.existsSync(path.join(dir, 'hardhat.config.js'))) {
@@ -153,7 +155,7 @@ function init(org, repo, packageManager, hardhatConfig) {
     case 'pnpm':
       spawnSync('pnpm', ['install'], { cwd: dir, sdtio: 'inherit' });
       spawnSync('pnpm', ['remove', 'hardhat'], { cwd: dir, sdtio: 'inherit' });
-      spawnSync('pnpm', ['add', '-D', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('pnpm', ['add', '-D', '-w', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     default:
       spawnSync('npm', ['init', '-y'], { cwd: dir, sdtio: 'inherit' });

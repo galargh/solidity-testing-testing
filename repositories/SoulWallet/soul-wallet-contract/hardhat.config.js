@@ -20,7 +20,11 @@ export default {
       "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/"
     ],
     "settings": {
-      "viaIR": true
+      "viaIR": true,
+      "optimizer": {
+        "enabled": true,
+        "runs": 100000
+      }
     }
   },
   "solidityTest": {
