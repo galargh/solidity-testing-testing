@@ -20,20 +20,6 @@ This repository contains a collection of Solidity repositories that are used for
 - [Uniswap/UniswapX](repositories/Uniswap/UniswapX)
 - [Vectorized/solady](repositories/Vectorized/solady)
 
-## Usage
-
-The following commands are available:
-
-- `clone`: Clones the repository.
-- `init`: Initializes the repository.
-- `update`: Updates the hardhat dependency and config.
-- `build:hardhat`: Builds the repository with Hardhat.
-- `build:forge`: Builds the repository with Forge.
-- `test:hardhat`: Tests the repository with Hardhat.
-- `test:forge`: Tests the repository with Forge.
-
-If you want to rerun any of the commands, you can use the `--force` flag.
-
 ## Analysis
 
 | Repository | Forge Build | Forge Test | Hardhat Build | Hardhat Test |

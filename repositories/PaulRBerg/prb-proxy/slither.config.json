@@ -1,4 +1,0 @@
-{
-  "detectors_to_exclude": "low-level-calls,naming-convention,reentrancy-events,solc-version",
-  "filter_paths": "(test)"
-}

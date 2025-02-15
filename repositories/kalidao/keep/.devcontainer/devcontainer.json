@@ -1,4 +1,0 @@
-{
-    "name": "My Codespace",
-    "postCreateCommand": "curl -L https://foundry.paradigm.xyz | bash &&  source ~/.bashrc && foundryup && pnpm i"
-}

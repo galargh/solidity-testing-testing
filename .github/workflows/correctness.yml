@@ -1,0 +1,139 @@
+
+on:
+  workflow_dispatch:
+    inputs:
+      repositories:
+        description: 'Repositories (default: "", example: ["transmissions11/solmate"])'
+        required: false
+        type: string
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  discover:
+    if: github.event.inputs.repositories == ''
+    runs-on: ubuntu-latest
+    outputs:
+      repositories: ${{ steps.repositories.outputs.repositories }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: repositories
+        run: |
+          echo "repositories<<EOF" >> $GITHUB_OUTPUT
+          jq -r 'keys' repositories.json | tee -a $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+  run:
+    if: success() || (!cancelled() && github.event.inputs.repositories != '')
+    needs: discover
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repository: ${{ github.event.inputs.repositories != '' && fromJson(github.event.inputs.repositories) || fromJson(needs.discover.outputs.repositories) }}
+        run:
+          - command: forge build
+            regex: 'Compiling \d+ files with Solc \d+\.\d+'
+          - command: forge test
+            regex: 'Ran \d+ test suites in \d+\.\d+m?s \(\d+\.\d+m?s CPU time\): \d+ tests passed, \d+ failed, \d+ skipped \(\d+ total tests\)'
+          - command: hardhat compile
+            regex: 'Compiled \d+ Solidity files with solc \d+\.\d+'
+          - command: hardhat test solidity
+            regex: 'Run (?:Failed|Passed): \d+ tests, \d+ passed, \d+ failed, \d+ skipped \(duration: \d+ ms\)'
+    env:
+      HARDHAT_VERSION: 3.0.0-next.18
+      FORGE_VERSION: v0.3.0
+      NODE_VERSION: 22.10.0
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: ${{ github.repository }}
+      - id: config
+        env:
+          REPOSITORY: ${{ matrix.repository }}
+        run: |
+          echo "config<<EOF" >> $GITHUB_OUTPUT
+          jq -r '.[env.REPOSITORY]' repositories.json | tee -a $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+        working-directory: ${{ github.repository }}
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          repository: ${{ matrix.repository }}
+          path: ${{ matrix.repository }}
+          ref: ${{ fromJSON(steps.config.outputs.config).ref }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - uses: foundry-rs/foundry-toolchain@de808b1eea699e761c404bda44ba8f21aba30b2c
+        with:
+          version: ${{ env.FORGE_VERSION }}
+          cache: false
+      - run: npm install -g @ignored/hardhat-vnext@${{ env.HARDHAT_VERSION }}
+      - if: fromJSON(steps.config.outputs.config).packageManager != '' && fromJSON(steps.config.outputs.config).packageManager != 'npm'
+        run: npm install -g ${{ fromJSON(steps.config.outputs.config).packageManager }}
+      - if: fromJSON(steps.config.outputs.config).packageManager != ''
+        run: ${{ fromJSON(steps.config.outputs.config).packageManager }} install
+        working-directory: ${{ matrix.repository }}
+      - if: fromJSON(steps.config.outputs.config).packageManager == ''
+        run: npm init -y
+        working-directory: ${{ matrix.repository }}
+      - run: npm pkg set type="module"
+        working-directory: ${{ matrix.repository }}
+      - env:
+          HARDHAT_CONFIG: ${{ toJSON(fromJSON(steps.config.outputs.config).hardhatConfig) }}
+        run: |
+          rm hardhat.config.ts 2>/dev/null || true
+          echo "export default $HARDHAT_CONFIG;" > hardhat.config.js
+          sed -i 's/blockGasLimit": "\([0-9]\+\)"/blockGasLimit": BigInt(\1)/' hardhat.config.js
+          sed -i 's/blockTimestamp": "\([0-9]\+\)"/blockTimestamp": BigInt(\1)/' hardhat.config.js
+          cat hardhat.config.js
+        working-directory: ${{ matrix.repository }}
+      - id: run
+        env:
+          CONFIG_ENV: ${{ toJSON(fromJSON(steps.config.outputs.config).env || fromJSON('{}')) }}
+        run: |
+          for key in $(jq -r 'keys[]' <<< "$CONFIG_ENV"); do
+            value=$(jq -r ".[\"$key\"]" <<< "$CONFIG_ENV")
+            export "$key"="$value"
+          done
+          env
+          touch '${{ matrix.run.command }}.out'
+          ${{ matrix.run.command }} 2>&1 | tee -a '${{ matrix.run.command }}.out'
+        working-directory: ${{ matrix.repository }}
+        continue-on-error: true
+      - id: upload
+        env:
+          REPOSITORY: ${{ matrix.repository }}
+        run: |
+          echo "name=${REPOSITORY#*/} ${REPOSITORY%/*} ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
+          echo "title=${{ matrix.repository }}: ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
+          echo "path=${{ matrix.repository }}/${{ matrix.run.command }}.result" | tee -a $GITHUB_OUTPUT
+          echo "content<<EOF" | tee -a $GITHUB_OUTPUT
+          (grep -P '${{ matrix.run.regex }}' '${{ matrix.run.command }}.out' || echo "Unexpected Error") | tee -a '${{ matrix.run.command }}.result' | tee -a $GITHUB_OUTPUT
+          echo "EOF" | tee -a $GITHUB_OUTPUT
+        working-directory: ${{ matrix.repository }}
+      - run: |
+          echo "::notice title=${{ steps.upload.outputs.title }}::${{ steps.upload.outputs.content }}"
+        working-directory: ${{ matrix.repository }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.upload.outputs.name }}
+          path: ${{ steps.upload.outputs.path }}
+  summary:
+    if: (!cancelled())
+    needs: run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: '*'
+      - id: summary
+        run: |
+          ls -R
+          for file in **/*.result; do
+            echo "#### $file" | tee -a $GITHUB_STEP_SUMMARY
+            cat "$file" | tee -a $GITHUB_STEP_SUMMARY
+            echo "" | tee -a $GITHUB_STEP_SUMMARY
+          done

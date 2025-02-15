@@ -1,7 +1,5 @@
-[
-  {
-    "org": "foundry-rs",
-    "repo": "forge-std",
+{
+  "foundry-rs/forge-std": {
     "packageManager": "npm",
     "hardhatConfig": {
       "paths": {
@@ -34,9 +32,7 @@
       }
     }
   },
-  {
-    "org": "transmissions11",
-    "repo": "solmate",
+  "transmissions11/solmate": {
     "packageManager": "npm",
     "hardhatConfig": {
       "paths": {
@@ -58,9 +54,7 @@
       }
     }
   },
-  {
-    "org": "Vectorized",
-    "repo": "solady",
+  "Vectorized/solady": {
     "packageManager": "npm",
     "hardhatConfig": {
       "paths": {
@@ -82,7 +76,7 @@
         }
       },
       "solidityTest": {
-        "blockGasLimit": 100000000,
+        "blockGasLimit": "100000000",
         "fsPermissions": {
           "read": [
             "./test/data"
@@ -94,9 +88,7 @@
       }
     }
   },
-  {
-    "org": "Uniswap",
-    "repo": "UniswapX",
+  "Uniswap/UniswapX": {
     "hardhatConfig": {
       "paths": {
         "sources": "src",
@@ -131,9 +123,7 @@
       }
     }
   },
-  {
-    "org": "sablier-labs",
-    "repo": "v2-core",
+  "sablier-labs/v2-core": {
     "packageManager": "bun",
     "hardhatConfig": {
       "paths": {
@@ -170,7 +160,7 @@
             "./script/"
           ]
         },
-        "blockGasLimit": 9223372036854775807,
+        "blockGasLimit": "9223372036854775807",
         "fuzz": {
           "runs": 50,
           "maxTestRejects": 1000000
@@ -188,9 +178,7 @@
       "RPC_URL_MAINNET": "https://eth-mainnet.g.alchemy.com/v2/<api-key>"
     }
   },
-  {
-    "org": "sablier-labs",
-    "repo": "v2-periphery",
+  "sablier-labs/v2-periphery": {
     "packageManager": "bun",
     "hardhatConfig": {
       "paths": {
@@ -217,7 +205,7 @@
         }
       },
       "solidityTest": {
-        "blockTimestamp": 1714518000,
+        "blockTimestamp": "1714518000",
         "fsPermissions": {
           "read": [
             "./out-optimized",
@@ -228,7 +216,7 @@
             "./cache"
           ]
         },
-        "blockGasLimit": 9223372036854775807,
+        "blockGasLimit": "9223372036854775807",
         "sender": "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38",
         "fuzz": {
           "runs": 20,
@@ -240,9 +228,7 @@
       "RPC_URL_MAINNET": "https://eth-mainnet.g.alchemy.com/v2/<api-key>"
     }
   },
-  {
-    "org": "PaulRBerg",
-    "repo": "prb-math",
+  "PaulRBerg/prb-math": {
     "packageManager": "bun",
     "hardhatConfig": {
       "paths": {
@@ -267,9 +253,7 @@
       }
     }
   },
-  {
-    "org": "PaulRBerg",
-    "repo": "prb-proxy",
+  "PaulRBerg/prb-proxy": {
     "packageManager": "bun",
     "hardhatConfig": {
       "paths": {
@@ -300,9 +284,7 @@
       }
     }
   },
-  {
-    "org": "PaulRBerg",
-    "repo": "prb-test",
+  "PaulRBerg/prb-test": {
     "packageManager": "bun",
     "hardhatConfig": {
       "paths": {
@@ -327,9 +309,7 @@
       }
     }
   },
-  {
-    "org": "ProjectOpenSea",
-    "repo": "seaport",
+  "ProjectOpenSea/seaport": {
     "packageManager": "yarn",
     "hardhatConfig": {
       "paths": {
@@ -378,9 +358,7 @@
       }
     }
   },
-  {
-    "org": "kalidao",
-    "repo": "keep",
+  "kalidao/keep": {
     "packageManager": "pnpm",
     "hardhatConfig": {
       "paths": {
@@ -408,9 +386,7 @@
       }
     }
   },
-  {
-    "org": "SoulWallet",
-    "repo": "soul-wallet-contract",
+  "SoulWallet/soul-wallet-contract": {
     "packageManager": "npm",
     "hardhatConfig": {
       "paths": {
@@ -446,9 +422,7 @@
       }
     }
   },
-  {
-    "org": "pancakeswap",
-    "repo": "pancake-v4-core",
+  "pancakeswap/pancake-v4-core": {
     "packageManager": "yarn",
     "hardhatConfig": {
       "paths": {
@@ -487,16 +461,14 @@
             "./test/pool-bin/bin"
           ]
         },
-        "blockGasLimit": 300000000,
+        "blockGasLimit": "300000000",
         "fuzz": {
           "runs": 5
         }
       }
     }
   },
-  {
-    "org": "pcaversaccio",
-    "repo": "createx",
+  "pcaversaccio/createx": {
     "packageManager": "pnpm",
     "hardhatConfig": {
       "paths": {
@@ -534,9 +506,7 @@
       }
     }
   },
-  {
-    "org": "mds1",
-    "repo": "multicall",
+  "mds1/multicall": {
     "hardhatConfig": {
       "paths": {
         "sources": "src"
@@ -561,4 +531,4 @@
       }
     }
   }
-]
+}

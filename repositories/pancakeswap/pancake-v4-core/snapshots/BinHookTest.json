@@ -1,7 +1,0 @@
-{
-  "testBurnSucceedsWithHook": "137014",
-  "testDonateSucceedsWithHook": "131582",
-  "testInitializeSucceedsWithHook": "150670",
-  "testMintSucceedsWithHook": "275474",
-  "testSwapSucceedsWithHook": "135268"
-}
