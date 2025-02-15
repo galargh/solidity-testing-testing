@@ -18,7 +18,14 @@ export default {
       "@crypto-lib/=lib/crypto-lib/src/",
       "forge-std/=lib/forge-std/src/",
       "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/"
-    ]
+    ],
+    "settings": {
+      "viaIR": true,
+      "optimizer": {
+        "enabled": true,
+        "runs": 100000
+      }
+    }
   },
   "solidityTest": {
     "testFail": true

@@ -13,9 +13,31 @@ export default {
       "@openzeppelin/=lib/openzeppelin-contracts/",
       "solmate/=lib/solmate/",
       "forge-gas-snapshot/=lib/forge-gas-snapshot/src/"
-    ]
+    ],
+    "settings": {
+      "viaIR": true,
+      "optimizer": {
+        "runs": 25666
+      }
+    }
   },
   "solidityTest": {
-    "testFail": true
+    "testFail": true,
+    "ffi": true,
+    "fsPermissions": {
+      "readWrite": [
+        ".forge-snapshots/"
+      ],
+      "read": [
+        "./foundry-out",
+        "./script/config",
+        "./test/pool-cl/bin",
+        "./test/pool-bin/bin"
+      ]
+    },
+    "blockGasLimit": BigInt(300000000),
+    "fuzz": {
+      "runs": 5
+    }
   }
 };

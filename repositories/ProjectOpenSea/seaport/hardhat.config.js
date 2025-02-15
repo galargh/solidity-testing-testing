@@ -1,9 +1,9 @@
 export default {
   "paths": {
-    "sources": [
-      "contracts",
-      "test/foundry"
-    ]
+    "sources": "contracts",
+    "tests": {
+      "solidity": "test/foundry"
+    }
   },
   "solidity": {
     "version": "0.8.24",
@@ -19,6 +19,28 @@ export default {
       "seaport-types/=lib/seaport-types/",
       "seaport-core/=lib/seaport-core/",
       "seaport/=contracts/"
-    ]
+    ],
+    "settings": {
+      "optimizer": {
+        "runs": 4294967292
+      }
+    }
+  },
+  "solidityTest": {
+    "fuzz": {
+      "runs": 1000
+    },
+    "fsPermissions": {
+      "read": [
+        "./optimized-out",
+        "./reference-out"
+      ],
+      "write": [
+        "./call-metrics.txt",
+        "./mutation-metrics.txt",
+        "./assume-metrics.txt",
+        "./fuzz_debug.json"
+      ]
+    }
   }
 };

@@ -2,8 +2,21 @@ export default {
   "paths": {
     "sources": "src",
     "tests": {
-      "solidity": "test"
+      "solidity": "test",
     }
   },
-  "solidity": "0.8.26"
+  "solidity": {
+    "version": "0.8.26",
+    "settings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": 1000000
+      }
+    }
+  },
+  "solidityTest": {
+    "fuzz": {
+      "runs": 256
+    }
+  }
 };

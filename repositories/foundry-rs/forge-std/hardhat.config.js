@@ -5,7 +5,15 @@ export default {
       "solidity": "test"
     }
   },
-  "solidity": "0.8.26",
+  "solidity": {
+    "version": "0.8.26",
+    "settings": {
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      }
+    }
+  },
   "solidityTest": {
     "fsPermissions": {
       "readWrite": [

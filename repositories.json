@@ -10,7 +10,15 @@
           "solidity": "test"
         }
       },
-      "solidity": "0.8.26",
+      "solidity": {
+        "version": "0.8.26",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          }
+        }
+      },
       "solidityTest": {
         "fsPermissions": {
           "readWrite": [
@@ -25,7 +33,8 @@
         }
       }
     }
-  }, {
+  },
+  {
     "org": "transmissions11",
     "repo": "solmate",
     "packageManager": "npm",
@@ -35,13 +44,21 @@
       },
       "solidity": {
         "version": "0.8.15",
-        "remappings": ["ds-test/=lib/ds-test/src/"]
+        "remappings": [
+          "ds-test/=lib/ds-test/src/"
+        ],
+        "settings": {
+          "optimizer": {
+            "runs": 1000000
+          }
+        }
       },
       "solidityTest": {
         "testFail": true
       }
     }
-  }, {
+  },
+  {
     "org": "Vectorized",
     "repo": "solady",
     "packageManager": "npm",
@@ -54,10 +71,30 @@
       },
       "solidity": {
         "version": "0.8.28",
-        "remappings": ["forge-std=test/utils/forge-std/"]
+        "remappings": [
+          "forge-std=test/utils/forge-std/"
+        ],
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000
+          }
+        }
+      },
+      "solidityTest": {
+        "blockGasLimit": 100000000,
+        "fsPermissions": {
+          "read": [
+            "./test/data"
+          ]
+        },
+        "fuzz": {
+          "runs": 256
+        }
       }
     }
-  }, {
+  },
+  {
     "org": "Uniswap",
     "repo": "UniswapX",
     "hardhatConfig": {
@@ -69,10 +106,32 @@
       },
       "solidity": {
         "version": "0.8.24",
-        "remappings": ["ds-test/=lib/forge-std/lib/ds-test/src/", "forge-gas-snapshot/=lib/forge-gas-snapshot/src/", "forge-std/=lib/forge-std/src/", "openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/", "permit2/=lib/permit2/", "solmate/=lib/solmate/", "solarray/=lib/solarray/src/"]
+        "remappings": [
+          "ds-test/=lib/forge-std/lib/ds-test/src/",
+          "forge-gas-snapshot/=lib/forge-gas-snapshot/src/",
+          "forge-std/=lib/forge-std/src/",
+          "openzeppelin-contracts/=lib/openzeppelin-contracts/contracts/",
+          "permit2/=lib/permit2/",
+          "solmate/=lib/solmate/",
+          "solarray/=lib/solarray/src/"
+        ],
+        "settings": {
+          "optimizer": {
+            "runs": 1000000
+          }
+        }
+      },
+      "solidityTest": {
+        "ffi": true,
+        "fsPermissions": {
+          "readWrite": [
+            ".forge-snapshots/"
+          ]
+        }
       }
     }
-  }, {
+  },
+  {
     "org": "sablier-labs",
     "repo": "v2-core",
     "packageManager": "bun",
@@ -85,13 +144,51 @@
       },
       "solidity": {
         "version": "0.8.26",
-        "remappings": ["@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/", "@prb/math/=node_modules/@prb/math/", "forge-std/=node_modules/forge-std/", "solady/=node_modules/solady/", "solarray/=node_modules/solarray/"]
+        "remappings": [
+          "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
+          "@prb/math/=node_modules/@prb/math/",
+          "forge-std/=node_modules/forge-std/",
+          "solady/=node_modules/solady/",
+          "solarray/=node_modules/solarray/"
+        ],
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "enabled": true,
+            "runs": 570
+          }
+        }
+      },
+      "solidityTest": {
+        "fsPermissions": {
+          "read": [
+            "./out-optimized",
+            "package.json"
+          ],
+          "readWrite": [
+            "./benchmark/results",
+            "./script/"
+          ]
+        },
+        "blockGasLimit": 9223372036854775807,
+        "fuzz": {
+          "runs": 50,
+          "maxTestRejects": 1000000
+        },
+        "invariant": {
+          "runs": 20,
+          "depth": 20,
+          "failOnRevert": true,
+          "callOverride": false
+        },
+        "sender": "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38"
       }
     },
     "env": {
       "RPC_URL_MAINNET": "https://eth-mainnet.g.alchemy.com/v2/<api-key>"
     }
-  }, {
+  },
+  {
     "org": "sablier-labs",
     "repo": "v2-periphery",
     "packageManager": "bun",
@@ -104,13 +201,45 @@
       },
       "solidity": {
         "version": "0.8.26",
-        "remappings": ["@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/", "@prb/math/=node_modules/@prb/math/", "@sablier/v2-core/=node_modules/@sablier/v2-core/", "forge-std/=node_modules/forge-std/", "solady/=node_modules/solady/"]
+        "remappings": [
+          "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
+          "@prb/math/=node_modules/@prb/math/",
+          "@sablier/v2-core/=node_modules/@sablier/v2-core/",
+          "forge-std/=node_modules/forge-std/",
+          "solady/=node_modules/solady/"
+        ],
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000
+          }
+        }
+      },
+      "solidityTest": {
+        "blockTimestamp": 1714518000,
+        "fsPermissions": {
+          "read": [
+            "./out-optimized",
+            "package.json"
+          ],
+          "readWrite": [
+            "./benchmark/results",
+            "./cache"
+          ]
+        },
+        "blockGasLimit": 9223372036854775807,
+        "sender": "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38",
+        "fuzz": {
+          "runs": 20,
+          "maxTestRejects": 1000000
+        }
       }
     },
     "env": {
       "RPC_URL_MAINNET": "https://eth-mainnet.g.alchemy.com/v2/<api-key>"
     }
-  }, {
+  },
+  {
     "org": "PaulRBerg",
     "repo": "prb-math",
     "packageManager": "bun",
@@ -121,9 +250,23 @@
           "solidity": "test"
         }
       },
-      "solidity": "0.8.26"
+      "solidity": {
+        "version": "0.8.26",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          }
+        }
+      },
+      "solidityTest": {
+        "fuzz": {
+          "runs": 256
+        }
+      }
     }
-  }, {
+  },
+  {
     "org": "PaulRBerg",
     "repo": "prb-proxy",
     "packageManager": "bun",
@@ -134,9 +277,29 @@
           "solidity": "test"
         }
       },
-      "solidity": "0.8.23"
+      "solidity": {
+        "version": "0.8.23",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          }
+        }
+      },
+      "solidityTest": {
+        "fuzz": {
+          "runs": 1000,
+          "maxTestRejects": 1000000
+        },
+        "fsPermissions": {
+          "read": [
+            "./out-optimized"
+          ]
+        }
+      }
     }
-  }, {
+  },
+  {
     "org": "PaulRBerg",
     "repo": "prb-test",
     "packageManager": "bun",
@@ -147,54 +310,138 @@
           "solidity": "test"
         }
       },
-      "solidity": "0.8.26"
+      "solidity": {
+        "version": "0.8.26",
+        "settings": {
+          "optimizer": {
+            "enabled": false
+          }
+        }
+      },
+      "solidityTest": {
+        "fuzz": {
+          "runs": 100,
+          "maxTestRejects": 100000
+        }
+      }
     }
-  }, {
+  },
+  {
     "org": "ProjectOpenSea",
     "repo": "seaport",
     "packageManager": "yarn",
     "hardhatConfig": {
       "paths": {
-        "sources": ["contracts", "test/foundry"]
+        "sources": "contracts",
+        "tests": {
+          "solidity": "test/foundry"
+        }
       },
       "solidity": {
         "version": "0.8.24",
-        "remappings": ["@rari-capital/solmate/=lib/solmate/", "ds-test/=lib/ds-test/src/", "forge-std/=lib/forge-std/src/", "murky/=lib/murky/src/", "@openzeppelin/=lib/openzeppelin-contracts/", "solarray/=lib/solarray/src/", "solady/=lib/solady/", "seaport-sol/=lib/seaport-sol/", "seaport-types/=lib/seaport-types/", "seaport-core/=lib/seaport-core/", "seaport/=contracts/"]
+        "remappings": [
+          "@rari-capital/solmate/=lib/solmate/",
+          "ds-test/=lib/ds-test/src/",
+          "forge-std/=lib/forge-std/src/",
+          "murky/=lib/murky/src/",
+          "@openzeppelin/=lib/openzeppelin-contracts/",
+          "solarray/=lib/solarray/src/",
+          "solady/=lib/solady/",
+          "seaport-sol/=lib/seaport-sol/",
+          "seaport-types/=lib/seaport-types/",
+          "seaport-core/=lib/seaport-core/",
+          "seaport/=contracts/"
+        ],
+        "settings": {
+          "optimizer": {
+            "runs": 4294967292
+          }
+        }
+      },
+      "solidityTest": {
+        "fuzz": {
+          "runs": 1000
+        },
+        "fsPermissions": {
+          "read": [
+            "./optimized-out",
+            "./reference-out"
+          ],
+          "write": [
+            "./call-metrics.txt",
+            "./mutation-metrics.txt",
+            "./assume-metrics.txt",
+            "./fuzz_debug.json"
+          ]
+        }
       }
     }
-  }, {
+  },
+  {
     "org": "kalidao",
     "repo": "keep",
     "packageManager": "pnpm",
     "hardhatConfig": {
       "paths": {
-        "sources": ["contracts", "test"]
+        "sources": [
+          "contracts",
+          "test"
+        ]
       },
       "solidity": {
-        "version":"0.8.18",
-        "remappings": ["@std/=lib/forge-std/src/", "@solady/=lib/solady/", "ds-test/=lib/forge-std/lib/ds-test/src/", "forge-std/=lib/forge-std/src/"]
+        "version": "0.8.18",
+        "remappings": [
+          "@std/=lib/forge-std/src/",
+          "@solady/=lib/solady/",
+          "ds-test/=lib/forge-std/lib/ds-test/src/",
+          "forge-std/=lib/forge-std/src/"
+        ],
+        "settings": {
+          "optimizer": {
+            "runs": 9999999
+          }
+        }
       },
       "solidityTest": {
         "testFail": true
       }
     }
-  }, {
+  },
+  {
     "org": "SoulWallet",
     "repo": "soul-wallet-contract",
     "packageManager": "npm",
     "hardhatConfig": {
       "paths": {
-        "sources": ["contracts", "test"]
+        "sources": [
+          "contracts",
+          "test"
+        ]
       },
       "solidity": {
         "version": "0.8.24",
-        "remappings": ["@soulwallet-core/=lib/soulwallet-core/", "@source/=contracts/", "@arbitrum/nitro-contracts=lib/nitro-contracts/", "@solady=lib/solady/", "@solenv=lib/solenv/src/", "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/", "@account-abstraction/=lib/account-abstraction/", "@crypto-lib/=lib/crypto-lib/src/", "forge-std/=lib/forge-std/src/", "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/"]
+        "remappings": [
+          "@soulwallet-core/=lib/soulwallet-core/",
+          "@source/=contracts/",
+          "@arbitrum/nitro-contracts=lib/nitro-contracts/",
+          "@solady=lib/solady/",
+          "@solenv=lib/solenv/src/",
+          "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+          "@account-abstraction/=lib/account-abstraction/",
+          "@crypto-lib/=lib/crypto-lib/src/",
+          "forge-std/=lib/forge-std/src/",
+          "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/"
+        ],
+        "settings": {
+          "viaIR": true
+        }
       },
       "solidityTest": {
         "testFail": true
       }
     }
-  }, {
+  },
+  {
     "org": "pancakeswap",
     "repo": "pancake-v4-core",
     "packageManager": "yarn",
@@ -207,13 +454,42 @@
       },
       "solidity": {
         "version": "0.8.26",
-        "remappings": ["ds-test/=lib/forge-std/lib/ds-test/src/", "forge-std/=lib/forge-std/src/", "@openzeppelin/=lib/openzeppelin-contracts/", "solmate/=lib/solmate/", "forge-gas-snapshot/=lib/forge-gas-snapshot/src/"]
+        "remappings": [
+          "ds-test/=lib/forge-std/lib/ds-test/src/",
+          "forge-std/=lib/forge-std/src/",
+          "@openzeppelin/=lib/openzeppelin-contracts/",
+          "solmate/=lib/solmate/",
+          "forge-gas-snapshot/=lib/forge-gas-snapshot/src/"
+        ],
+        "settings": {
+          "viaIR": true,
+          "optimizer": {
+            "runs": 25666
+          }
+        }
       },
       "solidityTest": {
-        "testFail": true
+        "testFail": true,
+        "ffi": true,
+        "fsPermissions": {
+          "readWrite": [
+            ".forge-snapshots/"
+          ],
+          "read": [
+            "./foundry-out",
+            "./script/config",
+            "./test/pool-cl/bin",
+            "./test/pool-bin/bin"
+          ]
+        },
+        "blockGasLimit": 300000000,
+        "fuzz": {
+          "runs": 5
+        }
       }
     }
-  }, {
+  },
+  {
     "org": "pcaversaccio",
     "repo": "createx",
     "packageManager": "pnpm",
@@ -226,10 +502,34 @@
       },
       "solidity": {
         "version": "0.8.23",
-        "remappings": ["solady/=lib/solady/src/", "forge-std/=lib/forge-std/src/", "openzeppelin/=lib/openzeppelin-contracts/contracts/"]
+        "remappings": [
+          "solady/=lib/solady/src/",
+          "forge-std/=lib/forge-std/src/",
+          "openzeppelin/=lib/openzeppelin-contracts/contracts/"
+        ],
+        "optimizer": {
+          "enabled": true,
+          "runs": 10000000
+        },
+        "viaIR": false
+      },
+      "solidityTest": {
+        "fuzz": {
+          "runs": 100
+        },
+        "fsPermissions": {
+          "readWrite": [
+            "./"
+          ]
+        },
+        "invariant": {
+          "runs": 256,
+          "depth": 15
+        }
       }
     }
-  }, {
+  },
+  {
     "org": "mds1",
     "repo": "multicall",
     "hardhatConfig": {
@@ -238,7 +538,20 @@
       },
       "solidity": {
         "version": "0.8.12",
-        "remappings": ["forge-std/=lib/forge-std/src/"]
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000000
+          }
+        },
+        "remappings": [
+          "forge-std/=lib/forge-std/src/"
+        ]
+      },
+      "solidityTest": {
+        "fuzz": {
+          "runs": 1000
+        }
       }
     }
   }

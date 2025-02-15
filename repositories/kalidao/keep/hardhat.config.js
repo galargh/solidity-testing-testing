@@ -12,7 +12,12 @@ export default {
       "@solady/=lib/solady/",
       "ds-test/=lib/forge-std/lib/ds-test/src/",
       "forge-std/=lib/forge-std/src/"
-    ]
+    ],
+    "settings": {
+      "optimizer": {
+        "runs": 9999999
+      }
+    }
   },
   "solidityTest": {
     "testFail": true

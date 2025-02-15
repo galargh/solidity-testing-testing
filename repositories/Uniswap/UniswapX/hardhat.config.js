@@ -15,6 +15,19 @@ export default {
       "permit2/=lib/permit2/",
       "solmate/=lib/solmate/",
       "solarray/=lib/solarray/src/"
-    ]
+    ],
+    "settings": {
+      "optimizer": {
+        "runs": 1000000
+      }
+    }
+  },
+  "solidityTest": {
+    "ffi": true,
+    "fsPermissions": {
+      "readWrite": [
+        ".forge-snapshots/"
+      ]
+    }
   }
 };

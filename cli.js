@@ -187,6 +187,7 @@ function update(org, repo, packageManager) {
     throw new Error(`Directory ${dir} does not exist`);
   }
   const hardhatVersion = process.env.HARDHAT_VERSION ?? 'next';
+  // remove hardhat first
   switch (packageManager) {
     case 'bun':
       spawnSync('bun', ['add', '-d', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, stdio: 'inherit' });
@@ -198,7 +199,7 @@ function update(org, repo, packageManager) {
       spawnSync('npm', ['install', '--save-dev', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     case 'pnpm':
-      spawnSync('pnpm', ['add', '-D', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('pnpm', ['add', '-D', '-w', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     default:
       spawnSync('npm', ['install', '--save-dev', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
