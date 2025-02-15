@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.17;
 
 import {IEIP712} from "./IEIP712.sol";
 
@@ -53,7 +53,7 @@ interface IAllowanceTransfer is IEIP712 {
         uint48 nonce;
     }
 
-    /// @notice The permit message signed for a single token allowance
+    /// @notice The permit message signed for a single token allownce
     struct PermitSingle {
         // the permit data for a single token alownce
         PermitDetails details;

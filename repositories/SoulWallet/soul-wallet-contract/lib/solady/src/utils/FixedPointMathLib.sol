@@ -437,22 +437,10 @@ library FixedPointMathLib {
     /*                  GENERAL NUMBER UTILITIES                  */
     /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/
 
-    /// @dev Returns `a * b == x * y`, with full precision.
-    function fullMulEq(uint256 a, uint256 b, uint256 x, uint256 y)
-        internal
-        pure
-        returns (bool result)
-    {
-        /// @solidity memory-safe-assembly
-        assembly {
-            result := and(eq(mul(a, b), mul(x, y)), eq(mulmod(x, y, not(0)), mulmod(a, b, not(0))))
-        }
-    }
-
     /// @dev Calculates `floor(x * y / d)` with full precision.
     /// Throws if result overflows a uint256 or when `d` is zero.
     /// Credit to Remco Bloemen under MIT license: https://2π.com/21/muldiv
-    function fullMulDiv(uint256 x, uint256 y, uint256 d) internal pure returns (uint256 z) {
+    function fullMulDiv(uint256 x, uint256 y, uint256 d) internal pure returns (uint256 result) {
         /// @solidity memory-safe-assembly
         assembly {
             // 512-bit multiply `[p1 p0] = x * y`.
@@ -461,20 +449,20 @@ library FixedPointMathLib {
             // the 512 bit result. The result is stored in two 256
             // variables such that `product = p1 * 2**256 + p0`.
 
-            // Temporarily use `z` as `p0` to save gas.
-            z := mul(x, y) // Lower 256 bits of `x * y`.
+            // Temporarily use `result` as `p0` to save gas.
+            result := mul(x, y) // Lower 256 bits of `x * y`.
             for {} 1 {} {
                 // If overflows.
-                if iszero(mul(or(iszero(x), eq(div(z, x), y)), d)) {
+                if iszero(mul(or(iszero(x), eq(div(result, x), y)), d)) {
                     let mm := mulmod(x, y, not(0))
-                    let p1 := sub(mm, add(z, lt(mm, z))) // Upper 256 bits of `x * y`.
+                    let p1 := sub(mm, add(result, lt(mm, result))) // Upper 256 bits of `x * y`.
 
                     /*------------------- 512 by 256 division --------------------*/
 
                     // Make division exact by subtracting the remainder from `[p1 p0]`.
                     let r := mulmod(x, y, d) // Compute remainder using mulmod.
                     let t := and(d, sub(0, d)) // The least significant bit of `d`. `t >= 1`.
-                    // Make sure `z` is less than `2**256`. Also prevents `d == 0`.
+                    // Make sure the result is less than `2**256`. Also prevents `d == 0`.
                     // Placing the check here seems to give more optimal stack operations.
                     if iszero(gt(d, p1)) {
                         mstore(0x00, 0xae47f702) // `FullMulDivFailed()`.
@@ -495,17 +483,20 @@ library FixedPointMathLib {
                     inv := mul(inv, sub(2, mul(d, inv))) // inverse mod 2**32
                     inv := mul(inv, sub(2, mul(d, inv))) // inverse mod 2**64
                     inv := mul(inv, sub(2, mul(d, inv))) // inverse mod 2**128
-                    z :=
+                    result :=
                         mul(
                             // Divide [p1 p0] by the factors of two.
                             // Shift in bits from `p1` into `p0`. For this we need
                             // to flip `t` such that it is `2**256 / t`.
-                            or(mul(sub(p1, gt(r, z)), add(div(sub(0, t), t), 1)), div(sub(z, r), t)),
+                            or(
+                                mul(sub(p1, gt(r, result)), add(div(sub(0, t), t), 1)),
+                                div(sub(result, r), t)
+                            ),
                             mul(sub(2, mul(d, inv)), inv) // inverse mod 2**256
                         )
                     break
                 }
-                z := div(z, d)
+                result := div(result, d)
                 break
             }
         }
@@ -517,13 +508,13 @@ library FixedPointMathLib {
     function fullMulDivUnchecked(uint256 x, uint256 y, uint256 d)
         internal
         pure
-        returns (uint256 z)
+        returns (uint256 result)
     {
         /// @solidity memory-safe-assembly
         assembly {
-            z := mul(x, y)
+            result := mul(x, y)
             let mm := mulmod(x, y, not(0))
-            let p1 := sub(mm, add(z, lt(mm, z)))
+            let p1 := sub(mm, add(result, lt(mm, result)))
             let t := and(d, sub(0, d))
             let r := mulmod(x, y, d)
             d := div(d, t)
@@ -533,9 +524,9 @@ library FixedPointMathLib {
             inv := mul(inv, sub(2, mul(d, inv)))
             inv := mul(inv, sub(2, mul(d, inv)))
             inv := mul(inv, sub(2, mul(d, inv)))
-            z :=
+            result :=
                 mul(
-                    or(mul(sub(p1, gt(r, z)), add(div(sub(0, t), t), 1)), div(sub(z, r), t)),
+                    or(mul(sub(p1, gt(r, result)), add(div(sub(0, t), t), 1)), div(sub(result, r), t)),
                     mul(sub(2, mul(d, inv)), inv)
                 )
         }
@@ -545,47 +536,16 @@ library FixedPointMathLib {
     /// Throws if result overflows a uint256 or when `d` is zero.
     /// Credit to Uniswap-v3-core under MIT license:
     /// https://github.com/Uniswap/v3-core/blob/main/contracts/libraries/FullMath.sol
-    function fullMulDivUp(uint256 x, uint256 y, uint256 d) internal pure returns (uint256 z) {
-        z = fullMulDiv(x, y, d);
+    function fullMulDivUp(uint256 x, uint256 y, uint256 d) internal pure returns (uint256 result) {
+        result = fullMulDiv(x, y, d);
         /// @solidity memory-safe-assembly
         assembly {
             if mulmod(x, y, d) {
-                z := add(z, 1)
-                if iszero(z) {
+                result := add(result, 1)
+                if iszero(result) {
                     mstore(0x00, 0xae47f702) // `FullMulDivFailed()`.
                     revert(0x1c, 0x04)
                 }
-            }
-        }
-    }
-
-    /// @dev Calculates `floor(x * y / 2 ** n)` with full precision.
-    /// Throws if result overflows a uint256.
-    /// Credit to Philogy under MIT license:
-    /// https://github.com/SorellaLabs/angstrom/blob/main/contracts/src/libraries/X128MathLib.sol
-    function fullMulDivN(uint256 x, uint256 y, uint8 n) internal pure returns (uint256 z) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            // Temporarily use `z` as `p0` to save gas.
-            z := mul(x, y) // Lower 256 bits of `x * y`. We'll call this `z`.
-            for {} 1 {} {
-                if iszero(or(iszero(x), eq(div(z, x), y))) {
-                    let k := and(n, 0xff) // `n`, cleaned.
-                    let mm := mulmod(x, y, not(0))
-                    let p1 := sub(mm, add(z, lt(mm, z))) // Upper 256 bits of `x * y`.
-                    //         |      p1     |      z     |
-                    // Before: | p1_0 ¦ p1_1 | z_0  ¦ z_1 |
-                    // Final:  |   0  ¦ p1_0 | p1_1 ¦ z_0 |
-                    // Check that final `z` doesn't overflow by checking that p1_0 = 0.
-                    if iszero(shr(k, p1)) {
-                        z := add(shl(sub(256, k), p1), shr(k, z))
-                        break
-                    }
-                    mstore(0x00, 0xae47f702) // `FullMulDivFailed()`.
-                    revert(0x1c, 0x04)
-                }
-                z := shr(and(n, 0xff), z)
-                break
             }
         }
     }
@@ -620,26 +580,6 @@ library FixedPointMathLib {
         }
     }
 
-    /// @dev Returns `x`, the modular multiplicative inverse of `a`, such that `(a * x) % n == 1`.
-    function invMod(uint256 a, uint256 n) internal pure returns (uint256 x) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            let g := n
-            let r := mod(a, n)
-            for { let y := 1 } 1 {} {
-                let q := div(g, r)
-                let t := g
-                g := r
-                r := sub(t, mul(r, q))
-                let u := x
-                x := y
-                y := sub(u, mul(y, q))
-                if iszero(r) { break }
-            }
-            x := mul(eq(g, 1), add(x, mul(slt(x, 0), n)))
-        }
-    }
-
     /// @dev Returns `ceil(x / d)`.
     /// Reverts if `d` is zero.
     function divUp(uint256 x, uint256 d) internal pure returns (uint256 z) {
@@ -653,7 +593,7 @@ library FixedPointMathLib {
         }
     }
 
-    /// @dev Returns `max(0, x - y)`. Alias for `saturatingSub`.
+    /// @dev Returns `max(0, x - y)`.
     function zeroFloorSub(uint256 x, uint256 y) internal pure returns (uint256 z) {
         /// @solidity memory-safe-assembly
         assembly {
@@ -661,51 +601,11 @@ library FixedPointMathLib {
         }
     }
 
-    /// @dev Returns `max(0, x - y)`.
-    function saturatingSub(uint256 x, uint256 y) internal pure returns (uint256 z) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            z := mul(gt(x, y), sub(x, y))
-        }
-    }
-
-    /// @dev Returns `min(2 ** 256 - 1, x + y)`.
-    function saturatingAdd(uint256 x, uint256 y) internal pure returns (uint256 z) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            z := or(sub(0, lt(add(x, y), x)), add(x, y))
-        }
-    }
-
-    /// @dev Returns `min(2 ** 256 - 1, x * y)`.
-    function saturatingMul(uint256 x, uint256 y) internal pure returns (uint256 z) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            z := or(sub(or(iszero(x), eq(div(mul(x, y), x), y)), 1), mul(x, y))
-        }
-    }
-
     /// @dev Returns `condition ? x : y`, without branching.
-    function ternary(bool condition, uint256 x, uint256 y) internal pure returns (uint256 z) {
+    function ternary(bool condition, uint256 x, uint256 y) internal pure returns (uint256 result) {
         /// @solidity memory-safe-assembly
         assembly {
-            z := xor(x, mul(xor(x, y), iszero(condition)))
-        }
-    }
-
-    /// @dev Returns `condition ? x : y`, without branching.
-    function ternary(bool condition, bytes32 x, bytes32 y) internal pure returns (bytes32 z) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            z := xor(x, mul(xor(x, y), iszero(condition)))
-        }
-    }
-
-    /// @dev Returns `condition ? x : y`, without branching.
-    function ternary(bool condition, address x, address y) internal pure returns (address z) {
-        /// @solidity memory-safe-assembly
-        assembly {
-            z := xor(x, mul(xor(x, y), iszero(condition)))
+            result := xor(x, mul(xor(x, y), iszero(condition)))
         }
     }
 
@@ -872,15 +772,15 @@ library FixedPointMathLib {
     }
 
     /// @dev Returns the factorial of `x`.
-    function factorial(uint256 x) internal pure returns (uint256 z) {
+    function factorial(uint256 x) internal pure returns (uint256 result) {
         /// @solidity memory-safe-assembly
         assembly {
-            z := 1
+            result := 1
             if iszero(lt(x, 58)) {
                 mstore(0x00, 0xaba0f2a2) // `FactorialOverflow()`.
                 revert(0x1c, 0x04)
             }
-            for {} x { x := sub(x, 1) } { z := mul(z, x) }
+            for {} x { x := sub(x, 1) } { result := mul(result, x) }
         }
     }
 

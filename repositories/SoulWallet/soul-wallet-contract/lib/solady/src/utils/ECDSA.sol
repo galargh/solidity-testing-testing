@@ -50,29 +50,43 @@ library ECDSA {
     function recover(bytes32 hash, bytes memory signature) internal view returns (address result) {
         /// @solidity memory-safe-assembly
         assembly {
-            for { let m := mload(0x40) } 1 {
-                mstore(0x00, 0x8baa579f) // `InvalidSignature()`.
-                revert(0x1c, 0x04)
-            } {
-                switch mload(signature)
-                case 64 {
+            result := 1
+            let m := mload(0x40) // Cache the free memory pointer.
+            for {} 1 {} {
+                mstore(0x00, hash)
+                mstore(0x40, mload(add(signature, 0x20))) // `r`.
+                if eq(mload(signature), 64) {
                     let vs := mload(add(signature, 0x40))
                     mstore(0x20, add(shr(255, vs), 27)) // `v`.
                     mstore(0x60, shr(1, shl(1, vs))) // `s`.
+                    break
                 }
-                case 65 {
+                if eq(mload(signature), 65) {
                     mstore(0x20, byte(0, mload(add(signature, 0x60)))) // `v`.
                     mstore(0x60, mload(add(signature, 0x40))) // `s`.
+                    break
                 }
-                default { continue }
-                mstore(0x00, hash)
-                mstore(0x40, mload(add(signature, 0x20))) // `r`.
-                result := mload(staticcall(gas(), 1, 0x00, 0x80, 0x01, 0x20))
-                mstore(0x60, 0) // Restore the zero slot.
-                mstore(0x40, m) // Restore the free memory pointer.
-                // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
-                if returndatasize() { break }
+                result := 0
+                break
             }
+            result :=
+                mload(
+                    staticcall(
+                        gas(), // Amount of gas left for the transaction.
+                        result, // Address of `ecrecover`.
+                        0x00, // Start of input.
+                        0x80, // Size of input.
+                        0x01, // Start of output.
+                        0x20 // Size of output.
+                    )
+                )
+            // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
+            if iszero(returndatasize()) {
+                mstore(0x00, 0x8baa579f) // `InvalidSignature()`.
+                revert(0x1c, 0x04)
+            }
+            mstore(0x60, 0) // Restore the zero slot.
+            mstore(0x40, m) // Restore the free memory pointer.
         }
     }
 
@@ -84,29 +98,43 @@ library ECDSA {
     {
         /// @solidity memory-safe-assembly
         assembly {
-            for { let m := mload(0x40) } 1 {
-                mstore(0x00, 0x8baa579f) // `InvalidSignature()`.
-                revert(0x1c, 0x04)
-            } {
-                switch signature.length
-                case 64 {
+            result := 1
+            let m := mload(0x40) // Cache the free memory pointer.
+            mstore(0x00, hash)
+            for {} 1 {} {
+                if eq(signature.length, 64) {
                     let vs := calldataload(add(signature.offset, 0x20))
                     mstore(0x20, add(shr(255, vs), 27)) // `v`.
                     mstore(0x40, calldataload(signature.offset)) // `r`.
                     mstore(0x60, shr(1, shl(1, vs))) // `s`.
+                    break
                 }
-                case 65 {
+                if eq(signature.length, 65) {
                     mstore(0x20, byte(0, calldataload(add(signature.offset, 0x40)))) // `v`.
                     calldatacopy(0x40, signature.offset, 0x40) // Copy `r` and `s`.
+                    break
                 }
-                default { continue }
-                mstore(0x00, hash)
-                result := mload(staticcall(gas(), 1, 0x00, 0x80, 0x01, 0x20))
-                mstore(0x60, 0) // Restore the zero slot.
-                mstore(0x40, m) // Restore the free memory pointer.
-                // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
-                if returndatasize() { break }
+                result := 0
+                break
             }
+            result :=
+                mload(
+                    staticcall(
+                        gas(), // Amount of gas left for the transaction.
+                        result, // Address of `ecrecover`.
+                        0x00, // Start of input.
+                        0x80, // Size of input.
+                        0x01, // Start of output.
+                        0x20 // Size of output.
+                    )
+                )
+            // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
+            if iszero(returndatasize()) {
+                mstore(0x00, 0x8baa579f) // `InvalidSignature()`.
+                revert(0x1c, 0x04)
+            }
+            mstore(0x60, 0) // Restore the zero slot.
+            mstore(0x40, m) // Restore the free memory pointer.
         }
     }
 
@@ -120,7 +148,17 @@ library ECDSA {
             mstore(0x20, add(shr(255, vs), 27)) // `v`.
             mstore(0x40, r)
             mstore(0x60, shr(1, shl(1, vs))) // `s`.
-            result := mload(staticcall(gas(), 1, 0x00, 0x80, 0x01, 0x20))
+            result :=
+                mload(
+                    staticcall(
+                        gas(), // Amount of gas left for the transaction.
+                        1, // Address of `ecrecover`.
+                        0x00, // Start of input.
+                        0x80, // Size of input.
+                        0x01, // Start of output.
+                        0x20 // Size of output.
+                    )
+                )
             // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
             if iszero(returndatasize()) {
                 mstore(0x00, 0x8baa579f) // `InvalidSignature()`.
@@ -145,7 +183,17 @@ library ECDSA {
             mstore(0x20, and(v, 0xff))
             mstore(0x40, r)
             mstore(0x60, s)
-            result := mload(staticcall(gas(), 1, 0x00, 0x80, 0x01, 0x20))
+            result :=
+                mload(
+                    staticcall(
+                        gas(), // Amount of gas left for the transaction.
+                        1, // Address of `ecrecover`.
+                        0x00, // Start of input.
+                        0x80, // Size of input.
+                        0x01, // Start of output.
+                        0x20 // Size of output.
+                    )
+                )
             // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
             if iszero(returndatasize()) {
                 mstore(0x00, 0x8baa579f) // `InvalidSignature()`.
@@ -174,27 +222,39 @@ library ECDSA {
     {
         /// @solidity memory-safe-assembly
         assembly {
-            for { let m := mload(0x40) } 1 {} {
-                switch mload(signature)
-                case 64 {
+            result := 1
+            let m := mload(0x40) // Cache the free memory pointer.
+            for {} 1 {} {
+                mstore(0x00, hash)
+                mstore(0x40, mload(add(signature, 0x20))) // `r`.
+                if eq(mload(signature), 64) {
                     let vs := mload(add(signature, 0x40))
                     mstore(0x20, add(shr(255, vs), 27)) // `v`.
                     mstore(0x60, shr(1, shl(1, vs))) // `s`.
+                    break
                 }
-                case 65 {
+                if eq(mload(signature), 65) {
                     mstore(0x20, byte(0, mload(add(signature, 0x60)))) // `v`.
                     mstore(0x60, mload(add(signature, 0x40))) // `s`.
+                    break
                 }
-                default { break }
-                mstore(0x00, hash)
-                mstore(0x40, mload(add(signature, 0x20))) // `r`.
-                pop(staticcall(gas(), 1, 0x00, 0x80, 0x40, 0x20))
-                mstore(0x60, 0) // Restore the zero slot.
-                // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
-                result := mload(xor(0x60, returndatasize()))
-                mstore(0x40, m) // Restore the free memory pointer.
+                result := 0
                 break
             }
+            pop(
+                staticcall(
+                    gas(), // Amount of gas left for the transaction.
+                    result, // Address of `ecrecover`.
+                    0x00, // Start of input.
+                    0x80, // Size of input.
+                    0x40, // Start of output.
+                    0x20 // Size of output.
+                )
+            )
+            mstore(0x60, 0) // Restore the zero slot.
+            // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
+            result := mload(xor(0x60, returndatasize()))
+            mstore(0x40, m) // Restore the free memory pointer.
         }
     }
 
@@ -206,27 +266,39 @@ library ECDSA {
     {
         /// @solidity memory-safe-assembly
         assembly {
-            for { let m := mload(0x40) } 1 {} {
-                switch signature.length
-                case 64 {
+            result := 1
+            let m := mload(0x40) // Cache the free memory pointer.
+            mstore(0x00, hash)
+            for {} 1 {} {
+                if eq(signature.length, 64) {
                     let vs := calldataload(add(signature.offset, 0x20))
                     mstore(0x20, add(shr(255, vs), 27)) // `v`.
                     mstore(0x40, calldataload(signature.offset)) // `r`.
                     mstore(0x60, shr(1, shl(1, vs))) // `s`.
+                    break
                 }
-                case 65 {
+                if eq(signature.length, 65) {
                     mstore(0x20, byte(0, calldataload(add(signature.offset, 0x40)))) // `v`.
                     calldatacopy(0x40, signature.offset, 0x40) // Copy `r` and `s`.
+                    break
                 }
-                default { break }
-                mstore(0x00, hash)
-                pop(staticcall(gas(), 1, 0x00, 0x80, 0x40, 0x20))
-                mstore(0x60, 0) // Restore the zero slot.
-                // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
-                result := mload(xor(0x60, returndatasize()))
-                mstore(0x40, m) // Restore the free memory pointer.
+                result := 0
                 break
             }
+            pop(
+                staticcall(
+                    gas(), // Amount of gas left for the transaction.
+                    result, // Address of `ecrecover`.
+                    0x00, // Start of input.
+                    0x80, // Size of input.
+                    0x40, // Start of output.
+                    0x20 // Size of output.
+                )
+            )
+            mstore(0x60, 0) // Restore the zero slot.
+            // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
+            result := mload(xor(0x60, returndatasize()))
+            mstore(0x40, m) // Restore the free memory pointer.
         }
     }
 
@@ -244,7 +316,16 @@ library ECDSA {
             mstore(0x20, add(shr(255, vs), 27)) // `v`.
             mstore(0x40, r)
             mstore(0x60, shr(1, shl(1, vs))) // `s`.
-            pop(staticcall(gas(), 1, 0x00, 0x80, 0x40, 0x20))
+            pop(
+                staticcall(
+                    gas(), // Amount of gas left for the transaction.
+                    1, // Address of `ecrecover`.
+                    0x00, // Start of input.
+                    0x80, // Size of input.
+                    0x40, // Start of output.
+                    0x20 // Size of output.
+                )
+            )
             mstore(0x60, 0) // Restore the zero slot.
             // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
             result := mload(xor(0x60, returndatasize()))
@@ -266,7 +347,16 @@ library ECDSA {
             mstore(0x20, and(v, 0xff))
             mstore(0x40, r)
             mstore(0x60, s)
-            pop(staticcall(gas(), 1, 0x00, 0x80, 0x40, 0x20))
+            pop(
+                staticcall(
+                    gas(), // Amount of gas left for the transaction.
+                    1, // Address of `ecrecover`.
+                    0x00, // Start of input.
+                    0x80, // Size of input.
+                    0x40, // Start of output.
+                    0x20 // Size of output.
+                )
+            )
             mstore(0x60, 0) // Restore the zero slot.
             // `returndatasize()` will be `0x20` upon success, and `0x00` otherwise.
             result := mload(xor(0x60, returndatasize()))
@@ -333,7 +423,7 @@ library ECDSA {
 
     /// @dev Returns the canonical hash of `signature`.
     function canonicalHash(bytes memory signature) internal pure returns (bytes32 result) {
-        /// @solidity memory-safe-assembly
+        // @solidity memory-safe-assembly
         assembly {
             let l := mload(signature)
             for {} 1 {} {
@@ -369,13 +459,14 @@ library ECDSA {
         pure
         returns (bytes32 result)
     {
-        /// @solidity memory-safe-assembly
+        // @solidity memory-safe-assembly
         assembly {
+            let l := signature.length
             for {} 1 {} {
                 mstore(0x00, calldataload(signature.offset)) // `r`.
                 let s := calldataload(add(signature.offset, 0x20))
                 let v := calldataload(add(signature.offset, 0x21))
-                if eq(signature.length, 64) {
+                if eq(l, 64) {
                     v := add(shr(255, s), 27)
                     s := shr(1, shl(1, s))
                 }
@@ -390,17 +481,17 @@ library ECDSA {
                 break
             }
             // If the length is neither 64 nor 65, return a uniquely corrupted hash.
-            if iszero(lt(sub(signature.length, 64), 2)) {
-                calldatacopy(mload(0x40), signature.offset, signature.length)
+            if iszero(lt(sub(l, 64), 2)) {
+                calldatacopy(mload(0x40), signature.offset, l)
                 // `bytes4(keccak256("InvalidSignatureLength"))`.
-                result := xor(keccak256(mload(0x40), signature.length), 0xd62f1ab2)
+                result := xor(keccak256(mload(0x40), l), 0xd62f1ab2)
             }
         }
     }
 
     /// @dev Returns the canonical hash of `signature`.
     function canonicalHash(bytes32 r, bytes32 vs) internal pure returns (bytes32 result) {
-        /// @solidity memory-safe-assembly
+        // @solidity memory-safe-assembly
         assembly {
             mstore(0x00, r) // `r`.
             let v := add(shr(255, vs), 27)
@@ -414,7 +505,7 @@ library ECDSA {
 
     /// @dev Returns the canonical hash of `signature`.
     function canonicalHash(uint8 v, bytes32 r, bytes32 s) internal pure returns (bytes32 result) {
-        /// @solidity memory-safe-assembly
+        // @solidity memory-safe-assembly
         assembly {
             mstore(0x00, r) // `r`.
             if iszero(lt(s, _HALF_N_PLUS_1)) {

@@ -152,7 +152,7 @@ contract TimelockController is AccessControl, ERC721Holder, ERC1155Holder {
     /**
      * @dev Contract might receive/hold ETH as part of the maintenance process.
      */
-    receive() external payable virtual {}
+    receive() external payable {}
 
     /**
      * @dev See {IERC165-supportsInterface}.

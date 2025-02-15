@@ -15,7 +15,7 @@
     "@prb/math": "4.1.0"
   },
   "devDependencies": {
-    "@ignored/hardhat-vnext": "3.0.0-next.18",
+    "@ignored/hardhat-vnext": "^3.0.0-next.18",
     "forge-std": "github:foundry-rs/forge-std#v1.8.2",
     "husky": "^9.1.4",
     "lint-staged": "^15.2.8",

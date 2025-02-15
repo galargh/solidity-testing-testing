@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts (last updated v5.1.0) (utils/structs/CircularBuffer.sol)
 pragma solidity ^0.8.20;
 
 import {Math} from "../math/Math.sol";
@@ -35,15 +34,8 @@ import {Panic} from "../Panic.sol";
  *     CircularBuffer.Bytes32CircularBuffer private myBuffer;
  * }
  * ```
- *
- * _Available since v5.1._
  */
 library CircularBuffer {
-    /**
-     * @dev Error emitted when trying to setup a buffer with a size of 0.
-     */
-    error InvalidBufferSize();
-
     /**
      * @dev Counts the number of items that have been pushed to the buffer. The residuo modulo _data.length indicates
      * where the next value should be stored.
@@ -52,9 +44,8 @@ library CircularBuffer {
      * directly. Use the functions provided below instead. Modifying the struct manually may violate assumptions and
      * lead to unexpected behavior.
      *
-     * In a full buffer:
-     * - The most recently pushed item (last) is at data[(index - 1) % data.length]
-     * - The oldest item (first) is at data[index % data.length]
+     * The last item is at data[(index - 1) % data.length] and the last item is at data[index % data.length]. This
+     * range can wrap around.
      */
     struct Bytes32CircularBuffer {
         uint256 _count;
@@ -70,7 +61,6 @@ library CircularBuffer {
      * Consider a large buffer size may render the function unusable.
      */
     function setup(Bytes32CircularBuffer storage self, uint256 size) internal {
-        if (size == 0) revert InvalidBufferSize();
         clear(self);
         Arrays.unsafeSetLength(self._data, size);
     }
@@ -101,7 +91,7 @@ library CircularBuffer {
     }
 
     /**
-     * @dev Length of the buffer. This is the maximum number of elements kept in the buffer.
+     * @dev Length of the buffer. This is the maximum number of elements kepts in the buffer.
      */
     function length(Bytes32CircularBuffer storage self) internal view returns (uint256) {
         return self._data.length;

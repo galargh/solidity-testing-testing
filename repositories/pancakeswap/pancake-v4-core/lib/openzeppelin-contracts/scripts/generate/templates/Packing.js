@@ -1,5 +1,4 @@
 const format = require('../format-lines');
-const sanitize = require('../helpers/sanitize');
 const { product } = require('../../helpers');
 const { SIZES } = require('./Packing.opts');
 
@@ -32,8 +31,6 @@ pragma solidity ^0.8.20;
  *     }
  * }
  * \`\`\`
- *
- * _Available since v5.1._
  */
 // solhint-disable func-name-mixedcase
 `;
@@ -47,8 +44,8 @@ function pack_${left}_${right}(bytes${left} left, bytes${right} right) internal 
   left + right
 } result) {
     assembly ("memory-safe") {
-        left := ${sanitize.bytes('left', left)}
-        right := ${sanitize.bytes('right', right)}
+        left := and(left, shl(${256 - 8 * left}, not(0)))
+        right := and(right, shl(${256 - 8 * right}, not(0)))
         result := or(left, shr(${8 * left}, right))
     }
 }
@@ -58,7 +55,7 @@ const extract = (outer, inner) => `\
 function extract_${outer}_${inner}(bytes${outer} self, uint8 offset) internal pure returns (bytes${inner} result) {
     if (offset > ${outer - inner}) revert OutOfRangeAccess();
     assembly ("memory-safe") {
-        result := ${sanitize.bytes('shl(mul(8, offset), self)', inner)}
+        result := and(shl(mul(8, offset), self), shl(${256 - 8 * inner}, not(0)))
     }
 }
 `;
@@ -67,7 +64,7 @@ const replace = (outer, inner) => `\
 function replace_${outer}_${inner}(bytes${outer} self, bytes${inner} value, uint8 offset) internal pure returns (bytes${outer} result) {
     bytes${inner} oldValue = extract_${outer}_${inner}(self, offset);
     assembly ("memory-safe") {
-        value := ${sanitize.bytes('value', inner)}
+        value := and(value, shl(${256 - 8 * inner}, not(0)))
         result := xor(self, shr(mul(8, offset), xor(oldValue, value)))
     }
 }

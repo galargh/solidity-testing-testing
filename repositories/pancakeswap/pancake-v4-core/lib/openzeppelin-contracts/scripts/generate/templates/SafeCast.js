@@ -61,6 +61,7 @@ function toUint${length}(uint256 value) internal pure returns (uint${length}) {
 }
 `;
 
+/* eslint-disable max-len */
 const toIntDownCast = length => `\
 /**
  * @dev Returns the downcasted int${length} from int256, reverting on
@@ -80,6 +81,7 @@ function toInt${length}(int256 value) internal pure returns (int${length} downca
     }
 }
 `;
+/* eslint-enable max-len */
 
 const toInt = length => `\
 /**
@@ -119,7 +121,8 @@ const boolToUint = `\
  * @dev Cast a boolean (false or true) to a uint256 (0 or 1) with no jump.
  */
 function toUint(bool b) internal pure returns (uint256 u) {
-    assembly ("memory-safe") {
+    /// @solidity memory-safe-assembly
+    assembly {
         u := iszero(iszero(b))
     }
 }

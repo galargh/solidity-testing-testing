@@ -1,70 +1,66 @@
-const { ethers } = require('hardhat');
+const { BN, expectEvent } = require('@openzeppelin/test-helpers');
+
 const { expect } = require('chai');
-const { loadFixture } = require('@nomicfoundation/hardhat-network-helpers');
+const { artifacts } = require('hardhat');
 
-const erc1155Uri = 'https://token.com/nfts/';
-const baseUri = 'https://token.com/';
-const tokenId = 1n;
-const value = 3000n;
+const ERC1155URIStorageMock = artifacts.require('ERC1155URIStorageMock');
 
-describe('ERC1155URIStorage', function () {
+contract(['ERC1155URIStorage'], function (accounts) {
+  const [ holder ] = accounts;
+
+  const erc1155Uri = 'https://token.com/nfts/';
+  const baseUri = 'https://token.com/';
+
+  const tokenId = new BN('1');
+  const amount = new BN('3000');
+
   describe('with base uri set', function () {
-    async function fixture() {
-      const [holder] = await ethers.getSigners();
-
-      const token = await ethers.deployContract('$ERC1155URIStorage', [erc1155Uri]);
-      await token.$_setBaseURI(baseUri);
-      await token.$_mint(holder, tokenId, value, '0x');
-
-      return { token, holder };
-    }
-
     beforeEach(async function () {
-      Object.assign(this, await loadFixture(fixture));
+      this.token = await ERC1155URIStorageMock.new(erc1155Uri);
+      this.token.setBaseURI(baseUri);
+
+      await this.token.mint(holder, tokenId, amount, '0x');
     });
 
     it('can request the token uri, returning the erc1155 uri if no token uri was set', async function () {
-      expect(await this.token.uri(tokenId)).to.equal(erc1155Uri);
+      const receivedTokenUri = await this.token.uri(tokenId);
+
+      expect(receivedTokenUri).to.be.equal(erc1155Uri);
     });
 
     it('can request the token uri, returning the concatenated uri if a token uri was set', async function () {
       const tokenUri = '1234/';
+      const receipt = await this.token.setURI(tokenId, tokenUri);
+
+      const receivedTokenUri = await this.token.uri(tokenId);
+
       const expectedUri = `${baseUri}${tokenUri}`;
-
-      await expect(this.token.$_setURI(ethers.Typed.uint256(tokenId), tokenUri))
-        .to.emit(this.token, 'URI')
-        .withArgs(expectedUri, tokenId);
-
-      expect(await this.token.uri(tokenId)).to.equal(expectedUri);
+      expect(receivedTokenUri).to.be.equal(expectedUri);
+      expectEvent(receipt, 'URI', { value: expectedUri, id: tokenId });
     });
   });
 
   describe('with base uri set to the empty string', function () {
-    async function fixture() {
-      const [holder] = await ethers.getSigners();
-
-      const token = await ethers.deployContract('$ERC1155URIStorage', ['']);
-      await token.$_mint(holder, tokenId, value, '0x');
-
-      return { token, holder };
-    }
-
     beforeEach(async function () {
-      Object.assign(this, await loadFixture(fixture));
+      this.token = await ERC1155URIStorageMock.new('');
+
+      await this.token.mint(holder, tokenId, amount, '0x');
     });
 
     it('can request the token uri, returning an empty string if no token uri was set', async function () {
-      expect(await this.token.uri(tokenId)).to.equal('');
+      const receivedTokenUri = await this.token.uri(tokenId);
+
+      expect(receivedTokenUri).to.be.equal('');
     });
 
     it('can request the token uri, returning the token uri if a token uri was set', async function () {
       const tokenUri = 'ipfs://1234/';
+      const receipt = await this.token.setURI(tokenId, tokenUri);
 
-      await expect(this.token.$_setURI(ethers.Typed.uint256(tokenId), tokenUri))
-        .to.emit(this.token, 'URI')
-        .withArgs(tokenUri, tokenId);
+      const receivedTokenUri = await this.token.uri(tokenId);
 
-      expect(await this.token.uri(tokenId)).to.equal(tokenUri);
+      expect(receivedTokenUri).to.be.equal(tokenUri);
+      expectEvent(receipt, 'URI', { value: tokenUri, id: tokenId });
     });
   });
 });

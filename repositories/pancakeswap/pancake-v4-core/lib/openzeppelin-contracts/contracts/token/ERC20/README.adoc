@@ -71,5 +71,3 @@ NOTE: This core set of contracts is designed to be unopinionated, allowing devel
 == Utilities
 
 {{SafeERC20}}
-
-{{ERC1363Utils}}

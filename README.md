@@ -152,8 +152,3 @@ It seems Forge is able to automatically resolve remappings from the `lib` direct
 ## Summary
 
 It seems the vast majority of the Hardhat test failures could be fixed by providing a modified test runner configuration to the EDR. A version of enabling that kind of workflow is implemented in https://github.com/NomicFoundation/hardhat/pull/5837.
-
-## Notes
-
-- use v4.9.6 of openzeppelin-contracts in Uniswap/UniswapX
-- use v0.7.0 of account-abstraction in SoulWallet/soul-wallet-contract

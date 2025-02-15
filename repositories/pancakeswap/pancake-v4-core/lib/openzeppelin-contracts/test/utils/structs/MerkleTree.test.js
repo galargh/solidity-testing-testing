@@ -6,9 +6,9 @@ const { StandardMerkleTree } = require('@openzeppelin/merkle-tree');
 
 const { generators } = require('../../helpers/random');
 
-const makeTree = (leaves = [ethers.ZeroHash]) =>
+const makeTree = (leafs = [ethers.ZeroHash]) =>
   StandardMerkleTree.of(
-    leaves.map(leaf => [leaf]),
+    leafs.map(leaf => [leaf]),
     ['bytes32'],
     { sortLeaves: false },
   );
@@ -39,15 +39,15 @@ describe('MerkleTree', function () {
 
   describe('push', function () {
     it('tree is correctly updated', async function () {
-      const leaves = Array.from({ length: 2 ** Number(DEPTH) }, () => ethers.ZeroHash);
+      const leafs = Array.from({ length: 2 ** Number(DEPTH) }, () => ethers.ZeroHash);
 
       // for each leaf slot
-      for (const i in leaves) {
+      for (const i in leafs) {
         // generate random leaf and hash it
-        const hashedLeaf = hashLeaf((leaves[i] = generators.bytes32()));
+        const hashedLeaf = hashLeaf((leafs[i] = generators.bytes32()));
 
         // update leaf list and rebuild tree.
-        const tree = makeTree(leaves);
+        const tree = makeTree(leafs);
 
         // push value to tree
         await expect(this.mock.push(hashedLeaf)).to.emit(this.mock, 'LeafInserted').withArgs(hashedLeaf, i, tree.root);
@@ -67,13 +67,13 @@ describe('MerkleTree', function () {
 
   it('reset', async function () {
     // empty tree
-    const zeroLeaves = Array.from({ length: 2 ** Number(DEPTH) }, () => ethers.ZeroHash);
-    const zeroTree = makeTree(zeroLeaves);
+    const zeroLeafs = Array.from({ length: 2 ** Number(DEPTH) }, () => ethers.ZeroHash);
+    const zeroTree = makeTree(zeroLeafs);
 
     // tree with one element
-    const leaves = Array.from({ length: 2 ** Number(DEPTH) }, () => ethers.ZeroHash);
-    const hashedLeaf = hashLeaf((leaves[0] = generators.bytes32())); // fill first leaf and hash it
-    const tree = makeTree(leaves);
+    const leafs = Array.from({ length: 2 ** Number(DEPTH) }, () => ethers.ZeroHash);
+    const hashedLeaf = hashLeaf((leafs[0] = generators.bytes32())); // fill first leaf and hash it
+    const tree = makeTree(leafs);
 
     // root should be that of a zero tree
     expect(await this.mock.root()).to.equal(zeroTree.root);

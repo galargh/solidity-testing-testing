@@ -61,6 +61,9 @@ abstract contract ERC6551 is UUPSUpgradeable, Receiver, ERC1271 {
     /// @dev Self ownership detected.
     error SelfOwnDetected();
 
+    /// @dev The function selector is not recognized.
+    error FnSelectorNotRecognized();
+
     /*´:°•.°+.*•´.*:˚.°*.˚•´.°:°•.°•.*•´.*:˚.°*.˚•´.°:°•.°+.*•´.*:*/
     /*                  CONSTANTS AND IMMUTABLES                  */
     /*.•°:°.´+˚.*°.˚:*.´•*.+°.•°:´*.´•*.•°.•°:°.´:•˚°.*°.˚:*.´+°.•*/

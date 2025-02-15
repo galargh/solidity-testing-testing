@@ -1,65 +1,58 @@
-const { ethers } = require('hardhat');
-const { loadFixture } = require('@nomicfoundation/hardhat-network-helpers');
+const { BN, constants } = require('@openzeppelin/test-helpers');
 
-const { mapValues } = require('../../helpers/iterate');
-const { generators } = require('../../helpers/random');
-const { TYPES, formatType } = require('../../../scripts/generate/templates/EnumerableMap.opts');
+const AddressToUintMapMock = artifacts.require('AddressToUintMapMock');
+const UintToAddressMapMock = artifacts.require('UintToAddressMapMock');
+const Bytes32ToBytes32MapMock = artifacts.require('Bytes32ToBytes32MapMock');
 
 const { shouldBehaveLikeMap } = require('./EnumerableMap.behavior');
 
-// Add Bytes32ToBytes32Map that must be tested but is not part of the generated types.
-TYPES.unshift(formatType('bytes32', 'bytes32'));
+contract('EnumerableMap', function (accounts) {
+  const [ accountA, accountB, accountC ] = accounts;
 
-async function fixture() {
-  const mock = await ethers.deployContract('$EnumerableMap');
-  const env = Object.fromEntries(
-    TYPES.map(({ name, keyType, valueType }) => [
-      name,
-      {
-        keyType,
-        keys: Array.from({ length: 3 }, generators[keyType]),
-        values: Array.from({ length: 3 }, generators[valueType]),
-        zeroValue: generators[valueType].zero,
-        methods: mapValues(
-          {
-            set: `$set(uint256,${keyType},${valueType})`,
-            get: `$get_EnumerableMap_${name}(uint256,${keyType})`,
-            tryGet: `$tryGet_EnumerableMap_${name}(uint256,${keyType})`,
-            remove: `$remove_EnumerableMap_${name}(uint256,${keyType})`,
-            length: `$length_EnumerableMap_${name}(uint256)`,
-            at: `$at_EnumerableMap_${name}(uint256,uint256)`,
-            contains: `$contains_EnumerableMap_${name}(uint256,${keyType})`,
-            keys: `$keys_EnumerableMap_${name}(uint256)`,
-          },
-          fnSig =>
-            (...args) =>
-              mock.getFunction(fnSig)(0, ...args),
-        ),
-        events: {
-          setReturn: `return$set_EnumerableMap_${name}_${keyType}_${valueType}`,
-          removeReturn: `return$remove_EnumerableMap_${name}_${keyType}`,
-        },
-      },
-    ]),
-  );
+  const keyA = new BN('7891');
+  const keyB = new BN('451');
+  const keyC = new BN('9592328');
 
-  return { mock, env };
-}
+  const bytesA = '0xdeadbeef'.padEnd(66, '0');
+  const bytesB = '0x0123456789'.padEnd(66, '0');
+  const bytesC = '0x42424242'.padEnd(66, '0');
 
-describe('EnumerableMap', function () {
-  beforeEach(async function () {
-    Object.assign(this, await loadFixture(fixture));
+  // AddressToUintMap
+  describe('AddressToUintMap', function () {
+    beforeEach(async function () {
+      this.map = await AddressToUintMapMock.new();
+    });
+
+    shouldBehaveLikeMap(
+      [accountA, accountB, accountC],
+      [keyA, keyB, keyC],
+      new BN('0'),
+    );
   });
 
-  for (const { name } of TYPES) {
-    describe(name, function () {
-      beforeEach(async function () {
-        Object.assign(this, this.env[name]);
-        [this.keyA, this.keyB, this.keyC] = this.keys;
-        [this.valueA, this.valueB, this.valueC] = this.values;
-      });
-
-      shouldBehaveLikeMap();
+  // UintToAddressMap
+  describe('UintToAddressMap', function () {
+    beforeEach(async function () {
+      this.map = await UintToAddressMapMock.new();
     });
-  }
+
+    shouldBehaveLikeMap(
+      [keyA, keyB, keyC],
+      [accountA, accountB, accountC],
+      constants.ZERO_ADDRESS,
+    );
+  });
+
+  // Bytes32ToBytes32Map
+  describe('Bytes32ToBytes32Map', function () {
+    beforeEach(async function () {
+      this.map = await Bytes32ToBytes32MapMock.new();
+    });
+
+    shouldBehaveLikeMap(
+      [keyA, keyB, keyC].map(k => ('0x' + k.toString(16)).padEnd(66, '0')),
+      [bytesA, bytesB, bytesC],
+      constants.ZERO_BYTES32,
+    );
+  });
 });

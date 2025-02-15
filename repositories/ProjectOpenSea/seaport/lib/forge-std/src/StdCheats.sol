@@ -188,6 +188,11 @@ abstract contract StdCheatsSafe {
         string value;
     }
 
+    struct Account {
+        address addr;
+        uint256 key;
+    }
+
     function assumeNoPrecompiles(address addr) internal virtual {
         // Assembly required since `block.chainid` was introduced in 0.8.0.
         uint256 chainId;
@@ -411,6 +416,11 @@ abstract contract StdCheatsSafe {
         (addr,) = makeAddrAndKey(name);
     }
 
+    // creates a struct containing both a labeled address and the corresponding private key
+    function makeAccount(string memory name) internal virtual returns (Account memory account) {
+        (account.addr, account.key) = makeAddrAndKey(name);
+    }
+
     function deriveRememberKey(string memory mnemonic, uint32 index)
         internal
         virtual
@@ -535,6 +545,11 @@ abstract contract StdCheats is StdCheatsSafe {
     function changePrank(address msgSender) internal virtual {
         vm.stopPrank();
         vm.startPrank(msgSender);
+    }
+
+    function changePrank(address msgSender, address txOrigin) internal virtual {
+        vm.stopPrank();
+        vm.startPrank(msgSender, txOrigin);
     }
 
     // The same as Vm's `deal`

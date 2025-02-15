@@ -19,98 +19,61 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/proxy/transparent/ProxyAdmin.sol";
 
 contract BridgeCreator is Ownable {
-    BridgeTemplates public ethBasedTemplates;
-    BridgeTemplates public erc20BasedTemplates;
+    BridgeContracts public ethBasedTemplates;
+    BridgeContracts public erc20BasedTemplates;
 
     event TemplatesUpdated();
     event ERC20TemplatesUpdated();
 
-    struct BridgeTemplates {
-        IBridge bridge;
-        ISequencerInbox sequencerInbox;
-        ISequencerInbox delayBufferableSequencerInbox;
-        IInboxBase inbox;
-        IRollupEventInbox rollupEventInbox;
-        IOutbox outbox;
-    }
-
     struct BridgeContracts {
         IBridge bridge;
-        IInboxBase inbox;
         ISequencerInbox sequencerInbox;
+        IInboxBase inbox;
         IRollupEventInbox rollupEventInbox;
         IOutbox outbox;
     }
 
     constructor(
-        BridgeTemplates memory _ethBasedTemplates,
-        BridgeTemplates memory _erc20BasedTemplates
+        BridgeContracts memory _ethBasedTemplates,
+        BridgeContracts memory _erc20BasedTemplates
     ) Ownable() {
         ethBasedTemplates = _ethBasedTemplates;
         erc20BasedTemplates = _erc20BasedTemplates;
     }
 
-    function updateTemplates(
-        BridgeTemplates calldata _newTemplates
-    ) external onlyOwner {
+    function updateTemplates(BridgeContracts calldata _newTemplates) external onlyOwner {
         ethBasedTemplates = _newTemplates;
         emit TemplatesUpdated();
     }
 
-    function updateERC20Templates(
-        BridgeTemplates calldata _newTemplates
-    ) external onlyOwner {
+    function updateERC20Templates(BridgeContracts calldata _newTemplates) external onlyOwner {
         erc20BasedTemplates = _newTemplates;
         emit ERC20TemplatesUpdated();
     }
 
-    function _createBridge(
-        bytes32 create2Salt,
-        address adminProxy,
-        BridgeTemplates memory templates,
-        bool isDelayBufferable
-    ) internal returns (BridgeContracts memory) {
+    function _createBridge(address adminProxy, BridgeContracts storage templates)
+        internal
+        returns (BridgeContracts memory)
+    {
         BridgeContracts memory frame;
         frame.bridge = IBridge(
-            address(
-                new TransparentUpgradeableProxy{salt: create2Salt}(
-                    address(templates.bridge), adminProxy, ""
-                )
-            )
+            address(new TransparentUpgradeableProxy(address(templates.bridge), adminProxy, ""))
         );
         frame.sequencerInbox = ISequencerInbox(
             address(
-                new TransparentUpgradeableProxy{salt: create2Salt}(
-                    address(
-                        isDelayBufferable
-                            ? templates.delayBufferableSequencerInbox
-                            : templates.sequencerInbox
-                    ),
-                    adminProxy,
-                    ""
-                )
+                new TransparentUpgradeableProxy(address(templates.sequencerInbox), adminProxy, "")
             )
         );
         frame.inbox = IInboxBase(
-            address(
-                new TransparentUpgradeableProxy{salt: create2Salt}(
-                    address(templates.inbox), adminProxy, ""
-                )
-            )
+            address(new TransparentUpgradeableProxy(address(templates.inbox), adminProxy, ""))
         );
         frame.rollupEventInbox = IRollupEventInbox(
             address(
-                new TransparentUpgradeableProxy{salt: create2Salt}(
-                    address(templates.rollupEventInbox), adminProxy, ""
-                )
+                new TransparentUpgradeableProxy(address(templates.rollupEventInbox), adminProxy, "")
             )
         );
         frame.outbox = IOutbox(
-            address(
-                new TransparentUpgradeableProxy{salt: create2Salt}(
-                    address(templates.outbox), adminProxy, ""
-                )
-            )
+            address(new TransparentUpgradeableProxy(address(templates.outbox), adminProxy, ""))
         );
         return frame;
     }
@@ -119,20 +82,12 @@ contract BridgeCreator is Ownable {
         address adminProxy,
         address rollup,
         address nativeToken,
-        ISequencerInbox.MaxTimeVariation calldata maxTimeVariation,
-        BufferConfig calldata bufferConfig
+        ISequencerInbox.MaxTimeVariation calldata maxTimeVariation
     ) external returns (BridgeContracts memory) {
-        // use create2 salt to ensure deterministic addresses
-        bytes32 create2Salt = keccak256(abi.encode(msg.data, msg.sender));
-        // create delay bufferable sequencer inbox if threshold is non-zero
-        bool isDelayBufferable = bufferConfig.threshold != 0;
-
         // create ETH-based bridge if address zero is provided for native token, otherwise create ERC20-based bridge
         BridgeContracts memory frame = _createBridge(
-            create2Salt,
             adminProxy,
-            nativeToken == address(0) ? ethBasedTemplates : erc20BasedTemplates,
-            isDelayBufferable
+            nativeToken == address(0) ? ethBasedTemplates : erc20BasedTemplates
         );
 
         // init contracts
@@ -141,7 +96,7 @@ contract BridgeCreator is Ownable {
         } else {
             IERC20Bridge(address(frame.bridge)).initialize(IOwnable(rollup), nativeToken);
         }
-        frame.sequencerInbox.initialize(IBridge(frame.bridge), maxTimeVariation, bufferConfig);
+        frame.sequencerInbox.initialize(IBridge(frame.bridge), maxTimeVariation);
         frame.inbox.initialize(frame.bridge, frame.sequencerInbox);
         frame.rollupEventInbox.initialize(frame.bridge);
         frame.outbox.initialize(frame.bridge);

@@ -1,8 +1,7 @@
 const { readPreState } = require('@changesets/pre');
 const { default: readChangesets } = require('@changesets/read');
 const { join } = require('path');
-const { fetch } = require('undici');
-const { version, name: packageName } = require(join(__dirname, '../../../contracts/package.json'));
+const { version } = require(join(__dirname, '../../../package.json'));
 
 module.exports = async ({ github, context, core }) => {
   const state = await getState({ github, context, core });
@@ -35,8 +34,8 @@ function shouldRunChangesets({ isReleaseBranch, isPush, isWorkflowDispatch, botR
   return (isReleaseBranch && isPush) || (isReleaseBranch && isWorkflowDispatch && botRun);
 }
 
-function shouldRunPublish({ isReleaseBranch, isPush, hasPendingChangesets, isPublishedOnNpm }) {
-  return isReleaseBranch && isPush && !hasPendingChangesets && !isPublishedOnNpm;
+function shouldRunPublish({ isReleaseBranch, isPush, hasPendingChangesets }) {
+  return isReleaseBranch && isPush && !hasPendingChangesets;
 }
 
 function shouldRunMerge({
@@ -47,7 +46,7 @@ function shouldRunMerge({
   hasPendingChangesets,
   prBackExists,
 }) {
-  return isReleaseBranch && isPush && !prerelease && isCurrentFinalVersion && !hasPendingChangesets && !prBackExists;
+  return isReleaseBranch && isPush && !prerelease && isCurrentFinalVersion && !hasPendingChangesets && prBackExists;
 }
 
 async function getState({ github, context, core }) {
@@ -79,9 +78,7 @@ async function getState({ github, context, core }) {
     state: 'open',
   });
 
-  state.prBackExists = prs.length !== 0;
-
-  state.isPublishedOnNpm = await isPublishedOnNpm(packageName, version);
+  state.prBackExists = prs.length === 0;
 
   // Log every state value in debug mode
   if (core.isDebug()) for (const [key, value] of Object.entries(state)) core.debug(`${key}: ${value}`);
@@ -104,9 +101,4 @@ async function readChangesetState(cwd = process.cwd()) {
     preState: isInPreMode ? preState : undefined,
     changesets,
   };
-}
-
-async function isPublishedOnNpm(packageName, version) {
-  const res = await fetch(`https://registry.npmjs.com/${packageName}/${version}`);
-  return res.ok;
 }

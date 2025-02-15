@@ -243,10 +243,10 @@ module.exports = function shouldBehaveLikeTransparentUpgradeableProxy() {
     });
 
     it('proxy admin cannot call delegated functions', async function () {
-      const factory = await ethers.getContractFactory('TransparentUpgradeableProxy');
+      const interface = await ethers.getContractFactory('TransparentUpgradeableProxy');
 
       await expect(this.instance.connect(this.proxyAdminAsSigner).delegatedFunction()).to.be.revertedWithCustomError(
-        factory,
+        interface,
         'ProxyDeniedAdminAccess',
       );
     });

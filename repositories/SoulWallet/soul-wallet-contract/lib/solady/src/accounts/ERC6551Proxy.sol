@@ -46,14 +46,12 @@ contract ERC6551Proxy {
 
     fallback() external payable virtual {
         bytes32 implementation;
-        /// @solidity memory-safe-assembly
         assembly {
             mstore(0x40, returndatasize()) // Optimization trick to change `6040608052` into `3d604052`.
             implementation := sload(_ERC1967_IMPLEMENTATION_SLOT)
         }
         if (implementation == bytes32(0)) {
             implementation = _defaultImplementation;
-            /// @solidity memory-safe-assembly
             assembly {
                 // Only initialize if the calldatasize is zero, so that staticcalls to
                 // functions (which will have 4-byte function selectors) won't revert.
@@ -62,7 +60,6 @@ contract ERC6551Proxy {
                 if iszero(calldatasize()) { sstore(_ERC1967_IMPLEMENTATION_SLOT, implementation) }
             }
         }
-        /// @solidity memory-safe-assembly
         assembly {
             calldatacopy(returndatasize(), returndatasize(), calldatasize())
             // forgefmt: disable-next-item

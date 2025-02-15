@@ -77,7 +77,7 @@ module.exports = {
   },
   networks: {
     hardhat: {
-      blockGasLimit: BigInt(10000000),
+      blockGasLimit: 10000000,
       allowUnlimitedContractSize: !withOptimizations,
     },
   },

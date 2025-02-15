@@ -126,9 +126,8 @@ describe('Address', function () {
       });
 
       it('reverts when function does not exist', async function () {
-        const call = new ethers.Interface(['function mockFunctionDoesNotExist()']).encodeFunctionData(
-          'mockFunctionDoesNotExist',
-        );
+        const interface = new ethers.Interface(['function mockFunctionDoesNotExist()']);
+        const call = interface.encodeFunctionData('mockFunctionDoesNotExist');
 
         await expect(this.mock.$functionCall(this.target, call)).to.be.revertedWithCustomError(this.mock, 'FailedCall');
       });

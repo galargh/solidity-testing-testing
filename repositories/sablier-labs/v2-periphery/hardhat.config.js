@@ -22,7 +22,7 @@ export default {
     }
   },
   "solidityTest": {
-    "blockTimestamp": BigInt(1714518000),
+    "blockTimestamp": 1714518000,
     "fsPermissions": {
       "read": [
         "./out-optimized",
@@ -33,7 +33,7 @@ export default {
         "./cache"
       ]
     },
-    "blockGasLimit": BigInt(9223372036854775807),
+    "blockGasLimit": 9223372036854776000,
     "sender": "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38",
     "fuzz": {
       "runs": 20,

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts (last updated v5.1.0) (metatx/ERC2771Forwarder.sol)
+// OpenZeppelin Contracts (last updated v5.0.0) (metatx/ERC2771Forwarder.sol)
 
 pragma solidity ^0.8.20;
 
@@ -218,7 +218,7 @@ contract ERC2771Forwarder is EIP712, Nonces {
      */
     function _recoverForwardRequestSigner(
         ForwardRequestData calldata request
-    ) internal view virtual returns (bool isValid, address signer) {
+    ) internal view virtual returns (bool, address) {
         (address recovered, ECDSA.RecoverError err, ) = _hashTypedDataV4(
             keccak256(
                 abi.encode(
@@ -286,7 +286,7 @@ contract ERC2771Forwarder is EIP712, Nonces {
 
             uint256 gasLeft;
 
-            assembly ("memory-safe") {
+            assembly {
                 success := call(reqGas, to, value, add(data, 0x20), mload(data), 0, 0)
                 gasLeft := gas()
             }
@@ -302,17 +302,15 @@ contract ERC2771Forwarder is EIP712, Nonces {
      *
      * This function performs a static call to the target contract calling the
      * {ERC2771Context-isTrustedForwarder} function.
-     *
-     * NOTE: Consider the execution of this forwarder is permissionless. Without this check, anyone may transfer assets
-     * that are owned by, or are approved to this forwarder.
      */
-    function _isTrustedByTarget(address target) internal view virtual returns (bool) {
+    function _isTrustedByTarget(address target) private view returns (bool) {
         bytes memory encodedParams = abi.encodeCall(ERC2771Context.isTrustedForwarder, (address(this)));
 
         bool success;
         uint256 returnSize;
         uint256 returnValue;
-        assembly ("memory-safe") {
+        /// @solidity memory-safe-assembly
+        assembly {
             // Perform the staticcall and save the result in the scratch space.
             // | Location  | Content  | Content (Hex)                                                      |
             // |-----------|----------|--------------------------------------------------------------------|
@@ -364,7 +362,8 @@ contract ERC2771Forwarder is EIP712, Nonces {
             // We explicitly trigger invalid opcode to consume all gas and bubble-up the effects, since
             // neither revert or assert consume all gas since Solidity 0.8.20
             // https://docs.soliditylang.org/en/v0.8.20/control-structures.html#panic-via-assert-and-error-via-require
-            assembly ("memory-safe") {
+            /// @solidity memory-safe-assembly
+            assembly {
                 invalid()
             }
         }

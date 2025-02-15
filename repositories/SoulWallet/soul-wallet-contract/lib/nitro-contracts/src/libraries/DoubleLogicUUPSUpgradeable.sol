@@ -26,9 +26,7 @@ abstract contract DoubleLogicUUPSUpgradeable is UUPSUpgradeable, DoubleLogicERC1
      * function _authorizeSecondaryUpgrade(address) internal override onlyOwner {}
      * ```
      */
-    function _authorizeSecondaryUpgrade(
-        address newImplementation
-    ) internal virtual;
+    function _authorizeSecondaryUpgrade(address newImplementation) internal virtual;
 
     /**
      * @dev Upgrade the secondary implementation of the proxy to `newImplementation`.
@@ -37,9 +35,7 @@ abstract contract DoubleLogicUUPSUpgradeable is UUPSUpgradeable, DoubleLogicERC1
      *
      * Emits an {UpgradedSecondary} event.
      */
-    function upgradeSecondaryTo(
-        address newImplementation
-    ) external onlyProxy {
+    function upgradeSecondaryTo(address newImplementation) external onlyProxy {
         _authorizeSecondaryUpgrade(newImplementation);
         _upgradeSecondaryToAndCallUUPS(newImplementation, new bytes(0), false);
     }
@@ -52,10 +48,11 @@ abstract contract DoubleLogicUUPSUpgradeable is UUPSUpgradeable, DoubleLogicERC1
      *
      * Emits an {UpgradedSecondary} event.
      */
-    function upgradeSecondaryToAndCall(
-        address newImplementation,
-        bytes memory data
-    ) external payable onlyProxy {
+    function upgradeSecondaryToAndCall(address newImplementation, bytes memory data)
+        external
+        payable
+        onlyProxy
+    {
         _authorizeSecondaryUpgrade(newImplementation);
         _upgradeSecondaryToAndCallUUPS(newImplementation, data, true);
     }

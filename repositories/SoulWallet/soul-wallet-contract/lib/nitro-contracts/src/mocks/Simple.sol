@@ -21,9 +21,7 @@ contract Simple {
         counter++;
     }
 
-    function logAndIncrement(
-        uint256 expected
-    ) external {
+    function logAndIncrement(uint256 expected) external {
         emit LogAndIncrementCalled(expected, counter);
         counter++;
     }
@@ -69,7 +67,8 @@ contract Simple {
             require(ArbSys(address(100)).isTopLevelCall() == expected, "UNEXPECTED_RESULT");
         } else {
             require(
-                ArbSys(address(100)).wasMyCallersAddressAliased() == expected, "UNEXPECTED_RESULT"
+                ArbSys(address(100)).wasMyCallersAddressAliased() == expected,
+                "UNEXPECTED_RESULT"
             );
         }
     }
@@ -87,7 +86,8 @@ contract Simple {
             require(ArbSys(address(100)).isTopLevelCall() == directCase, "UNEXPECTED_RESULT");
         } else {
             require(
-                ArbSys(address(100)).wasMyCallersAddressAliased() == directCase, "UNEXPECTED_RESULT"
+                ArbSys(address(100)).wasMyCallersAddressAliased() == directCase,
+                "UNEXPECTED_RESULT"
             );
         }
 
@@ -96,15 +96,19 @@ contract Simple {
 
         // DELEGATE CALL
         bytes memory data = abi.encodeWithSelector(
-            this.checkIsTopLevelOrWasAliased.selector, useTopLevel, delegateCase
+            this.checkIsTopLevelOrWasAliased.selector,
+            useTopLevel,
+            delegateCase
         );
         // solhint-disable-next-line avoid-low-level-calls
-        (bool success,) = address(this).delegatecall(data);
+        (bool success, ) = address(this).delegatecall(data);
         require(success, "DELEGATE_CALL_FAILED");
 
         // CALLCODE
         data = abi.encodeWithSelector(
-            this.checkIsTopLevelOrWasAliased.selector, useTopLevel, callcodeCase
+            this.checkIsTopLevelOrWasAliased.selector,
+            useTopLevel,
+            callcodeCase
         );
         assembly {
             success := callcode(gas(), address(), 0, add(data, 32), mload(data), 0, 0)
@@ -112,10 +116,13 @@ contract Simple {
         require(success, "CALLCODE_FAILED");
 
         // CALL
-        data =
-            abi.encodeWithSelector(this.checkIsTopLevelOrWasAliased.selector, useTopLevel, callCase);
+        data = abi.encodeWithSelector(
+            this.checkIsTopLevelOrWasAliased.selector,
+            useTopLevel,
+            callCase
+        );
         // solhint-disable-next-line avoid-low-level-calls
-        (success,) = address(this).call(data);
+        (success, ) = address(this).call(data);
         require(success, "CALL_FAILED");
     }
 
@@ -125,7 +132,7 @@ contract Simple {
         // so we ignore the result of this call.
         // solhint-disable-next-line avoid-low-level-calls
         // solc-ignore-next-line unused-call-retval
-        to.staticcall{gas: before - 10000}(input);// forgefmt: disable-line
+        to.staticcall{gas: before - 10000}(input);
         return before - gasleft();
     }
 
@@ -138,7 +145,12 @@ contract Simple {
         uint256 delayedMessagesRead = sequencerInbox.totalDelayedMessagesRead();
         for (uint256 i = 0; i < numberToPost; i++) {
             sequencerInbox.addSequencerL2Batch(
-                sequenceNumber, batchData, delayedMessagesRead, IGasRefunder(address(0)), 0, 0
+                sequenceNumber,
+                batchData,
+                delayedMessagesRead,
+                IGasRefunder(address(0)),
+                0,
+                0
             );
             sequenceNumber++;
         }

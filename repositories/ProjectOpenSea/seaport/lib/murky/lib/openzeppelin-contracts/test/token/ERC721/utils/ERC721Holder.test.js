@@ -1,20 +1,24 @@
-const { ethers } = require('hardhat');
+const { BN } = require('@openzeppelin/test-helpers');
+
 const { expect } = require('chai');
 
-const name = 'Non Fungible Token';
-const symbol = 'NFT';
-const tokenId = 1n;
+const ERC721Holder = artifacts.require('ERC721Holder');
+const ERC721Mock = artifacts.require('ERC721Mock');
 
-describe('ERC721Holder', function () {
+contract('ERC721Holder', function (accounts) {
+  const [ owner ] = accounts;
+
+  const name = 'Non Fungible Token';
+  const symbol = 'NFT';
+
   it('receives an ERC721 token', async function () {
-    const [owner] = await ethers.getSigners();
+    const token = await ERC721Mock.new(name, symbol);
+    const tokenId = new BN(1);
+    await token.mint(owner, tokenId);
 
-    const token = await ethers.deployContract('$ERC721', [name, symbol]);
-    await token.$_mint(owner, tokenId);
+    const receiver = await ERC721Holder.new();
+    await token.safeTransferFrom(owner, receiver.address, tokenId, { from: owner });
 
-    const receiver = await ethers.deployContract('$ERC721Holder');
-    await token.connect(owner).safeTransferFrom(owner, receiver, tokenId);
-
-    expect(await token.ownerOf(tokenId)).to.equal(receiver);
+    expect(await token.ownerOf(tokenId)).to.be.equal(receiver.address);
   });
 });

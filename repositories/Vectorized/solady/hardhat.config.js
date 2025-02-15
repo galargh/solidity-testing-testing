@@ -18,7 +18,7 @@ export default {
     }
   },
   "solidityTest": {
-    "blockGasLimit": BigInt(100000000),
+    "blockGasLimit": 100000000,
     "fsPermissions": {
       "read": [
         "./test/data"

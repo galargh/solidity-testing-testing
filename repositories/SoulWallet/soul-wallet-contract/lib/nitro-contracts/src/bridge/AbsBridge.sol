@@ -1,5 +1,5 @@
 // Copyright 2021-2022, Offchain Labs, Inc.
-// For license information, see https://github.com/OffchainLabs/nitro-contracts/blob/main/LICENSE
+// For license information, see https://github.com/nitro/blob/master/LICENSE
 // SPDX-License-Identifier: BUSL-1.1
 
 pragma solidity ^0.8.4;
@@ -68,9 +68,7 @@ abstract contract AbsBridge is Initializable, DelegateCallAware, IBridge {
     }
 
     /// @notice Allows the rollup owner to set another rollup address
-    function updateRollupAddress(
-        IOwnable _rollup
-    ) external onlyRollupOrOwner {
+    function updateRollupAddress(IOwnable _rollup) external onlyRollupOrOwner {
         rollup = _rollup;
         emit RollupUpdated(address(_rollup));
     }
@@ -86,15 +84,11 @@ abstract contract AbsBridge is Initializable, DelegateCallAware, IBridge {
         return outbox;
     }
 
-    function allowedDelayedInboxes(
-        address inbox
-    ) public view returns (bool) {
+    function allowedDelayedInboxes(address inbox) public view returns (bool) {
         return allowedDelayedInboxesMap[inbox].allowed;
     }
 
-    function allowedOutboxes(
-        address outbox
-    ) public view returns (bool) {
+    function allowedOutboxes(address outbox) public view returns (bool) {
         return allowedOutboxesMap[outbox].allowed;
     }
 
@@ -111,18 +105,24 @@ abstract contract AbsBridge is Initializable, DelegateCallAware, IBridge {
     )
         external
         onlySequencerInbox
-        returns (uint256 seqMessageIndex, bytes32 beforeAcc, bytes32 delayedAcc, bytes32 acc)
+        returns (
+            uint256 seqMessageIndex,
+            bytes32 beforeAcc,
+            bytes32 delayedAcc,
+            bytes32 acc
+        )
     {
         if (
-            sequencerReportedSubMessageCount != prevMessageCount && prevMessageCount != 0
-                && sequencerReportedSubMessageCount != 0
+            sequencerReportedSubMessageCount != prevMessageCount &&
+            prevMessageCount != 0 &&
+            sequencerReportedSubMessageCount != 0
         ) {
             revert BadSequencerMessageNumber(sequencerReportedSubMessageCount, prevMessageCount);
         }
         sequencerReportedSubMessageCount = newMessageCount;
         seqMessageIndex = sequencerInboxAccs.length;
-        if (seqMessageIndex > 0) {
-            beforeAcc = sequencerInboxAccs[seqMessageIndex - 1];
+        if (sequencerInboxAccs.length > 0) {
+            beforeAcc = sequencerInboxAccs[sequencerInboxAccs.length - 1];
         }
         if (afterDelayedMessagesRead > 0) {
             delayedAcc = delayedInboxAccs[afterDelayedMessagesRead - 1];
@@ -132,18 +132,20 @@ abstract contract AbsBridge is Initializable, DelegateCallAware, IBridge {
     }
 
     /// @inheritdoc IBridge
-    function submitBatchSpendingReport(
-        address sender,
-        bytes32 messageDataHash
-    ) external onlySequencerInbox returns (uint256) {
-        return addMessageToDelayedAccumulator(
-            L1MessageType_batchPostingReport,
-            sender,
-            uint64(block.number),
-            uint64(block.timestamp), // solhint-disable-line not-rely-on-time,
-            block.basefee,
-            messageDataHash
-        );
+    function submitBatchSpendingReport(address sender, bytes32 messageDataHash)
+        external
+        onlySequencerInbox
+        returns (uint256)
+    {
+        return
+            addMessageToDelayedAccumulator(
+                L1MessageType_batchPostingReport,
+                sender,
+                uint64(block.number),
+                uint64(block.timestamp), // solhint-disable-line not-rely-on-time,
+                block.basefee,
+                messageDataHash
+            );
     }
 
     function _enqueueDelayedMessage(
@@ -178,7 +180,13 @@ abstract contract AbsBridge is Initializable, DelegateCallAware, IBridge {
     ) internal returns (uint256) {
         uint256 count = delayedInboxAccs.length;
         bytes32 messageHash = Messages.messageHash(
-            kind, sender, blockNumber, blockTimestamp, count, baseFeeL1, messageDataHash
+            kind,
+            sender,
+            blockNumber,
+            blockTimestamp,
+            count,
+            baseFeeL1,
+            messageDataHash
         );
         bytes32 prevAcc = 0;
         if (count > 0) {
@@ -186,7 +194,14 @@ abstract contract AbsBridge is Initializable, DelegateCallAware, IBridge {
         }
         delayedInboxAccs.push(Messages.accumulateInboxMessage(prevAcc, messageHash));
         emit MessageDelivered(
-            count, prevAcc, msg.sender, kind, sender, messageDataHash, baseFeeL1, blockTimestamp
+            count,
+            prevAcc,
+            msg.sender,
+            kind,
+            sender,
+            messageDataHash,
+            baseFeeL1,
+            blockTimestamp
         );
         return count;
     }
@@ -211,9 +226,7 @@ abstract contract AbsBridge is Initializable, DelegateCallAware, IBridge {
         emit BridgeCallTriggered(msg.sender, to, value, data);
     }
 
-    function setSequencerInbox(
-        address _sequencerInbox
-    ) external onlyRollupOrOwner {
+    function setSequencerInbox(address _sequencerInbox) external onlyRollupOrOwner {
         sequencerInbox = _sequencerInbox;
         emit SequencerInboxUpdated(_sequencerInbox);
     }
@@ -229,8 +242,9 @@ abstract contract AbsBridge is Initializable, DelegateCallAware, IBridge {
             allowedDelayedInboxesMap[inbox] = InOutInfo(allowedDelayedInboxList.length, true);
             allowedDelayedInboxList.push(inbox);
         } else {
-            allowedDelayedInboxList[info.index] =
-                allowedDelayedInboxList[allowedDelayedInboxList.length - 1];
+            allowedDelayedInboxList[info.index] = allowedDelayedInboxList[
+                allowedDelayedInboxList.length - 1
+            ];
             allowedDelayedInboxesMap[allowedDelayedInboxList[info.index]].index = info.index;
             allowedDelayedInboxList.pop();
             delete allowedDelayedInboxesMap[inbox];
@@ -257,9 +271,7 @@ abstract contract AbsBridge is Initializable, DelegateCallAware, IBridge {
         }
     }
 
-    function setSequencerReportedSubMessageCount(
-        uint256 newMsgCount
-    ) external onlyRollupOrOwner {
+    function setSequencerReportedSubMessageCount(uint256 newMsgCount) external onlyRollupOrOwner {
         sequencerReportedSubMessageCount = newMsgCount;
     }
 
@@ -275,9 +287,7 @@ abstract contract AbsBridge is Initializable, DelegateCallAware, IBridge {
     function acceptFundsFromOldBridge() external payable {}
 
     /// @dev transfer funds provided to pay for crosschain msg
-    function _transferFunds(
-        uint256 amount
-    ) internal virtual;
+    function _transferFunds(uint256 amount) internal virtual;
 
     function _executeLowLevelCall(
         address to,

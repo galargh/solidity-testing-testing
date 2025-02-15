@@ -42,7 +42,10 @@ interface IBridge {
     );
 
     event BridgeCallTriggered(
-        address indexed outbox, address indexed to, uint256 value, bytes data
+        address indexed outbox,
+        address indexed to,
+        uint256 value,
+        bytes data
     );
 
     event InboxToggle(address indexed inbox, bool enabled);
@@ -53,23 +56,15 @@ interface IBridge {
 
     event RollupUpdated(address rollup);
 
-    function allowedDelayedInboxList(
-        uint256
-    ) external returns (address);
+    function allowedDelayedInboxList(uint256) external returns (address);
 
-    function allowedOutboxList(
-        uint256
-    ) external returns (address);
+    function allowedOutboxList(uint256) external returns (address);
 
     /// @dev Accumulator for delayed inbox messages; tail represents hash of the current state; each element represents the inclusion of a new message.
-    function delayedInboxAccs(
-        uint256
-    ) external view returns (bytes32);
+    function delayedInboxAccs(uint256) external view returns (bytes32);
 
     /// @dev Accumulator for sequencer inbox messages; tail represents hash of the current state; each element represents the inclusion of a new message.
-    function sequencerInboxAccs(
-        uint256
-    ) external view returns (bytes32);
+    function sequencerInboxAccs(uint256) external view returns (bytes32);
 
     function rollup() external view returns (IOwnable);
 
@@ -77,13 +72,9 @@ interface IBridge {
 
     function activeOutbox() external view returns (address);
 
-    function allowedDelayedInboxes(
-        address inbox
-    ) external view returns (bool);
+    function allowedDelayedInboxes(address inbox) external view returns (bool);
 
-    function allowedOutboxes(
-        address outbox
-    ) external view returns (bool);
+    function allowedOutboxes(address outbox) external view returns (bool);
 
     function sequencerReportedSubMessageCount() external view returns (uint256);
 
@@ -106,7 +97,12 @@ interface IBridge {
         uint256 newMessageCount
     )
         external
-        returns (uint256 seqMessageIndex, bytes32 beforeAcc, bytes32 delayedAcc, bytes32 acc);
+        returns (
+            uint256 seqMessageIndex,
+            bytes32 beforeAcc,
+            bytes32 delayedAcc,
+            bytes32 acc
+        );
 
     /**
      * @dev Allows the sequencer inbox to submit a delayed message of the batchPostingReport type
@@ -114,22 +110,17 @@ interface IBridge {
      *      to call `enqueueDelayedMessage` to avoid the gas overhead of an extra SLOAD in either
      *      every delayed inbox or every sequencer inbox call.
      */
-    function submitBatchSpendingReport(
-        address batchPoster,
-        bytes32 dataHash
-    ) external returns (uint256 msgNum);
+    function submitBatchSpendingReport(address batchPoster, bytes32 dataHash)
+        external
+        returns (uint256 msgNum);
 
     // ---------- onlyRollupOrOwner functions ----------
 
-    function setSequencerInbox(
-        address _sequencerInbox
-    ) external;
+    function setSequencerInbox(address _sequencerInbox) external;
 
     function setDelayedInbox(address inbox, bool enabled) external;
 
     function setOutbox(address inbox, bool enabled) external;
 
-    function updateRollupAddress(
-        IOwnable _rollup
-    ) external;
+    function updateRollupAddress(IOwnable _rollup) external;
 }

@@ -6,7 +6,6 @@ pragma solidity ^0.8.0;
 
 import "./AbsRollupEventInbox.sol";
 import "../bridge/IEthBridge.sol";
-import {INITIALIZATION_MSG_TYPE} from "../libraries/MessageTypes.sol";
 
 /**
  * @title The inbox for rollup protocol events
@@ -14,12 +13,13 @@ import {INITIALIZATION_MSG_TYPE} from "../libraries/MessageTypes.sol";
 contract RollupEventInbox is AbsRollupEventInbox {
     constructor() AbsRollupEventInbox() {}
 
-    function _enqueueInitializationMsg(
-        bytes memory initMsg
-    ) internal override returns (uint256) {
-        return IEthBridge(address(bridge)).enqueueDelayedMessage(
-            INITIALIZATION_MSG_TYPE, address(0), keccak256(initMsg)
-        );
+    function _enqueueInitializationMsg(bytes memory initMsg) internal override returns (uint256) {
+        return
+            IEthBridge(address(bridge)).enqueueDelayedMessage(
+                INITIALIZATION_MSG_TYPE,
+                address(0),
+                keccak256(initMsg)
+            );
     }
 
     function _currentDataCostToReport() internal view override returns (uint256) {

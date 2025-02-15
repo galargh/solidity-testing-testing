@@ -18,5 +18,12 @@ interface ArbStatistics {
     function getStats()
         external
         view
-        returns (uint256, uint256, uint256, uint256, uint256, uint256);
+        returns (
+            uint256,
+            uint256,
+            uint256,
+            uint256,
+            uint256,
+            uint256
+        );
 }

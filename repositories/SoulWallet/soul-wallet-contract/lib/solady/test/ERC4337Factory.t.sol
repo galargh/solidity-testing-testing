@@ -24,36 +24,46 @@ contract ERC4337FactoryTest is SoladyTest {
         vm.deal(address(this), 100 ether);
         address owner = _randomNonZeroAddress();
         uint256 initialValue = _random() % 100 ether;
-        bytes32 ownSalt = bytes32(bytes20(owner)) | bytes32(uint256(uint96(_random())));
-        address account = factory.createAccount{value: initialValue}(ownSalt);
+        bytes32 salt = _randomChance(8) ? bytes32(_random()) : bytes32(uint256(uint96(_random())));
+        address account;
+        if (uint256(salt) >> 96 != uint160(owner) && uint256(salt) >> 96 != 0) {
+            vm.expectRevert(LibClone.SaltDoesNotStartWith.selector);
+            account = factory.createAccount{value: initialValue}(owner, salt);
+            return;
+        } else {
+            account = factory.createAccount{value: initialValue}(owner, salt);
+        }
         assertEq(address(account).balance, initialValue);
         assertEq(MockERC4337(payable(account)).owner(), owner);
         _checkImplementationSlot(account, address(erc4337));
     }
 
     function testCreateAccountRepeatedDeployment() public {
-        address owner = address(0xABCD);
-        bytes32 ownSalt = bytes32(bytes20(owner)) | bytes32(uint256(uint96(_random())));
-        address expectedInstance = factory.getAddress(ownSalt);
-        address instance = factory.createAccount{value: 123}(ownSalt);
+        bytes32 salt = bytes32(_random() & uint256(type(uint96).max));
+        address expectedInstance = factory.getAddress(salt);
+        address instance = factory.createAccount{value: 123}(address(0xABCD), salt);
         assertEq(instance.balance, 123);
-        assertEq(factory.createAccount{value: 456}(ownSalt), instance);
-        assertEq(factory.createAccount(ownSalt), instance);
+        assertEq(factory.createAccount{value: 456}(address(0xABCD), salt), instance);
+        assertEq(factory.createAccount(address(0xABCD), salt), instance);
         assertEq(instance.balance, 123 + 456);
         assertEq(expectedInstance, instance);
     }
 
     function testCreateAccountRepeatedDeployment(uint256) public {
         address owner = _randomNonZeroAddress();
-        bytes32 ownSalt = bytes32(bytes20(owner)) | bytes32(uint256(uint96(_random())));
-        address expectedInstance = factory.getAddress(ownSalt);
+        bytes32 salt =
+            bytes32((_random() & uint256(type(uint96).max)) | (uint256(uint160(owner)) << 96));
+        address expectedInstance = factory.getAddress(salt);
         address notOwner = _randomNonZeroAddress();
         while (owner == notOwner) notOwner = _randomNonZeroAddress();
-
-        address instance = factory.createAccount{value: 123}(ownSalt);
+        vm.expectRevert(LibClone.SaltDoesNotStartWith.selector);
+        factory.createAccount{value: 123}(notOwner, salt);
+        address instance = factory.createAccount{value: 123}(owner, salt);
         assertEq(instance.balance, 123);
-        assertEq(factory.createAccount{value: 456}(ownSalt), instance);
-        assertEq(factory.createAccount(ownSalt), instance);
+        vm.expectRevert(LibClone.SaltDoesNotStartWith.selector);
+        factory.createAccount{value: 123}(notOwner, salt);
+        assertEq(factory.createAccount{value: 456}(owner, salt), instance);
+        assertEq(factory.createAccount(owner, salt), instance);
         assertEq(instance.balance, 123 + 456);
         assertEq(expectedInstance, instance);
     }

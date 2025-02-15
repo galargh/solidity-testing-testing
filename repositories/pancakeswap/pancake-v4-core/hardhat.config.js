@@ -35,7 +35,7 @@ export default {
         "./test/pool-bin/bin"
       ]
     },
-    "blockGasLimit": BigInt(300000000),
+    "blockGasLimit": 300000000,
     "fuzz": {
       "runs": 5
     }

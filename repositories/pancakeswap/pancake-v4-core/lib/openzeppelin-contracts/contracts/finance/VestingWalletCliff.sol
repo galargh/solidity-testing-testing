@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts (last updated v5.1.0) (finance/VestingWalletCliff.sol)
 
 pragma solidity ^0.8.20;
 
@@ -8,8 +7,6 @@ import {VestingWallet} from "./VestingWallet.sol";
 
 /**
  * @dev Extension of {VestingWallet} that adds a cliff to the vesting schedule.
- *
- * _Available since v5.1._
  */
 abstract contract VestingWalletCliff is VestingWallet {
     using SafeCast for *;
@@ -20,8 +17,8 @@ abstract contract VestingWalletCliff is VestingWallet {
     error InvalidCliffDuration(uint64 cliffSeconds, uint64 durationSeconds);
 
     /**
-     * @dev Set the duration of the cliff, in seconds. The cliff starts vesting schedule (see {VestingWallet}'s
-     * constructor) and ends `cliffSeconds` later.
+     * @dev Sets the sender as the initial owner, the beneficiary as the pending owner, the start timestamp, the
+     * vesting duration and the duration of the cliff of the vesting wallet.
      */
     constructor(uint64 cliffSeconds) {
         if (cliffSeconds > duration()) {

@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts (last updated v5.1.0) (utils/Panic.sol)
 
 pragma solidity ^0.8.20;
 
@@ -19,8 +18,6 @@ pragma solidity ^0.8.20;
  * ```
  *
  * Follows the list from https://github.com/ethereum/solidity/blob/v0.8.24/libsolutil/ErrorCodes.h[libsolutil].
- *
- * _Available since v5.1._
  */
 // slither-disable-next-line unused-state
 library Panic {
@@ -48,7 +45,8 @@ library Panic {
     /// @dev Reverts with a panic code. Recommended to use with
     /// the internal constants with predefined codes.
     function panic(uint256 code) internal pure {
-        assembly ("memory-safe") {
+        /// @solidity memory-safe-assembly
+        assembly {
             mstore(0x00, 0x4e487b71)
             mstore(0x20, code)
             revert(0x1c, 0x24)

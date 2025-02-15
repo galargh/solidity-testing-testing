@@ -24,19 +24,13 @@ jobs:
           version: nightly
       
       - name: Run Fuzzed Unit Tests
-        run: forge test --no-match-path src/test/StandardInput.t.sol --fuzz-runs 10000
+        run: forge test --no-match-path src/test/StandardInput.t.sol
       
-      - name: Run Murky Differential Tests
+      - name: Run Differential Tests
         run: |
           npm --prefix differential_testing/scripts/ install
           npm --prefix differential_testing/scripts/ run compile
-          forge test --ffi --contracts differential_testing/test/DifferentialTests.t.sol --fuzz-runs 512
-        
-      - name: Run Complete Differential Tests
-        run: |
-          npm --prefix differential_testing/scripts/ install
-          npm --prefix differential_testing/scripts/ run compile
-          forge test --ffi --contracts differential_testing/test/CompleteDifferentialTests.t.sol --fuzz-runs 512 
+          FOUNDRY_FUZZ_RUNS=512 forge test --ffi -c differential_testing/test/DifferentialTests.t.sol 
 
       - name: Run Standard Gas Snapshotting
         run: forge snapshot --gas-report --ffi --match-path src/test/StandardInput.t.sol

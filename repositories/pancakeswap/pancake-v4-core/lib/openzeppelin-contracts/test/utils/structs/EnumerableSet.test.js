@@ -20,25 +20,21 @@ async function fixture() {
   const mock = await ethers.deployContract('$EnumerableSet');
 
   const env = Object.fromEntries(
-    TYPES.map(({ name, type, base, size }) => [
+    TYPES.map(({ name, type }) => [
       type,
       {
-        values: Array.from(
-          { length: 3 },
-          size ? () => Array.from({ length: size }, generators[base]) : generators[type],
-        ),
+        values: Array.from({ length: 3 }, generators[type]),
         methods: getMethods(mock, {
           add: `$add(uint256,${type})`,
           remove: `$remove(uint256,${type})`,
-          clear: `$clear_EnumerableSet_${name}(uint256)`,
           contains: `$contains(uint256,${type})`,
           length: `$length_EnumerableSet_${name}(uint256)`,
           at: `$at_EnumerableSet_${name}(uint256,uint256)`,
           values: `$values_EnumerableSet_${name}(uint256)`,
         }),
         events: {
-          addReturn: `return$add_EnumerableSet_${name}_${type.replace(/[[\]]/g, '_')}`,
-          removeReturn: `return$remove_EnumerableSet_${name}_${type.replace(/[[\]]/g, '_')}`,
+          addReturn: `return$add_EnumerableSet_${name}_${type}`,
+          removeReturn: `return$remove_EnumerableSet_${name}_${type}`,
         },
       },
     ]),

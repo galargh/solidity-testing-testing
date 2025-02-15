@@ -1,22 +1,16 @@
 // SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts (last updated v5.1.0) (utils/ShortStrings.sol)
 
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.8;
 
-import {StorageSlot} from "./StorageSlot.sol";
+import "./StorageSlot.sol";
 
-// | string  | 0xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA   |
-// | length  | 0x                                                              BB |
 type ShortString is bytes32;
 
 /**
  * @dev This library provides functions to convert short memory strings
  * into a `ShortString` type that can be used as an immutable variable.
- *
- * Strings of arbitrary length can be optimized using this library if
- * they are short enough (up to 31 bytes) by packing them with their
- * length (1 byte) in a single EVM word (32 bytes). Additionally, a
- * fallback mechanism can be used for every other case.
+ * Strings of arbitrary length can be optimized if they are short enough by
+ * the addition of a storage variable used as fallback.
  *
  * Usage example:
  *
@@ -38,11 +32,7 @@ type ShortString is bytes32;
  * ```
  */
 library ShortStrings {
-    // Used as an identifier for strings longer than 31 bytes.
-    bytes32 private constant FALLBACK_SENTINEL = 0x00000000000000000000000000000000000000000000000000000000000000FF;
-
     error StringTooLong(string str);
-    error InvalidShortString();
 
     /**
      * @dev Encode a string of at most 31 chars into a `ShortString`.
@@ -61,10 +51,11 @@ library ShortStrings {
      * @dev Decode a `ShortString` back to a "normal" string.
      */
     function toString(ShortString sstr) internal pure returns (string memory) {
-        uint256 len = byteLength(sstr);
+        uint256 len = length(sstr);
         // using `new string(len)` would work locally but is not memory safe.
         string memory str = new string(32);
-        assembly ("memory-safe") {
+        /// @solidity memory-safe-assembly
+        assembly {
             mstore(str, len)
             mstore(add(str, 0x20), sstr)
         }
@@ -74,12 +65,8 @@ library ShortStrings {
     /**
      * @dev Return the length of a `ShortString`.
      */
-    function byteLength(ShortString sstr) internal pure returns (uint256) {
-        uint256 result = uint256(ShortString.unwrap(sstr)) & 0xFF;
-        if (result > 31) {
-            revert InvalidShortString();
-        }
-        return result;
+    function length(ShortString sstr) internal pure returns (uint256) {
+        return uint256(ShortString.unwrap(sstr)) & 0xFF;
     }
 
     /**
@@ -90,33 +77,18 @@ library ShortStrings {
             return toShortString(value);
         } else {
             StorageSlot.getStringSlot(store).value = value;
-            return ShortString.wrap(FALLBACK_SENTINEL);
+            return ShortString.wrap(0);
         }
     }
 
     /**
-     * @dev Decode a string that was encoded to `ShortString` or written to storage using {toShortStringWithFallback}.
+     * @dev Decode a string that was encoded to `ShortString` or written to storage using {setWithFallback}.
      */
     function toStringWithFallback(ShortString value, string storage store) internal pure returns (string memory) {
-        if (ShortString.unwrap(value) != FALLBACK_SENTINEL) {
+        if (length(value) > 0) {
             return toString(value);
         } else {
             return store;
-        }
-    }
-
-    /**
-     * @dev Return the length of a string that was encoded to `ShortString` or written to storage using
-     * {toShortStringWithFallback}.
-     *
-     * WARNING: This will return the "byte length" of the string. This may not reflect the actual length in terms of
-     * actual characters as the UTF-8 encoding of a single character can span over multiple bytes.
-     */
-    function byteLengthWithFallback(ShortString value, string storage store) internal view returns (uint256) {
-        if (ShortString.unwrap(value) != FALLBACK_SENTINEL) {
-            return byteLength(value);
-        } else {
-            return bytes(store).length;
         }
     }
 }

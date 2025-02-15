@@ -104,7 +104,7 @@ function clone(org, repo) {
       return;
     }
   }
-  const { status } = spawnSync('git', ['clone', `git@github.com:${org}/${repo}.git`, "--depth=1", dir], { stdio: 'inherit' });
+  const { status } = spawnSync('git', ['clone', '--recurse-submodules', `git@github.com:${org}/${repo}.git`, "--depth=1", dir], { stdio: 'inherit' });
   if (status !== 0) {
     throw new Error(`Failed to clone ${org}/${repo}`);
   }
@@ -137,18 +137,22 @@ function init(org, repo, packageManager, hardhatConfig) {
   switch (packageManager) {
     case 'bun':
       spawnSync('bun', ['install'], { cwd: dir, stdio: 'inherit' });
+      spawnSync('bun', ['remove', 'hardhat'], { cwd: dir, stdio: 'inherit' });
       spawnSync('bun', ['add', '-d', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, stdio: 'inherit' });
       break;
     case 'yarn':
       spawnSync('yarn', ['install'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('yarn', ['remove', 'hardhat'], { cwd: dir, sdtio: 'inherit' });
       spawnSync('yarn', ['add', '-D', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     case 'npm':
       spawnSync('npm', ['install'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('npm', ['remove', 'hardhat'], { cwd: dir, sdtio: 'inherit' });
       spawnSync('npm', ['install', '--save-dev', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     case 'pnpm':
       spawnSync('pnpm', ['install'], { cwd: dir, sdtio: 'inherit' });
+      spawnSync('pnpm', ['remove', 'hardhat'], { cwd: dir, sdtio: 'inherit' });
       spawnSync('pnpm', ['add', '-D', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, sdtio: 'inherit' });
       break;
     default:
@@ -160,23 +164,6 @@ function init(org, repo, packageManager, hardhatConfig) {
     packageJson.type = 'module';
     fs.writeFileSync(path.join(dir, 'package.json'), JSON.stringify(packageJson, null, 2));
   }
-  if (fs.existsSync(path.join(dir, '.gitmodules'))) {
-    const gitmodules = fs.readFileSync(path.join(dir, '.gitmodules'), 'utf8');
-    const submodules = gitmodules.split(/\[submodule "([^"]+)"\]/g).slice(1)
-      .map((config) => {
-        const lines = config.split('\n').map((line) => line.trim());
-        const path = lines.find((line) => line.startsWith('path = '))?.slice(7);
-        const url = lines.find((line) => line.startsWith('url = '))?.slice(6);
-        const branch = lines.find((line) => line.startsWith('branch = '))?.slice(9);
-        return { path, url, branch };
-      })
-      .filter((submodule) => submodule.path !== undefined && submodule.url !== undefined)
-      .filter((submodule) => submodule.path.startsWith('lib/') && submodule.url.startsWith('https://github.com/'))
-      .map((submodule) => ({path: submodule.path.slice(4), url: submodule.url.slice(19), branch: submodule.branch}));
-    for (const submodule of submodules) {
-      spawnSync('forge', ['install', '--no-git', `${submodule.path}=${submodule.url}${submodule.branch ? `@${submodule.branch}` : ''}`], { cwd: dir, stdio: 'inherit' });
-    }
-  }
   return;
 }
 
@@ -187,7 +174,6 @@ function update(org, repo, packageManager) {
     throw new Error(`Directory ${dir} does not exist`);
   }
   const hardhatVersion = process.env.HARDHAT_VERSION ?? 'next';
-  // remove hardhat first
   switch (packageManager) {
     case 'bun':
       spawnSync('bun', ['add', '-d', `@ignored/hardhat-vnext@${hardhatVersion}`], { cwd: dir, stdio: 'inherit' });

@@ -21,9 +21,7 @@ contract PendingBlkTimeAndNrAdvanceCheck {
         require(ARB_SYS.arbBlockNumber() > deployedAtBlock, "Block didn't advance");
     }
 
-    function checkArbBlockHashReturnsLatest(
-        bytes32 expected
-    ) external {
+    function checkArbBlockHashReturnsLatest(bytes32 expected) external {
         bytes32 gotBlockHash = ARB_SYS.arbBlockHash(ARB_SYS.arbBlockNumber() - 1);
         require(gotBlockHash != bytes32(0), "ZERO_BLOCK_HASH");
         require(gotBlockHash == expected, "WRONG_BLOCK_HASH");

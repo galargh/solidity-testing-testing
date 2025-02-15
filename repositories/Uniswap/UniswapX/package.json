@@ -4,6 +4,7 @@
   "description": "[![Integration Tests](https://github.com/Uniswap/uniswapx/actions/workflows/test-integration.yml/badge.svg)](https://github.com/Uniswap/uniswapx/actions/workflows/test-integration.yml) [![Unit Tests](https://github.com/Uniswap/uniswapx/actions/workflows/test.yml/badge.svg)](https://github.com/Uniswap/uniswapx/actions/workflows/test.yml)",
   "main": "hardhat.config.js",
   "directories": {
+    "lib": "lib",
     "test": "test"
   },
   "scripts": {

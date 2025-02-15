@@ -1,19 +1,27 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.0;
 
-import {ERC20} from "../../token/ERC20/ERC20.sol";
+contract ERC20ReturnFalseMock {
+    mapping(address => uint256) private _allowances;
 
-abstract contract ERC20ReturnFalseMock is ERC20 {
-    function transfer(address, uint256) public pure override returns (bool) {
+    function transfer(address, uint256) public pure returns (bool) {
         return false;
     }
 
-    function transferFrom(address, address, uint256) public pure override returns (bool) {
+    function transferFrom(address, address, uint256) public pure returns (bool) {
         return false;
     }
 
-    function approve(address, uint256) public pure override returns (bool) {
+    function approve(address, uint256) public pure returns (bool) {
         return false;
+    }
+
+    function setAllowance(address account, uint256 allowance_) public {
+        _allowances[account] = allowance_;
+    }
+
+    function allowance(address owner, address) public view returns (uint256) {
+        return _allowances[owner];
     }
 }

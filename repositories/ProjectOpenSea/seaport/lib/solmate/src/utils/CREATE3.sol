@@ -56,16 +56,12 @@ library CREATE3 {
     }
 
     function getDeployed(bytes32 salt) internal view returns (address) {
-        return getDeployed(salt, address(this));
-    }
-
-    function getDeployed(bytes32 salt, address creator) internal pure returns (address) {
         address proxy = keccak256(
             abi.encodePacked(
                 // Prefix:
                 bytes1(0xFF),
                 // Creator:
-                creator,
+                address(this),
                 // Salt:
                 salt,
                 // Bytecode hash:
