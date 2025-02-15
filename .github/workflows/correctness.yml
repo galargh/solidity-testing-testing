@@ -107,7 +107,7 @@ jobs:
         env:
           REPOSITORY: ${{ matrix.repository }}
         run: |
-          echo "name=${REPOSITORY#*/} ${REPOSITORY%/*} ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
+          echo "name=${REPOSITORY%/*} ${REPOSITORY#*/} ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
           echo "title=${{ matrix.repository }}: ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
           echo "path=${{ matrix.repository }}/${{ matrix.run.command }}.result" | tee -a $GITHUB_OUTPUT
           echo "content<<EOF" | tee -a $GITHUB_OUTPUT
