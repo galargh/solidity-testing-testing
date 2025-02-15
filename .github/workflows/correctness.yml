@@ -18,8 +18,10 @@ jobs:
     outputs:
       repositories: ${{ steps.repositories.outputs.repositories }}
     steps:
-      - uses: actions/checkout@v4
-      - id: repositories
+      - name: Checkout the testing repository
+        uses: actions/checkout@v4
+      - name: Find repositories that need to be tested
+        id: repositories
         run: |
           echo "repositories<<EOF" >> $GITHUB_OUTPUT
           jq -r 'keys' repositories.json | tee -a $GITHUB_OUTPUT
@@ -46,10 +48,12 @@ jobs:
       FORGE_VERSION: v0.3.0
       NODE_VERSION: 22.10.0
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout the testing repository
+        uses: actions/checkout@v4
         with:
           path: ${{ github.repository }}
-      - id: config
+      - name: Find the configuration for the repository
+        id: config
         env:
           REPOSITORY: ${{ matrix.repository }}
         run: |
@@ -57,31 +61,40 @@ jobs:
           jq -r '.[env.REPOSITORY]' repositories.json | tee -a $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
         working-directory: ${{ github.repository }}
-      - uses: actions/checkout@v4
+      - name: Checkout the repository to be tested
+        uses: actions/checkout@v4
         with:
           submodules: recursive
           repository: ${{ matrix.repository }}
           path: ${{ matrix.repository }}
           ref: ${{ fromJSON(steps.config.outputs.config).ref }}
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - uses: foundry-rs/foundry-toolchain@de808b1eea699e761c404bda44ba8f21aba30b2c
+      - name: Setup Foundry
+        uses: foundry-rs/foundry-toolchain@de808b1eea699e761c404bda44ba8f21aba30b2c
         with:
           version: ${{ env.FORGE_VERSION }}
           cache: false
-      - run: npm install -g @ignored/hardhat-vnext@${{ env.HARDHAT_VERSION }}
-      - if: fromJSON(steps.config.outputs.config).packageManager != '' && fromJSON(steps.config.outputs.config).packageManager != 'npm'
+      - name: Install Hardhat
+        run: npm install -g @ignored/hardhat-vnext@${{ env.HARDHAT_VERSION }}
+      - name: Install the package manager
+        if: fromJSON(steps.config.outputs.config).packageManager != '' && fromJSON(steps.config.outputs.config).packageManager != 'npm'
         run: npm install -g ${{ fromJSON(steps.config.outputs.config).packageManager }}
-      - if: fromJSON(steps.config.outputs.config).packageManager != ''
+      - name: Install the dependencies
+        if: fromJSON(steps.config.outputs.config).packageManager != ''
         run: ${{ fromJSON(steps.config.outputs.config).packageManager }} install
         working-directory: ${{ matrix.repository }}
-      - if: fromJSON(steps.config.outputs.config).packageManager == ''
+      - name: Initialize the repository
+        if: fromJSON(steps.config.outputs.config).packageManager == ''
         run: npm init -y
         working-directory: ${{ matrix.repository }}
-      - run: npm pkg set type="module"
+      - name: Set the package type
+        run: npm pkg set type="module"
         working-directory: ${{ matrix.repository }}
-      - env:
+      - name: Set the Hardhat configuration
+        env:
           HARDHAT_CONFIG: ${{ toJSON(fromJSON(steps.config.outputs.config).hardhatConfig) }}
         run: |
           rm hardhat.config.ts 2>/dev/null || true
@@ -90,7 +103,8 @@ jobs:
           sed -i 's/blockTimestamp": "\([0-9]\+\)"/blockTimestamp": BigInt(\1)/' hardhat.config.js
           cat hardhat.config.js
         working-directory: ${{ matrix.repository }}
-      - id: run
+      - name: Run ${{ matrix.run.command }}
+        id: run
         env:
           CONFIG_ENV: ${{ toJSON(fromJSON(steps.config.outputs.config).env || fromJSON('{}')) }}
         run: |
@@ -103,7 +117,8 @@ jobs:
           ${{ matrix.run.command }} 2>&1 | tee -a '${{ matrix.run.command }}.out'
         working-directory: ${{ matrix.repository }}
         continue-on-error: true
-      - id: upload
+      - name: Prepare the upload
+        id: upload
         env:
           REPOSITORY: ${{ matrix.repository }}
         run: |
@@ -114,10 +129,12 @@ jobs:
           (grep -P '${{ matrix.run.regex }}' '${{ matrix.run.command }}.out' || echo "Unexpected Error") | tee -a '${{ matrix.run.command }}.result' | tee -a $GITHUB_OUTPUT
           echo "EOF" | tee -a $GITHUB_OUTPUT
         working-directory: ${{ matrix.repository }}
-      - run: |
+      - name: Set the notice
+        run: |
           echo "::notice title=${{ steps.upload.outputs.title }}::${{ steps.upload.outputs.content }}"
         working-directory: ${{ matrix.repository }}
-      - uses: actions/upload-artifact@v4
+      - name: Upload the result
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.upload.outputs.name }}
           path: ${{ steps.upload.outputs.path }}
@@ -126,10 +143,12 @@ jobs:
     needs: run
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v4
+      - name: Download the results
+        uses: actions/download-artifact@v4
         with:
           pattern: '*'
-      - id: summary
+      - name: Summarize the results
+        id: summary
         run: |
           ls -R
           for file in **/*.result; do
