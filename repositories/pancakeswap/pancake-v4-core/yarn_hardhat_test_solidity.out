@@ -1,0 +1,1734 @@
+yarn run v1.22.19
+$ /Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/pancakeswap/pancake-v4-core/node_modules/.bin/hardhat test solidity
+
+WARNING: You are using Node.js 20.11.1 which is not supported by Hardhat.
+Please upgrade to 22.10.0 or a later version.
+
+Running Solidity tests
+
+Ran 1 tests for test/pool-bin/helpers/BinDonateHelper.sol:BinDonateHelper (v0.8.26)
+✘ Failed(1): setUp() (duration: 1 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/pool-bin/helpers/BinCustomCurveHook.sol:BinCustomCurveHook (v0.8.26)
+✘ Failed(2): setUp() (duration: 1 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/pool-bin/helpers/BinFeeManagerHook.sol:BinFeeManagerHook (v0.8.26)
+✘ Failed(3): setUp() (duration: 1 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/pool-bin/helpers/BinMintBurnFeeHook.sol:BinMintBurnFeeHook (v0.8.26)
+✘ Failed(4): setUp() (duration: 7 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 7 ms)
+
+Ran 1 tests for test/pool-bin/helpers/BinLiquidityHelper.sol:BinLiquidityHelper (v0.8.26)
+✘ Failed(5): setUp() (duration: 8 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 8 ms)
+
+Ran 11 tests for test/pool-bin/libraries/BinPoolFee.t.sol:BinPoolFeeTest (v0.8.26)
+✔ Passed: test_Swap_WithDynamicFee(uint24) (duration: 11 ms, runs: 5, meanGas: 585512, medianGas: 585135)
+✔ Passed: test_Swap_NoFee() (duration: 0 ms, consumedGas: 517761)
+✔ Passed: test_Mint_WithDynamicFeeFromBeforeMintTooLarge() (duration: 0 ms, consumedGas: 795087)
+✔ Passed: test_MintCompositionFee_WithProtocolFee() (duration: 0 ms, consumedGas: 619838)
+✔ Passed: test_MintCompositionFee_WithDynamicFee() (duration: 2 ms, consumedGas: 1130732)
+✔ Passed: test_MintCompositionFee_NoProtocolFee() (duration: 2 ms, consumedGas: 539085)
+✔ Passed: test_MintCompositionFee_DynamicFee() (duration: 0 ms, consumedGas: 643866)
+✔ Passed: test_Burn_NoFee() (duration: 0 ms, consumedGas: 431508)
+✔ Passed: testFuzz_Swap_WithDynamicFeeTooLarge(uint24) (duration: 4 ms, runs: 5, meanGas: 530364, medianGas: 530130)
+✔ Passed: testFuzz_SwapOutputMoreThanMint(uint24,uint256) (duration: 9 ms, runs: 5, meanGas: 1049036, medianGas: 1049944)
+✔ Passed: testFuzz_Mint_WithDynamicFeeTooLarge(uint24) (duration: 24 ms, runs: 5, meanGas: 279303, medianGas: 279692)
+✔ Suite Passed: 11 tests, 11 passed, 0 failed, 0 skipped (duration: 40 ms)
+
+Ran 6 tests for test/pool-bin/libraries/BinPoolDonate.t.sol:BinPoolDonateTest (v0.8.26)
+✔ Passed: testFuzzDonate(uint128,uint128) (duration: 3 ms, runs: 5, meanGas: 476775, medianGas: 488596)
+✔ Passed: testDonate_InsufficientBinShareForDonate(uint256) (duration: 4 ms, runs: 5, meanGas: 498150, medianGas: 498150)
+✔ Passed: testDonatePoolNotInitialized() (duration: 0 ms, consumedGas: 29976)
+✔ Passed: testDonateOverflow_LiquidityOverflow() (duration: 0 ms, consumedGas: 447090)
+✔ Passed: testDonateOverflow_BinReserve() (duration: 0 ms, consumedGas: 458584)
+✔ Passed: testDonate() (duration: 1 ms, consumedGas: 635539)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 42 ms)
+
+Ran 2 tests for test/pool-bin/BinCustomCurveHook.t.sol:BinCustomCurveHookTest (v0.8.26)
+✔ Passed: test_addLiquidity_removeLiquidity() (duration: 0 ms, consumedGas: 436105)
+✘ Failed(6): test_Swap_CustomCurve(uint256) (duration: 20 ms, runs: 0, meanGas: 0, medianGas: 0)
+✘ Suite Failed: 2 tests, 1 passed, 1 failed, 0 skipped (duration: 382083 ms)
+
+Ran 15 tests for test/pool-bin/BinPoolManagerOwner.t.sol:BinPoolManagerOwnerTest (v0.8.26)
+✔ Passed: test_UnPausePoolManager_OnlyOwner() (duration: 0 ms, consumedGas: 43175)
+✔ Passed: test_UnPausePoolManager_NotOwner() (duration: 0 ms, consumedGas: 86610)
+✔ Passed: test_TransferPoolManagerOwnership_OverridePendingOwner() (duration: 0 ms, consumedGas: 93698)
+✔ Passed: test_TransferPoolManagerOwnership_OnlyOwner() (duration: 0 ms, consumedGas: 65485)
+✔ Passed: test_TransferPoolManagerOwnership_NotPendingPoolManagerOwner() (duration: 0 ms, consumedGas: 42625)
+✔ Passed: test_TransferPoolManagerOwnership_NotOwner() (duration: 0 ms, consumedGas: 17539)
+✔ Passed: test_SetProtocolFeeController_OnlyOwner() (duration: 0 ms, consumedGas: 38959)
+✔ Passed: test_SetProtocolFeeController_NotOwner() (duration: 1 ms, consumedGas: 19843)
+✔ Passed: test_SetMinBinSharesForDonate_OnlyOwner() (duration: 1 ms, consumedGas: 39810)
+✔ Passed: test_SetMinBinSharesForDonate_NotOwner() (duration: 1 ms, consumedGas: 17502)
+✔ Passed: test_SetMaxBinStep_OnlyOwner() (duration: 0 ms, consumedGas: 34939)
+✔ Passed: test_SetMaxBinStep_NotOwner() (duration: 0 ms, consumedGas: 17074)
+✔ Passed: test_PausePoolManager_OnlyPausableRoleMember() (duration: 0 ms, consumedGas: 81723)
+✔ Passed: test_PausePoolManager_OnlyOwner() (duration: 0 ms, consumedGas: 54171)
+✔ Passed: test_PausePoolManager_NotOwnerOrPausableRoleMember() (duration: 1 ms, consumedGas: 19632)
+✔ Suite Passed: 15 tests, 15 passed, 0 failed, 0 skipped (duration: 4 ms)
+
+Ran 2 tests for test/pool-bin/BinMintBurnFeeHook.t.sol:BinMintBurnFeeHookTest (v0.8.26)
+✘ Failed(7): test_Mint() (duration: 2 ms, consumedGas: 664119)
+✘ Failed(8): test_Burn() (duration: 3 ms, consumedGas: 875890)
+✘ Suite Failed: 2 tests, 0 passed, 2 failed, 0 skipped (duration: 240 ms)
+
+Ran 1 tests for test/pool-bin/libraries/BinPoolParameterHelper.t.sol:BinPoolParametersHelperTest (v0.8.26)
+✔ Passed: testFuzz_SetBinStep(uint16) (duration: 1 ms, runs: 5, meanGas: 8127, medianGas: 8127)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 1 ms)
+
+Ran 14 tests for test/pool-bin/libraries/BinPoolLiquidity.t.sol:BinPoolLiquidityTest (v0.8.26)
+✔ Passed: test_revert_MintZeroShares() (duration: 0 ms, consumedGas: 202582)
+✔ Passed: test_revert_MintMoreThanAmountSent() (duration: 0 ms, consumedGas: 622125)
+✔ Passed: test_revert_MintEmptyConfig() (duration: 0 ms, consumedGas: 182252)
+✔ Passed: test_revert_BurnZeroShares() (duration: 0 ms, consumedGas: 184575)
+✔ Passed: test_revert_BurnMoreThanBalance() (duration: 0 ms, consumedGas: 540535)
+✔ Passed: test_revert_BurnForZeroAmounts() (duration: 0 ms, consumedGas: 459312)
+✔ Passed: test_revert_BurnEmptyArraysOrDifferent() (duration: 0 ms, consumedGas: 235116)
+✔ Passed: test_SimpleMintX() (duration: 2 ms, consumedGas: 2001481)
+✔ Passed: test_SimpleBurn() (duration: 2 ms, consumedGas: 1555123)
+✔ Passed: test_Mint_CompositionFeeGoesToLp() (duration: 1 ms, consumedGas: 559308)
+✔ Passed: test_MintWithDifferentBins() (duration: 3 ms, consumedGas: 2125168)
+✔ Passed: test_MintTwice() (duration: 6 ms, consumedGas: 2311134)
+✔ Passed: test_MintFuzz(uint128,uint128) (duration: 9 ms, runs: 5, meanGas: 1120094, medianGas: 464733)
+✔ Passed: test_BurnHalfTwice() (duration: 3 ms, consumedGas: 1722917)
+✔ Suite Passed: 14 tests, 14 passed, 0 failed, 0 skipped (duration: 430 ms)
+
+Ran 3 tests for test/pool-bin/BinPoolManagerBehaviorComparison.t.sol:BinPoolManagerBehaviorComparisonTest (v0.8.26)
+✔ Passed: testSwapWithMutiplePositionsFuzz(uint16,uint24,(uint24,uint256,uint256,uint8)[],bool,uint128) (duration: 265 ms, runs: 5, meanGas: 21983890, medianGas: 22261145)
+✔ Passed: testSwapFuzz(uint16,uint24,uint256,uint256,uint8,bool,uint128) (duration: 36 ms, runs: 5, meanGas: 5213844, medianGas: 5688921)
+✔ Passed: testMintFuzz(uint16,uint24,uint256,uint256,uint8) (duration: 21 ms, runs: 5, meanGas: 2806292, medianGas: 2607796)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 430 ms)
+
+Ran 6 tests for test/pool-bin/libraries/BinPosition.t.sol:BinPositionTest (v0.8.26)
+✔ Passed: testFuzz_SubShareMultiple(address,uint24,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 39656, medianGas: 40033)
+✔ Passed: testFuzz_SubShare(address,uint24,uint256) (duration: 0 ms, runs: 5, meanGas: 20508, medianGas: 20546)
+✔ Passed: testFuzz_GetPosition(address,uint24,bytes32,uint256) (duration: 0 ms, runs: 5, meanGas: 29432, medianGas: 29432)
+✔ Passed: testFuzz_CalculatePositionKey(address,uint24,bytes32) (duration: 0 ms, runs: 5, meanGas: 5992, medianGas: 5992)
+✔ Passed: testFuzz_AddShareMultiple(address,uint24,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 40022, medianGas: 40022)
+✔ Passed: testFuzz_AddShare(address,uint24,uint256) (duration: 0 ms, runs: 5, meanGas: 29909, medianGas: 29909)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 2 ms)
+
+Ran 1 tests for test/pool-bin/helpers/BinReturnsDeltaHook.sol:BinReturnsDeltaHook (v0.8.26)
+✘ Failed(9): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 2 tests for test/pool-bin/types/BinSlot0.t.sol:BinSlot0Test (v0.8.26)
+✔ Passed: test_slot0_constants_masks() (duration: 0 ms, consumedGas: 4960)
+✔ Passed: test_fuzz_slot0_pack_unpack(uint24,uint24,uint24) (duration: 1 ms, runs: 5, meanGas: 16248, medianGas: 16248)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 2 ms)
+
+Ran 1 tests for test/pool-bin/helpers/BinSkipCallbackHook.sol:BinSkipCallbackHook (v0.8.26)
+✘ Failed(10): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 5 tests for test/libraries/BipsLibrary.t.sol:BipsLibraryTest (v0.8.26)
+✔ Passed: test_gasLimit_1_percent() (duration: 0 ms, consumedGas: 7879)
+✔ Passed: test_gasLimit_1BP() (duration: 0 ms, consumedGas: 7923)
+✔ Passed: test_gasLimit_100_percent() (duration: 0 ms, consumedGas: 5450)
+✔ Passed: test_fuzz_gasLimit(uint256) (duration: 0 ms, runs: 5, meanGas: 5891, medianGas: 5247)
+✔ Passed: test_fuzz_calculatePortion(uint256,uint256) (duration: 2 ms, runs: 5, meanGas: 10920, medianGas: 10745)
+✔ Suite Passed: 5 tests, 5 passed, 0 failed, 0 skipped (duration: 2 ms)
+
+Ran 1 tests for test/pool-bin/helpers/BinSwapHelper.sol:BinSwapHelper (v0.8.26)
+✘ Failed(11): setUp() (duration: 1 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 8 tests for test/pool-bin/libraries/math/BitMath.t.sol:BitMathTest (v0.8.26)
+✔ Passed: test_MostSignificantBit() (duration: 2 ms, consumedGas: 869029)
+✔ Passed: test_LeastSignificantBit() (duration: 3 ms, consumedGas: 874449)
+✔ Passed: test_ClosestBitRight() (duration: 3 ms, consumedGas: 1098457)
+✔ Passed: test_ClosestBitLeft() (duration: 4 ms, consumedGas: 1026557)
+✔ Passed: testFuzz_MostSignificantBit(uint256) (duration: 0 ms, runs: 5, meanGas: 6420, medianGas: 6381)
+✔ Passed: testFuzz_LeastSignificantBit(uint256) (duration: 0 ms, runs: 5, meanGas: 6842, medianGas: 6846)
+✔ Passed: testFuzz_ClosestBitRight(uint256,uint8) (duration: 0 ms, runs: 5, meanGas: 10148, medianGas: 10160)
+✔ Passed: testFuzz_ClosestBitLeft(uint256,uint8) (duration: 0 ms, runs: 5, meanGas: 8900, medianGas: 9526)
+✔ Suite Passed: 8 tests, 8 passed, 0 failed, 0 skipped (duration: 13 ms)
+
+Ran 14 tests for test/pool-cl/libraries/BitMath.t.sol:BitMathTest (v0.8.26)
+✘ Failed(12): testMsbGas() (duration: 0 ms, consumedGas: 4638)
+✔ Passed: testMostSignificantBitZero() (duration: 0 ms, consumedGas: 4834)
+✔ Passed: testMostSignificantBitTwo() (duration: 0 ms, consumedGas: 5236)
+✔ Passed: testMostSignificantBitPowersOfTwo() (duration: 1 ms, consumedGas: 691624)
+✔ Passed: testMostSignificantBitOne() (duration: 0 ms, consumedGas: 5697)
+✔ Passed: testMostSignificantBitMaxUint256() (duration: 0 ms, consumedGas: 5455)
+✔ Passed: testMostSignificantBit(uint256) (duration: 1 ms, runs: 5, meanGas: 59714, medianGas: 54984)
+✘ Failed(13): testLsbGas() (duration: 0 ms, consumedGas: 4528)
+✔ Passed: testLeastSignificantBitZero() (duration: 0 ms, consumedGas: 4988)
+✔ Passed: testLeastSignificantBitTwo() (duration: 0 ms, consumedGas: 5674)
+✔ Passed: testLeastSignificantBitPowersOfTwo() (duration: 1 ms, consumedGas: 674240)
+✔ Passed: testLeastSignificantBitOne() (duration: 0 ms, consumedGas: 5387)
+✔ Passed: testLeastSignificantBitMaxUint256() (duration: 0 ms, consumedGas: 5144)
+✔ Passed: testLeastSignificantBit(uint256) (duration: 0 ms, runs: 5, meanGas: 8311, medianGas: 8311)
+✘ Suite Failed: 14 tests, 12 passed, 2 failed, 0 skipped (duration: 12 ms)
+
+Ran 1 tests for test/pool-cl/helpers/CLCustomCurveHook.sol:CLCustomCurveHook (v0.8.26)
+✘ Failed(14): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/pool-cl/helpers/CLFeeManagerHook.sol:CLFeeManagerHook (v0.8.26)
+✘ Failed(15): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 10 tests for test/pool-cl/CLHookReturnsDelta.t.sol:CLHookReturnsDeltaTest (v0.8.26)
+✔ Passed: testSwap_noSwap_specifyOutput() (duration: 1 ms, consumedGas: 752009)
+✔ Passed: testSwap_noSwap_specifyInput() (duration: 1 ms, consumedGas: 765043)
+✔ Passed: testSwap_noSwap_returnUnspecifiedInBeforeSwapAndAfterSwap() (duration: 1 ms, consumedGas: 855380)
+✔ Passed: testSwap_noSwap_returnUnspecifiedInBeforeSwap() (duration: 1 ms, consumedGas: 826926)
+✔ Passed: testSwap_SwapMore() (duration: 1 ms, consumedGas: 871521)
+✔ Passed: testSwap_SwapLess() (duration: 1 ms, consumedGas: 869478)
+✔ Passed: testModifyPosition_RemoveMore() (duration: 1 ms, consumedGas: 827690)
+✔ Passed: testModifyPosition_RemoveLess() (duration: 1 ms, consumedGas: 857606)
+✔ Passed: testModifyPosition_AddMore() (duration: 1 ms, consumedGas: 771876)
+✔ Passed: testModifyPosition_AddLess() (duration: 2 ms, consumedGas: 837950)
+✔ Suite Passed: 10 tests, 10 passed, 0 failed, 0 skipped (duration: 19 ms)
+
+Ran 5 tests for test/pool-cl/CLHookReturnsFee.t.sol:CLHookReturnsFeeTest (v0.8.26)
+✔ Passed: test_fuzz_dynamicReturnSwapFee(uint24) (duration: 5 ms, runs: 5, meanGas: 249290, medianGas: 290170)
+✔ Passed: test_dynamicReturnSwapFee_revertIfFeeTooLarge() (duration: 0 ms, consumedGas: 94912)
+✔ Passed: test_dynamicReturnSwapFee_notUsedIfPoolIsStaticFee() (duration: 1 ms, consumedGas: 790620)
+✔ Passed: test_dynamicReturnSwapFee_notStored() (duration: 1 ms, consumedGas: 819534)
+✔ Passed: test_dynamicReturnSwapFee_initializeZeroSwapFee() (duration: 0 ms, consumedGas: 218659)
+✔ Suite Passed: 5 tests, 5 passed, 0 failed, 0 skipped (duration: 11 ms)
+
+Ran 2 tests for test/pool-cl/CLHookRevertWithReason.t.sol:CLHookRevertWithReasonTest (v0.8.26)
+✔ Passed: testRevertWithNoReason() (duration: 0 ms, consumedGas: 209097)
+✔ Passed: testRevertWithHookNotImplemented() (duration: 0 ms, consumedGas: 230988)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 8 ms)
+
+Ran 8 tests for test/pool-cl/CLHookSkipCallback.t.sol:CLHookSkipCallbackTest (v0.8.26)
+✔ Passed: testSwap_NotFromHook() (duration: 1 ms, consumedGas: 869863)
+✔ Passed: testSwap_FromHook() (duration: 1 ms, consumedGas: 826327)
+✔ Passed: testModifyPosition_NotFromHook() (duration: 1 ms, consumedGas: 703824)
+✔ Passed: testModifyPosition_FromHook() (duration: 1 ms, consumedGas: 651328)
+✔ Passed: testInitialize_NotFromHook() (duration: 0 ms, consumedGas: 240434)
+✔ Passed: testInitialize_FromHook() (duration: 0 ms, consumedGas: 213351)
+✔ Passed: testDonate_NotFromHook() (duration: 1 ms, consumedGas: 841108)
+✔ Passed: testDonate_FromHook() (duration: 1 ms, consumedGas: 797299)
+✔ Suite Passed: 8 tests, 8 passed, 0 failed, 0 skipped (duration: 6 ms)
+
+Ran 1 tests for test/pool-cl/helpers/CLMintBurnFeeHook.sol:CLMintBurnFeeHook (v0.8.26)
+✘ Failed(16): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 2 tests for test/pool-cl/CLCustomCurveHook.t.sol:CLCustomCurveHookTest (v0.8.26)
+✔ Passed: test_addLiquidity_removeLiquidityXX() (duration: 0 ms, consumedGas: 435766)
+✘ Failed(17): test_Swap_CustomCurve(uint256) (duration: 21 ms, runs: 0, meanGas: 0, medianGas: 0)
+✘ Suite Failed: 2 tests, 1 passed, 1 failed, 0 skipped (duration: 77 ms)
+
+Ran 3 tests for test/pool-cl/libraries/CLPoolGetters.t.sol:CLPoolGettersTest (v0.8.26)
+✔ Passed: testGetPoolTickInfo() (duration: 0 ms, consumedGas: 278080)
+✔ Passed: testGetPoolBitmapInfo() (duration: 0 ms, consumedGas: 26234)
+✔ Passed: testGetFeeGrowthGlobals() (duration: 0 ms, consumedGas: 45060)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 0 ms)
+
+Ran 2 tests for test/pool-cl/CLMintBurnFeeHook.t.sol:CLMintBurnFeeHookTest (v0.8.26)
+✘ Failed(18): test_Mint() (duration: 0 ms, consumedGas: 667890)
+✘ Failed(19): test_Burn() (duration: 1 ms, consumedGas: 870216)
+✘ Suite Failed: 2 tests, 0 passed, 2 failed, 0 skipped (duration: 82 ms)
+
+Ran 11 tests for test/pool-cl/CLPoolManagerOwner.t.sol:CLPoolManagerOwnerTest (v0.8.26)
+✔ Passed: test_UnPausePoolManager_OnlyOwner() (duration: 0 ms, consumedGas: 43104)
+✔ Passed: test_UnPausePoolManager_NotOwner() (duration: 0 ms, consumedGas: 86522)
+✔ Passed: test_TransferPoolManagerOwnership_OverridePendingOwner() (duration: 0 ms, consumedGas: 93368)
+✔ Passed: test_TransferPoolManagerOwnership_OnlyOwner() (duration: 0 ms, consumedGas: 65265)
+✔ Passed: test_TransferPoolManagerOwnership_NotPendingPoolManagerOwner() (duration: 0 ms, consumedGas: 42537)
+✔ Passed: test_TransferPoolManagerOwnership_NotOwner() (duration: 0 ms, consumedGas: 17473)
+✔ Passed: test_SetProtocolFeeController_OnlyOwner() (duration: 0 ms, consumedGas: 55751)
+✔ Passed: test_SetProtocolFeeController_NotOwner() (duration: 0 ms, consumedGas: 19799)
+✔ Passed: test_PausePoolManager_OnlyPausableRoleMember() (duration: 0 ms, consumedGas: 81635)
+✔ Passed: test_PausePoolManager_OnlyOwner() (duration: 0 ms, consumedGas: 54105)
+✔ Passed: test_PausePoolManager_NotOwnerOrPausableRoleMember() (duration: 0 ms, consumedGas: 19566)
+✔ Suite Passed: 11 tests, 11 passed, 0 failed, 0 skipped (duration: 3 ms)
+
+Ran 1 tests for test/pool-cl/helpers/CLPoolManagerRouter.sol:CLPoolManagerRouter (v0.8.26)
+✘ Failed(20): setUp() (duration: 1 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 84 tests for test/pool-cl/CLPoolManager.t.sol:CLPoolManagerTest (v0.8.26)
+✔ Passed: test_initialize_succeedsWithMaxTickSpacing(uint160) (duration: 4 ms, runs: 5, meanGas: 199686, medianGas: 199698)
+✔ Passed: test_initialize_succeedsWithHooks(uint160) (duration: 5 ms, runs: 5, meanGas: 1805863, medianGas: 1810212)
+✔ Passed: test_initialize_succeedsWithEmptyHooks(uint160) (duration: 4 ms, runs: 5, meanGas: 1768523, medianGas: 1767737)
+✔ Passed: test_initialize_succeedsWithCorrectSelectors() (duration: 0 ms, consumedGas: 1782798)
+✔ Passed: test_initialize_revertsWithSameTokenCombo(uint160) (duration: 4 ms, runs: 5, meanGas: 186435, medianGas: 189023)
+✔ Passed: test_initialize_revertsWithIdenticalTokens(uint160) (duration: 3 ms, runs: 5, meanGas: 29997, medianGas: 30775)
+✔ Passed: test_initialize_revertsWhenPoolAlreadyInitialized(uint160) (duration: 4 ms, runs: 5, meanGas: 192069, medianGas: 192017)
+✔ Passed: test_initialize_fuzz((address,address,address,address,uint24,bytes32),uint160) (duration: 6 ms, runs: 5, meanGas: 26567, medianGas: 26177)
+✔ Passed: test_initialize_forNativeTokens(uint160) (duration: 3 ms, runs: 5, meanGas: 204839, medianGas: 211463)
+✔ Passed: test_initialize_failsWithIncorrectSelectors() (duration: 0 ms, consumedGas: 1814771)
+✔ Passed: test_initialize_failsIfTickSpaceZero(uint160) (duration: 2 ms, runs: 5, meanGas: 29802, medianGas: 30444)
+✔ Passed: test_initialize_failsIfTickSpaceTooLarge(uint160) (duration: 2 ms, runs: 5, meanGas: 29207, medianGas: 28819)
+✔ Passed: test_initialize_failsIfTickSpaceNeg(uint160) (duration: 2 ms, runs: 5, meanGas: 29551, medianGas: 30329)
+✔ Passed: test_initialize_failsIDynamicFeeTooLarge(uint24) (duration: 3 ms, runs: 5, meanGas: 225454, medianGas: 226232)
+✔ Passed: test_initialize_failsDynamicFeeInvalid() (duration: 0 ms, consumedGas: 45536)
+✘ Failed(21): test_initcodeHash() (duration: 0 ms, consumedGas: 24164)
+✘ Failed(22): test_bytecodeSize() (duration: 0 ms, consumedGas: 11220)
+✔ Passed: testUpdateDynamicLPFee_FeeTooLarge() (duration: 0 ms, consumedGas: 37171)
+✔ Passed: testUpdateDynamicLPFee_FeeNotDynamic() (duration: 0 ms, consumedGas: 23926)
+✔ Passed: testTake_succeedsWithPoolWithLiquidityWithNativeToken() (duration: 0 ms, consumedGas: 651476)
+✔ Passed: testTake_succeedsWithPoolWithLiquidity() (duration: 1 ms, consumedGas: 716628)
+✔ Passed: testTake_failsWithInvalidTokensThatDoNotReturnTrueOnTransfer() (duration: 1 ms, consumedGas: 1413837)
+✘ Failed(23): testSwap_withNative_gas() (duration: 0 ms, consumedGas: 391159)
+✘ Failed(24): testSwap_withHooks_gas() (duration: 1 ms, consumedGas: 2007420)
+✘ Failed(25): testSwap_useSurplusTokenAsInput_gas() (duration: 1 ms, consumedGas: 1062785)
+✔ Passed: testSwap_useSurplusTokenAsInput() (duration: 1 ms, consumedGas: 1059148)
+✔ Passed: testSwap_succeeds_withBothFeeEnabled() (duration: 1 ms, consumedGas: 886369)
+✔ Passed: testSwap_succeedsWithNativeTokensIfInitialized() (duration: 0 ms, consumedGas: 280697)
+✔ Passed: testSwap_succeedsWithHooksIfInitialized() (duration: 1 ms, consumedGas: 2061405)
+✔ Passed: testSwap_succeedsWithCorrectSelectors() (duration: 1 ms, consumedGas: 2300055)
+✔ Passed: testSwap_succeedsIfInitialized_WithDynamicFee() (duration: 1 ms, consumedGas: 846254)
+✔ Passed: testSwap_succeedsIfInitialized() (duration: 1 ms, consumedGas: 793449)
+✘ Failed(26): testSwap_runOutOfLiquidity() (duration: 1 ms, consumedGas: 787054)
+✘ Failed(27): testSwap_leaveSurplusTokenInVault_gas() (duration: 1 ms, consumedGas: 805615)
+✔ Passed: testSwap_leaveSurplusTokenInVault() (duration: 1 ms, consumedGas: 821684)
+✘ Failed(28): testSwap_gas() (duration: 0 ms, consumedGas: 391775)
+✔ Passed: testSwap_failsWithIncorrectSelectors() (duration: 1 ms, consumedGas: 2341122)
+✔ Passed: testSwap_failsIfNotInitialized(uint160) (duration: 4 ms, runs: 5, meanGas: 62177, medianGas: 62955)
+✘ Failed(29): testSwap_againstLiq_gas() (duration: 1 ms, consumedGas: 932040)
+✘ Failed(30): testSwap_againstLiqWithNative_gas() (duration: 1 ms, consumedGas: 879233)
+✔ Passed: testSwap_WhenPaused() (duration: 0 ms, consumedGas: 255379)
+✔ Passed: testSetProtocolFee_updatesProtocolFeeForInitializedPool() (duration: 0 ms, consumedGas: 253560)
+✔ Passed: testModifyPosition_withSalt_addAndRemove() (duration: 2 ms, consumedGas: 1002400)
+✘ Failed(31): testModifyPosition_withNative_gas() (duration: 0 ms, consumedGas: 428431)
+✔ Passed: testModifyPosition_succeedsWithHooksIfLiquidityDeltaIsZero(uint160) (duration: 8 ms, runs: 5, meanGas: 2162908, medianGas: 2163754)
+✔ Passed: testModifyPosition_succeedsWithHooksIfInitialized(uint160) (duration: 13 ms, runs: 5, meanGas: 2394395, medianGas: 2395624)
+✔ Passed: testModifyPosition_succeedsWithHooksIfFeesAccruedNonZero(uint160) (duration: 15 ms, runs: 5, meanGas: 2743731, medianGas: 2743731)
+✔ Passed: testModifyPosition_succeedsWithCorrectSelectors() (duration: 0 ms, consumedGas: 2131575)
+✔ Passed: testModifyPosition_succeedsIfInitialized(uint160) (duration: 6 ms, runs: 5, meanGas: 473904, medianGas: 473270)
+✔ Passed: testModifyPosition_succeedsForNativeTokensIfInitialized(uint160) (duration: 10 ms, runs: 5, meanGas: 460386, medianGas: 470208)
+✔ Passed: testModifyPosition_removeLiquidity_updateEmptyPosition() (duration: 0 ms, consumedGas: 256277)
+✘ Failed(32): testModifyPosition_removeLiquidity_halfAndThenAll() (duration: 1 ms, consumedGas: 671862)
+✔ Passed: testModifyPosition_removeLiquidity_fromEmpty() (duration: 0 ms, consumedGas: 244546)
+✔ Passed: testModifyPosition_removeLiquidity_empty() (duration: 1 ms, consumedGas: 689981)
+✔ Passed: testModifyPosition_mixWithAndWithoutSalt() (duration: 1 ms, consumedGas: 1101437)
+✔ Passed: testModifyPosition_feeDelta() (duration: 4 ms, consumedGas: 1976960)
+✔ Passed: testModifyPosition_failsWithIncorrectSelectors() (duration: 0 ms, consumedGas: 2064657)
+✔ Passed: testModifyPosition_failsIfNotInitialized() (duration: 0 ms, consumedGas: 54823)
+✔ Passed: testModifyPosition_addLiquidity_belowCurrentTick() (duration: 0 ms, consumedGas: 561144)
+✘ Failed(33): testModifyPosition_addLiquidity() (duration: 0 ms, consumedGas: 652520)
+✔ Passed: testModifyPosition_Liquidity_aboveCurrentTick() (duration: 0 ms, consumedGas: 568281)
+✔ Passed: testModifyLiquidity_Remove_WhenPaused() (duration: 1 ms, consumedGas: 673347)
+✔ Passed: testModifyLiquidity_Add_WhenPaused() (duration: 0 ms, consumedGas: 253475)
+✔ Passed: testInitialize_unusedBits() (duration: 0 ms, consumedGas: 93308)
+✔ Passed: testInitialize_tickSpacing() (duration: 1 ms, consumedGas: 545466)
+✔ Passed: testInitialize_stateCheck() (duration: 0 ms, consumedGas: 203097)
+✘ Failed(34): testInitialize_gasCheck_withoutHooks() (duration: 0 ms, consumedGas: 170587)
+✔ Passed: testInitialize_feeRange() (duration: 1 ms, consumedGas: 696737)
+✔ Passed: testInitialize_HookValidation() (duration: 0 ms, consumedGas: 1621445)
+✘ Failed(35): testGasUpdateDynamicLPFee() (duration: 0 ms, consumedGas: 224354)
+✘ Failed(36): testGasDonateOneToken() (duration: 0 ms, consumedGas: 696536)
+✔ Passed: testFuzzUpdateDynamicLPFee(uint24) (duration: 3 ms, runs: 5, meanGas: 228735, medianGas: 228735)
+✔ Passed: testDonate_WhenPaused() (duration: 0 ms, consumedGas: 223862)
+✔ Passed: testDonateSuccessWithEventEmitted() (duration: 0 ms, consumedGas: 705013)
+✔ Passed: testDonateSucceedsWithCorrectSelectors() (duration: 1 ms, consumedGas: 2428306)
+✘ Failed(37): testDonateSucceedsWhenPoolHasLiquidity() (duration: 1 ms, consumedGas: 754175)
+✔ Passed: testDonateSucceedsForNativeTokensWhenPoolHasLiquidity() (duration: 0 ms, consumedGas: 696986)
+✔ Passed: testDonateFailsWithIncorrectSelectors() (duration: 1 ms, consumedGas: 2401674)
+✔ Passed: testDonateFailsIfNotInitialized() (duration: 0 ms, consumedGas: 52659)
+✔ Passed: testDonateFailsIfNoLiquidity(uint160) (duration: 4 ms, runs: 5, meanGas: 213450, medianGas: 216055)
+✔ Passed: testCollectProtocolFees_nativeToken_returnsAllFeesIf0IsProvidedAsParameter() (duration: 1 ms, consumedGas: 875152)
+✔ Passed: testCollectProtocolFees_nativeToken_allowsFeeControllerToAccumulateFees() (duration: 1 ms, consumedGas: 874906)
+✔ Passed: testCollectProtocolFees_initializesWithProtocolFeeIfCalled() (duration: 0 ms, consumedGas: 245182)
+✔ Passed: testCollectProtocolFees_ERC20_returnsAllFeesIf0IsProvidedAsParameter() (duration: 1 ms, consumedGas: 933213)
+✘ Suite Failed: 84 tests, 67 passed, 17 failed, 0 skipped (duration: 262 ms)
+
+Ran 2 tests for test/pool-cl/CLPoolManagerBehaviorComparison.t.sol:CLPoolManagerBehaviorComparisonTest (v0.8.26)
+✔ Passed: test_shouldSwapEqualMultipleLP(uint24,int24,(int24,int24,int256)[],int256,int128,bool) (duration: 61 ms, runs: 5, meanGas: 10673320, medianGas: 11890498)
+✔ Passed: test_shouldSwapEqual(uint24,int24,int24,int24,int256,int256,int128,bool) (duration: 12 ms, runs: 5, meanGas: 5687866, medianGas: 5607202)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 327 ms)
+
+Ran 1 tests for test/pool-cl/libraries/CLPoolParametersHelper.t.sol:CLPoolParametersHelperTest (v0.8.26)
+✔ Passed: testGetTickSpacing() (duration: 0 ms, consumedGas: 10545)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/pool-cl/helpers/CLPoolParametersHelper.t.sol:CLPoolParametersHelperTest (v0.8.26)
+✔ Passed: testFuzz_SetTickSpacing(int24) (duration: 0 ms, runs: 5, meanGas: 8279, medianGas: 8279)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 0 ms)
+
+Ran 6 tests for test/pool-cl/libraries/CLPoolSwapFee.t.sol:CLPoolSwapFeeTest (v0.8.26)
+✔ Passed: testUpdateFailsWithTooLargeFee() (duration: 0 ms, consumedGas: 233575)
+✔ Passed: testSwapWorksWithStaticFee() (duration: 1 ms, consumedGas: 833179)
+✔ Passed: testSwapWorks() (duration: 2 ms, consumedGas: 858049)
+✔ Passed: testRevertOnInitPoolWithDynamicFee() (duration: 0 ms, consumedGas: 33921)
+✔ Passed: testPoolInitializeFailsWithTooLargeFee() (duration: 0 ms, consumedGas: 42407)
+✔ Passed: testCacheDynamicFeeAndSwap() (duration: 2 ms, consumedGas: 836893)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 5 ms)
+
+Ran 5 tests for test/pool-cl/libraries/CLPosition.t.sol:CLPositionTest (v0.8.26)
+✘ Failed(38): test_set_updateNonEmptyPosition() (duration: 0 ms, consumedGas: 80194)
+✔ Passed: test_set_updateEmptyPositionFuzz(int128,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 20180, medianGas: 9130)
+✔ Passed: test_get_emptyPosition() (duration: 0 ms, consumedGas: 16829)
+✔ Passed: test_fuzz_calculatePositionKey(address,int24,int24,bytes32) (duration: 2 ms, runs: 5, meanGas: 6196, medianGas: 6196)
+✔ Passed: test_MixFuzz(address,int24,int24,bytes32,int128) (duration: 2 ms, runs: 5, meanGas: 49265, medianGas: 49713)
+✘ Suite Failed: 5 tests, 4 passed, 1 failed, 0 skipped (duration: 23 ms)
+
+Ran 4 tests for test/pool-cl/CLProtocolFees.t.sol:CLProtocolFeesTest (v0.8.26)
+✔ Passed: testSetProtocolFeeControllerFuzz(uint24) (duration: 4 ms, runs: 5, meanGas: 99145, medianGas: 99705)
+✔ Passed: testNoProtocolFee(uint24) (duration: 15 ms, runs: 5, meanGas: 1098101, medianGas: 1097776)
+✔ Passed: testMaliciousProtocolFeeControllerReturnHugeData() (duration: 0 ms, consumedGas: 2810095)
+✔ Passed: testCollectFees() (duration: 1 ms, consumedGas: 791372)
+✔ Suite Passed: 4 tests, 4 passed, 0 failed, 0 skipped (duration: 18 ms)
+
+Ran 1 tests for test/pool-cl/helpers/CLReturnsDeltaHook.sol:CLReturnsDeltaHook (v0.8.26)
+✘ Failed(39): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/pool-cl/helpers/CLSkipCallbackHook.sol:CLSkipCallbackHook (v0.8.26)
+✘ Failed(40): setUp() (duration: 1 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 1 ms)
+
+Ran 2 tests for test/pool-cl/types/CLSlot0.t.sol:CLSlot0Test (v0.8.26)
+✔ Passed: test_slot0_constants_masks() (duration: 0 ms, consumedGas: 7013)
+✔ Passed: test_fuzz_slot0_pack_unpack(uint160,int24,uint24,uint24) (duration: 0 ms, runs: 5, meanGas: 20506, medianGas: 20506)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 0 ms)
+
+Ran 7 tests for test/libraries/math/Encoded.t.sol:EncodedTest (v0.8.26)
+✔ Passed: testFuzz_decodeUint64(bytes32,uint256) (duration: 1 ms, runs: 5, meanGas: 6244, medianGas: 6244)
+✔ Passed: testFuzz_decodeUint24(bytes32,uint256) (duration: 0 ms, runs: 5, meanGas: 6090, medianGas: 6090)
+✔ Passed: testFuzz_decodeUint16(bytes32,uint256) (duration: 0 ms, runs: 5, meanGas: 6068, medianGas: 6068)
+✔ Passed: testFuzz_decodeBool(bytes32,uint256) (duration: 0 ms, runs: 5, meanGas: 6613, medianGas: 6616)
+✔ Passed: testFuzz_SetAndDecode(bytes32,uint256,uint256,uint256) (duration: 1 ms, runs: 5, meanGas: 6523, medianGas: 6523)
+✔ Passed: testFuzz_Set(bytes32,uint256,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 6429, medianGas: 6429)
+✔ Passed: testFuzz_Decode(bytes32,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 6117, medianGas: 6117)
+✔ Suite Passed: 7 tests, 7 passed, 0 failed, 0 skipped (duration: 1 ms)
+
+Ran 1 tests for test/vault/FakeHook.sol:FakeHook (v0.8.26)
+✘ Failed(41): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/vault/FakePoolManager.sol:FakePoolManager (v0.8.26)
+✘ Failed(42): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 3 tests for test/pool-bin/libraries/FeeHelper.t.sol:FeeHelperTest (v0.8.26)
+✔ Passed: testFuzz_GetFeeAmountFrom(uint128,uint24) (duration: 0 ms, runs: 5, meanGas: 13668, medianGas: 13668)
+✔ Passed: testFuzz_GetFeeAmount(uint128,uint24) (duration: 0 ms, runs: 5, meanGas: 14314, medianGas: 13937)
+✔ Passed: testFuzz_GetCompositionFee(uint128,uint24) (duration: 0 ms, runs: 5, meanGas: 14818, medianGas: 14441)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 0 ms)
+
+Ran 20 tests for test/pool-cl/libraries/FullMath.t.sol:FullMathTest (v0.8.26)
+✔ Passed: test_mulDiv_validWithoutPhantomOverflow() (duration: 0 ms, consumedGas: 6990)
+✔ Passed: test_mulDiv_validWithPhantomOverflow() (duration: 0 ms, consumedGas: 9721)
+✔ Passed: test_mulDiv_validAllMaxInputs() (duration: 0 ms, consumedGas: 8016)
+✔ Passed: test_mulDiv_revertsWithOverflowingNumeratorAndZeroDenominator() (duration: 0 ms, consumedGas: 5363)
+✔ Passed: test_mulDiv_revertsWith0Denominator(uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 5241, medianGas: 5241)
+✔ Passed: test_mulDiv_revertsOverflowWithAllMaxInputs() (duration: 0 ms, consumedGas: 4966)
+✔ Passed: test_mulDiv_revertsIfOutputOverflows() (duration: 0 ms, consumedGas: 5144)
+✔ Passed: test_mulDiv_recomputed(uint256,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 19118, medianGas: 16692)
+✔ Passed: test_mulDiv_phantomOverflowRepeatingDecimal() (duration: 0 ms, consumedGas: 9457)
+✔ Passed: test_mulDiv_fuzz(uint256,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 14454, medianGas: 13724)
+✔ Passed: test_mulDivRoundingUp_validWithPhantomOverflowRepeatingDecimal() (duration: 0 ms, consumedGas: 10460)
+✔ Passed: test_mulDivRoundingUp_validWithPhantomOverflow() (duration: 0 ms, consumedGas: 9479)
+✔ Passed: test_mulDivRoundingUp_validWithNoPhantomOverflow() (duration: 0 ms, consumedGas: 7883)
+✔ Passed: test_mulDivRoundingUp_validWithAllMaxInputs() (duration: 0 ms, consumedGas: 8508)
+✔ Passed: test_mulDivRoundingUp_revertsWith0Denominator(uint256,uint256) (duration: 1 ms, runs: 5, meanGas: 5591, medianGas: 5591)
+✔ Passed: test_mulDivRoundingUp_revertsIfMulDivOverflows256BitsAfterRoundingUpCase2() (duration: 0 ms, consumedGas: 8756)
+✔ Passed: test_mulDivRoundingUp_revertsIfMulDivOverflows256BitsAfterRoundingUp() (duration: 0 ms, consumedGas: 8690)
+✔ Passed: test_mulDivRoundingUp_fuzz(uint256,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 16888, medianGas: 17265)
+✔ Passed: test_mulDivRounding(uint256,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 10811, medianGas: 10973)
+✔ Passed: testResultOverflowsHelper() (duration: 0 ms, consumedGas: 34452)
+✔ Suite Passed: 20 tests, 20 passed, 0 failed, 0 skipped (duration: 2 ms)
+
+Ran 1 tests for test/libraries/Hooks/HooksContract.sol:HooksContract (v0.8.26)
+✘ Failed(43): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 3 tests for test/libraries/Hooks/Hooks.t.sol:HooksTest (v0.8.26)
+✔ Passed: testhasOffsetEnabled() (duration: 0 ms, consumedGas: 39572)
+✔ Passed: testFuzzValidateHookConfig_noHook(bytes32,uint24) (duration: 0 ms, runs: 5, meanGas: 10795, medianGas: 9505)
+✔ Passed: testFuzzValidateHookConfig(uint16,bytes32) (duration: 0 ms, runs: 5, meanGas: 106396, medianGas: 106396)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 1 ms)
+
+Ran 6 tests for test/libraries/LPFeeLibrary.t.sol:LPFeeLibraryTest (v0.8.26)
+✔ Passed: testIsOverride() (duration: 0 ms, consumedGas: 18314)
+✔ Passed: testIsDynamicLPFeeFuzz(uint24) (duration: 0 ms, runs: 5, meanGas: 5356, medianGas: 5356)
+✔ Passed: testIsDynamicLPFee() (duration: 0 ms, consumedGas: 15440)
+✔ Passed: testGetInitialLPFee() (duration: 0 ms, consumedGas: 38527)
+✔ Passed: testFuzzValidate(uint24,uint24) (duration: 0 ms, runs: 5, meanGas: 1847, medianGas: 902)
+✔ Passed: testFuzzRemoveOverrideAndValidate(uint24,uint24) (duration: 0 ms, runs: 5, meanGas: 6039, medianGas: 6039)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 1 ms)
+
+Ran 3 tests for test/pool-bin/libraries/math/LiquidityConfigurations.t.sol:LiquidityConfigurationsTest (v0.8.26)
+✔ Passed: testFuzz_GetAmountsAndId(bytes32,bytes32) (duration: 0 ms, runs: 5, meanGas: 7728, medianGas: 7728)
+✔ Passed: testFuzz_EncodeParams(uint64,uint64,uint24) (duration: 0 ms, runs: 5, meanGas: 8534, medianGas: 8534)
+✔ Passed: testFuzz_DecodeParams(bytes32) (duration: 0 ms, runs: 5, meanGas: 10443, medianGas: 7593)
+✔ Suite Passed: 3 tests, 3 passed, 0 failed, 0 skipped (duration: 0 ms)
+
+Ran 3 tests for test/pool-cl/libraries/LiquidityMath.t.sol:LiquidityMathTest (v0.8.26)
+✔ Passed: testAddDeltaUnderflow() (duration: 0 ms, consumedGas: 4661)
+✔ Passed: testAddDeltaOverflow() (duration: 0 ms, consumedGas: 4860)
+✘ Failed(44): testAddDelta() (duration: 0 ms, consumedGas: 11165)
+✘ Suite Failed: 3 tests, 2 passed, 1 failed, 0 skipped (duration: 8 ms)
+
+Ran 1 tests for test/pool-cl/helpers/NonStandardERC20.sol:NonStandardERC20 (v0.8.26)
+✘ Failed(45): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 19 tests for test/pool-bin/libraries/math/PackedUint128Math.t.sol:PackedUint128MathTest (v0.8.26)
+✔ Passed: test_getProtocolFeeAmt_Overflow() (duration: 0 ms, consumedGas: 7893)
+✔ Passed: test_getProtocolFeeAmtX() (duration: 0 ms, consumedGas: 24694)
+✔ Passed: test_SubUnderflow() (duration: 0 ms, consumedGas: 15220)
+✔ Passed: test_SubSelf() (duration: 0 ms, consumedGas: 6637)
+✔ Passed: test_AddSelf() (duration: 0 ms, consumedGas: 6815)
+✔ Passed: test_AddOverflow() (duration: 0 ms, consumedGas: 5767)
+✔ Passed: testFuzz_getProtocolFeeAmt(bytes32,uint16,uint16,uint24) (duration: 1 ms, runs: 5, meanGas: 25938, medianGas: 28109)
+✔ Passed: testFuzz_decodeY(bytes32) (duration: 1 ms, runs: 5, meanGas: 6399, medianGas: 6399)
+✔ Passed: testFuzz_decodeX(bytes32) (duration: 0 ms, runs: 5, meanGas: 6343, medianGas: 6343)
+✔ Passed: testFuzz_Sub(bytes32,bytes32) (duration: 0 ms, runs: 5, meanGas: 8454, medianGas: 9446)
+✔ Passed: testFuzz_LessThan(bytes32,bytes32) (duration: 0 ms, runs: 5, meanGas: 6288, medianGas: 6247)
+✔ Passed: testFuzz_GreaterThan(bytes32,bytes32) (duration: 0 ms, runs: 5, meanGas: 6700, medianGas: 6783)
+✔ Passed: testFuzz_EncodeSecond(uint128) (duration: 0 ms, runs: 5, meanGas: 6064, medianGas: 6064)
+✔ Passed: testFuzz_EncodeFirst(uint128) (duration: 0 ms, runs: 5, meanGas: 5612, medianGas: 5612)
+✔ Passed: testFuzz_EncodeBool(uint128,bool) (duration: 0 ms, runs: 5, meanGas: 6336, medianGas: 6328)
+✔ Passed: testFuzz_Encode(uint128,uint128) (duration: 0 ms, runs: 5, meanGas: 6717, medianGas: 6717)
+✔ Passed: testFuzz_DecodeBool(bytes32,bool) (duration: 0 ms, runs: 5, meanGas: 6707, medianGas: 6707)
+✔ Passed: testFuzz_Decode(bytes32) (duration: 0 ms, runs: 5, meanGas: 9657, medianGas: 9657)
+✔ Passed: testFuzz_Add(bytes32,bytes32) (duration: 0 ms, runs: 5, meanGas: 9076, medianGas: 9552)
+✔ Suite Passed: 19 tests, 19 passed, 0 failed, 0 skipped (duration: 2 ms)
+
+Ran 4 tests for test/base/PausableRole.t.sol:PausableRoleTest (v0.8.26)
+✔ Passed: test_RevokePausableRole_OnlyOwner() (duration: 0 ms, consumedGas: 38849)
+✔ Passed: test_RevokePausableRole_NotOwner() (duration: 0 ms, consumedGas: 18093)
+✔ Passed: test_GrantPausableRole_OnlyOwner() (duration: 0 ms, consumedGas: 49282)
+✔ Passed: test_GrantPausableRole_NotOwner() (duration: 0 ms, consumedGas: 18225)
+✔ Suite Passed: 4 tests, 4 passed, 0 failed, 0 skipped (duration: 0 ms)
+
+Ran 4 tests for test/Extsload.t.sol:ExtsloadTest (v0.8.26)
+✔ Passed: testFuzz_extsload(uint256,uint256,bytes) (duration: 30 ms, runs: 5, meanGas: 2079808, medianGas: 2004635)
+✔ Passed: testExtsload_10_sparse() (duration: 0 ms, consumedGas: 70007)
+✘ Failed(46): testExtsloadInBatch() (duration: 0 ms, consumedGas: 18127)
+✘ Failed(47): testExtsload() (duration: 0 ms, consumedGas: 12321)
+✘ Suite Failed: 4 tests, 2 passed, 2 failed, 0 skipped (duration: 32 ms)
+
+Ran 1 tests for test/libraries/PoolIdLibrary.t.sol:PoolIdLibraryTest (v0.8.26)
+✔ Passed: test_toId() (duration: 0 ms, consumedGas: 27158)
+✔ Suite Passed: 1 tests, 1 passed, 0 failed, 0 skipped (duration: 0 ms)
+
+Ran 4 tests for test/pool-cl/libraries/CLPool.t.sol:PoolTest (v0.8.26)
+✔ Passed: testSwap(uint160,(address,int24,int24,int128,int24,bytes32),(int24,bool,int256,uint160,uint24),uint24,uint16,uint16) (duration: 2 ms, runs: 5, meanGas: 83232, medianGas: 42433)
+✔ Passed: testPoolInitialize(uint160,uint24,uint24) (duration: 1 ms, runs: 5, meanGas: 46695, medianGas: 69966)
+✔ Passed: testModifyPosition(uint160,(address,int24,int24,int128,int24,bytes32),uint24,uint24) (duration: 1 ms, runs: 5, meanGas: 67591, medianGas: 22165)
+✔ Passed: testDonate(uint160,(address,int24,int24,int128,int24,bytes32),uint256,uint256,uint24,uint16,uint16) (duration: 1 ms, runs: 5, meanGas: 33171, medianGas: 34302)
+✔ Suite Passed: 4 tests, 4 passed, 0 failed, 0 skipped (duration: 2 ms)
+
+Ran 7 tests for test/pool-bin/libraries/PriceHelper.t.sol:PriceHelperTest (v0.8.26)
+✔ Passed: test_Price() (duration: 0 ms, consumedGas: 65263)
+✔ Passed: testFuzz_revert_ConvertDecimalPriceTo128x128(uint256) (duration: 0 ms, runs: 5, meanGas: 12754, medianGas: 13007)
+✔ Passed: testFuzz_Price(uint256,uint16) (duration: 6 ms, runs: 5, meanGas: 438644, medianGas: 489247)
+✔ Passed: testFuzz_GetExponent(uint24) (duration: 1 ms, runs: 5, meanGas: 6453, medianGas: 6453)
+✔ Passed: testFuzz_GetBase(uint16) (duration: 0 ms, runs: 5, meanGas: 7592, medianGas: 7592)
+✔ Passed: testFuzz_ConvertDecimalPriceTo128x128(uint256) (duration: 0 ms, runs: 5, meanGas: 16495, medianGas: 13579)
+✔ Passed: testFuzz_Convert128x128PriceToDecimal(uint256) (duration: 1 ms, runs: 5, meanGas: 8787, medianGas: 9539)
+✔ Suite Passed: 7 tests, 7 passed, 0 failed, 0 skipped (duration: 15 ms)
+
+Ran 13 tests for test/ProtocolFeeController.t.sol:ProtocolFeeControllerTest (v0.8.26)
+✔ Passed: testSetProtocolFeeForCLPool(uint24) (duration: 6 ms, runs: 5, meanGas: 1542316, medianGas: 1542316)
+✔ Passed: testSetProcotolFeeSplitRatio(uint256) (duration: 4 ms, runs: 5, meanGas: 1324088, medianGas: 1325808)
+✔ Passed: testProtocolFeeForPool(uint24,uint256) (duration: 4 ms, runs: 5, meanGas: 1335013, medianGas: 1334002)
+✔ Passed: testOwnerTransfer() (duration: 1 ms, consumedGas: 1377469)
+✔ Passed: testGetLPFeeFromTotalFee(uint24,uint24) (duration: 3 ms, runs: 5, meanGas: 1337415, medianGas: 1338051)
+✔ Passed: testGetLPFeeFromTotalFee() (duration: 2 ms, consumedGas: 1336919)
+✔ Passed: testCollectProtocolFee_CollectAllFee() (duration: 1 ms, consumedGas: 5295814)
+✔ Passed: testCollectProtocolFeeForCLPool() (duration: 2 ms, consumedGas: 5432933)
+✔ Passed: testCollectProtocolFeeForBinPool() (duration: 3 ms, consumedGas: 2271547)
+✔ Passed: testCLPoolInitWithoutProtolFeeController(uint24) (duration: 3 ms, runs: 5, meanGas: 177832, medianGas: 177832)
+✔ Passed: testCLPoolInitWithProtolFeeControllerFuzz(uint24,uint256) (duration: 4 ms, runs: 5, meanGas: 1520302, medianGas: 1519291)
+✔ Passed: testBinPoolInitWithoutProtolFeeController(uint24) (duration: 7 ms, runs: 5, meanGas: 169655, medianGas: 168901)
+✔ Passed: testBinPoolInitWithProtolFeeControllerFuzz(uint24,uint256) (duration: 4 ms, runs: 5, meanGas: 1495900, medianGas: 1495009)
+✔ Suite Passed: 13 tests, 13 passed, 0 failed, 0 skipped (duration: 13 ms)
+
+Ran 8 tests for test/libraries/ProtocolFeeLibrary.t.sol:ProtocolFeeLibraryTest (v0.8.26)
+✔ Passed: test_isValidProtocolFee_fee() (duration: 0 ms, consumedGas: 19410)
+✔ Passed: test_getZeroForOneFee() (duration: 0 ms, consumedGas: 6647)
+✔ Passed: test_getOneForZeroFee() (duration: 0 ms, consumedGas: 6779)
+✔ Passed: test_fuzz_getZeroForOneFee(uint24) (duration: 0 ms, runs: 5, meanGas: 5529, medianGas: 5529)
+✔ Passed: test_fuzz_getOneForZeroFee(uint24) (duration: 0 ms, runs: 5, meanGas: 5827, medianGas: 5827)
+✔ Passed: test_fuzz_calculateSwapFee(uint16,uint24) (duration: 0 ms, runs: 5, meanGas: 20023, medianGas: 19673)
+✔ Passed: test_calculateSwapFee() (duration: 0 ms, consumedGas: 16810)
+✔ Passed: testFuzz_isValid(uint24) (duration: 0 ms, runs: 5, meanGas: 6013, medianGas: 6013)
+✔ Suite Passed: 8 tests, 8 passed, 0 failed, 0 skipped (duration: 1 ms)
+
+Ran 5 tests for test/libraries/SafeCast.t.sol:SafeCastTest (v0.8.26)
+✔ Passed: testToUint256(int256) (duration: 0 ms, runs: 5, meanGas: 5345, medianGas: 5491)
+✔ Passed: testToUint160(uint256) (duration: 0 ms, runs: 5, meanGas: 5205, medianGas: 5256)
+✔ Passed: testToInt256(uint256) (duration: 0 ms, runs: 5, meanGas: 5563, medianGas: 5563)
+✔ Passed: testToInt128(uint256) (duration: 0 ms, runs: 5, meanGas: 5345, medianGas: 5591)
+✔ Passed: testToInt128(int256) (duration: 0 ms, runs: 5, meanGas: 5450, medianGas: 5588)
+✔ Suite Passed: 5 tests, 5 passed, 0 failed, 0 skipped (duration: 1 ms)
+
+Ran 15 tests for test/pool-bin/libraries/BinPoolSwap.t.sol:BinPoolSwapTest (v0.8.26)
+✔ Passed: test_revert_swapMaxLiquidityPerBinfuzz(int128) (duration: 3 ms, runs: 5, meanGas: 473569, medianGas: 474340)
+✔ Passed: test_revert_SwapOutOfLiquidity() (duration: 16 ms, consumedGas: 12524004)
+✔ Passed: test_revert_SwapInsufficientAmountOut() (duration: 9 ms, consumedGas: 10002832)
+✔ Passed: test_revert_SwapAmountSpecifiedIsZero() (duration: 9 ms, consumedGas: 9944012)
+✘ Failed(48): test_exactOutputSingleBin_SwapForY() (duration: 0 ms, consumedGas: 475915)
+✘ Failed(49): test_exactOutputSingleBin_SwapForX() (duration: 0 ms, consumedGas: 475861)
+✘ Failed(50): test_exactOutputMultipleBin() (duration: 3 ms, consumedGas: 2500550)
+✘ Failed(51): test_exactInputSingleBin_SwapForY() (duration: 0 ms, consumedGas: 479489)
+✘ Failed(52): test_exactInputSingleBin_SwapForX() (duration: 0 ms, consumedGas: 479497)
+✘ Failed(53): test_exactInputMultipleBin() (duration: 2 ms, consumedGas: 2503429)
+✔ Passed: test_SwapWithProtocolFee_ExactOut_SwapForY() (duration: 0 ms, consumedGas: 850857)
+✔ Passed: test_SwapWithProtocolFee_ExactIn_SwapForY_MultipleBin() (duration: 3 ms, consumedGas: 2948584)
+✔ Passed: test_SwapWithProtocolFee_ExactIn_SwapForY() (duration: 0 ms, consumedGas: 874160)
+✔ Passed: test_SwapWithProtocolFee_ExactIn_SwapForX() (duration: 0 ms, consumedGas: 873860)
+✘ Failed(54): testGas_exactOutputMultipleBin_WithEmptyBins() (duration: 3 ms, consumedGas: 2695838)
+✘ Suite Failed: 15 tests, 8 passed, 7 failed, 0 skipped (duration: 754 ms)
+
+Ran 13 tests for test/ProtocolFees.t.sol:ProtocolFeesTest (v0.8.26)
+✔ Passed: test_Init_ProtocolFeeTooLarge() (duration: 0 ms, consumedGas: 93209)
+✔ Passed: test_CollectProtocolFee_OnlyFeeController() (duration: 0 ms, consumedGas: 34003)
+✔ Passed: test_CollectProtocolFee() (duration: 0 ms, consumedGas: 369509)
+✔ Passed: testSwap_OnlyProtocolFee() (duration: 0 ms, consumedGas: 173554)
+✔ Passed: testSwap_NoProtocolFee() (duration: 0 ms, consumedGas: 39539)
+✔ Passed: testSetProtocolFeeController() (duration: 0 ms, consumedGas: 46606)
+✔ Passed: testSetProtocolFee() (duration: 0 ms, consumedGas: 122489)
+✔ Passed: testInit_WhenFeeControllerRevert() (duration: 0 ms, consumedGas: 64318)
+✔ Passed: testInit_WhenFeeControllerOverflow() (duration: 0 ms, consumedGas: 67635)
+✔ Passed: testInit_WhenFeeControllerOutOfBound() (duration: 0 ms, consumedGas: 68577)
+✔ Passed: testInit_WhenFeeControllerInvalidReturnSize() (duration: 0 ms, consumedGas: 79346)
+✔ Passed: testInitFuzz(uint24) (duration: 2 ms, runs: 5, meanGas: 93927, medianGas: 93927)
+✔ Passed: testFuzz_Init_WhenOutOfGasForProtocolFeeController(uint256) (duration: 2 ms, runs: 5, meanGas: 124199, medianGas: 126930)
+✔ Suite Passed: 13 tests, 13 passed, 0 failed, 0 skipped (duration: 7 ms)
+
+Ran 2 tests for test/libraries/SettlementGuard.t.sol:SettlementGuardTest (v0.8.26)
+✔ Passed: testSetLocker(address,address) (duration: 0 ms, runs: 5, meanGas: 16247, medianGas: 16247)
+✔ Passed: testAccountDelta(address,address,int256,int256) (duration: 0 ms, runs: 5, meanGas: 26319, medianGas: 26319)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 1 ms)
+
+Ran 32 tests for test/pool-bin/libraries/math/SafeCast.t.sol:SafeCastTest (v0.8.26)
+✔ Passed: testFuzz_SafeCastInt128(uint128) (duration: 0 ms, runs: 5, meanGas: 6432, medianGas: 6432)
+✔ Passed: testFuzz_SafeCast96(uint256) (duration: 0 ms, runs: 5, meanGas: 6172, medianGas: 6662)
+✔ Passed: testFuzz_SafeCast88(uint256) (duration: 0 ms, runs: 5, meanGas: 5949, medianGas: 5460)
+✔ Passed: testFuzz_SafeCast80(uint256) (duration: 0 ms, runs: 5, meanGas: 6059, medianGas: 5570)
+✔ Passed: testFuzz_SafeCast8(uint256) (duration: 0 ms, runs: 5, meanGas: 5680, medianGas: 5680)
+✔ Passed: testFuzz_SafeCast72(uint256) (duration: 0 ms, runs: 5, meanGas: 6383, medianGas: 5889)
+✔ Passed: testFuzz_SafeCast64(uint256) (duration: 0 ms, runs: 5, meanGas: 6367, medianGas: 5878)
+✔ Passed: testFuzz_SafeCast56(uint256) (duration: 0 ms, runs: 5, meanGas: 5776, medianGas: 6266)
+✔ Passed: testFuzz_SafeCast48(uint256) (duration: 0 ms, runs: 5, meanGas: 6062, medianGas: 6552)
+✔ Passed: testFuzz_SafeCast40(uint256) (duration: 0 ms, runs: 5, meanGas: 6263, medianGas: 6508)
+✔ Passed: testFuzz_SafeCast32(uint256) (duration: 0 ms, runs: 5, meanGas: 6213, medianGas: 5724)
+✔ Passed: testFuzz_SafeCast248(uint256) (duration: 0 ms, runs: 5, meanGas: 6376, medianGas: 6376)
+✔ Passed: testFuzz_SafeCast240(uint256) (duration: 0 ms, runs: 5, meanGas: 6222, medianGas: 6222)
+✔ Passed: testFuzz_SafeCast24(uint256) (duration: 0 ms, runs: 5, meanGas: 6502, medianGas: 6992)
+✔ Passed: testFuzz_SafeCast232(uint256) (duration: 0 ms, runs: 5, meanGas: 6241, medianGas: 6486)
+✔ Passed: testFuzz_SafeCast224(uint256) (duration: 0 ms, runs: 5, meanGas: 7036, medianGas: 7036)
+✔ Passed: testFuzz_SafeCast216(uint256) (duration: 0 ms, runs: 5, meanGas: 6200, medianGas: 6200)
+✔ Passed: testFuzz_SafeCast208(uint256) (duration: 1 ms, runs: 5, meanGas: 6926, medianGas: 6926)
+✔ Passed: testFuzz_SafeCast200(uint256) (duration: 0 ms, runs: 5, meanGas: 6750, medianGas: 6750)
+✔ Passed: testFuzz_SafeCast192(uint256) (duration: 4 ms, runs: 5, meanGas: 6706, medianGas: 6706)
+✔ Passed: testFuzz_SafeCast184(uint256) (duration: 0 ms, runs: 5, meanGas: 6530, medianGas: 6530)
+✔ Passed: testFuzz_SafeCast176(uint256) (duration: 0 ms, runs: 5, meanGas: 6725, medianGas: 6970)
+✔ Passed: testFuzz_SafeCast168(uint256) (duration: 0 ms, runs: 5, meanGas: 6084, medianGas: 6574)
+✔ Passed: testFuzz_SafeCast160(uint256) (duration: 4 ms, runs: 5, meanGas: 6618, medianGas: 6618)
+✔ Passed: testFuzz_SafeCast16(uint256) (duration: 0 ms, runs: 5, meanGas: 5993, medianGas: 5504)
+✔ Passed: testFuzz_SafeCast152(uint256) (duration: 0 ms, runs: 5, meanGas: 6464, medianGas: 6464)
+✔ Passed: testFuzz_SafeCast144(uint256) (duration: 0 ms, runs: 5, meanGas: 6065, medianGas: 6310)
+✔ Passed: testFuzz_SafeCast136(uint256) (duration: 1 ms, runs: 5, meanGas: 5754, medianGas: 6244)
+✔ Passed: testFuzz_SafeCast128(uint256) (duration: 0 ms, runs: 5, meanGas: 6813, medianGas: 7058)
+✔ Passed: testFuzz_SafeCast120(uint256) (duration: 0 ms, runs: 5, meanGas: 6106, medianGas: 6596)
+✔ Passed: testFuzz_SafeCast112(uint256) (duration: 0 ms, runs: 5, meanGas: 6153, medianGas: 6398)
+✔ Passed: testFuzz_SafeCast104(uint256) (duration: 0 ms, runs: 5, meanGas: 6590, medianGas: 7080)
+✔ Suite Passed: 32 tests, 32 passed, 0 failed, 0 skipped (duration: 5 ms)
+
+Ran 53 tests for test/pool-bin/BinPoolManager.t.sol:BinPoolManagerTest (v0.8.26)
+✘ Failed(55): test_initcodeHash() (duration: 0 ms, consumedGas: 25344)
+✔ Passed: test_getNextNonEmptyBin_NoBinWithLiqudiity() (duration: 0 ms, consumedGas: 193526)
+✔ Passed: test_getNextNonEmptyBin_AddRemoveAddLiquidity() (duration: 1 ms, consumedGas: 1001095)
+✔ Passed: test_getNextNonEmptyBin() (duration: 1 ms, consumedGas: 1386435)
+✔ Passed: test_fuzz_ValidPrice(uint24,bool) (duration: 3 ms, runs: 5, meanGas: 167599, medianGas: 167588)
+✔ Passed: test_fuzz_InvalidPrice(uint24,bool) (duration: 3 ms, runs: 5, meanGas: 39914, medianGas: 40386)
+✘ Failed(56): test_bytecodeSize() (duration: 0 ms, consumedGas: 10802)
+✔ Passed: test_FuzzInitializePoolUnusedBits(uint256) (duration: 5 ms, runs: 5, meanGas: 1674139, medianGas: 1674139)
+✔ Passed: test_FuzzInitializePool(uint16) (duration: 15 ms, runs: 5, meanGas: 1857153, medianGas: 1857530)
+✔ Passed: testUpdateDynamicLPFee_FeeTooLarge() (duration: 2 ms, consumedGas: 1177019)
+✔ Passed: testUpdateDynamicLPFee_FeeNotDynamic() (duration: 0 ms, consumedGas: 36298)
+✔ Passed: testSwap_WhenPaused() (duration: 0 ms, consumedGas: 726131)
+✔ Passed: testSwapUseSurplusTokenAsInput() (duration: 1 ms, consumedGas: 997307)
+✔ Passed: testSwapPoolNotInitialized() (duration: 0 ms, consumedGas: 107055)
+✔ Passed: testSetProtocolFeePoolNotOwner() (duration: 0 ms, consumedGas: 343061)
+✔ Passed: testSetProtocolFeePoolNotInitialized() (duration: 0 ms, consumedGas: 347984)
+✘ Failed(57): testSetProtocolFee() (duration: 0 ms, consumedGas: 496733)
+✔ Passed: testSetMaxBinStep() (duration: 0 ms, consumedGas: 27572)
+✔ Passed: testMint_WhenPaused() (duration: 0 ms, consumedGas: 349374)
+✔ Passed: testMintPoolNotInitialized() (duration: 0 ms, consumedGas: 179303)
+✘ Failed(58): testMintNativeCurrency() (duration: 0 ms, consumedGas: 602698)
+✔ Passed: testMintMixWithAndWithoutSalt() (duration: 13 ms, consumedGas: 4630436)
+✔ Passed: testMintAndBurnWithSalt() (duration: 6 ms, consumedGas: 2242305)
+✔ Passed: testMinBinSharesForDonate_OnlyOwner() (duration: 0 ms, consumedGas: 20195)
+✘ Failed(59): testInitialize_gasCheck_withoutHooks() (duration: 0 ms, consumedGas: 164105)
+✔ Passed: testInitializeSwapFeeTooLarge() (duration: 0 ms, consumedGas: 59170)
+✔ Passed: testInitializeSamePool() (duration: 0 ms, consumedGas: 182435)
+✔ Passed: testInitializeInvalidId() (duration: 0 ms, consumedGas: 32580)
+✔ Passed: testInitializeInvalidFee() (duration: 0 ms, consumedGas: 1186129)
+✔ Passed: testInitializeInvalidBinStep() (duration: 0 ms, consumedGas: 71425)
+✔ Passed: testInitializeHookValidation() (duration: 0 ms, consumedGas: 1701520)
+✔ Passed: testInitializeDynamicFeeTooLarge(uint24) (duration: 3 ms, runs: 5, meanGas: 1183500, medianGas: 1184142)
+✘ Failed(60): testGas_SetMaxBinStep() (duration: 0 ms, consumedGas: 23589)
+✘ Failed(61): testGasUpdateDynamicLPFee() (duration: 0 ms, consumedGas: 1351584)
+✘ Failed(62): testGasSwapSingleBin() (duration: 1 ms, consumedGas: 875939)
+✘ Failed(63): testGasSwapOverBigBinIdGate() (duration: 5 ms, consumedGas: 2048196)
+✘ Failed(64): testGasSwapMultipleBins() (duration: 2 ms, consumedGas: 1772656)
+✘ Failed(65): testGasMintOneBin() (duration: 0 ms, consumedGas: 698299)
+✘ Failed(66): testGasMintNneBins() (duration: 1 ms, consumedGas: 1508945)
+✘ Failed(67): testGasGetBin() (duration: 0 ms, consumedGas: 698139)
+✘ Failed(68): testGasDonate() (duration: 1 ms, consumedGas: 824484)
+✘ Failed(69): testGasBurnOneBin() (duration: 0 ms, consumedGas: 833930)
+✘ Failed(70): testGasBurnNineBins() (duration: 2 ms, consumedGas: 1862817)
+✘ Failed(71): testGasBurnHalfBin() (duration: 1 ms, consumedGas: 816889)
+✔ Passed: testFuzz_SetMinBinSharesForDonate(uint256) (duration: 3 ms, runs: 5, meanGas: 31643, medianGas: 31643)
+✔ Passed: testFuzz_SetMaxBinStep(uint16) (duration: 5 ms, runs: 5, meanGas: 29668, medianGas: 29668)
+✔ Passed: testFuzzUpdateDynamicLPFee(uint24) (duration: 8 ms, runs: 5, meanGas: 1362224, medianGas: 1361847)
+✘ Failed(72): testExtLoadPoolActiveId() (duration: 0 ms, consumedGas: 175505)
+✔ Passed: testDonate_WhenPaused() (duration: 0 ms, consumedGas: 734121)
+✔ Passed: testDonatePoolNotInitialized() (duration: 0 ms, consumedGas: 158908)
+✔ Passed: testBurn_WhenPaused() (duration: 0 ms, consumedGas: 767226)
+✔ Passed: testBurnPoolNotInitialized() (duration: 0 ms, consumedGas: 94719)
+✘ Failed(73): testBurnNativeCurrency() (duration: 1 ms, consumedGas: 759505)
+✘ Suite Failed: 53 tests, 34 passed, 19 failed, 0 skipped (duration: 817 ms)
+
+Ran 15 tests for test/libraries/Currency.t.sol:TestCurrency (v0.8.26)
+✔ Passed: testCurrency_transfer_token_successfullyTransfersFunds() (duration: 0 ms, consumedGas: 43802)
+✔ Passed: testCurrency_transfer_token_insufficientBalance() (duration: 0 ms, consumedGas: 310104)
+✔ Passed: testCurrency_transfer_native_unsuccessfullyTransfersFunds() (duration: 0 ms, consumedGas: 59946)
+✔ Passed: testCurrency_transfer_native_successfullyTransfersFunds() (duration: 0 ms, consumedGas: 21533)
+✔ Passed: testCurrency_transfer_native_insufficientBalance() (duration: 0 ms, consumedGas: 281034)
+✔ Passed: testCurrency_toId_token_returnsAddressAsUint160() (duration: 0 ms, consumedGas: 8323)
+✔ Passed: testCurrency_toId_native_returns0() (duration: 0 ms, consumedGas: 7800)
+✔ Passed: testCurrency_isNative_token_returnsFalse() (duration: 0 ms, consumedGas: 7642)
+✔ Passed: testCurrency_isNative_native_returnsTrue() (duration: 0 ms, consumedGas: 7842)
+✔ Passed: testCurrency_fromId_token_returnsAddressAsUint160() (duration: 0 ms, consumedGas: 8783)
+✔ Passed: testCurrency_fromId_native_returns0() (duration: 0 ms, consumedGas: 7930)
+✔ Passed: testCurrency_balanceOf_token() (duration: 0 ms, consumedGas: 15439)
+✔ Passed: testCurrency_balanceOf_native() (duration: 0 ms, consumedGas: 8681)
+✔ Passed: testCurrency_balanceOfSelf_token() (duration: 0 ms, consumedGas: 15866)
+✔ Passed: testCurrency_balanceOfSelf_native() (duration: 0 ms, consumedGas: 8500)
+✔ Suite Passed: 15 tests, 15 passed, 0 failed, 0 skipped (duration: 4 ms)
+
+Ran 41 tests for test/pool-cl/libraries/SqrtPriceMath.t.sol:SqrtPriceMathTest (v0.8.26)
+✔ Passed: test_swapComputation_sqrtPTimessqrtQOverflows() (duration: 0 ms, consumedGas: 18015)
+✘ Failed(74): test_getNextSqrtPriceFromOutput_zeroForOneEqualsTrueGas() (duration: 0 ms, consumedGas: 4498)
+✘ Failed(75): test_getNextSqrtPriceFromOutput_zeroForOneEqualsFalseGas() (duration: 0 ms, consumedGas: 4586)
+✔ Passed: test_getNextSqrtPriceFromOutput_succeedsIfOutputAmountIsJustLessThanTheVirtualReservesOfCurrency1() (duration: 0 ms, consumedGas: 6607)
+✔ Passed: test_getNextSqrtPriceFromOutput_revertsIfPriceIsZero() (duration: 0 ms, consumedGas: 5461)
+✔ Passed: test_getNextSqrtPriceFromOutput_revertsIfOutputAmountIsGreaterThanTheVirtualReservesOfCurrency1() (duration: 0 ms, consumedGas: 6317)
+✔ Passed: test_getNextSqrtPriceFromOutput_revertsIfOutputAmountIsGreaterThanTheVirtualReservesOfCurrency0() (duration: 0 ms, consumedGas: 6713)
+✔ Passed: test_getNextSqrtPriceFromOutput_revertsIfOutputAmountIsExactlyTheVirtualReservesOfCurrency1() (duration: 0 ms, consumedGas: 6537)
+✔ Passed: test_getNextSqrtPriceFromOutput_revertsIfOutputAmountIsExactlyTheVirtualReservesOfCurrency0() (duration: 0 ms, consumedGas: 6295)
+✔ Passed: test_getNextSqrtPriceFromOutput_revertsIfLiquidityIsZero() (duration: 0 ms, consumedGas: 5022)
+✔ Passed: test_getNextSqrtPriceFromOutput_revertsIfAmountOutIsImpossibleInZeroForOneDirection() (duration: 0 ms, consumedGas: 5927)
+✔ Passed: test_getNextSqrtPriceFromOutput_revertsIfAmountOutIsImpossibleInOneForZeroDirection() (duration: 0 ms, consumedGas: 6200)
+✔ Passed: test_getNextSqrtPriceFromOutput_returnsInputPriceIfAmountInIsZeroAndZeroForOneEqualsTrue() (duration: 0 ms, consumedGas: 7117)
+✔ Passed: test_getNextSqrtPriceFromOutput_returnsInputPriceIfAmountInIsZeroAndZeroForOneEqualsFalse() (duration: 0 ms, consumedGas: 6378)
+✔ Passed: test_getNextSqrtPriceFromOutput_puzzlingEchidnaTest() (duration: 0 ms, consumedGas: 5855)
+✔ Passed: test_getNextSqrtPriceFromOutput_outputAmountOf0_1Currency1() (duration: 0 ms, consumedGas: 7748)
+✔ Passed: test_getNextSqrtPriceFromOutput_outputAmountOf0_1Currency0() (duration: 0 ms, consumedGas: 7294)
+✘ Failed(76): test_getNextSqrtPriceFromInput_zeroForOneEqualsTrueGas() (duration: 0 ms, consumedGas: 4828)
+✘ Failed(77): test_getNextSqrtPriceFromInput_zeroForOneEqualsFalseGas() (duration: 0 ms, consumedGas: 4762)
+✔ Passed: test_getNextSqrtPriceFromInput_revertsIfPriceIsZero() (duration: 0 ms, consumedGas: 5329)
+✔ Passed: test_getNextSqrtPriceFromInput_revertsIfLiquidityIsZero() (duration: 0 ms, consumedGas: 5000)
+✔ Passed: test_getNextSqrtPriceFromInput_revertsIfInputAmountOverflowsThePrice() (duration: 0 ms, consumedGas: 6722)
+✔ Passed: test_getNextSqrtPriceFromInput_returnsTheMinimumPriceForMaxInputs() (duration: 0 ms, consumedGas: 7672)
+✔ Passed: test_getNextSqrtPriceFromInput_returnsInputPriceIfAmountInIsZeroAndZeroForOneEqualsTrue() (duration: 0 ms, consumedGas: 6324)
+✔ Passed: test_getNextSqrtPriceFromInput_returnsInputPriceIfAmountInIsZeroAndZeroForOneEqualsFalse() (duration: 0 ms, consumedGas: 7527)
+✔ Passed: test_getNextSqrtPriceFromInput_inputAmountOf0_1Currency1() (duration: 0 ms, consumedGas: 7242)
+✔ Passed: test_getNextSqrtPriceFromInput_inputAmountOf0_1Currency0() (duration: 0 ms, consumedGas: 8126)
+✔ Passed: test_getNextSqrtPriceFromInput_canReturn1WithEnoughAmountInAndZeroForOneEqualsTrue() (duration: 0 ms, consumedGas: 7618)
+✔ Passed: test_getNextSqrtPriceFromInput_anyInputAmountCannotUnderflowThePrice() (duration: 0 ms, consumedGas: 8825)
+✔ Passed: test_getNextSqrtPriceFromInput_amountInGreaterThanType_uint96_maxAndZeroForOneEqualsTrue() (duration: 0 ms, consumedGas: 8610)
+✔ Passed: test_getAmount1Delta_returns0_1Amount1ForPriceOf1To1_21() (duration: 0 ms, consumedGas: 10336)
+✔ Passed: test_getAmount1Delta_returns0IfPricesAreEqual() (duration: 0 ms, consumedGas: 7067)
+✔ Passed: test_getAmount1Delta_returns0IfLiquidityIs0() (duration: 0 ms, consumedGas: 5989)
+✘ Failed(78): test_getAmount1Delta_gasCostForAmount1WhereRoundUpIsTrue() (duration: 0 ms, consumedGas: 5203)
+✘ Failed(79): test_getAmount1Delta_gasCostForAmount1WhereRoundUpIsFalse() (duration: 0 ms, consumedGas: 5071)
+✔ Passed: test_getAmount0Delta_worksForPricesThatOverflow() (duration: 0 ms, consumedGas: 15245)
+✔ Passed: test_getAmount0Delta_returns0_1Amount1ForPriceOf1To1_21() (duration: 0 ms, consumedGas: 11573)
+✔ Passed: test_getAmount0Delta_returns0IfPricesAreEqual() (duration: 0 ms, consumedGas: 8051)
+✔ Passed: test_getAmount0Delta_returns0IfLiquidityIs0() (duration: 0 ms, consumedGas: 7545)
+✘ Failed(80): test_getAmount0Delta_gasCostForAmount0WhereRoundUpIsTrue() (duration: 0 ms, consumedGas: 4565)
+✘ Failed(81): test_getAmount0Delta_gasCostForAmount0WhereRoundUpIsFalse() (duration: 0 ms, consumedGas: 5049)
+✘ Suite Failed: 41 tests, 33 passed, 8 failed, 0 skipped (duration: 5 ms)
+
+Ran 18 tests for test/pool-cl/libraries/SwapMath.t.sol:SwapMathTest (v0.8.26)
+✔ Passed: testFuzz_getSqrtPriceTarget(bool,uint160,uint160) (duration: 0 ms, runs: 5, meanGas: 5923, medianGas: 5932)
+✔ Passed: testComputeSwapTest_sufficientAmountOutOneForZero() (duration: 0 ms, consumedGas: 27063)
+✔ Passed: testComputeSwapTest_sufficientAmountInOneForZero() (duration: 0 ms, consumedGas: 24681)
+✔ Passed: testComputeSwapTest_partialInputToPriceEq1() (duration: 0 ms, consumedGas: 19534)
+✔ Passed: testComputeSwapTest_notEntireInputAmountTakenAsFee() (duration: 0 ms, consumedGas: 17550)
+✔ Passed: testComputeSwapTest_insufficientLiquidityExactOutputInZeroForOne() (duration: 0 ms, consumedGas: 16690)
+✔ Passed: testComputeSwapTest_insufficientLiquidityExactOutputInOneForZero() (duration: 0 ms, consumedGas: 16270)
+✔ Passed: testComputeSwapTest_insufficientAmountOutOneForZero() (duration: 0 ms, consumedGas: 25947)
+✔ Passed: testComputeSwapTest_insufficientAmountIntOneForZero() (duration: 0 ms, consumedGas: 26617)
+✘ Failed(82): testComputeSwapTest_gasSwapZeroForOneExactOutPartial() (duration: 0 ms, consumedGas: 8254)
+✘ Failed(83): testComputeSwapTest_gasSwapZeroForOneExactOutCapped() (duration: 0 ms, consumedGas: 8232)
+✘ Failed(84): testComputeSwapTest_gasSwapZeroForOneExactInPartial() (duration: 0 ms, consumedGas: 8496)
+✘ Failed(85): testComputeSwapTest_gasSwapZeroForOneExactInCapped() (duration: 0 ms, consumedGas: 8320)
+✘ Failed(86): testComputeSwapTest_gasSwapOneForZeroExactOutPartial() (duration: 0 ms, consumedGas: 8738)
+✘ Failed(87): testComputeSwapTest_gasSwapOneForZeroExactOutCapped() (duration: 0 ms, consumedGas: 8518)
+✘ Failed(88): testComputeSwapTest_gasSwapOneForZeroExactInPartial() (duration: 0 ms, consumedGas: 8606)
+✘ Failed(89): testComputeSwapTest_gasSwapOneForZeroExactInCapped() (duration: 0 ms, consumedGas: 8584)
+✔ Passed: testComputeSwapTest_amountWantedOutEq1() (duration: 0 ms, consumedGas: 17913)
+✘ Suite Failed: 18 tests, 10 passed, 8 failed, 0 skipped (duration: 4 ms)
+
+Ran 11 tests for test/libraries/BalanceDelta.t.sol:TestBalanceDelta (v0.8.26)
+✔ Passed: test_toBalanceDelta() (duration: 0 ms, consumedGas: 24018)
+✔ Passed: test_sub_revertsOnUnderflow() (duration: 0 ms, consumedGas: 5745)
+✔ Passed: test_sub() (duration: 0 ms, consumedGas: 26787)
+✔ Passed: test_fuzz_toBalanceDelta(int128,int128) (duration: 0 ms, runs: 5, meanGas: 6336, medianGas: 6336)
+✔ Passed: test_fuzz_sub(int128,int128,int128,int128) (duration: 0 ms, runs: 5, meanGas: 9729, medianGas: 9729)
+✔ Passed: test_fuzz_neq(int128,int128,int128,int128) (duration: 1 ms, runs: 5, meanGas: 5610, medianGas: 5610)
+✔ Passed: test_fuzz_eq(int128,int128,int128,int128) (duration: 0 ms, runs: 5, meanGas: 6075, medianGas: 6075)
+✔ Passed: test_fuzz_amount0_amount1(int128,int128) (duration: 0 ms, runs: 5, meanGas: 7492, medianGas: 7492)
+✔ Passed: test_fuzz_add(int128,int128,int128,int128) (duration: 0 ms, runs: 5, meanGas: 7517, medianGas: 6932)
+✔ Passed: test_add_revertsOnOverflow() (duration: 0 ms, consumedGas: 5569)
+✔ Passed: test_add() (duration: 0 ms, consumedGas: 26025)
+✔ Suite Passed: 11 tests, 11 passed, 0 failed, 0 skipped (duration: 4 ms)
+
+Ran 11 tests for test/pool-bin/libraries/BinHelper.t.sol:BinHelperTest (v0.8.26)
+✔ Passed: testFuzz_getSharesAndEffectiveAmountsIn(uint128,uint128,uint128,uint128,uint256,uint256) (duration: 1 ms, runs: 5, meanGas: 26505, medianGas: 33901)
+✔ Passed: testFuzz_getAmountsOutFullBin(uint128,uint128,bool,int16,uint128,uint24) (duration: 1 ms, runs: 5, meanGas: 39023, medianGas: 44869)
+✔ Passed: testFuzz_VerifyAmountsOnActiveId(uint128,uint128,uint24) (duration: 1 ms, runs: 5, meanGas: 1240, medianGas: 1240)
+✔ Passed: testFuzz_VerifyAmountsNeqIds(uint128,uint128,uint24,uint24) (duration: 2 ms, runs: 5, meanGas: 8587, medianGas: 8644)
+✔ Passed: testFuzz_TryExploitShares(uint128,uint128,uint128,uint128,uint256) (duration: 2 ms, runs: 5, meanGas: 18089, medianGas: 26934)
+✔ Passed: testFuzz_GetLiquidity(uint128,uint128,uint256) (duration: 1 ms, runs: 5, meanGas: 8984, medianGas: 9423)
+✔ Passed: testFuzz_GetCompositionFees(uint128,uint128,uint16,uint128,uint128,uint256,uint256,uint24) (duration: 2 ms, runs: 5, meanGas: 55909, medianGas: 53620)
+✔ Passed: testFuzz_GetAmountsOutLessThanBin(uint128,uint128,bool,int16,uint128,uint24) (duration: 4 ms, runs: 5, meanGas: 31840, medianGas: 39365)
+✔ Passed: testFuzz_GetAmountsIn(uint128,uint128,bool,int16,uint128,uint24) (duration: 5 ms, runs: 5, meanGas: 38961, medianGas: 39312)
+✔ Passed: testFuzz_GetAmountOutOfBin(uint128,uint128,uint256,uint256) (duration: 1 ms, runs: 5, meanGas: 21274, medianGas: 19888)
+✔ Passed: testFuzz_BinIsEmpty(uint128,uint128) (duration: 2 ms, runs: 5, meanGas: 9306, medianGas: 9306)
+✔ Suite Passed: 11 tests, 11 passed, 0 failed, 0 skipped (duration: 382913 ms)
+
+Ran 8 tests for test/pool-bin/BinHookReturnsDelta.t.sol:BinHookReturnsDelta (v0.8.26)
+✔ Passed: testSwap_swapMore() (duration: 1 ms, consumedGas: 685019)
+✔ Passed: testSwap_swapLess() (duration: 1 ms, consumedGas: 683846)
+✔ Passed: testSwap_noSwap_specifyOutput() (duration: 0 ms, consumedGas: 620083)
+✔ Passed: testSwap_noSwap_specifyInput() (duration: 1 ms, consumedGas: 638856)
+✔ Passed: testSwap_noSwap_returnUnspecifiedInBeforeSwapAndAfterSwap() (duration: 1 ms, consumedGas: 728298)
+✔ Passed: testSwap_noSwap_returnUnspecifiedInBeforeSwap() (duration: 1 ms, consumedGas: 700053)
+✔ Passed: testMint_MintMore() (duration: 1 ms, consumedGas: 785680)
+✔ Passed: testBurn_FeeCharge() (duration: 1 ms, consumedGas: 674349)
+✔ Suite Passed: 8 tests, 8 passed, 0 failed, 0 skipped (duration: 382911 ms)
+
+Ran 5 tests for test/pool-bin/BinHookReturnsFee.t.sol:BinHookReturnsFeeTest (v0.8.26)
+✔ Passed: test_fuzz_dynamicReturnSwapFee(uint24) (duration: 4 ms, runs: 5, meanGas: 224160, medianGas: 224160)
+✔ Passed: test_dynamicReturnSwapFee_revertIfFeeTooLarge() (duration: 0 ms, consumedGas: 86585)
+✔ Passed: test_dynamicReturnSwapFee_notUsedIfPoolIsStaticFee() (duration: 4 ms, consumedGas: 715764)
+✔ Passed: test_dynamicReturnSwapFee_notStored() (duration: 1 ms, consumedGas: 743994)
+✔ Passed: test_dynamicReturnSwapFee_initializeZeroSwapFee() (duration: 0 ms, consumedGas: 212168)
+✔ Suite Passed: 5 tests, 5 passed, 0 failed, 0 skipped (duration: 382913 ms)
+
+Ran 15 tests for test/pool-bin/BinHook.t.sol:BinHookTest (v0.8.26)
+✘ Failed(90): testSwapSucceedsWithHook() (duration: 0 ms, consumedGas: 782165)
+✔ Passed: testSwapInvalidReturn() (duration: 0 ms, consumedGas: 692393)
+✘ Failed(91): testMintSucceedsWithHook() (duration: 0 ms, consumedGas: 676272)
+✔ Passed: testMintInvalidReturn() (duration: 0 ms, consumedGas: 390582)
+✘ Failed(92): testInitializeSucceedsWithHook() (duration: 0 ms, consumedGas: 344285)
+✘ Failed(93): testDonateSucceedsWithHook() (duration: 1 ms, consumedGas: 757760)
+✘ Failed(94): testBurnSucceedsWithHook() (duration: 0 ms, consumedGas: 787722)
+✔ Passed: testBurnInvalidReturn() (duration: 1 ms, consumedGas: 652882)
+✔ Passed: testBeforeInitializeInvalidReturn() (duration: 0 ms, consumedGas: 217180)
+✔ Passed: testBeforeDonateInvalidReturn() (duration: 0 ms, consumedGas: 692016)
+✔ Passed: testAfterSwapInvalidReturn() (duration: 0 ms, consumedGas: 728292)
+✔ Passed: testAfterMintInvalidReturn() (duration: 0 ms, consumedGas: 568039)
+✔ Passed: testAfterInitializeInvalidReturn() (duration: 0 ms, consumedGas: 360805)
+✔ Passed: testAfterDonateInvalidReturn() (duration: 1 ms, consumedGas: 716430)
+✔ Passed: testAfterBurnInvalidReturn() (duration: 4 ms, consumedGas: 600057)
+✘ Suite Failed: 15 tests, 10 passed, 5 failed, 0 skipped (duration: 382908 ms)
+
+Ran 2 tests for test/pool-bin/BinHookRevertWithReason.t.sol:BinHookRevertWithReasonTest (v0.8.26)
+✔ Passed: testRevertWithNoReason() (duration: 0 ms, consumedGas: 200880)
+✔ Passed: testRevertWithHookNotImplemented() (duration: 0 ms, consumedGas: 222749)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 382910 ms)
+
+Ran 8 tests for test/pool-bin/BinHookSkipCallback.t.sol:BinHookSkipCallbackTest (v0.8.26)
+✔ Passed: testMint_NotFromHook() (duration: 4 ms, consumedGas: 630290)
+✔ Passed: testMint_FromHook() (duration: 1 ms, consumedGas: 668317)
+✔ Passed: testInitialize_NotfromHook() (duration: 0 ms, consumedGas: 234328)
+✔ Passed: testInitialize_FromHook() (duration: 0 ms, consumedGas: 207507)
+✔ Passed: testDonate_NotFromHook() (duration: 1 ms, consumedGas: 792222)
+✔ Passed: testDonate_FromHook() (duration: 1 ms, consumedGas: 773653)
+✔ Passed: testBurn_NotFromHook() (duration: 1 ms, consumedGas: 742381)
+✔ Passed: testBurn_FromHook() (duration: 1 ms, consumedGas: 690497)
+✔ Suite Passed: 8 tests, 8 passed, 0 failed, 0 skipped (duration: 382910 ms)
+
+Ran 1 tests for test/vault/VaultReentrancy.t.sol:TokenLocker (v0.8.26)
+✘ Failed(95): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 1 tests for test/vault/VaultInvariant.t.sol:VaultPoolManager (v0.8.26)
+✘ Failed(96): setUp() (duration: 0 ms, consumedGas: 0)
+✘ Suite Failed: 1 tests, 0 passed, 1 failed, 0 skipped (duration: 0 ms)
+
+Ran 2 tests for test/libraries/VaultReserves.t.sol:VaultReserveTest (v0.8.26)
+✔ Passed: test_slot_correctness() (duration: 0 ms, consumedGas: 7497)
+✔ Passed: test_fuzz_get_set(address,uint256) (duration: 0 ms, runs: 5, meanGas: 12057, medianGas: 12057)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 8 ms)
+
+Ran 18 tests for test/vault/VaultSync.t.sol:VaultSyncTest (v0.8.26)
+✔ Passed: test_sync_twiceWithoutSettle() (duration: 0 ms, consumedGas: 122211)
+✔ Passed: test_sync_twiceWithSettleNative() (duration: 0 ms, consumedGas: 142743)
+✔ Passed: test_sync_twiceWithSettle() (duration: 0 ms, consumedGas: 140345)
+✔ Passed: test_sync_balanceIsZero() (duration: 0 ms, consumedGas: 43910)
+✔ Passed: test_sync_balanceIsNonZero() (duration: 0 ms, consumedGas: 76521)
+✔ Passed: test_sync() (duration: 0 ms, consumedGas: 19696)
+✔ Passed: test_settle_transferBeforeSync() (duration: 0 ms, consumedGas: 153347)
+✔ Passed: test_settle_startWithZeroBalance() (duration: 0 ms, consumedGas: 147321)
+✔ Passed: test_settle_nativeTokenWithoutFund() (duration: 0 ms, consumedGas: 36066)
+✔ Passed: test_settle_nativeTokenWithFund() (duration: 0 ms, consumedGas: 94671)
+✔ Passed: test_settle_NativeERC20() (duration: 0 ms, consumedGas: 1987170)
+✔ Passed: test_settle_ERC20TokenWithValue() (duration: 0 ms, consumedGas: 45826)
+✔ Passed: test_settleFor_transferBeforeSync() (duration: 0 ms, consumedGas: 153478)
+✔ Passed: test_settleFor_startWithZeroBalance() (duration: 0 ms, consumedGas: 147228)
+✔ Passed: test_settleFor_nativeTokenWithoutFund() (duration: 0 ms, consumedGas: 38683)
+✔ Passed: test_settleFor_nativeTokenWithFund() (duration: 0 ms, consumedGas: 94246)
+✔ Passed: test_settleFor_NativeERC20() (duration: 0 ms, consumedGas: 1988783)
+✔ Passed: test_settleFor_ERC20TokenWithValue() (duration: 0 ms, consumedGas: 46435)
+✔ Suite Passed: 18 tests, 18 passed, 0 failed, 0 skipped (duration: 31 ms)
+
+Ran 49 tests for test/vault/Vault.t.sol:VaultTest (v0.8.26)
+✘ Failed(97): test_initcodeHash() (duration: 0 ms, consumedGas: 11613)
+✘ Failed(98): test_bytecodeSize() (duration: 0 ms, consumedGas: 11396)
+✔ Passed: test_CollectFee_WhenVaultLocked() (duration: 0 ms, consumedGas: 250876)
+✔ Passed: test_CollectFeeWhenCurrencyIsSynced() (duration: 0 ms, consumedGas: 51375)
+✔ Passed: test_CollectFeeFromRandomUser() (duration: 0 ms, consumedGas: 24535)
+✔ Passed: test_CollectFee() (duration: 0 ms, consumedGas: 254059)
+✔ Passed: testVault_ethSupport_transferInAndSettle() (duration: 0 ms, consumedGas: 178474)
+✔ Passed: testVault_ethSupport_settleAndTake() (duration: 0 ms, consumedGas: 87832)
+✔ Passed: testVault_ethSupport_flashloan() (duration: 0 ms, consumedGas: 404278)
+✔ Passed: testVault_ethSupport_SettleNonNativeCurrencyWithValue() (duration: 0 ms, consumedGas: 46487)
+✔ Passed: testVault_clear_withAmountZero() (duration: 0 ms, consumedGas: 194207)
+✘ Failed(99): testVault_clear_successWithZeroExistingDelta() (duration: 0 ms, consumedGas: 139185)
+✘ Failed(100): testVault_clear_successWithNonZeroExistingDelta() (duration: 0 ms, consumedGas: 159409)
+✔ Passed: testVault_clear_existingDeltaNegative() (duration: 0 ms, consumedGas: 145747)
+✔ Passed: testVault_clear_existingDeltaLessThanInput() (duration: 0 ms, consumedGas: 196694)
+✔ Passed: testVault_clear_existingDeltaGreaterThanInput() (duration: 0 ms, consumedGas: 196034)
+✔ Passed: testVaultOwner_registerApp() (duration: 0 ms, consumedGas: 72765)
+✔ Passed: testVaultOwner_get() (duration: 0 ms, consumedGas: 19917)
+✔ Passed: testVaultOwner_2StepsTransferOwnership() (duration: 0 ms, consumedGas: 68295)
+✔ Passed: testVaultFuzz_mint_toSomeoneElse(uint256) (duration: 6 ms, runs: 5, meanGas: 140505, medianGas: 141259)
+✔ Passed: testVaultFuzz_mint(uint256) (duration: 2 ms, runs: 5, meanGas: 124770, medianGas: 124393)
+✔ Passed: testVaultFuzz_burnHalf(uint256) (duration: 4 ms, runs: 5, meanGas: 145584, medianGas: 155846)
+✔ Passed: testVaultFuzz_burnFrom_withoutApprove(uint256) (duration: 3 ms, runs: 5, meanGas: 149753, medianGas: 148999)
+✔ Passed: testVaultFuzz_burnFrom_withApprove(uint256) (duration: 8 ms, runs: 5, meanGas: 490697, medianGas: 490120)
+✔ Passed: testVaultFuzz_burn(uint256) (duration: 4 ms, runs: 5, meanGas: 118383, medianGas: 118956)
+✔ Passed: testTake_failsWithNoLiquidity() (duration: 0 ms, consumedGas: 37175)
+✘ Failed(101): testRegisterPoolManager() (duration: 0 ms, consumedGas: 57164)
+✔ Passed: testNotCorrectPoolManager() (duration: 0 ms, consumedGas: 239115)
+✔ Passed: testLock_NoOperation() (duration: 0 ms, consumedGas: 15468)
+✔ Passed: testLockWhenMoreThanOnePoolManagers() (duration: 0 ms, consumedGas: 395129)
+✔ Passed: testLockWhenAlreadyLocked() (duration: 0 ms, consumedGas: 25764)
+✔ Passed: testLockSettledWhenSwap() (duration: 0 ms, consumedGas: 327928)
+✔ Passed: testLockSettledWhenAddLiquidity_HookDelta() (duration: 0 ms, consumedGas: 453550)
+✔ Passed: testLockSettledWhenAddLiquidity() (duration: 0 ms, consumedGas: 275616)
+✔ Passed: testLockNotSettledWithoutPayment_HookDelta() (duration: 0 ms, consumedGas: 106124)
+✔ Passed: testLockNotSettledWithoutPayment() (duration: 0 ms, consumedGas: 103372)
+✔ Passed: testLockNotSettledWithoutFullyPayment_HookDelta() (duration: 0 ms, consumedGas: 187944)
+✔ Passed: testLockNotSettledWithoutFullyPayment() (duration: 0 ms, consumedGas: 191816)
+✔ Passed: testLockNotSettledAsPayTooMuch_HookDelta() (duration: 0 ms, consumedGas: 272238)
+✔ Passed: testLockNotSettledAsPayTooMuch() (duration: 0 ms, consumedGas: 222771)
+✔ Passed: testLockInSufficientBalanceWhenMoreThanOnePoolManagers() (duration: 0 ms, consumedGas: 421076)
+✔ Passed: testLockFlashloanCrossMoreThanOnePoolManagers() (duration: 0 ms, consumedGas: 476928)
+✔ Passed: testFuzzAccountBalanceDeltaWithHookDelta_RemoveLiquidityHookFee(uint256,uint256) (duration: 4 ms, runs: 5, meanGas: 346279, medianGas: 358735)
+✔ Passed: testFuzzAccountBalanceDeltaWithHookDelta_OverwriteCurve(uint256,uint256) (duration: 3 ms, runs: 5, meanGas: 287960, medianGas: 286829)
+✔ Passed: testFuzzAccountBalanceDeltaWithHookDelta_AddLiquidityHookFee(uint256,uint256) (duration: 4 ms, runs: 5, meanGas: 324881, medianGas: 323373)
+✔ Passed: testAccountPoolBalanceDeltaWithoutLock() (duration: 0 ms, consumedGas: 37512)
+✔ Passed: testAccountPoolBalanceDeltaWithHookDeltaFromUnregistedPoolManager() (duration: 0 ms, consumedGas: 50706)
+✔ Passed: testAccountPoolBalanceDeltaFromUnregistedPoolManager() (duration: 0 ms, consumedGas: 42087)
+✔ Passed: testAccountPoolBalanceDeltaFromArbitraryAddr() (duration: 0 ms, consumedGas: 32199)
+✘ Suite Failed: 49 tests, 44 passed, 5 failed, 0 skipped (duration: 54 ms)
+
+Ran 27 tests for test/VaultToken.t.sol:VaultTokenTest (v0.8.26)
+✔ Passed: testTransferFromWithInfiniteApproval(address,address,address,uint256,uint256) (duration: 1 ms, runs: 5, meanGas: 123365, medianGas: 122611)
+✔ Passed: testTransferFromWithInfiniteApproval() (duration: 0 ms, consumedGas: 121566)
+✔ Passed: testTransferFromWithApprovalFuzz(address,address,address,uint256,uint256) (duration: 1 ms, runs: 5, meanGas: 126290, medianGas: 127044)
+✔ Passed: testTransferFromWithApproval() (duration: 0 ms, consumedGas: 123408)
+✔ Passed: testTransferFromAsOperator(address,address,address,uint256,uint256) (duration: 1 ms, runs: 5, meanGas: 113309, medianGas: 112579)
+✔ Passed: testTransferFromAsOperator() (duration: 0 ms, consumedGas: 110438)
+✔ Passed: testTransfer(address,address,address,uint256,uint256) (duration: 1 ms, runs: 5, meanGas: 84798, medianGas: 85552)
+✔ Passed: testTransfer() (duration: 0 ms, consumedGas: 82000)
+✔ Passed: testSetOperator(address,bool) (duration: 1 ms, runs: 5, meanGas: 28540, medianGas: 20580)
+✔ Passed: testSetOperator() (duration: 0 ms, consumedGas: 40001)
+✔ Passed: testMint(address,address,uint256) (duration: 1 ms, runs: 5, meanGas: 42430, medianGas: 42430)
+✔ Passed: testMint() (duration: 0 ms, consumedGas: 43355)
+✔ Passed: testFailTransferFromNotAuthorized(address,address,address,uint256) (duration: 1 ms, runs: 5, meanGas: 53279, medianGas: 53279)
+✔ Passed: testFailTransferFromNotAuthorized() (duration: 0 ms, consumedGas: 45316)
+✔ Passed: testFailTransferFromBalanceUnderflow(address,address,address,uint256) (duration: 0 ms, runs: 5, meanGas: 20062, medianGas: 20062)
+✔ Passed: testFailTransferFromBalanceUnderflow() (duration: 0 ms, consumedGas: 15292)
+✔ Passed: testFailTransferFromBalanceOverflow(address,address,address,uint256) (duration: 1 ms, runs: 5, meanGas: 108226, medianGas: 108226)
+✔ Passed: testFailTransferFromBalanceOverflow() (duration: 0 ms, consumedGas: 105292)
+✔ Passed: testFailTransferBalanceUnderflow(address,address,address,uint256) (duration: 0 ms, runs: 5, meanGas: 19116, medianGas: 19116)
+✔ Passed: testFailTransferBalanceUnderflow() (duration: 0 ms, consumedGas: 15138)
+✔ Passed: testFailTransferBalanceOverflow(address,address,address,uint256) (duration: 2 ms, runs: 5, meanGas: 107101, medianGas: 107101)
+✔ Passed: testFailTransferBalanceOverflow() (duration: 0 ms, consumedGas: 105336)
+✔ Passed: testFailMintBalanceOverflow() (duration: 0 ms, consumedGas: 39012)
+✔ Passed: testBurn(address,address,uint256) (duration: 1 ms, runs: 5, meanGas: 34772, medianGas: 34742)
+✔ Passed: testBurn() (duration: 0 ms, consumedGas: 51733)
+✔ Passed: testApprove(address,address,uint256) (duration: 1 ms, runs: 5, meanGas: 42441, medianGas: 42441)
+✔ Passed: testApprove() (duration: 0 ms, consumedGas: 43102)
+✔ Suite Passed: 27 tests, 27 passed, 0 failed, 0 skipped (duration: 11 ms)
+
+Ran 9 tests for test/pool-bin/libraries/math/TreeMath.t.sol:TreeMathTest (v0.8.26)
+✔ Passed: test_FindFirstFar() (duration: 0 ms, consumedGas: 150338)
+✔ Passed: test_FindFirst() (duration: 0 ms, consumedGas: 122320)
+✔ Passed: testFuzz_RemoveLogicAndSearchRight(uint24) (duration: 1 ms, runs: 5, meanGas: 98669, medianGas: 98742)
+✔ Passed: testFuzz_RemoveLogicAndSearchRight() (duration: 0 ms, consumedGas: 120291)
+✔ Passed: testFuzz_RemoveLogicAndSearchLeft(uint24) (duration: 1 ms, runs: 5, meanGas: 102085, medianGas: 102085)
+✔ Passed: testFuzz_RemoveFromTree(uint24[]) (duration: 39 ms, runs: 5, meanGas: 3207688, medianGas: 2604993)
+✔ Passed: testFuzz_FindFirst(uint24[]) (duration: 32 ms, runs: 5, meanGas: 3186975, medianGas: 3165144)
+✔ Passed: testFuzz_AddToTree(uint24[]) (duration: 26 ms, runs: 5, meanGas: 3265202, medianGas: 3022156)
+✔ Passed: testFuzz_AddAndRemove(uint24) (duration: 1 ms, runs: 5, meanGas: 82963, medianGas: 82964)
+✔ Suite Passed: 9 tests, 9 passed, 0 failed, 0 skipped (duration: 566 ms)
+
+Ran 2 tests for test/pool-bin/libraries/math/Uint128x128Math.t.sol:Uint128x128MathTest (v0.8.26)
+✔ Passed: test_PowAndLog() (duration: 1 ms, consumedGas: 446968)
+✔ Passed: test_Pow() (duration: 0 ms, consumedGas: 9164)
+✔ Suite Passed: 2 tests, 2 passed, 0 failed, 0 skipped (duration: 566 ms)
+
+Ran 6 tests for test/vault/VaultInvariant.t.sol:VaultInvariant (v0.8.26)
+✔ Passed: invariant_TotalMintedCurrency() (duration: 531 ms, runs: 5, calls: 2500, reverts: 2499)
+✔ Passed: invariant_TotalFeeCollected() (duration: 495 ms, runs: 5, calls: 2500, reverts: 2500)
+✔ Passed: invariant_TokenbalanceInVaultGeReserveOfPoolManagerPlusSurplusToken() (duration: 514 ms, runs: 5, calls: 2500, reverts: 2499)
+✔ Passed: invariant_TokenBalanceInVaultGeMinted() (duration: 477 ms, runs: 5, calls: 2500, reverts: 2497)
+✔ Passed: invariant_Locker() (duration: 480 ms, runs: 5, calls: 2500, reverts: 2500)
+✔ Passed: invariant_LockDataLengthZero() (duration: 505 ms, runs: 5, calls: 2500, reverts: 2500)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 565 ms)
+
+Ran 4 tests for test/vault/VaultReentrancy.t.sol:VaultReentrancyTest (v0.8.26)
+✔ Passed: testVault_withArbitraryAmountOfOperations() (duration: 8 ms, consumedGas: 1784446)
+✔ Passed: testVault_withArbitraryAmountOfCallers() (duration: 3 ms, consumedGas: 1117407)
+✔ Passed: testVault_reentrance_byCurrentLocker() (duration: 0 ms, consumedGas: 30256)
+✔ Passed: testVault_functioningAsExpected() (duration: 0 ms, consumedGas: 115273)
+✔ Suite Passed: 4 tests, 4 passed, 0 failed, 0 skipped (duration: 565 ms)
+
+Ran 10 tests for test/libraries/math/UnsafeMath.t.sol:UnsafeMathTest (v0.8.26)
+✔ Passed: test_simpleMulDiv_zeroDoesNotRevert(uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 847, medianGas: 847)
+✔ Passed: test_simpleMulDiv_succeeds() (duration: 0 ms, consumedGas: 5813)
+✔ Passed: test_simpleMulDiv_noOverflow() (duration: 0 ms, consumedGas: 5280)
+✔ Passed: test_invariant_divRoundingUp(uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 7329, medianGas: 7329)
+✔ Passed: test_fuzz_simpleMulDiv_succeeds(uint256,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 6991, medianGas: 6991)
+✔ Passed: test_fuzz_simpleMulDiv_bounded(uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 13394, medianGas: 14148)
+✔ Passed: test_fuzz_divRoundingUp(uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 7478, medianGas: 7568)
+✔ Passed: test_divRoundingUp_zeroDoesNotRevert(uint256) (duration: 0 ms, runs: 5, meanGas: 829, medianGas: 829)
+✔ Passed: test_divRoundingUp_maxInput() (duration: 0 ms, consumedGas: 5099)
+✔ Passed: test_divRoundingUp_RoundsUp() (duration: 0 ms, consumedGas: 5633)
+✔ Suite Passed: 10 tests, 10 passed, 0 failed, 0 skipped (duration: 566 ms)
+
+Ran 6 tests for test/pool-bin/libraries/math/Uint256x256Math.t.sol:Uint256x256MathTest (v0.8.26)
+✔ Passed: testFuzz_mulShiftRoundUp(uint256,uint256,uint8) (duration: 0 ms, runs: 5, meanGas: 9384, medianGas: 9384)
+✔ Passed: testFuzz_mulShiftRoundDown(uint256,uint256,uint8) (duration: 0 ms, runs: 5, meanGas: 7202, medianGas: 7747)
+✔ Passed: testFuzz_ShiftDivRoundUp(uint256,uint8,uint256) (duration: 1 ms, runs: 5, meanGas: 9928, medianGas: 10558)
+✔ Passed: testFuzz_ShiftDivRoundDown(uint256,uint8,uint256) (duration: 0 ms, runs: 5, meanGas: 8882, medianGas: 8882)
+✔ Passed: testFuzz_MulDivRoundUp(uint256,uint256,uint256) (duration: 0 ms, runs: 5, meanGas: 9112, medianGas: 8517)
+✔ Passed: testFuzz_MulDivRoundDown(uint256,uint256,uint256) (duration: 1 ms, runs: 5, meanGas: 8672, medianGas: 7833)
+✔ Suite Passed: 6 tests, 6 passed, 0 failed, 0 skipped (duration: 566 ms)
+
+[2m2025-02-15T13:16:21.357100Z[0m [31mERROR[0m ThreadId(43) [2mcrates/foundry/cheatcodes/src/fs.rs[0m[2m:[0m[2m414:[0m non-empty stderr [3minput[0m[2m=[0m["npx", "ts-node", "test/js-scripts/getTickAtSqrtRatio.ts", "4295128739,68722059824,1099552957184,17592847314944,281485557039104,4503768912625664,72060302602010624,1152964841632169984,18447437466114719744,295158999457835515904,4722543991325368254464,75560703861205892071424,1208971261779294273142784,19343540188468708370284544,309496643015499333924552704,4951946288247989342792843264,79231140611967829484685492224,1267698249791485271754967875584,20283171996663764348079486009344,324530751946620229569271776149504,5192492031145923673108348418392064,83079872498334778769733574694273024,1329277959973356460315737195108368384,21268447359573703365051795121733894144,340295157753179253840828721947742306304,5444722524050868061453259551163876900864,87115560384813888983252152818622030413824,1393848966157022223732034445097952486621184,22301583458512355579712551121567239785938944,356825335336197689275400817945075836575023104,5709205365379163028406413087121213385200369664"] [3mstderr[0m[2m=[0m"TypeError: Unknown file extension \".ts\" for /Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/pancakeswap/pancake-v4-core/test/js-scripts/getTickAtSqrtRatio.ts\n    at Object.getFileProtocolModuleFormat [as file:] (node:internal/modules/esm/get_format:160:9)\n    at defaultGetFormat (node:internal/modules/esm/get_format:203:36)\n    at defaultLoad (node:internal/modules/esm/load:143:22)\n    at async ModuleLoader.load (node:internal/modules/esm/loader:409:7)\n    at async ModuleLoader.moduleProvider (node:internal/modules/esm/loader:291:45)\n    at async link (node:internal/modules/esm/module_job:76:21) {\n  code: 'ERR_UNKNOWN_FILE_EXTENSION'\n}\n"
+[2m2025-02-15T13:16:21.357103Z[0m [31mERROR[0m ThreadId(35) [2mcrates/foundry/cheatcodes/src/fs.rs[0m[2m:[0m[2m414:[0m non-empty stderr [3minput[0m[2m=[0m["npx", "ts-node", "test/js-scripts/getSqrtRatioAtTick.ts", "-50,50,-100,100,-200,200,-400,400,-800,800,-1600,1600,-3200,3200,-6400,6400,-12800,12800,-25600,25600,-51200,51200,-102400,102400,-204800,204800,-409600,409600,-819200,819200"] [3mstderr[0m[2m=[0m"TypeError: Unknown file extension \".ts\" for /Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/pancakeswap/pancake-v4-core/test/js-scripts/getSqrtRatioAtTick.ts\n    at Object.getFileProtocolModuleFormat [as file:] (node:internal/modules/esm/get_format:160:9)\n    at defaultGetFormat (node:internal/modules/esm/get_format:203:36)\n    at defaultLoad (node:internal/modules/esm/load:143:22)\n    at async ModuleLoader.load (node:internal/modules/esm/loader:409:7)\n    at async ModuleLoader.moduleProvider (node:internal/modules/esm/loader:291:45)\n    at async link (node:internal/modules/esm/module_job:76:21) {\n  code: 'ERR_UNKNOWN_FILE_EXTENSION'\n}\n"
+[2m2025-02-15T13:16:21.658907Z[0m [31mERROR[0m ThreadId(43) [2mcrates/foundry/cheatcodes/src/fs.rs[0m[2m:[0m[2m414:[0m non-empty stderr [3minput[0m[2m=[0m["npx", "ts-node", "test/js-scripts/getTickAtSqrtRatio.ts", "4295128739,68722059824,1099552957184,17592847314944,281485557039104,4503768912625664,72060302602010624,1152964841632169984,18447437466114719744,295158999457835515904,4722543991325368254464,75560703861205892071424,1208971261779294273142784,19343540188468708370284544,309496643015499333924552704,4951946288247989342792843264,79231140611967829484685492224,1267698249791485271754967875584,20283171996663764348079486009344,324530751946620229569271776149504,5192492031145923673108348418392064,83079872498334778769733574694273024,1329277959973356460315737195108368384,21268447359573703365051795121733894144,340295157753179253840828721947742306304,5444722524050868061453259551163876900864,87115560384813888983252152818622030413824,1393848966157022223732034445097952486621184,22301583458512355579712551121567239785938944,356825335336197689275400817945075836575023104,5709205365379163028406413087121213385200369664"] [3mstderr[0m[2m=[0m"TypeError: Unknown file extension \".ts\" for /Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/pancakeswap/pancake-v4-core/test/js-scripts/getTickAtSqrtRatio.ts\n    at Object.getFileProtocolModuleFormat [as file:] (node:internal/modules/esm/get_format:160:9)\n    at defaultGetFormat (node:internal/modules/esm/get_format:203:36)\n    at defaultLoad (node:internal/modules/esm/load:143:22)\n    at async ModuleLoader.load (node:internal/modules/esm/loader:409:7)\n    at async ModuleLoader.moduleProvider (node:internal/modules/esm/loader:291:45)\n    at async link (node:internal/modules/esm/module_job:76:21) {\n  code: 'ERR_UNKNOWN_FILE_EXTENSION'\n}\n"
+[2m2025-02-15T13:16:21.658935Z[0m [31mERROR[0m ThreadId(35) [2mcrates/foundry/cheatcodes/src/fs.rs[0m[2m:[0m[2m414:[0m non-empty stderr [3minput[0m[2m=[0m["npx", "ts-node", "test/js-scripts/getSqrtRatioAtTick.ts", "-50,50,-100,100,-200,200,-400,400,-800,800,-1600,1600,-3200,3200,-6400,6400,-12800,12800,-25600,25600,-51200,51200,-102400,102400,-204800,204800,-409600,409600,-819200,819200"] [3mstderr[0m[2m=[0m"TypeError: Unknown file extension \".ts\" for /Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/pancakeswap/pancake-v4-core/test/js-scripts/getSqrtRatioAtTick.ts\n    at Object.getFileProtocolModuleFormat [as file:] (node:internal/modules/esm/get_format:160:9)\n    at defaultGetFormat (node:internal/modules/esm/get_format:203:36)\n    at defaultLoad (node:internal/modules/esm/load:143:22)\n    at async ModuleLoader.load (node:internal/modules/esm/loader:409:7)\n    at async ModuleLoader.moduleProvider (node:internal/modules/esm/loader:291:45)\n    at async link (node:internal/modules/esm/module_job:76:21) {\n  code: 'ERR_UNKNOWN_FILE_EXTENSION'\n}\n"
+Ran 39 tests for test/pool-cl/libraries/TickBitmap.t.sol:TickBitmapTest (v0.8.26)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteTrue_wordBoundaryLess1nextInitializedTickInNextWord() (duration: 0 ms, consumedGas: 11110)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteTrue_wordBoundary() (duration: 0 ms, consumedGas: 11478)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteTrue_willNotExceedTheWordBoundary() (duration: 0 ms, consumedGas: 10532)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteTrue_returnsTickDirectlyToTheLeftOfInputTickIfNotInitialized() (duration: 0 ms, consumedGas: 11088)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteTrue_returnsSameTickIfInitialized() (duration: 0 ms, consumedGas: 11462)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteTrue_halfwayThroughEmptyWord() (duration: 0 ms, consumedGas: 10686)
+✘ Failed(102): test_nextInitializedTickWithinOneWord_lteTrue_gasCostOnBoundary() (duration: 0 ms, consumedGas: 8814)
+✘ Failed(103): test_nextInitializedTickWithinOneWord_lteTrue_gasCostJustBelowBoundary() (duration: 0 ms, consumedGas: 9164)
+✘ Failed(104): test_nextInitializedTickWithinOneWord_lteTrue_gasCostForEntireWord() (duration: 0 ms, consumedGas: 8330)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteTrue_entireEmptyWord() (duration: 0 ms, consumedGas: 10928)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteTrue_boundaryIsInitialized() (duration: 0 ms, consumedGas: 31599)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteTrue_atTheWordBoundary() (duration: 0 ms, consumedGas: 10796)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteFalse_skipsHalfWord() (duration: 0 ms, consumedGas: 11395)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteFalse_skipsEntireWord() (duration: 0 ms, consumedGas: 11549)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteFalse_returnsTickToRightIfAtInitializedTick2() (duration: 0 ms, consumedGas: 11365)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteFalse_returnsTickToRightIfAtInitializedTick() (duration: 0 ms, consumedGas: 12153)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteFalse_returnsTheTickDirectlyToTheRight2() (duration: 0 ms, consumedGas: 12047)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteFalse_returnsTheTickDirectlyToTheRight() (duration: 0 ms, consumedGas: 11563)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteFalse_returnsTheNextWordsInitializedTickIfOnTheRightBoundary2() (duration: 0 ms, consumedGas: 12113)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteFalse_returnsTheNextWordsInitializedTickIfOnTheRightBoundary() (duration: 0 ms, consumedGas: 10999)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteFalse_returnsTheNextInitializedTickFromTheNextWord() (duration: 0 ms, consumedGas: 31722)
+✘ Failed(105): test_nextInitializedTickWithinOneWord_lteFalse_gasCostOnBoundary() (duration: 0 ms, consumedGas: 9083)
+✘ Failed(106): test_nextInitializedTickWithinOneWord_lteFalse_gasCostJustBelowBoundary() (duration: 0 ms, consumedGas: 9252)
+✘ Failed(107): test_nextInitializedTickWithinOneWord_lteFalse_gasCostForEntireWord() (duration: 0 ms, consumedGas: 9149)
+✔ Passed: test_nextInitializedTickWithinOneWord_lteFalse_doesNotExceedBoundary() (duration: 0 ms, consumedGas: 11197)
+✔ Passed: test_nextInitializedTickWithinOneWord_fuzz(int24,bool) (duration: 13 ms, runs: 5, meanGas: 764980, medianGas: 942115)
+✔ Passed: test_isInitialized_isNotChangedByAnotherFlipToADifferentTickOnAnotherWord() (duration: 0 ms, consumedGas: 36244)
+✔ Passed: test_isInitialized_isNotChangedByAnotherFlipToADifferentTick() (duration: 0 ms, consumedGas: 13297)
+✔ Passed: test_isInitialized_isFlippedByFlipTick() (duration: 0 ms, consumedGas: 13331)
+✔ Passed: test_isInitialized_isFlippedBackByFlipTick() (duration: 0 ms, consumedGas: 10316)
+✔ Passed: test_isInitialized_isFalseAtFirst() (duration: 0 ms, consumedGas: 9666)
+✔ Passed: test_flipTick_revertsOnlyItself() (duration: 0 ms, consumedGas: 64879)
+✘ Failed(108): test_flipTick_gasCostOfFlippingSecondTickInWordToInitialized() (duration: 0 ms, consumedGas: 10099)
+✘ Failed(109): test_flipTick_gasCostOfFlippingFirstTickInWordToInitialized() (duration: 0 ms, consumedGas: 27220)
+✘ Failed(110): test_flipTick_gasCostOfFlippingATickThatResultsInDeletingAWord() (duration: 0 ms, consumedGas: 10362)
+✔ Passed: test_flipTick_flipsOnlyTheSpecifiedTick() (duration: 0 ms, consumedGas: 55895)
+✔ Passed: testFuzz_position(int24) (duration: 1 ms, runs: 5, meanGas: 8689, medianGas: 8689)
+✔ Passed: testFuzz_flipTick(int24,int24) (duration: 1 ms, runs: 5, meanGas: 18165, medianGas: 18269)
+✔ Passed: testFuzz_compress(int24,int24) (duration: 1 ms, runs: 5, meanGas: 17397, medianGas: 18003)
+✘ Suite Failed: 39 tests, 30 passed, 9 failed, 0 skipped (duration: 1054 ms)
+
+Ran 22 tests for test/pool-cl/libraries/TickMath.t.sol:TickMathTestTest (v0.8.26)
+✔ Passed: test_getTickAtSqrtRatio_throwsForTooLow() (duration: 0 ms, consumedGas: 12739)
+✔ Passed: test_getTickAtSqrtRatio_throwsForTooHigh() (duration: 0 ms, consumedGas: 12207)
+✘ Failed(111): test_getTickAtSqrtRatio_matchesJavascriptImplWithin1() (duration: 685 ms, consumedGas: 768539)
+✔ Passed: test_getTickAtSqrtRatio_isValidRatioClosestToMaxTick() (duration: 0 ms, consumedGas: 27647)
+✔ Passed: test_getTickAtSqrtRatio_isValidMinSqrtRatioPlusOne() (duration: 0 ms, consumedGas: 27518)
+✔ Passed: test_getTickAtSqrtRatio_isValidMinSqrtRatio() (duration: 0 ms, consumedGas: 26677)
+✔ Passed: test_getTickAtSqrtRatio_isValidMaxSqrtRatioMinusOne() (duration: 0 ms, consumedGas: 27694)
+✔ Passed: test_getSqrtRatioAtTick_throwsForTooLow() (duration: 0 ms, consumedGas: 12393)
+✔ Passed: test_getSqrtRatioAtTick_throwsForTooHigh() (duration: 0 ms, consumedGas: 12707)
+✔ Passed: test_getSqrtRatioAtTick_throwsForInt24Min() (duration: 0 ms, consumedGas: 11781)
+✘ Failed(112): test_getSqrtRatioAtTick_matchesJavaScriptImplByOneHundrethOfABip() (duration: 685 ms, consumedGas: 1145949)
+✔ Passed: test_getSqrtRatioAtTick_isValidMinTickAddOne() (duration: 0 ms, consumedGas: 23284)
+✔ Passed: test_getSqrtRatioAtTick_isValidMinTick() (duration: 0 ms, consumedGas: 39116)
+✔ Passed: test_getSqrtRatioAtTick_isValidMaxTickSubOne() (duration: 0 ms, consumedGas: 23340)
+✔ Passed: test_getSqrtRatioAtTick_isValidMaxTick() (duration: 0 ms, consumedGas: 39204)
+✔ Passed: test_getSqrtRatioAtTick_isLessThanJSImplMinTick() (duration: 0 ms, consumedGas: 22154)
+✔ Passed: test_getSqrtRatioAtTick_isGreaterThanJSImplMaxTick() (duration: 0 ms, consumedGas: 22845)
+✔ Passed: test_fuzz_getTickAtSqrtPrice_getSqrtRatioAtTick_relation(int24) (duration: 4 ms, runs: 5, meanGas: 113654, medianGas: 115203)
+✔ Passed: test_fuzz_getSqrtRatioAtTick_throwsForTooLarge(int24) (duration: 1 ms, runs: 5, meanGas: 25279, medianGas: 25656)
+✔ Passed: test_MIN_TICK_equalsNegativeMAX_TICK() (duration: 0 ms, consumedGas: 15290)
+✔ Passed: test_MAX_TICK_equalsNegativeMIN_TICK() (duration: 0 ms, consumedGas: 15057)
+✔ Passed: testFuzz_getTickAtSqrtPrice_throwsForInvalid(uint160,bool) (duration: 2 ms, runs: 5, meanGas: 18471, medianGas: 17796)
+✘ Suite Failed: 22 tests, 20 passed, 2 failed, 0 skipped (duration: 1054 ms)
+
+Ran 38 tests for test/pool-cl/libraries/Tick.t.sol:TickTest (v0.8.26)
+✔ Passed: test_fuzz_tickSpacingToMaxLiquidityPerTick(int24) (duration: 1 ms, runs: 5, meanGas: 19900, medianGas: 19900)
+✔ Passed: testTick_update_revertsOnTickLiquidityOverflow2() (duration: 0 ms, consumedGas: 18917)
+✔ Passed: testTick_update_revertsOnTickLiquidityOverflow() (duration: 0 ms, consumedGas: 17644)
+✔ Passed: testTick_update_revertsOnOverflowLiquidityNet() (duration: 0 ms, consumedGas: 48305)
+✔ Passed: testTick_update_netsTheLiquidityBasedOnUpperFlag() (duration: 0 ms, consumedGas: 63688)
+✔ Passed: testTick_update_liquidityParsing_parsesMaxUint128StoredLiquidityGrossBeforeUpdate() (duration: 0 ms, consumedGas: 110290)
+✔ Passed: testTick_update_liquidityParsing_parsesMaxUint128StoredLiquidityGrossAfterUpdate() (duration: 0 ms, consumedGas: 110567)
+✔ Passed: testTick_update_liquidityParsing_parsesMaxInt128StoredLiquidityGrossBeforeUpdate() (duration: 0 ms, consumedGas: 111064)
+✔ Passed: testTick_update_liquidityParsing_parsesMaxInt128StoredLiquidityGrossAfterUpdate() (duration: 0 ms, consumedGas: 111071)
+✘ Failed(113): testTick_update_gasCost() (duration: 0 ms, consumedGas: 4748)
+✔ Passed: testTick_update_flipsFromZeroToNonzero() (duration: 0 ms, consumedGas: 45643)
+✔ Passed: testTick_update_flipsFromNonzeroToZero() (duration: 0 ms, consumedGas: 36062)
+✔ Passed: testTick_update_doesNotSetAnyGrowthFieldsIfTickIsAlreadyInitialized() (duration: 0 ms, consumedGas: 153018)
+✔ Passed: testTick_update_doesNotSetAnyGrowthFieldsForTicksGtCurrentTick() (duration: 0 ms, consumedGas: 106251)
+✔ Passed: testTick_update_doesNotFlipFromNonzeroToLesserZero() (duration: 0 ms, consumedGas: 49903)
+✔ Passed: testTick_update_doesNotFlipFromNonzeroToGreaterNonzero() (duration: 0 ms, consumedGas: 50321)
+✔ Passed: testTick_update_assumesAllGrowthHappensBelowTicksLteCurrentTick() (duration: 0 ms, consumedGas: 148029)
+✔ Passed: testTick_tickSpacingToParametersInvariants_fuzz(int24) (duration: 1 ms, runs: 5, meanGas: 25266, medianGas: 25707)
+✔ Passed: testTick_tickSpacingToMaxLiquidityPerTick_returnsTheCorrectValueForMediumFee() (duration: 0 ms, consumedGas: 10628)
+✔ Passed: testTick_tickSpacingToMaxLiquidityPerTick_returnsTheCorrectValueForLowFee() (duration: 0 ms, consumedGas: 10430)
+✔ Passed: testTick_tickSpacingToMaxLiquidityPerTick_returnsTheCorrectValueForHighFee() (duration: 0 ms, consumedGas: 10188)
+✔ Passed: testTick_tickSpacingToMaxLiquidityPerTick_returnsTheCorrectValueForEntireRange() (duration: 0 ms, consumedGas: 10482)
+✔ Passed: testTick_tickSpacingToMaxLiquidityPerTick_returnsTheCorrectValueFor2302() (duration: 0 ms, consumedGas: 10178)
+✔ Passed: testTick_tickSpacingToMaxLiquidityPerTick_returnsTheCorrectValueFor1() (duration: 0 ms, consumedGas: 10596)
+✘ Failed(114): testTick_tickSpacingToMaxLiquidityPerTick_gasCost10TickSpacing() (duration: 0 ms, consumedGas: 5078)
+✔ Passed: testTick_getFeeGrowthInside_worksCorrectlyWithOverflowOnInsideTick() (duration: 0 ms, consumedGas: 157383)
+✔ Passed: testTick_getFeeGrowthInside_subtractsUpperTickIfBelow() (duration: 0 ms, consumedGas: 112156)
+✔ Passed: testTick_getFeeGrowthInside_subtractsUpperAndLowerTickIfInside() (duration: 0 ms, consumedGas: 157361)
+✔ Passed: testTick_getFeeGrowthInside_subtractsLowerTickIfAbove() (duration: 0 ms, consumedGas: 111452)
+✔ Passed: testTick_getFeeGrowthInside_returnsAllForTwoUninitializedTicksIfTickIsInside() (duration: 0 ms, consumedGas: 65604)
+✔ Passed: testTick_getFeeGrowthInside_returns0ForTwoUninitializedTicksIfTickIsBelow() (duration: 0 ms, consumedGas: 86271)
+✔ Passed: testTick_getFeeGrowthInside_returns0ForTwoUninitializedTicksIfTickIsAbove() (duration: 0 ms, consumedGas: 85634)
+✘ Failed(115): testTick_getFeeGrowthInside_gasCost() (duration: 0 ms, consumedGas: 54332)
+✔ Passed: testTick_cross_twoFlipsAreNoOp() (duration: 0 ms, consumedGas: 83986)
+✔ Passed: testTick_cross_flipsTheGrowthVariables() (duration: 0 ms, consumedGas: 82038)
+✔ Passed: testTick_clear_deletesAllTheDataInTheTick() (duration: 0 ms, consumedGas: 63101)
+✘ Failed(116): testTick_checkTicks_gasCost() (duration: 0 ms, consumedGas: 4792)
+✔ Passed: testTickFuzz_checkTicks(int24,int24) (duration: 1 ms, runs: 5, meanGas: 4622, medianGas: 6049)
+✘ Suite Failed: 38 tests, 34 passed, 4 failed, 0 skipped (duration: 1054 ms)
+
+✘ Run Failed: 848 tests, 732 passed, 116 failed, 0 skipped (duration: 2689968 ms)
+
+Failure (1): setUp()
+Reason: EvmError: Revert
+  at BinDonateHelper.constructor (test/pool-bin/helpers/BinDonateHelper.sol:18)
+  at BinDonateHelper.<unknown> (test/pool-bin/helpers/BinDonateHelper.sol:12)
+
+Failure (2): setUp()
+Reason: EvmError: Revert
+  at BinCustomCurveHook.constructor (test/pool-bin/helpers/BinCustomCurveHook.sol:25)
+  at BinCustomCurveHook.<unknown> (test/pool-bin/helpers/BinCustomCurveHook.sol:15)
+
+Failure (3): setUp()
+Reason: EvmError: Revert
+  at BinFeeManagerHook.constructor (test/pool-bin/helpers/BinFeeManagerHook.sol:16)
+  at BinFeeManagerHook.<unknown> (test/pool-bin/helpers/BinFeeManagerHook.sol:11)
+
+Failure (4): setUp()
+Reason: EvmError: Revert
+  at BinMintBurnFeeHook.constructor (test/pool-bin/helpers/BinMintBurnFeeHook.sol:27)
+  at BinMintBurnFeeHook.<unknown> (test/pool-bin/helpers/BinMintBurnFeeHook.sol:18)
+
+Failure (5): setUp()
+Reason: EvmError: Revert
+  at BinLiquidityHelper.constructor (test/pool-bin/helpers/BinLiquidityHelper.sol:28)
+  at BinLiquidityHelper.<unknown> (test/pool-bin/helpers/BinLiquidityHelper.sol:13)
+
+Failure (6): test_Swap_CustomCurve(uint256)
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinCustomCurveHookTest.test_Swap_CustomCurve (test/pool-bin/BinCustomCurveHook.t.sol:117)
+  at BinCustomCurveHookTest.test_Swap_CustomCurve (test/pool-bin/BinCustomCurveHook.t.sol:117)
+Decoded Logs:
+  Bound result 980269561888401524
+Counterexample:
+  calldata: 0x1137036a000000000000000000000000000000000000000000000c71560c3a377c5e8f5b
+  args: 58759080269561888411483 [2m[5.875e22][0m
+
+Failure (7): test_Mint()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinMintBurnFeeHookTest.test_Mint (test/pool-bin/BinMintBurnFeeHook.t.sol:88)
+  at BinMintBurnFeeHookTest.test_Mint (test/pool-bin/BinMintBurnFeeHook.t.sol:88)
+
+Failure (8): test_Burn()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinMintBurnFeeHookTest.test_Burn (test/pool-bin/BinMintBurnFeeHook.t.sol:118)
+  at BinMintBurnFeeHookTest.test_Burn (test/pool-bin/BinMintBurnFeeHook.t.sol:118)
+
+Failure (9): setUp()
+Reason: EvmError: Revert
+  at BinReturnsDeltaHook.constructor (test/pool-bin/helpers/BinReturnsDeltaHook.sol:24)
+  at BinReturnsDeltaHook.<unknown> (test/pool-bin/helpers/BinReturnsDeltaHook.sol:15)
+
+Failure (10): setUp()
+Reason: EvmError: Revert
+  at BinSkipCallbackHook.constructor (test/pool-bin/helpers/BinSkipCallbackHook.sol:38)
+  at BinSkipCallbackHook.<unknown> (test/pool-bin/helpers/BinSkipCallbackHook.sol:18)
+
+Failure (11): setUp()
+Reason: EvmError: Revert
+  at BinSwapHelper.constructor (test/pool-bin/helpers/BinSwapHelper.sol:22)
+  at BinSwapHelper.<unknown> (test/pool-bin/helpers/BinSwapHelper.sol:13)
+
+Failure (12): testMsbGas()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BitMathTest.testMsbGas (test/pool-cl/libraries/BitMath.t.sol:38)
+  at BitMathTest.testMsbGas (test/pool-cl/libraries/BitMath.t.sol:38)
+
+Failure (13): testLsbGas()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BitMathTest.testLsbGas (test/pool-cl/libraries/BitMath.t.sol:81)
+  at BitMathTest.testLsbGas (test/pool-cl/libraries/BitMath.t.sol:81)
+
+Failure (14): setUp()
+Reason: EvmError: Revert
+  at CLCustomCurveHook.constructor (test/pool-cl/helpers/CLCustomCurveHook.sol:26)
+  at CLCustomCurveHook.<unknown> (test/pool-cl/helpers/CLCustomCurveHook.sol:16)
+
+Failure (15): setUp()
+Reason: EvmError: Revert
+  at CLFeeManagerHook.constructor (test/pool-cl/helpers/CLFeeManagerHook.sol:17)
+  at CLFeeManagerHook.<unknown> (test/pool-cl/helpers/CLFeeManagerHook.sol:12)
+
+Failure (16): setUp()
+Reason: EvmError: Revert
+  at CLMintBurnFeeHook.constructor (test/pool-cl/helpers/CLMintBurnFeeHook.sol:25)
+  at CLMintBurnFeeHook.<unknown> (test/pool-cl/helpers/CLMintBurnFeeHook.sol:16)
+
+Failure (17): test_Swap_CustomCurve(uint256)
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLCustomCurveHookTest.test_Swap_CustomCurve (test/pool-cl/CLCustomCurveHook.t.sol:120)
+  at CLCustomCurveHookTest.test_Swap_CustomCurve (test/pool-cl/CLCustomCurveHook.t.sol:120)
+Decoded Logs:
+  Bound result 1784847731214359448
+Counterexample:
+  calldata: 0x1137036a00000000000000001612ca4bca35e83de52e01fbcd3dc32ede3df476ae636945
+  args: 541238175807977764891346662587385377920588471214627055941 [2m[5.412e56][0m
+
+Failure (18): test_Mint()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLMintBurnFeeHookTest.test_Mint (test/pool-cl/CLMintBurnFeeHook.t.sol:84)
+  at CLMintBurnFeeHookTest.test_Mint (test/pool-cl/CLMintBurnFeeHook.t.sol:84)
+
+Failure (19): test_Burn()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLMintBurnFeeHookTest.test_Burn (test/pool-cl/CLMintBurnFeeHook.t.sol:120)
+  at CLMintBurnFeeHookTest.test_Burn (test/pool-cl/CLMintBurnFeeHook.t.sol:120)
+
+Failure (20): setUp()
+Reason: EvmError: Revert
+  at CLPoolManagerRouter.constructor (test/pool-cl/helpers/CLPoolManagerRouter.sol:25)
+  at CLPoolManagerRouter.<unknown> (test/pool-cl/helpers/CLPoolManagerRouter.sol:15)
+
+Failure (21): test_initcodeHash()
+Reason: unknown cheatcode with selector 0x51db805a; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.test_initcodeHash (test/pool-cl/CLPoolManager.t.sol:85)
+  at CLPoolManagerTest.test_initcodeHash (test/pool-cl/CLPoolManager.t.sol:85)
+
+Failure (22): test_bytecodeSize()
+Reason: unknown cheatcode with selector 0x51db805a; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.test_bytecodeSize (test/pool-cl/CLPoolManager.t.sol:75)
+  at CLPoolManagerTest.test_bytecodeSize (test/pool-cl/CLPoolManager.t.sol:75)
+
+Failure (23): testSwap_withNative_gas()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testSwap_withNative_gas (test/pool-cl/CLPoolManager.t.sol:2229)
+  at CLPoolManagerTest.testSwap_withNative_gas (test/pool-cl/CLPoolManager.t.sol:2229)
+
+Failure (24): testSwap_withHooks_gas()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testSwap_withHooks_gas (test/pool-cl/CLPoolManager.t.sol:2257)
+  at CLPoolManagerTest.testSwap_withHooks_gas (test/pool-cl/CLPoolManager.t.sol:2257)
+
+Failure (25): testSwap_useSurplusTokenAsInput_gas()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testSwap_useSurplusTokenAsInput_gas (test/pool-cl/CLPoolManager.t.sol:2334)
+  at CLPoolManagerTest.testSwap_useSurplusTokenAsInput_gas (test/pool-cl/CLPoolManager.t.sol:2334)
+
+Failure (26): testSwap_runOutOfLiquidity()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testSwap_runOutOfLiquidity (test/pool-cl/CLPoolManager.t.sol:1813)
+  at CLPoolManagerTest.testSwap_runOutOfLiquidity (test/pool-cl/CLPoolManager.t.sol:1813)
+
+Failure (27): testSwap_leaveSurplusTokenInVault_gas()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testSwap_leaveSurplusTokenInVault_gas (test/pool-cl/CLPoolManager.t.sol:2289)
+  at CLPoolManagerTest.testSwap_leaveSurplusTokenInVault_gas (test/pool-cl/CLPoolManager.t.sol:2289)
+
+Failure (28): testSwap_gas()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testSwap_gas (test/pool-cl/CLPoolManager.t.sol:2203)
+  at CLPoolManagerTest.testSwap_gas (test/pool-cl/CLPoolManager.t.sol:2203)
+
+Failure (29): testSwap_againstLiq_gas()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testSwap_againstLiq_gas (test/pool-cl/CLPoolManager.t.sol:2370)
+  at CLPoolManagerTest.testSwap_againstLiq_gas (test/pool-cl/CLPoolManager.t.sol:2370)
+
+Failure (30): testSwap_againstLiqWithNative_gas()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testSwap_againstLiqWithNative_gas (test/pool-cl/CLPoolManager.t.sol:2401)
+  at CLPoolManagerTest.testSwap_againstLiqWithNative_gas (test/pool-cl/CLPoolManager.t.sol:2401)
+
+Failure (31): testModifyPosition_withNative_gas()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testModifyPosition_withNative_gas (test/pool-cl/CLPoolManager.t.sol:1568)
+  at CLPoolManagerTest.testModifyPosition_withNative_gas (test/pool-cl/CLPoolManager.t.sol:1568)
+
+Failure (32): testModifyPosition_removeLiquidity_halfAndThenAll()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testModifyPosition_removeLiquidity_halfAndThenAll (test/pool-cl/CLPoolManager.t.sol:1250)
+  at CLPoolManagerTest.testModifyPosition_removeLiquidity_halfAndThenAll (test/pool-cl/CLPoolManager.t.sol:1250)
+
+Failure (33): testModifyPosition_addLiquidity()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testModifyPosition_addLiquidity (test/pool-cl/CLPoolManager.t.sol:807)
+  at CLPoolManagerTest.testModifyPosition_addLiquidity (test/pool-cl/CLPoolManager.t.sol:807)
+
+Failure (34): testInitialize_gasCheck_withoutHooks()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testInitialize_gasCheck_withoutHooks (test/pool-cl/CLPoolManager.t.sol:382)
+  at CLPoolManagerTest.testInitialize_gasCheck_withoutHooks (test/pool-cl/CLPoolManager.t.sol:382)
+
+Failure (35): testGasUpdateDynamicLPFee()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testGasUpdateDynamicLPFee (test/pool-cl/CLPoolManager.t.sol:2892)
+  at CLPoolManagerTest.testGasUpdateDynamicLPFee (test/pool-cl/CLPoolManager.t.sol:2892)
+
+Failure (36): testGasDonateOneToken()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testGasDonateOneToken (test/pool-cl/CLPoolManager.t.sol:2576)
+  at CLPoolManagerTest.testGasDonateOneToken (test/pool-cl/CLPoolManager.t.sol:2576)
+
+Failure (37): testDonateSucceedsWhenPoolHasLiquidity()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPoolManagerTest.testDonateSucceedsWhenPoolHasLiquidity (test/pool-cl/CLPoolManager.t.sol:2452)
+  at CLPoolManagerTest.testDonateSucceedsWhenPoolHasLiquidity (test/pool-cl/CLPoolManager.t.sol:2452)
+
+Failure (38): test_set_updateNonEmptyPosition()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at CLPositionTest.test_set_updateNonEmptyPosition (test/pool-cl/libraries/CLPosition.t.sol:57)
+  at CLPositionTest.test_set_updateNonEmptyPosition (test/pool-cl/libraries/CLPosition.t.sol:57)
+
+Failure (39): setUp()
+Reason: EvmError: Revert
+  at CLReturnsDeltaHook.constructor (test/pool-cl/helpers/CLReturnsDeltaHook.sol:25)
+  at CLReturnsDeltaHook.<unknown> (test/pool-cl/helpers/CLReturnsDeltaHook.sol:16)
+
+Failure (40): setUp()
+Reason: EvmError: Revert
+  at CLSkipCallbackHook.constructor (test/pool-cl/helpers/CLSkipCallbackHook.sol:28)
+  at CLSkipCallbackHook.<unknown> (test/pool-cl/helpers/CLSkipCallbackHook.sol:16)
+
+Failure (41): setUp()
+Reason: EvmError: Revert
+  at FakeHook.constructor (test/vault/FakeHook.sol:14)
+  at FakeHook.<unknown> (test/vault/FakeHook.sol:9)
+
+Failure (42): setUp()
+Reason: EvmError: Revert
+  at FakePoolManager.constructor (test/vault/FakePoolManager.sol:15)
+  at FakePoolManager.<unknown> (test/vault/FakePoolManager.sol:10)
+
+Failure (43): setUp()
+Reason: EvmError: Revert
+  at HooksContract.constructor (test/libraries/Hooks/HooksContract.sol:9)
+  at HooksContract.<unknown> (test/libraries/Hooks/HooksContract.sol:6)
+
+Failure (44): testAddDelta()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at LiquidityMathTest.testAddDelta (test/pool-cl/libraries/LiquidityMath.t.sol:15)
+  at LiquidityMathTest.testAddDelta (test/pool-cl/libraries/LiquidityMath.t.sol:15)
+
+Failure (45): setUp()
+Reason: EvmError: Revert
+  at NonStandardERC20.constructor (test/pool-cl/helpers/NonStandardERC20.sol:11)
+  at NonStandardERC20.<unknown> (test/pool-cl/helpers/NonStandardERC20.sol:7)
+
+Failure (46): testExtsloadInBatch()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at ExtsloadTest.testExtsloadInBatch (test/Extsload.t.sol:49)
+  at ExtsloadTest.testExtsloadInBatch (test/Extsload.t.sol:49)
+
+Failure (47): testExtsload()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at ExtsloadTest.testExtsload (test/Extsload.t.sol:37)
+  at ExtsloadTest.testExtsload (test/Extsload.t.sol:37)
+
+Failure (48): test_exactOutputSingleBin_SwapForY()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolSwapTest.test_exactOutputSingleBin_SwapForY (test/pool-bin/libraries/BinPoolSwap.t.sol:81)
+  at BinPoolSwapTest.test_exactOutputSingleBin_SwapForY (test/pool-bin/libraries/BinPoolSwap.t.sol:81)
+
+Failure (49): test_exactOutputSingleBin_SwapForX()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolSwapTest.test_exactOutputSingleBin_SwapForX (test/pool-bin/libraries/BinPoolSwap.t.sol:91)
+  at BinPoolSwapTest.test_exactOutputSingleBin_SwapForX (test/pool-bin/libraries/BinPoolSwap.t.sol:91)
+
+Failure (50): test_exactOutputMultipleBin()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolSwapTest.test_exactOutputMultipleBin (test/pool-bin/libraries/BinPoolSwap.t.sol:111)
+  at BinPoolSwapTest.test_exactOutputMultipleBin (test/pool-bin/libraries/BinPoolSwap.t.sol:111)
+
+Failure (51): test_exactInputSingleBin_SwapForY()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolSwapTest.test_exactInputSingleBin_SwapForY (test/pool-bin/libraries/BinPoolSwap.t.sol:61)
+  at BinPoolSwapTest.test_exactInputSingleBin_SwapForY (test/pool-bin/libraries/BinPoolSwap.t.sol:61)
+
+Failure (52): test_exactInputSingleBin_SwapForX()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolSwapTest.test_exactInputSingleBin_SwapForX (test/pool-bin/libraries/BinPoolSwap.t.sol:71)
+  at BinPoolSwapTest.test_exactInputSingleBin_SwapForX (test/pool-bin/libraries/BinPoolSwap.t.sol:71)
+
+Failure (53): test_exactInputMultipleBin()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolSwapTest.test_exactInputMultipleBin (test/pool-bin/libraries/BinPoolSwap.t.sol:101)
+  at BinPoolSwapTest.test_exactInputMultipleBin (test/pool-bin/libraries/BinPoolSwap.t.sol:101)
+
+Failure (54): testGas_exactOutputMultipleBin_WithEmptyBins()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolSwapTest.testGas_exactOutputMultipleBin_WithEmptyBins (test/pool-bin/libraries/BinPoolSwap.t.sol:134)
+  at BinPoolSwapTest.testGas_exactOutputMultipleBin_WithEmptyBins (test/pool-bin/libraries/BinPoolSwap.t.sol:134)
+
+Failure (55): test_initcodeHash()
+Reason: unknown cheatcode with selector 0x51db805a; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.test_initcodeHash (test/pool-bin/BinPoolManager.t.sol:123)
+  at BinPoolManagerTest.test_initcodeHash (test/pool-bin/BinPoolManager.t.sol:123)
+
+Failure (56): test_bytecodeSize()
+Reason: unknown cheatcode with selector 0x51db805a; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.test_bytecodeSize (test/pool-bin/BinPoolManager.t.sol:113)
+  at BinPoolManagerTest.test_bytecodeSize (test/pool-bin/BinPoolManager.t.sol:113)
+
+Failure (57): testSetProtocolFee()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testSetProtocolFee (test/pool-bin/BinPoolManager.t.sol:931)
+  at BinPoolManagerTest.testSetProtocolFee (test/pool-bin/BinPoolManager.t.sol:931)
+
+Failure (58): testMintNativeCurrency()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testMintNativeCurrency (test/pool-bin/BinPoolManager.t.sol:415)
+  at BinPoolManagerTest.testMintNativeCurrency (test/pool-bin/BinPoolManager.t.sol:415)
+
+Failure (59): testInitialize_gasCheck_withoutHooks()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testInitialize_gasCheck_withoutHooks (test/pool-bin/BinPoolManager.t.sol:131)
+  at BinPoolManagerTest.testInitialize_gasCheck_withoutHooks (test/pool-bin/BinPoolManager.t.sol:131)
+
+Failure (60): testGas_SetMaxBinStep()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGas_SetMaxBinStep (test/pool-bin/BinPoolManager.t.sol:953)
+  at BinPoolManagerTest.testGas_SetMaxBinStep (test/pool-bin/BinPoolManager.t.sol:953)
+
+Failure (61): testGasUpdateDynamicLPFee()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasUpdateDynamicLPFee (test/pool-bin/BinPoolManager.t.sol:1072)
+  at BinPoolManagerTest.testGasUpdateDynamicLPFee (test/pool-bin/BinPoolManager.t.sol:1072)
+
+Failure (62): testGasSwapSingleBin()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasSwapSingleBin (test/pool-bin/BinPoolManager.t.sol:738)
+  at BinPoolManagerTest.testGasSwapSingleBin (test/pool-bin/BinPoolManager.t.sol:738)
+
+Failure (63): testGasSwapOverBigBinIdGate()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasSwapOverBigBinIdGate (test/pool-bin/BinPoolManager.t.sol:783)
+  at BinPoolManagerTest.testGasSwapOverBigBinIdGate (test/pool-bin/BinPoolManager.t.sol:783)
+
+Failure (64): testGasSwapMultipleBins()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasSwapMultipleBins (test/pool-bin/BinPoolManager.t.sol:755)
+  at BinPoolManagerTest.testGasSwapMultipleBins (test/pool-bin/BinPoolManager.t.sol:755)
+
+Failure (65): testGasMintOneBin()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasMintOneBin (test/pool-bin/BinPoolManager.t.sol:369)
+  at BinPoolManagerTest.testGasMintOneBin (test/pool-bin/BinPoolManager.t.sol:369)
+
+Failure (66): testGasMintNneBins()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasMintNneBins (test/pool-bin/BinPoolManager.t.sol:384)
+  at BinPoolManagerTest.testGasMintNneBins (test/pool-bin/BinPoolManager.t.sol:384)
+
+Failure (67): testGasGetBin()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasGetBin (test/pool-bin/BinPoolManager.t.sol:1173)
+  at BinPoolManagerTest.testGasGetBin (test/pool-bin/BinPoolManager.t.sol:1173)
+
+Failure (68): testGasDonate()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasDonate (test/pool-bin/BinPoolManager.t.sol:800)
+  at BinPoolManagerTest.testGasDonate (test/pool-bin/BinPoolManager.t.sol:800)
+
+Failure (69): testGasBurnOneBin()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasBurnOneBin (test/pool-bin/BinPoolManager.t.sol:649)
+  at BinPoolManagerTest.testGasBurnOneBin (test/pool-bin/BinPoolManager.t.sol:649)
+
+Failure (70): testGasBurnNineBins()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasBurnNineBins (test/pool-bin/BinPoolManager.t.sol:684)
+  at BinPoolManagerTest.testGasBurnNineBins (test/pool-bin/BinPoolManager.t.sol:684)
+
+Failure (71): testGasBurnHalfBin()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testGasBurnHalfBin (test/pool-bin/BinPoolManager.t.sol:667)
+  at BinPoolManagerTest.testGasBurnHalfBin (test/pool-bin/BinPoolManager.t.sol:667)
+
+Failure (72): testExtLoadPoolActiveId()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testExtLoadPoolActiveId (test/pool-bin/BinPoolManager.t.sol:881)
+  at BinPoolManagerTest.testExtLoadPoolActiveId (test/pool-bin/BinPoolManager.t.sol:881)
+
+Failure (73): testBurnNativeCurrency()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinPoolManagerTest.testBurnNativeCurrency (test/pool-bin/BinPoolManager.t.sol:715)
+  at BinPoolManagerTest.testBurnNativeCurrency (test/pool-bin/BinPoolManager.t.sol:715)
+
+Failure (74): test_getNextSqrtPriceFromOutput_zeroForOneEqualsTrueGas()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SqrtPriceMathTest.test_getNextSqrtPriceFromOutput_zeroForOneEqualsTrueGas (test/pool-cl/libraries/SqrtPriceMath.t.sol:227)
+  at SqrtPriceMathTest.test_getNextSqrtPriceFromOutput_zeroForOneEqualsTrueGas (test/pool-cl/libraries/SqrtPriceMath.t.sol:227)
+
+Failure (75): test_getNextSqrtPriceFromOutput_zeroForOneEqualsFalseGas()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SqrtPriceMathTest.test_getNextSqrtPriceFromOutput_zeroForOneEqualsFalseGas (test/pool-cl/libraries/SqrtPriceMath.t.sol:235)
+  at SqrtPriceMathTest.test_getNextSqrtPriceFromOutput_zeroForOneEqualsFalseGas (test/pool-cl/libraries/SqrtPriceMath.t.sol:235)
+
+Failure (76): test_getNextSqrtPriceFromInput_zeroForOneEqualsTrueGas()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SqrtPriceMathTest.test_getNextSqrtPriceFromInput_zeroForOneEqualsTrueGas (test/pool-cl/libraries/SqrtPriceMath.t.sol:97)
+  at SqrtPriceMathTest.test_getNextSqrtPriceFromInput_zeroForOneEqualsTrueGas (test/pool-cl/libraries/SqrtPriceMath.t.sol:97)
+
+Failure (77): test_getNextSqrtPriceFromInput_zeroForOneEqualsFalseGas()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SqrtPriceMathTest.test_getNextSqrtPriceFromInput_zeroForOneEqualsFalseGas (test/pool-cl/libraries/SqrtPriceMath.t.sol:105)
+  at SqrtPriceMathTest.test_getNextSqrtPriceFromInput_zeroForOneEqualsFalseGas (test/pool-cl/libraries/SqrtPriceMath.t.sol:105)
+
+Failure (78): test_getAmount1Delta_gasCostForAmount1WhereRoundUpIsTrue()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SqrtPriceMathTest.test_getAmount1Delta_gasCostForAmount1WhereRoundUpIsTrue (test/pool-cl/libraries/SqrtPriceMath.t.sol:318)
+  at SqrtPriceMathTest.test_getAmount1Delta_gasCostForAmount1WhereRoundUpIsTrue (test/pool-cl/libraries/SqrtPriceMath.t.sol:318)
+
+Failure (79): test_getAmount1Delta_gasCostForAmount1WhereRoundUpIsFalse()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SqrtPriceMathTest.test_getAmount1Delta_gasCostForAmount1WhereRoundUpIsFalse (test/pool-cl/libraries/SqrtPriceMath.t.sol:324)
+  at SqrtPriceMathTest.test_getAmount1Delta_gasCostForAmount1WhereRoundUpIsFalse (test/pool-cl/libraries/SqrtPriceMath.t.sol:324)
+
+Failure (80): test_getAmount0Delta_gasCostForAmount0WhereRoundUpIsTrue()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SqrtPriceMathTest.test_getAmount0Delta_gasCostForAmount0WhereRoundUpIsTrue (test/pool-cl/libraries/SqrtPriceMath.t.sol:280)
+  at SqrtPriceMathTest.test_getAmount0Delta_gasCostForAmount0WhereRoundUpIsTrue (test/pool-cl/libraries/SqrtPriceMath.t.sol:280)
+
+Failure (81): test_getAmount0Delta_gasCostForAmount0WhereRoundUpIsFalse()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SqrtPriceMathTest.test_getAmount0Delta_gasCostForAmount0WhereRoundUpIsFalse (test/pool-cl/libraries/SqrtPriceMath.t.sol:286)
+  at SqrtPriceMathTest.test_getAmount0Delta_gasCostForAmount0WhereRoundUpIsFalse (test/pool-cl/libraries/SqrtPriceMath.t.sol:286)
+
+Failure (82): testComputeSwapTest_gasSwapZeroForOneExactOutPartial()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SwapMathTest.testComputeSwapTest_gasSwapZeroForOneExactOutPartial (test/pool-cl/libraries/SwapMath.t.sol:329)
+  at SwapMathTest.testComputeSwapTest_gasSwapZeroForOneExactOutPartial (test/pool-cl/libraries/SwapMath.t.sol:329)
+
+Failure (83): testComputeSwapTest_gasSwapZeroForOneExactOutCapped()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SwapMathTest.testComputeSwapTest_gasSwapZeroForOneExactOutCapped (test/pool-cl/libraries/SwapMath.t.sol:269)
+  at SwapMathTest.testComputeSwapTest_gasSwapZeroForOneExactOutCapped (test/pool-cl/libraries/SwapMath.t.sol:269)
+
+Failure (84): testComputeSwapTest_gasSwapZeroForOneExactInPartial()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SwapMathTest.testComputeSwapTest_gasSwapZeroForOneExactInPartial (test/pool-cl/libraries/SwapMath.t.sol:299)
+  at SwapMathTest.testComputeSwapTest_gasSwapZeroForOneExactInPartial (test/pool-cl/libraries/SwapMath.t.sol:299)
+
+Failure (85): testComputeSwapTest_gasSwapZeroForOneExactInCapped()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SwapMathTest.testComputeSwapTest_gasSwapZeroForOneExactInCapped (test/pool-cl/libraries/SwapMath.t.sol:239)
+  at SwapMathTest.testComputeSwapTest_gasSwapZeroForOneExactInCapped (test/pool-cl/libraries/SwapMath.t.sol:239)
+
+Failure (86): testComputeSwapTest_gasSwapOneForZeroExactOutPartial()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SwapMathTest.testComputeSwapTest_gasSwapOneForZeroExactOutPartial (test/pool-cl/libraries/SwapMath.t.sol:314)
+  at SwapMathTest.testComputeSwapTest_gasSwapOneForZeroExactOutPartial (test/pool-cl/libraries/SwapMath.t.sol:314)
+
+Failure (87): testComputeSwapTest_gasSwapOneForZeroExactOutCapped()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SwapMathTest.testComputeSwapTest_gasSwapOneForZeroExactOutCapped (test/pool-cl/libraries/SwapMath.t.sol:254)
+  at SwapMathTest.testComputeSwapTest_gasSwapOneForZeroExactOutCapped (test/pool-cl/libraries/SwapMath.t.sol:254)
+
+Failure (88): testComputeSwapTest_gasSwapOneForZeroExactInPartial()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SwapMathTest.testComputeSwapTest_gasSwapOneForZeroExactInPartial (test/pool-cl/libraries/SwapMath.t.sol:284)
+  at SwapMathTest.testComputeSwapTest_gasSwapOneForZeroExactInPartial (test/pool-cl/libraries/SwapMath.t.sol:284)
+
+Failure (89): testComputeSwapTest_gasSwapOneForZeroExactInCapped()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at SwapMathTest.testComputeSwapTest_gasSwapOneForZeroExactInCapped (test/pool-cl/libraries/SwapMath.t.sol:224)
+  at SwapMathTest.testComputeSwapTest_gasSwapOneForZeroExactInCapped (test/pool-cl/libraries/SwapMath.t.sol:224)
+
+Failure (90): testSwapSucceedsWithHook()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinHookTest.testSwapSucceedsWithHook (test/pool-bin/BinHook.t.sol:170)
+  at BinHookTest.testSwapSucceedsWithHook (test/pool-bin/BinHook.t.sol:170)
+
+Failure (91): testMintSucceedsWithHook()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinHookTest.testMintSucceedsWithHook (test/pool-bin/BinHook.t.sol:104)
+  at BinHookTest.testMintSucceedsWithHook (test/pool-bin/BinHook.t.sol:104)
+
+Failure (92): testInitializeSucceedsWithHook()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinHookTest.testInitializeSucceedsWithHook (test/pool-bin/BinHook.t.sol:66)
+  at BinHookTest.testInitializeSucceedsWithHook (test/pool-bin/BinHook.t.sol:66)
+
+Failure (93): testDonateSucceedsWithHook()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinHookTest.testDonateSucceedsWithHook (test/pool-bin/BinHook.t.sol:216)
+  at BinHookTest.testDonateSucceedsWithHook (test/pool-bin/BinHook.t.sol:216)
+
+Failure (94): testBurnSucceedsWithHook()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at BinHookTest.testBurnSucceedsWithHook (test/pool-bin/BinHook.t.sol:122)
+  at BinHookTest.testBurnSucceedsWithHook (test/pool-bin/BinHook.t.sol:122)
+
+Failure (95): setUp()
+Reason: EvmError: Revert
+  at TokenLocker.constructor (test/vault/VaultReentrancy.t.sol:22)
+  at TokenLocker.<unknown> (test/vault/VaultReentrancy.t.sol:18)
+
+Failure (96): setUp()
+Reason: EvmError: Revert
+  at VaultPoolManager.constructor (test/vault/VaultInvariant.t.sol:47)
+  at VaultPoolManager.<unknown> (test/vault/VaultInvariant.t.sol:16)
+
+Failure (97): test_initcodeHash()
+Reason: unknown cheatcode with selector 0x51db805a; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at VaultTest.test_initcodeHash (test/vault/Vault.t.sol:91)
+  at VaultTest.test_initcodeHash (test/vault/Vault.t.sol:91)
+
+Failure (98): test_bytecodeSize()
+Reason: unknown cheatcode with selector 0x51db805a; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at VaultTest.test_bytecodeSize (test/vault/Vault.t.sol:81)
+  at VaultTest.test_bytecodeSize (test/vault/Vault.t.sol:81)
+
+Failure (99): testVault_clear_successWithZeroExistingDelta()
+Reason: EvmError: Revert
+  at VaultTest.testVault_clear_successWithZeroExistingDelta (test/vault/Vault.t.sol:788)
+  at VaultTest.noIsolate (test/helpers/NoIsolate.sol:8)
+  at VaultTest.testVault_clear_successWithZeroExistingDelta (test/vault/Vault.t.sol:788)
+
+Failure (100): testVault_clear_successWithNonZeroExistingDelta()
+Reason: EvmError: Revert
+  at VaultTest.testVault_clear_successWithNonZeroExistingDelta (test/vault/Vault.t.sol:774)
+  at VaultTest.noIsolate (test/helpers/NoIsolate.sol:8)
+  at VaultTest.testVault_clear_successWithNonZeroExistingDelta (test/vault/Vault.t.sol:774)
+
+Failure (101): testRegisterPoolManager()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at VaultTest.testRegisterPoolManager (test/vault/Vault.t.sol:103)
+  at VaultTest.testRegisterPoolManager (test/vault/Vault.t.sol:103)
+
+Failure (102): test_nextInitializedTickWithinOneWord_lteTrue_gasCostOnBoundary()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteTrue_gasCostOnBoundary (test/pool-cl/libraries/TickBitmap.t.sol:272)
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteTrue_gasCostOnBoundary (test/pool-cl/libraries/TickBitmap.t.sol:272)
+
+Failure (103): test_nextInitializedTickWithinOneWord_lteTrue_gasCostJustBelowBoundary()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteTrue_gasCostJustBelowBoundary (test/pool-cl/libraries/TickBitmap.t.sol:277)
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteTrue_gasCostJustBelowBoundary (test/pool-cl/libraries/TickBitmap.t.sol:277)
+
+Failure (104): test_nextInitializedTickWithinOneWord_lteTrue_gasCostForEntireWord()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteTrue_gasCostForEntireWord (test/pool-cl/libraries/TickBitmap.t.sol:282)
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteTrue_gasCostForEntireWord (test/pool-cl/libraries/TickBitmap.t.sol:282)
+
+Failure (105): test_nextInitializedTickWithinOneWord_lteFalse_gasCostOnBoundary()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteFalse_gasCostOnBoundary (test/pool-cl/libraries/TickBitmap.t.sol:196)
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteFalse_gasCostOnBoundary (test/pool-cl/libraries/TickBitmap.t.sol:196)
+
+Failure (106): test_nextInitializedTickWithinOneWord_lteFalse_gasCostJustBelowBoundary()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteFalse_gasCostJustBelowBoundary (test/pool-cl/libraries/TickBitmap.t.sol:201)
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteFalse_gasCostJustBelowBoundary (test/pool-cl/libraries/TickBitmap.t.sol:201)
+
+Failure (107): test_nextInitializedTickWithinOneWord_lteFalse_gasCostForEntireWord()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteFalse_gasCostForEntireWord (test/pool-cl/libraries/TickBitmap.t.sol:206)
+  at TickBitmapTest.test_nextInitializedTickWithinOneWord_lteFalse_gasCostForEntireWord (test/pool-cl/libraries/TickBitmap.t.sol:206)
+
+Failure (108): test_flipTick_gasCostOfFlippingSecondTickInWordToInitialized()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickBitmapTest.test_flipTick_gasCostOfFlippingSecondTickInWordToInitialized (test/pool-cl/libraries/TickBitmap.t.sol:101)
+  at TickBitmapTest.test_flipTick_gasCostOfFlippingSecondTickInWordToInitialized (test/pool-cl/libraries/TickBitmap.t.sol:101)
+
+Failure (109): test_flipTick_gasCostOfFlippingFirstTickInWordToInitialized()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickBitmapTest.test_flipTick_gasCostOfFlippingFirstTickInWordToInitialized (test/pool-cl/libraries/TickBitmap.t.sol:96)
+  at TickBitmapTest.test_flipTick_gasCostOfFlippingFirstTickInWordToInitialized (test/pool-cl/libraries/TickBitmap.t.sol:96)
+
+Failure (110): test_flipTick_gasCostOfFlippingATickThatResultsInDeletingAWord()
+Reason: unknown cheatcode with selector 0xdd9fca12; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickBitmapTest.test_flipTick_gasCostOfFlippingATickThatResultsInDeletingAWord (test/pool-cl/libraries/TickBitmap.t.sol:106)
+  at TickBitmapTest.test_flipTick_gasCostOfFlippingATickThatResultsInDeletingAWord (test/pool-cl/libraries/TickBitmap.t.sol:106)
+
+Failure (111): test_getTickAtSqrtRatio_matchesJavascriptImplWithin1()
+Reason: EvmError: Revert
+  at TickMathTestTest.test_getTickAtSqrtRatio_matchesJavascriptImplWithin1 (test/pool-cl/libraries/TickMath.t.sol:185)
+  at TickMathTestTest.test_getTickAtSqrtRatio_matchesJavascriptImplWithin1 (test/pool-cl/libraries/TickMath.t.sol:208)
+
+Failure (112): test_getSqrtRatioAtTick_matchesJavaScriptImplByOneHundrethOfABip()
+Reason: EvmError: Revert
+  at TickMathTestTest.test_getSqrtRatioAtTick_matchesJavaScriptImplByOneHundrethOfABip (test/pool-cl/libraries/TickMath.t.sol:144)
+  at TickMathTestTest.test_getSqrtRatioAtTick_matchesJavaScriptImplByOneHundrethOfABip (test/pool-cl/libraries/TickMath.t.sol:171)
+
+Failure (113): testTick_update_gasCost()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickTest.testTick_update_gasCost (test/pool-cl/libraries/Tick.t.sol:301)
+  at TickTest.testTick_update_gasCost (test/pool-cl/libraries/Tick.t.sol:301)
+
+Failure (114): testTick_tickSpacingToMaxLiquidityPerTick_gasCost10TickSpacing()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickTest.testTick_tickSpacingToMaxLiquidityPerTick_gasCost10TickSpacing (test/pool-cl/libraries/Tick.t.sol:181)
+  at TickTest.testTick_tickSpacingToMaxLiquidityPerTick_gasCost10TickSpacing (test/pool-cl/libraries/Tick.t.sol:181)
+
+Failure (115): testTick_getFeeGrowthInside_gasCost()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickTest.testTick_getFeeGrowthInside_gasCost (test/pool-cl/libraries/Tick.t.sol:196)
+  at TickTest.testTick_getFeeGrowthInside_gasCost (test/pool-cl/libraries/Tick.t.sol:196)
+
+Failure (116): testTick_checkTicks_gasCost()
+Reason: unknown cheatcode with selector 0x3cad9d7b; you may have a mismatch between the `Vm` interface (likely in `forge-std`) and the `edr_solidity_tests` version
+  at TickTest.testTick_checkTicks_gasCost (test/pool-cl/libraries/Tick.t.sol:133)
+  at TickTest.testTick_checkTicks_gasCost (test/pool-cl/libraries/Tick.t.sol:133)
+
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.

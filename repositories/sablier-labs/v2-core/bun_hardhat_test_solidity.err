@@ -1,0 +1,8 @@
+YulException: Cannot swap Variable size with Variable size_2: too deep in the stack by 2 slots in [ RET size size size memPtr size size size size size memPtr_5 var_params_mpos size_1 size _44 size _370_mpos size _373_mpos size_2 ]
+memoryguard was present.
+
+
+Error HHE1232: Compilation failed
+
+For more info go to https://hardhat.org/HHE1232 or run Hardhat with --show-stack-traces
+error: "hardhat" exited with code 1

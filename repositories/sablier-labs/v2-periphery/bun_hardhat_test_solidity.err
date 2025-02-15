@@ -1,0 +1,484 @@
+Warning: Contract code size is 26199 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> node_modules/@sablier/v2-core/src/SablierV2NFTDescriptor.sol:38:1:
+   |
+38 | contract SablierV2NFTDescriptor is ISablierV2NFTDescriptor {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 132633 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> node_modules/@sablier/v2-core/precompiles/Precompiles.sol:16:1:
+   |
+16 | contract Precompiles {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 132661 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> node_modules/@sablier/v2-core/precompiles/Precompiles.sol:16:1:
+   |
+16 | contract Precompiles {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 163031 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> precompiles/Precompiles.sol:14:1:
+   |
+14 | contract Precompiles {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 163059 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> precompiles/Precompiles.sol:14:1:
+   |
+14 | contract Precompiles {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 70400 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDC.t.sol:15:1:
+   |
+15 | contract USDC_CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 79342 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDC.t.sol:15:1:
+   |
+15 | contract USDC_CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 68400 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDC.t.sol:19:1:
+   |
+19 | contract USDC_CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 77342 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDC.t.sol:19:1:
+   |
+19 | contract USDC_CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 70318 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDC.t.sol:23:1:
+   |
+23 | contract USDC_CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 79260 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDC.t.sol:23:1:
+   |
+23 | contract USDC_CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 83810 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDC.t.sol:27:1:
+   |
+27 | contract USDC_MerkleLL_Fork_Test is MerkleLL_Fork_Test(usdc) { }
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Contract initcode size is 92787 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDC.t.sol:27:1:
+   |
+27 | contract USDC_MerkleLL_Fork_Test is MerkleLL_Fork_Test(usdc) { }
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Contract code size is 85965 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDC.t.sol:29:1:
+   |
+29 | contract USDC_MerkleLT_Fork_Test is MerkleLT_Fork_Test(usdc) { }
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Contract initcode size is 94942 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDC.t.sol:29:1:
+   |
+29 | contract USDC_MerkleLT_Fork_Test is MerkleLT_Fork_Test(usdc) { }
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Contract code size is 70400 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDT.t.sol:15:1:
+   |
+15 | contract USDT_CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 79342 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDT.t.sol:15:1:
+   |
+15 | contract USDT_CreateWithTimestamps_LockupDynamic_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 68400 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDT.t.sol:19:1:
+   |
+19 | contract USDT_CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 77342 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDT.t.sol:19:1:
+   |
+19 | contract USDT_CreateWithTimestamps_LockupLinear_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 70318 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDT.t.sol:23:1:
+   |
+23 | contract USDT_CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 79260 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDT.t.sol:23:1:
+   |
+23 | contract USDT_CreateWithTimestamps_LockupTranched_BatchLockup_Fork_Test is
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 83810 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDT.t.sol:27:1:
+   |
+27 | contract USDT_MerkleLL_Fork_Test is MerkleLL_Fork_Test(usdt) { }
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Contract initcode size is 92787 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDT.t.sol:27:1:
+   |
+27 | contract USDT_MerkleLL_Fork_Test is MerkleLL_Fork_Test(usdt) { }
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Contract code size is 85965 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDT.t.sol:29:1:
+   |
+29 | contract USDT_MerkleLT_Fork_Test is MerkleLT_Fork_Test(usdt) { }
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Contract initcode size is 94942 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/fork/assets/USDT.t.sol:29:1:
+   |
+29 | contract USDT_MerkleLT_Fork_Test is MerkleLT_Fork_Test(usdt) { }
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Contract code size is 198841 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-durations-ld/createWithDurationsLD.t.sol:9:1:
+  |
+9 | contract CreateWithDurationsLD_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 198869 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-durations-ld/createWithDurationsLD.t.sol:9:1:
+  |
+9 | contract CreateWithDurationsLD_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 198529 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-durations-ll/createWithDurationsLL.t.sol:9:1:
+  |
+9 | contract CreateWithDurationsLL_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 198557 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-durations-ll/createWithDurationsLL.t.sol:9:1:
+  |
+9 | contract CreateWithDurationsLL_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 198764 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-durations-lt/createWithDurationsLT.t.sol:9:1:
+  |
+9 | contract CreateWithDurationsLT_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 198792 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-durations-lt/createWithDurationsLT.t.sol:9:1:
+  |
+9 | contract CreateWithDurationsLT_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 198926 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-timestamps-ld/createWithTimestampsLD.t.sol:9:1:
+  |
+9 | contract CreateWithTimestampsLD_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 198954 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-timestamps-ld/createWithTimestampsLD.t.sol:9:1:
+  |
+9 | contract CreateWithTimestampsLD_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 198587 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-timestamps-ll/createWithTimestamps.t.sol:9:1:
+  |
+9 | contract CreateWithTimestampsLL_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 198615 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-timestamps-ll/createWithTimestamps.t.sol:9:1:
+  |
+9 | contract CreateWithTimestampsLL_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 198849 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-timestamps-lt/createWithTimestampsLT.t.sol:9:1:
+  |
+9 | contract CreateWithTimestampsLT_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 198877 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/batch-lockup/create-with-timestamps-lt/createWithTimestampsLT.t.sol:9:1:
+  |
+9 | contract CreateWithTimestampsLT_Integration_Test is Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 208483 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/factory/create-merkle-ll/createMerkleLL.t.sol:12:1:
+   |
+12 | contract CreateMerkleLL_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 208511 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/factory/create-merkle-ll/createMerkleLL.t.sol:12:1:
+   |
+12 | contract CreateMerkleLL_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 210290 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/factory/create-merkle-lt/createMerkleLT.t.sol:10:1:
+   |
+10 | contract CreateMerkleLT_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 210318 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/factory/create-merkle-lt/createMerkleLT.t.sol:10:1:
+   |
+10 | contract CreateMerkleLT_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 199208 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/factory/is-percentages-sum-100/isPercentagesSum100.t.sol:10:1:
+   |
+10 | contract IsPercentagesSum100_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 199236 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/factory/is-percentages-sum-100/isPercentagesSum100.t.sol:10:1:
+   |
+10 | contract IsPercentagesSum100_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 206972 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/ll/claim/claim.t.sol:10:1:
+   |
+10 | contract Claim_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 207000 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/ll/claim/claim.t.sol:10:1:
+   |
+10 | contract Claim_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 201721 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/ll/clawback/clawback.t.sol:10:1:
+   |
+10 | contract Clawback_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 201749 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/ll/clawback/clawback.t.sol:10:1:
+   |
+10 | contract Clawback_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 208395 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/ll/constructor/constructor.t.sol:10:1:
+   |
+10 | contract Constructor_MerkleLL_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 208423 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/ll/constructor/constructor.t.sol:10:1:
+   |
+10 | contract Constructor_MerkleLL_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 198804 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/ll/get-first-claim-time/getFirstClaimTime.t.sol:6:1:
+  |
+6 | contract GetFirstClaimTime_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 198832 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/ll/get-first-claim-time/getFirstClaimTime.t.sol:6:1:
+  |
+6 | contract GetFirstClaimTime_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 199364 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/ll/has-claimed/hasClaimed.t.sol:6:1:
+  |
+6 | contract HasClaimed_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 199392 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/ll/has-claimed/hasClaimed.t.sol:6:1:
+  |
+6 | contract HasClaimed_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 199675 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/ll/has-expired/hasExpired.t.sol:8:1:
+  |
+8 | contract HasExpired_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 199703 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/ll/has-expired/hasExpired.t.sol:8:1:
+  |
+8 | contract HasExpired_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 213320 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/lt/claim/claim.t.sol:17:1:
+   |
+17 | contract Claim_Integration_Test is Merkle, MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 213568 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/lt/claim/claim.t.sol:17:1:
+   |
+17 | contract Claim_Integration_Test is Merkle, MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 201721 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/lt/clawback/clawback.t.sol:10:1:
+   |
+10 | contract Clawback_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 201749 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/integration/merkle-lockup/lt/clawback/clawback.t.sol:10:1:
+   |
+10 | contract Clawback_Integration_Test is MerkleLockup_Integration_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 211042 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/lt/constructor/constructor.t.sol:9:1:
+  |
+9 | contract Constructor_MerkleLT_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 211070 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/lt/constructor/constructor.t.sol:9:1:
+  |
+9 | contract Constructor_MerkleLT_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 198804 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/lt/get-first-claim-time/getFirstClaimTime.t.sol:6:1:
+  |
+6 | contract GetFirstClaimTime_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 198832 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/lt/get-first-claim-time/getFirstClaimTime.t.sol:6:1:
+  |
+6 | contract GetFirstClaimTime_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 199364 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/lt/has-claimed/hasClaimed.t.sol:6:1:
+  |
+6 | contract HasClaimed_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 199392 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/lt/has-claimed/hasClaimed.t.sol:6:1:
+  |
+6 | contract HasClaimed_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 199669 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/lt/has-expired/hasExpired.t.sol:8:1:
+  |
+8 | contract HasExpired_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 199697 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/integration/merkle-lockup/lt/has-expired/hasExpired.t.sol:8:1:
+  |
+8 | contract HasExpired_Integration_Test is MerkleLockup_Integration_Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 35725 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/utils/Precompiles.t.sol:10:1:
+   |
+10 | contract Precompiles_Test is Base_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 198918 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/utils/Precompiles.t.sol:10:1:
+   |
+10 | contract Precompiles_Test is Base_Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+error: "hardhat" exited with code 1

@@ -11,7 +11,8 @@ export default {
       }
     },
     "remappings": [
-      "forge-std/=lib/forge-std/src/"
+      "forge-std/=lib/forge-std/src/",
+      "ds-test/=lib/forge-std/lib/ds-test/src/"
     ]
   },
   "solidityTest": {

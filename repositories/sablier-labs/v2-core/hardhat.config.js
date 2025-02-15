@@ -2,7 +2,7 @@ export default {
   "paths": {
     "sources": "src",
     "tests": {
-      "solidity": "test"
+      "solidity": "tests"
     }
   },
   "solidity": {

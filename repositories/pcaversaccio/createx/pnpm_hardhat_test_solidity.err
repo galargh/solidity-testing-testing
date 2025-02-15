@@ -1,0 +1,364 @@
+Warning: Contract code size is 34849 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/utils/BaseTest.sol:50:1:
+   |
+50 | contract BaseTest is Test {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 35648 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/internal/CreateX._efficientHash.t.sol:6:1:
+  |
+6 | contract CreateX_EfficientHash_Internal_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 44137 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/internal/CreateX._generateSalt.t.sol:6:1:
+  |
+6 | contract CreateX_GenerateSalt_Internal_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 47604 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/internal/CreateX._guard.t.sol:7:1:
+  |
+7 | contract CreateX_Guard_Internal_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 46809 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/internal/CreateX._parseSalt.t.sol:7:1:
+  |
+7 | contract CreateX_ParseSalt_Internal_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 41391 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/internal/CreateX._requireSuccessfulContractCreation_1Arg.t.sol:7:1:
+  |
+7 | contract CreateX_RequireSuccessfulContractCreation_1Arg_Internal_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 42012 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/internal/CreateX._requireSuccessfulContractCreation_2Args.t.sol:7:1:
+  |
+7 | contract CreateX_RequireSuccessfulContractCreation_2Args_Internal_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 41504 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/internal/CreateX._requireSuccessfulContractInitialisation.t.sol:7:1:
+  |
+7 | contract CreateX_RequireSuccessfulContractInitialisation_Internal_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 28537 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/invariants/CreateX_Invariants.t.sol:7:1:
+  |
+7 | contract CreateX_Invariants is Test {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 38538 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE/CreateX.computeCreateAddress_1Arg.t.sol:7:1:
+  |
+7 | contract CreateX_ComputeCreateAddress_1Arg_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 38723 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE/CreateX.computeCreateAddress_2Args.t.sol:7:1:
+  |
+7 | contract CreateX_ComputeCreateAddress_2Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 52751 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE/CreateX.deployCreate.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 52895 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE/CreateX.deployCreate.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 63088 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE/CreateX.deployCreateAndInit_3Args.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreateAndInit_3Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 63274 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE/CreateX.deployCreateAndInit_3Args.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreateAndInit_3Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 60361 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE/CreateX.deployCreateAndInit_4Args.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreateAndInit_4Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 60540 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE/CreateX.deployCreateAndInit_4Args.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreateAndInit_4Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 43242 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE/CreateX.deployCreateClone.t.sol:8:1:
+  |
+8 | contract CreateX_DeployCreateClone_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 35997 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.computeCreate2Address_2Args.t.sol:7:1:
+  |
+7 | contract CreateX_ComputeCreate2Address_2Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 36020 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.computeCreate2Address_3Args.t.sol:7:1:
+  |
+7 | contract CreateX_ComputeCreate2Address_3Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 82358 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2AndInit_3Args.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2AndInit_3Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 82554 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2AndInit_3Args.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2AndInit_3Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 81551 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2AndInit_4Args_CustomiseRefundAddress.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2AndInit_4Args_CustomiseRefundAddress_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 81754 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2AndInit_4Args_CustomiseRefundAddress.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2AndInit_4Args_CustomiseRefundAddress_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 98477 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2AndInit_4Args_CustomiseSalt.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2AndInit_4Args_CustomiseSalt_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 98680 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2AndInit_4Args_CustomiseSalt.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2AndInit_4Args_CustomiseSalt_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 98052 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2AndInit_5Args.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2AndInit_5Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 98269 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2AndInit_5Args.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2AndInit_5Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 55493 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2Clone_2Args.t.sol:8:1:
+  |
+8 | contract CreateX_DeployCreate2Clone_2Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 56708 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2Clone_2Args.t.sol:8:1:
+  |
+8 | contract CreateX_DeployCreate2Clone_2Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 59901 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2Clone_3Args.t.sol:8:1:
+  |
+8 | contract CreateX_DeployCreate2Clone_3Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 61116 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2Clone_3Args.t.sol:8:1:
+  |
+8 | contract CreateX_DeployCreate2Clone_3Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 63402 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2_1Arg.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2_1Arg_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 63546 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2_1Arg.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2_1Arg_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 70066 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2_2Args.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2_2Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 70213 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE2/CreateX.deployCreate2_2Args.t.sol:9:1:
+  |
+9 | contract CreateX_DeployCreate2_2Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 36066 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE3/CreateX.computeCreate3Address_1Arg.t.sol:8:1:
+  |
+8 | contract CreateX_ComputeCreate3Address_1Arg_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 36089 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+ --> test/public/CREATE3/CreateX.computeCreate3Address_2Args.t.sol:8:1:
+  |
+8 | contract CreateX_ComputeCreate3Address_2Args_Public_Test is BaseTest {
+  | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 96032 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3AndInit_3Args.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3AndInit_3Args_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 96386 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3AndInit_3Args.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3AndInit_3Args_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 95227 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3AndInit_4Args_CustomiseRefundAddress.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3AndInit_4Args_CustomiseRefundAddress_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 95588 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3AndInit_4Args_CustomiseRefundAddress.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3AndInit_4Args_CustomiseRefundAddress_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 115771 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3AndInit_4Args_CustomiseSalt.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3AndInit_4Args_CustomiseSalt_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 116132 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3AndInit_4Args_CustomiseSalt.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3AndInit_4Args_CustomiseSalt_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 115438 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3AndInit_5Args.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3AndInit_5Args_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 115813 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3AndInit_5Args.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3AndInit_5Args_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 72485 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3_1Arg.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3_1Arg_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 72790 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3_1Arg.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3_1Arg_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract code size is 81314 bytes and exceeds 24576 bytes (a limit introduced in Spurious Dragon). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3_2Args.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3_2Args_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Contract initcode size is 81619 bytes and exceeds 49152 bytes (a limit introduced in Shanghai). This contract may not be deployable on Mainnet. Consider enabling the optimizer (with a low "runs" value!), turning off revert strings, or using libraries.
+  --> test/public/CREATE3/CreateX.deployCreate3_2Args.t.sol:10:1:
+   |
+10 | contract CreateX_DeployCreate3_2Args_Public_Test is BaseTest {
+   | ^ (Relevant source part starts here and spans across multiple lines).
+
+
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 400 to a large(r) value to shrink more; current configuration: 400 iterations)

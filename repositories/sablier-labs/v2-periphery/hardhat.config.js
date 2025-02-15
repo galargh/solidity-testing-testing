@@ -15,6 +15,7 @@ export default {
       "solady/=node_modules/solady/"
     ],
     "settings": {
+      "viaIR": true,
       "optimizer": {
         "enabled": true,
         "runs": 10000
