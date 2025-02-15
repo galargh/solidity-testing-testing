@@ -1,0 +1,634 @@
+No files changed, compilation skipped
+
+Ran 2 tests for test/unit/ud60x18/math/floor/floor.t.sol:Floor_Unit_Test
+[PASS] test_Floor_Positive() (gas: 520546)
+[PASS] test_Floor_Zero() (gas: 3520)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 408.67µs (115.71µs CPU time)
+
+Ran 2 tests for test/unit/ud60x18/math/frac/frac.t.sol:Frac_Unit_Test
+[PASS] test_Frac() (gas: 480616)
+[PASS] test_Frac_Zero() (gas: 3520)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 466.96µs (107.46µs CPU time)
+
+Ran 5 tests for test/unit/sd59x18/math/exp2/exp2.t.sol:Exp2_Unit_Test
+[PASS] test_Exp2_Negative_GteMinPermitted() (gas: 786196)
+[PASS] test_Exp2_Negative_LtThreshold() (gas: 138836)
+[PASS] test_Exp2_Positive_LTePermittedMax() (gas: 1079313)
+[PASS] test_Exp2_Zero() (gas: 3944)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Positive_GtMaxPermitted() (gas: 3812)
+Suite result: FAILED. 4 passed; 1 failed; 0 skipped; finished in 799.88µs (506.25µs CPU time)
+
+Ran 4 tests for test/unit/sd59x18/math/floor/floor.t.sol:Floor_Unit_Test
+[PASS] test_Floor_Negative_GteMinPermitted() (gas: 463837)
+[PASS] test_Floor_Positive() (gas: 522155)
+[PASS] test_Floor_Zero() (gas: 3702)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Negative_LtMinPermitted() (gas: 3785)
+Suite result: FAILED. 3 passed; 1 failed; 0 skipped; finished in 338.54µs (168.54µs CPU time)
+
+Ran 3 tests for test/unit/sd59x18/math/frac/frac.t.sol:Frac_Unit_Test
+[PASS] test_Frac() (gas: 481713)
+[PASS] test_Frac_Negative() (gas: 481714)
+[PASS] test_Frac_Zero() (gas: 3638)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 355.92µs (162.83µs CPU time)
+
+Ran 4 tests for test/unit/sd59x18/math/log10/log10.t.sol:Log10_Unit_Test
+[PASS] test_Log10_NotPowerOfTen() (gas: 1084957)
+[PASS] test_Log10_PowerOfTen() (gas: 794702)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Negative() (gas: 3621)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Zero() (gas: 5442)
+Suite result: FAILED. 2 passed; 2 failed; 0 skipped; finished in 1.02ms (692.38µs CPU time)
+
+Ran 2 tests for test/unit/ud60x18/math/ln/ln.t.sol:Ln_Unit_Test
+[PASS] test_Ln() (gas: 580240)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_LtUnit() (gas: 3779)
+Suite result: FAILED. 1 passed; 1 failed; 0 skipped; finished in 398.13µs (207.00µs CPU time)
+
+Ran 2 tests for test/unit/ud60x18/math/inv/inv.t.sol:Inv_Unit_Test
+[PASS] test_Inv() (gas: 775109)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Zero() (gas: 3544)
+Suite result: FAILED. 1 passed; 1 failed; 0 skipped; finished in 317.00µs (126.58µs CPU time)
+
+Ran 3 tests for test/unit/ud60x18/math/gm/gm.t.sol:Gm_Unit_Test
+[PASS] test_Gm() (gas: 788680)
+[PASS] test_Gm_OneOperandZero() (gas: 109685)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductOverflows() (gas: 4084)
+Suite result: FAILED. 2 passed; 1 failed; 0 skipped; finished in 340.42µs (149.54µs CPU time)
+
+Ran 3 tests for test/unit/ud60x18/math/log2/log2.t.sol:Log2_Unit_Test
+[PASS] test_Log2_NotPowerOfTwo() (gas: 402076)
+[PASS] test_Log2_PowerOfTwo() (gas: 347124)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_LtUnit() (gas: 3725)
+Suite result: FAILED. 2 passed; 1 failed; 0 skipped; finished in 418.33µs (224.33µs CPU time)
+
+Ran 7 tests for test/unit/sd59x18/math/avg/avg.t.sol:Avg_Unit_Test
+[PASS] test_Avg_BothOperandsEven() (gas: 435866)
+[PASS] test_Avg_BothOperandsNegative() (gas: 504850)
+[PASS] test_Avg_BothOperandsOdd() (gas: 512944)
+[PASS] test_Avg_BothOperandsZero() (gas: 3663)
+[PASS] test_Avg_OneOperandEvenTheOtherOdd() (gas: 504835)
+[PASS] test_Avg_OneOperandNegativeTheOtherPositive() (gas: 494206)
+[PASS] test_Avg_OnlyOneOperandZero() (gas: 267445)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 1.37ms (793.08µs CPU time)
+
+Ran 3 tests for test/unit/sd59x18/math/inv/inv.t.sol:Inv_Unit_Test
+[PASS] test_Inv_Negative() (gas: 796233)
+[PASS] test_Inv_Positive() (gas: 776378)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Zero() (gas: 3569)
+Suite result: FAILED. 2 passed; 1 failed; 0 skipped; finished in 441.71µs (242.96µs CPU time)
+
+Ran 3 tests for test/unit/sd59x18/math/ln/ln.t.sol:Ln_Unit_Test
+[PASS] test_Ln() (gas: 1080949)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Negative() (gas: 3649)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Zero() (gas: 3638)
+Suite result: FAILED. 1 passed; 2 failed; 0 skipped; finished in 648.75µs (450.71µs CPU time)
+
+Ran 4 tests for test/unit/sd59x18/math/log2/log2.t.sol:Log2_Unit_Test
+[PASS] test_Log2_NotPowerOfTwo() (gas: 959313)
+[PASS] test_Log2_PowerOfTwo() (gas: 544802)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Negative() (gas: 3595)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Zero() (gas: 3628)
+Suite result: FAILED. 2 passed; 2 failed; 0 skipped; finished in 729.79µs (530.58µs CPU time)
+
+Ran 3 tests for test/unit/ud60x18/math/log10/log10.t.sol:Log10_Unit_Test
+[PASS] test_Log10_NotPowerOfTen() (gas: 737704)
+[PASS] test_Log10_PowerOfTen() (gas: 401141)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_LtUnit() (gas: 3748)
+Suite result: FAILED. 2 passed; 1 failed; 0 skipped; finished in 590.21µs (387.79µs CPU time)
+
+Ran 4 tests for test/unit/ud60x18/math/mul/mul.t.sol:Mul_Unit_Test
+[PASS] test_Mul() (gas: 1247196)
+[PASS] test_Mul_OneOperandZero() (gas: 112516)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUD60x18_Function() (gas: 4109)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUD60x18_Operator() (gas: 4065)
+Suite result: FAILED. 2 passed; 2 failed; 0 skipped; finished in 429.38µs (235.92µs CPU time)
+
+Ran 8 tests for test/unit/sd59x18/math/gm/gm.t.sol:Gm_Unit_Test
+[PASS] test_Gm() (gas: 1416569)
+[PASS] test_Gm_OneOperandZero() (gas: 109708)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductNegative_A() (gas: 3881)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductNegative_B() (gas: 3871)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductOverflow_A() (gas: 3873)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductOverflow_B() (gas: 3996)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductOverflow_C() (gas: 4218)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductOverflow_D() (gas: 3839)
+Suite result: FAILED. 2 passed; 6 failed; 0 skipped; finished in 2.66ms (937.42µs CPU time)
+
+Ran 8 tests for test/unit/sd59x18/math/mul/mul.t.sol:Mul_Unit_Test
+[PASS] test_Mul_OneOperandZero() (gas: 175720)
+[PASS] test_Mul_OperandsDifferentSign() (gas: 2277841)
+[PASS] test_Mul_OperandsSameSign() (gas: 2277615)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_OneOperandMinSD59x18_Function() (gas: 3177)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_OneOperandMinSD59x18_Operator() (gas: 3167)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowSD59x18_A() (gas: 4270)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowSD59x18_B() (gas: 4305)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUint256() (gas: 359756)
+Suite result: FAILED. 3 passed; 5 failed; 0 skipped; finished in 1.13ms (899.79µs CPU time)
+
+Ran 2 tests for test/unit/sd59x18/conversion/convert-from/convertFrom.t.sol:ConvertFrom_Unit_Test
+[PASS] test_ConvertFrom() (gas: 1099808)
+[PASS] test_ConvertFrom_LtAbsoluteUnit() (gas: 176391)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 378.75µs (187.00µs CPU time)
+
+Ran 3 tests for test/unit/sd59x18/conversion/convert-to/convertTo.t.sol:ConvertTo_Unit_Test
+[PASS] test_ConvertTo() (gas: 907035)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3961)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_LtMinPermitted() (gas: 3818)
+Suite result: FAILED. 1 passed; 2 failed; 0 skipped; finished in 347.63µs (156.33µs CPU time)
+
+Ran 6 tests for test/unit/ud60x18/math/div/div.t.sol:Div_Unit_Test
+[PASS] test_Div() (gas: 1177360)
+[PASS] test_Div_NumeratorZero() (gas: 173701)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorZero_Function() (gas: 3674)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorZero_Operator() (gas: 3696)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUD60x18_Function() (gas: 4111)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUD60x18_Operator() (gas: 4090)
+Suite result: FAILED. 2 passed; 4 failed; 0 skipped; finished in 464.88µs (271.04µs CPU time)
+
+Ran 7 tests for test/unit/ud60x18/math/pow/pow.t.sol:Pow_Unit_Test
+[PASS] test_Pow_BaseGtUnit() (gas: 1012166)
+[PASS] test_Pow_BaseLtUnit() (gas: 982078)
+[PASS] test_Pow_BaseUnit() (gas: 3633)
+[PASS] test_Pow_BaseZero_ExponentNotZero() (gas: 3655)
+[PASS] test_Pow_BaseZero_ExponentZero() (gas: 3631)
+[PASS] test_Pow_ExponentUnit(uint256) (runs: 257, μ: 4205, ~: 4205)
+[PASS] test_Pow_ExponentZero() (gas: 3656)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 4.22ms (4.01ms CPU time)
+
+Ran 11 tests for test/unit/sd59x18/math/div/div.t.sol:Div_Unit_Test
+[PASS] test_Div_NumeratorDenominatorDifferentSign() (gas: 2279297)
+[PASS] test_Div_NumeratorDenominatorSameSign() (gas: 2278373)
+[PASS] test_Div_NumeratorZero() (gas: 299768)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorMinSD59x18_Function() (gas: 3189)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorMinSD59x18_Operator() (gas: 3166)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorZero_Function() (gas: 3844)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorZero_Operator() (gas: 3888)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_NumeratorMinSD59x18_Function() (gas: 3488)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_NumeratorMinSD59x18_Operator() (gas: 3510)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowSD59x18_Function() (gas: 4220)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowSD59x18_Operator() (gas: 4285)
+Suite result: FAILED. 3 passed; 8 failed; 0 skipped; finished in 1.18ms (954.17µs CPU time)
+
+Ran 3 tests for test/unit/ud60x18/math/exp/exp.t.sol:Exp_Unit_Test
+[PASS] test_Exp() (gas: 892960)
+[PASS] test_Exp_Zero() (gas: 4038)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3748)
+Suite result: FAILED. 2 passed; 1 failed; 0 skipped; finished in 439.92µs (245.17µs CPU time)
+
+Ran 5 tests for test/unit/sd59x18/math/exp/exp.t.sol:Exp_Unit_Test
+[PASS] test_Exp_Negative_GteMinPermitted() (gas: 798453)
+[PASS] test_Exp_Negative_LtThreshold() (gas: 138677)
+[PASS] test_Exp_Positive_LteMaxPermitted() (gas: 893149)
+[PASS] test_Exp_Zero() (gas: 4051)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Positive_GtMaxPermitted() (gas: 3813)
+Suite result: FAILED. 4 passed; 1 failed; 0 skipped; finished in 678.96µs (473.71µs CPU time)
+
+Ran 3 tests for test/unit/ud60x18/math/exp2/exp2.t.sol:Exp2_Unit_Test
+[PASS] test_Exp2() (gas: 1079640)
+[PASS] test_Exp2_Zero() (gas: 3947)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3747)
+Suite result: FAILED. 2 passed; 1 failed; 0 skipped; finished in 441.00µs (246.21µs CPU time)
+
+Ran 4 tests for test/fuzz/sd59x18/math/pow/pow.t.sol:Pow_Fuzz_Test
+[PASS] testFuzz_Pow_BaseUnit(int256) (runs: 257, μ: 3685, ~: 3685)
+[PASS] testFuzz_Pow_BaseZero_ExponentNotZero(int256) (runs: 257, μ: 4065, ~: 4065)
+[PASS] testFuzz_Pow_ExponentUnit(int256) (runs: 257, μ: 4183, ~: 4183)
+[PASS] testFuzz_Pow_ExponentZero(int256) (runs: 257, μ: 4108, ~: 4108)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 12.66ms (12.47ms CPU time)
+
+Ran 7 tests for test/unit/sd59x18/math/pow/pow.t.sol:Pow_Unit_Test
+[PASS] test_Pow_BaseUnit() (gas: 3656)
+[PASS] test_Pow_BaseZero_ExponentNotZero() (gas: 3633)
+[PASS] test_Pow_BaseZero_ExponentZero() (gas: 3675)
+[PASS] test_Pow_ExponentUnit() (gas: 3722)
+[PASS] test_Pow_ExponentZero() (gas: 3656)
+[PASS] test_Pow_NegativeExponent() (gas: 1441326)
+[PASS] test_Pow_PositiveExponent() (gas: 1549024)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 1.42ms (1.20ms CPU time)
+
+Ran 5 tests for test/unit/ud60x18/math/powu/powu.t.sol:Powu_Unit_Test
+[PASS] test_Powu() (gas: 1203939)
+[PASS] test_Powu_BaseAndExponentZero() (gas: 3631)
+[PASS] test_Powu_BaseZeroExponentNotZero() (gas: 139668)
+[PASS] test_Powu_ExponentZero() (gas: 218580)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowsUD60x18() (gas: 3915)
+Suite result: FAILED. 4 passed; 1 failed; 0 skipped; finished in 434.29µs (236.96µs CPU time)
+
+Ran 9 tests for test/fuzz/ud2x18/casting/Casting.t.sol:UD2x18_Casting_Fuzz_Test
+[PASS] testFuzz_IntoSD59x18(uint64) (runs: 256, μ: 3681, ~: 3681)
+[PASS] testFuzz_IntoUD60x18(uint64) (runs: 257, μ: 3659, ~: 3659)
+[PASS] testFuzz_IntoUint128(uint64) (runs: 257, μ: 3642, ~: 3642)
+[PASS] testFuzz_IntoUint256(uint64) (runs: 257, μ: 3663, ~: 3663)
+[PASS] testFuzz_IntoUint40(uint64) (runs: 257, μ: 4108, ~: 3961)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x2240a3c5000000000000000000000000000000000000000000000000000000009264220c args=[2456035852 [2.456e9]]] testFuzz_RevertWhen_OverflowUint40(uint64) (runs: 0, μ: 0, ~: 0)
+[PASS] testFuzz_Unwrap(uint64) (runs: 257, μ: 3664, ~: 3664)
+[PASS] testFuzz_Wrap(uint64) (runs: 257, μ: 3654, ~: 3654)
+[PASS] testFuzz_ud2x18(uint64) (runs: 257, μ: 3698, ~: 3698)
+Suite result: FAILED. 8 passed; 1 failed; 0 skipped; finished in 21.74ms (21.38ms CPU time)
+
+Ran 8 tests for test/unit/sd59x18/math/powu/powu.t.sol:Powu_Unit_Test
+[PASS] test_Powu_BaseAndExponentZero() (gas: 3862)
+[PASS] test_Powu_BaseZeroExponentNotZero() (gas: 157865)
+[PASS] test_Powu_ExponentZero() (gas: 367623)
+[PASS] test_Powu_NegativeBase() (gas: 1209583)
+[PASS] test_Powu_PositiveBase() (gas: 1207840)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowSD59x18() (gas: 4672)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUint256() (gas: 4291)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultUnderflowSD59x18() (gas: 4756)
+Suite result: FAILED. 5 passed; 3 failed; 0 skipped; finished in 734.04µs (523.50µs CPU time)
+
+Ran 3 tests for test/unit/ud60x18/math/sqrt/sqrt.t.sol:Sqrt_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3725)
+[PASS] test_Sqrt() (gas: 816989)
+[PASS] test_Sqrt_Zero() (gas: 3680)
+Suite result: FAILED. 2 passed; 1 failed; 0 skipped; finished in 357.29µs (167.37µs CPU time)
+
+Ran 4 tests for test/unit/sd59x18/math/sqrt/sqrt.t.sol:Sqrt_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3929)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Negative() (gas: 3611)
+[PASS] test_Sqrt() (gas: 818729)
+[PASS] test_Sqrt_Zero() (gas: 3798)
+Suite result: FAILED. 2 passed; 2 failed; 0 skipped; finished in 374.33µs (184.79µs CPU time)
+
+Ran 4 tests for test/unit/sd59x18/math/ceil/ceil.t.sol:Ceil_Unit_Test
+[PASS] test_Ceil_Negative() (gas: 502275)
+[PASS] test_Ceil_Positive() (gas: 512962)
+[PASS] test_Ceil_Zero() (gas: 3681)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3764)
+Suite result: FAILED. 3 passed; 1 failed; 0 skipped; finished in 372.63µs (176.96µs CPU time)
+
+Ran 4 tests for test/unit/sd59x18/math/abs/abs.t.sol:Abs_Unit_Test
+[PASS] test_Abs() (gas: 561079)
+[PASS] test_Abs_Negative() (gas: 561857)
+[PASS] test_Abs_Zero() (gas: 3607)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_MinSD59x18() (gas: 3471)
+Suite result: FAILED. 3 passed; 1 failed; 0 skipped; finished in 364.04µs (172.67µs CPU time)
+
+Ran 2 tests for test/unit/ud60x18/conversion/convert-from/convertFrom.t.sol:ConvertFrom_Unit_Test
+[PASS] test_ConvertFrom() (gas: 609631)
+[PASS] test_ConvertFrom_LtUnit() (gas: 118345)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 297.63µs (110.63µs CPU time)
+
+Ran 9 tests for test/fuzz/casting/CastingUint256.t.sol:CastingUint256_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xe751c6a900000000000000000000000000000000000000000000000000000000000000e5 args=[229]] testFuzz_RevertWhen_OverflowSD1x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x91251ea200000000000000000000000000000000000000000000000000000000000000e5 args=[229]] testFuzz_RevertWhen_OverflowSD59x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x8791670f00000000000000000000000000000000000000000000000000000000000000e5 args=[229]] testFuzz_RevertWhen_OverflowUD2x18(uint256) (runs: 0, μ: 0, ~: 0)
+[PASS] testFuzz_intoSD1x18(uint256) (runs: 257, μ: 4133, ~: 3816)
+[PASS] testFuzz_intoSD21x18(uint256) (runs: 257, μ: 4099, ~: 3861)
+[PASS] testFuzz_intoSD59x18(uint256) (runs: 257, μ: 3875, ~: 3844)
+[PASS] testFuzz_intoUD21x18(uint256) (runs: 257, μ: 4065, ~: 3813)
+[PASS] testFuzz_intoUD2x18(uint256) (runs: 257, μ: 4125, ~: 3813)
+[PASS] testFuzz_intoUD60x18(uint256) (runs: 257, μ: 3591, ~: 3591)
+Suite result: FAILED. 6 passed; 3 failed; 0 skipped; finished in 23.62ms (23.33ms CPU time)
+
+Ran 2 tests for test/unit/ud60x18/conversion/convert-to/convertTo.t.sol:ConvertTo_Unit_Test
+[PASS] test_ConvertTo() (gas: 463373)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3719)
+Suite result: FAILED. 1 passed; 1 failed; 0 skipped; finished in 261.58µs (75.62µs CPU time)
+
+Ran 5 tests for test/unit/ud60x18/math/avg/avg.t.sol:Avg_Unit_Test
+[PASS] test_Avg_BothOperandsZero() (gas: 3633)
+[PASS] test_Avg_NeitherOperandZero_BothOperandsEven() (gas: 435595)
+[PASS] test_Avg_NeitherOperandZero_BothOperandsOdd() (gas: 504491)
+[PASS] test_Avg_NeitherOperandZero_OneOperandEvenTheOtherOdd() (gas: 504513)
+[PASS] test_Avg_OnlyOneOperandZero() (gas: 169297)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 365.83µs (174.96µs CPU time)
+
+Ran 3 tests for test/unit/ud60x18/math/ceil/ceil.t.sol:CeilTest
+[PASS] test_Ceil() (gas: 512140)
+[PASS] test_Ceil_Zero() (gas: 3606)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3747)
+Suite result: FAILED. 2 passed; 1 failed; 0 skipped; finished in 277.63µs (92.92µs CPU time)
+
+Ran 4 tests for test/fuzz/ud60x18/math/pow/pow.t.sol:Pow_Fuzz_Test
+[PASS] testFuzz_Pow_BaseUnit(uint256) (runs: 257, μ: 3729, ~: 3729)
+[PASS] testFuzz_Pow_BaseZero_ExponentNotZero(uint256) (runs: 257, μ: 4043, ~: 4043)
+[PASS] testFuzz_Pow_ExponentUnit(uint256) (runs: 257, μ: 4138, ~: 4138)
+[PASS] testFuzz_Pow_ExponentZero(uint256) (runs: 257, μ: 4109, ~: 4109)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 21.14ms (20.95ms CPU time)
+
+Ran 6 tests for test/fuzz/casting/CastingUint40.t.sol:CastingUint40_Test
+[PASS] testFuzz_intoSD1x18(uint40) (runs: 257, μ: 3689, ~: 3689)
+[PASS] testFuzz_intoSD21x18(uint40) (runs: 257, μ: 3646, ~: 3646)
+[PASS] testFuzz_intoSD59x18(uint40) (runs: 257, μ: 3652, ~: 3652)
+[PASS] testFuzz_intoUD21x18(uint40) (runs: 257, μ: 3641, ~: 3641)
+[PASS] testFuzz_intoUD2x18(uint40) (runs: 257, μ: 3619, ~: 3619)
+[PASS] testFuzz_intoUD60x18(uint40) (runs: 257, μ: 3674, ~: 3674)
+Suite result: ok. 6 passed; 0 failed; 0 skipped; finished in 16.04ms (15.85ms CPU time)
+
+Ran 9 tests for test/fuzz/ud21x18/casting/Casting.t.sol:UD21x18_Casting_Fuzz_Test
+[PASS] testFuzz_IntoSD59x18(uint128) (runs: 257, μ: 3703, ~: 3703)
+[PASS] testFuzz_IntoUD60x18(uint128) (runs: 257, μ: 3659, ~: 3659)
+[PASS] testFuzz_IntoUint256(uint128) (runs: 257, μ: 3621, ~: 3621)
+[PASS] testFuzz_IntoUint40(uint128) (runs: 257, μ: 4240, ~: 3940)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x5f914a02000000000000000000000000000000000000000000000000000000005f914a03 args=[1603357187 [1.603e9]]] testFuzz_RevertWhen_OverflowUint40(uint128) (runs: 0, μ: 0, ~: 0)
+[PASS] testFuzz_Unwrap(uint128) (runs: 257, μ: 3619, ~: 3619)
+[PASS] testFuzz_Wrap(uint128) (runs: 257, μ: 3687, ~: 3687)
+[PASS] testFuzz_intoUint128(uint128) (runs: 257, μ: 3642, ~: 3642)
+[PASS] testFuzz_ud21x18(uint128) (runs: 257, μ: 3708, ~: 3708)
+Suite result: FAILED. 8 passed; 1 failed; 0 skipped; finished in 31.75ms (27.30ms CPU time)
+
+Ran 8 tests for test/fuzz/casting/CastingUint128.t.sol:CastingUint128_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x1209950100000000000000000000000000000000000000000000000000000000000000a3 args=[163]] testFuzz_RevertWhen_OverflowSD1x18(uint128) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xb3f3c09300000000000000000000000000000000000000000000000000000000000000a3 args=[163]] testFuzz_RevertWhen_OverflowUD2x18(uint128) (runs: 0, μ: 0, ~: 0)
+[PASS] testFuzz_intoSD1x18(uint128) (runs: 257, μ: 4212, ~: 3974)
+[PASS] testFuzz_intoSD21x18(uint128) (runs: 257, μ: 3984, ~: 3952)
+[PASS] testFuzz_intoSD59x18(uint128) (runs: 257, μ: 3630, ~: 3630)
+[PASS] testFuzz_intoUD21x18(uint128) (runs: 257, μ: 3685, ~: 3685)
+[PASS] testFuzz_intoUD2x18(uint128) (runs: 257, μ: 4168, ~: 3927)
+[PASS] testFuzz_intoUD60x18(uint128) (runs: 257, μ: 3652, ~: 3652)
+Suite result: FAILED. 6 passed; 2 failed; 0 skipped; finished in 17.88ms (24.23ms CPU time)
+
+Ran 27 tests for test/fuzz/sd59x18/casting/Casting.t.sol:SD59x18_Casting_Fuzz_Test
+[PASS] testFuzz_IntoInt256(int256) (runs: 256, μ: 3619, ~: 3619)
+[PASS] testFuzz_IntoSD1x18(int256) (runs: 257, μ: 5020, ~: 5190)
+[PASS] testFuzz_IntoSD21x18(int256) (runs: 257, μ: 4833, ~: 4578)
+[PASS] testFuzz_IntoUD21x18(int256) (runs: 257, μ: 4931, ~: 5231)
+[PASS] testFuzz_IntoUD2x18(int256) (runs: 257, μ: 4885, ~: 5117)
+[PASS] testFuzz_IntoUD60x18(int256) (runs: 257, μ: 4708, ~: 4466)
+[PASS] testFuzz_IntoUint128(int256) (runs: 257, μ: 4863, ~: 5053)
+[PASS] testFuzz_IntoUint256(int256) (runs: 257, μ: 4747, ~: 4471)
+[PASS] testFuzz_IntoUint40(int256) (runs: 257, μ: 4967, ~: 5213)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x62b589f20000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowSD1x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x37b4efbf0000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowSD21x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xc794d3730000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowUD21x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x709784f00000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowUD2x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x8da87f300000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowUint128(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x973d18cb0000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowUint40(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x22042f000000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowSD1x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xfcb77bf00000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowSD21x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x97f3ff930000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUD21x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xecc51a0d0000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUD2x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x2b9e1e8c0000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUD60x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x0f6ae8a20000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUint128(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x6105bd050000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUint256(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xc5208cb20000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUint40(int256) (runs: 0, μ: 0, ~: 0)
+[PASS] testFuzz_Sd(int256) (runs: 257, μ: 3638, ~: 3638)
+[PASS] testFuzz_Unwrap(int256) (runs: 257, μ: 3575, ~: 3575)
+[PASS] testFuzz_Wrap(int256) (runs: 257, μ: 3659, ~: 3659)
+[PASS] testFuzz_sd59x18(int256) (runs: 257, μ: 3637, ~: 3637)
+Suite result: FAILED. 13 passed; 14 failed; 0 skipped; finished in 60.15ms (46.95ms CPU time)
+
+Ran 13 tests for test/fuzz/sd21x18/casting/Casting.t.sol:Casting_Fuzz_Test
+[PASS] testFuzz_IntoSD59x18(int128) (runs: 257, μ: 3731, ~: 3731)
+[PASS] testFuzz_IntoUD60x18(int128) (runs: 257, μ: 5092, ~: 5339)
+[PASS] testFuzz_IntoUint128(int128) (runs: 257, μ: 5047, ~: 5332)
+[PASS] testFuzz_IntoUint256(int128) (runs: 257, μ: 5078, ~: 5333)
+[PASS] testFuzz_IntoUint40(int128) (runs: 257, μ: 5253, ~: 5357)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xc95683d0ffffffffffffffffffffffffffffffff8000000000000000000000005fc3b5b8 args=[-170141183460469231731687303714277444168 [-1.701e38]]] testFuzz_RevertWhen_OverflowUint40(int128) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xf88260bcffffffffffffffffffffffffffffffff8000000000000000000000005fc3b5b8 args=[-170141183460469231731687303714277444168 [-1.701e38]]] testFuzz_RevertWhen_UnderflowUD60x18(int128) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xbb5e5badffffffffffffffffffffffffffffffff8000000000000000000000005fc3b5b8 args=[-170141183460469231731687303714277444168 [-1.701e38]]] testFuzz_RevertWhen_UnderflowUint128(int128) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x47596ed2ffffffffffffffffffffffffffffffff8000000000000000000000005fc3b5b8 args=[-170141183460469231731687303714277444168 [-1.701e38]]] testFuzz_RevertWhen_UnderflowUint256(int128) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x03515fafffffffffffffffffffffffffffffffff8000000000000000000000005fc3b5b8 args=[-170141183460469231731687303714277444168 [-1.701e38]]] testFuzz_RevertWhen_UnderflowUint40(int128) (runs: 0, μ: 0, ~: 0)
+[PASS] testFuzz_Unwrap(int128) (runs: 257, μ: 3653, ~: 3653)
+[PASS] testFuzz_Wrap(int128) (runs: 257, μ: 3715, ~: 3715)
+[PASS] testFuzz_sd21x18(int128) (runs: 257, μ: 3694, ~: 3694)
+Suite result: FAILED. 8 passed; 5 failed; 0 skipped; finished in 61.55ms (38.61ms CPU time)
+
+Ran 18 tests for test/fuzz/ud60x18/casting/Casting.t.sol:UD60x18_Casting_Fuzz_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xe751c6a90000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowSD1x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xead9e6030000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowSD21x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x91251ea20000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowSD59x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x8791670f0000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowUD2x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x763554080000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowUint128(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xb46f83530000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowUint40(uint256) (runs: 0, μ: 0, ~: 0)
+[PASS] testFuzz_UD60x18(uint256) (runs: 257, μ: 3613, ~: 3613)
+[PASS] testFuzz_Ud(uint256) (runs: 257, μ: 3634, ~: 3634)
+[PASS] testFuzz_Unwrap(uint256) (runs: 257, μ: 3617, ~: 3617)
+[PASS] testFuzz_Wrap(uint256) (runs: 257, μ: 3633, ~: 3633)
+[PASS] testFuzz_intoSD1x18(uint256) (runs: 257, μ: 4252, ~: 4462)
+[PASS] testFuzz_intoSD21x18(uint256) (runs: 257, μ: 4137, ~: 3923)
+[PASS] testFuzz_intoSD59x18(uint256) (runs: 257, μ: 3952, ~: 3927)
+[PASS] testFuzz_intoUD21x18(uint256) (runs: 257, μ: 4128, ~: 3897)
+[PASS] testFuzz_intoUD2x18(uint256) (runs: 257, μ: 4228, ~: 4427)
+[PASS] testFuzz_intoUint128(uint256) (runs: 257, μ: 4136, ~: 3881)
+[PASS] testFuzz_intoUint256(uint256) (runs: 257, μ: 3573, ~: 3573)
+[PASS] testFuzz_intoUint40(uint256) (runs: 257, μ: 4257, ~: 4442)
+Suite result: FAILED. 12 passed; 6 failed; 0 skipped; finished in 47.10ms (39.79ms CPU time)
+
+Ran 13 tests for test/fuzz/sd1x18/casting/Casting.t.sol:Casting_Fuzz_Test
+[PASS] testFuzz_IntoSD59x18(int64) (runs: 256, μ: 3688, ~: 3688)
+[PASS] testFuzz_IntoUD60x18(int64) (runs: 257, μ: 5064, ~: 5349)
+[PASS] testFuzz_IntoUint128(int64) (runs: 257, μ: 5150, ~: 5388)
+[PASS] testFuzz_IntoUint256(int64) (runs: 257, μ: 5101, ~: 5377)
+[PASS] testFuzz_IntoUint40(int64) (runs: 257, μ: 5197, ~: 5368)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xb0408d63ffffffffffffffffffffffffffffffffffffffffffffffff8000000072a399d8 args=[-9223372034931451432 [-9.223e18]]] testFuzz_RevertWhen_OverflowUint40(int64) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xf341dd61ffffffffffffffffffffffffffffffffffffffffffffffff8000000072a399d8 args=[-9223372034931451432 [-9.223e18]]] testFuzz_RevertWhen_UnderflowUD60x18(int64) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x72a399d8ffffffffffffffffffffffffffffffffffffffffffffffff8000000072a399d8 args=[-9223372034931451432 [-9.223e18]]] testFuzz_RevertWhen_UnderflowUint128(int64) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x3cbd5752ffffffffffffffffffffffffffffffffffffffffffffffff8000000072a399d8 args=[-9223372034931451432 [-9.223e18]]] testFuzz_RevertWhen_UnderflowUint256(int64) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x433bc67affffffffffffffffffffffffffffffffffffffffffffffff8000000072a399d8 args=[-9223372034931451432 [-9.223e18]]] testFuzz_RevertWhen_UnderflowUint40(int64) (runs: 0, μ: 0, ~: 0)
+[PASS] testFuzz_Unwrap(int64) (runs: 257, μ: 3675, ~: 3675)
+[PASS] testFuzz_Wrap(int64) (runs: 257, μ: 3693, ~: 3693)
+[PASS] testFuzz_sd1x18(int64) (runs: 257, μ: 3671, ~: 3671)
+Suite result: FAILED. 8 passed; 5 failed; 0 skipped; finished in 67.16ms (39.23ms CPU time)
+
+Ran 18 tests for test/fuzz/ud60x18/helpers/Helpers.t.sol:UD60x18_Helpers_Fuzz_Test
+[PASS] testFuzz_Add(uint256,uint256) (runs: 257, μ: 5372, ~: 5328)
+[PASS] testFuzz_And(uint256,uint256) (runs: 257, μ: 4544, ~: 4544)
+[PASS] testFuzz_Eq(uint256) (runs: 257, μ: 4294, ~: 4294)
+[PASS] testFuzz_Gt(uint256,uint256) (runs: 256, μ: 4687, ~: 4687)
+[PASS] testFuzz_Gte(uint256,uint256) (runs: 256, μ: 4702, ~: 4702)
+[PASS] testFuzz_IsZero(uint256) (runs: 257, μ: 3632, ~: 3632)
+[PASS] testFuzz_Lshift(uint256,uint256) (runs: 256, μ: 4051, ~: 4051)
+[PASS] testFuzz_Lt(uint256,uint256) (runs: 257, μ: 4665, ~: 4665)
+[PASS] testFuzz_Lte(uint256,uint256) (runs: 257, μ: 4745, ~: 4745)
+[PASS] testFuzz_Mod(uint256,uint256) (runs: 257, μ: 5103, ~: 5103)
+[PASS] testFuzz_Neq(uint256,uint256) (runs: 257, μ: 4744, ~: 4744)
+[PASS] testFuzz_Not(uint256) (runs: 257, μ: 4501, ~: 4501)
+[PASS] testFuzz_Or(uint256,uint256) (runs: 257, μ: 4580, ~: 4580)
+[PASS] testFuzz_Rshift(uint256,uint256) (runs: 256, μ: 4029, ~: 4029)
+[PASS] testFuzz_Sub(uint256,uint256) (runs: 256, μ: 5133, ~: 5133)
+[PASS] testFuzz_UncheckedAdd(uint256,uint256) (runs: 257, μ: 3741, ~: 3741)
+[PASS] testFuzz_UncheckedSub(uint256,uint256) (runs: 257, μ: 3717, ~: 3717)
+[PASS] testFuzz_Xor(uint256,uint256) (runs: 257, μ: 4558, ~: 4558)
+Suite result: ok. 18 passed; 0 failed; 0 skipped; finished in 65.49ms (143.10ms CPU time)
+
+Ran 19 tests for test/fuzz/sd59x18/helpers/Helpers.t.sol:SD59x18_Helpers_Fuzz_Test
+[PASS] testFuzz_Add(int256,int256) (runs: 257, μ: 7274, ~: 7221)
+[PASS] testFuzz_And(int256,int256) (runs: 257, μ: 4567, ~: 4567)
+[PASS] testFuzz_Eq(int256) (runs: 257, μ: 4315, ~: 4315)
+[PASS] testFuzz_Gt(int256,int256) (runs: 257, μ: 4667, ~: 4667)
+[PASS] testFuzz_Gte(int256,int256) (runs: 257, μ: 4733, ~: 4733)
+[PASS] testFuzz_IsZero(int256) (runs: 257, μ: 3587, ~: 3587)
+[PASS] testFuzz_Lshift(int256,uint256) (runs: 257, μ: 4453, ~: 4540)
+[PASS] testFuzz_Lt(int256,int256) (runs: 256, μ: 4665, ~: 4665)
+[PASS] testFuzz_Lte(int256,int256) (runs: 256, μ: 4702, ~: 4702)
+[PASS] testFuzz_Mod(int256,int256) (runs: 257, μ: 5124, ~: 5124)
+[PASS] testFuzz_Neq(int256,int256) (runs: 257, μ: 4723, ~: 4723)
+[PASS] testFuzz_Not(int256) (runs: 257, μ: 4523, ~: 4523)
+[PASS] testFuzz_Or(int256,int256) (runs: 257, μ: 4559, ~: 4559)
+[PASS] testFuzz_Rshift(int256,uint256) (runs: 257, μ: 4427, ~: 4520)
+[PASS] testFuzz_Sub(int256,int256) (runs: 257, μ: 7234, ~: 7172)
+[PASS] testFuzz_Unary(int256) (runs: 257, μ: 5690, ~: 5636)
+[PASS] testFuzz_UncheckedAdd(int256,int256) (runs: 257, μ: 3741, ~: 3741)
+[PASS] testFuzz_UncheckedSub(int256,int256) (runs: 257, μ: 3719, ~: 3719)
+[PASS] testFuzz_Xor(int256,int256) (runs: 257, μ: 4581, ~: 4581)
+Suite result: ok. 19 passed; 0 failed; 0 skipped; finished in 49.65ms (104.55ms CPU time)
+
+Ran 50 test suites in 219.13ms (522.22ms CPU time): 222 tests passed, 92 failed, 0 skipped (314 total tests)
+
+Failing tests:
+Encountered 2 failing tests in test/fuzz/casting/CastingUint128.t.sol:CastingUint128_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x1209950100000000000000000000000000000000000000000000000000000000000000a3 args=[163]] testFuzz_RevertWhen_OverflowSD1x18(uint128) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xb3f3c09300000000000000000000000000000000000000000000000000000000000000a3 args=[163]] testFuzz_RevertWhen_OverflowUD2x18(uint128) (runs: 0, μ: 0, ~: 0)
+
+Encountered 3 failing tests in test/fuzz/casting/CastingUint256.t.sol:CastingUint256_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xe751c6a900000000000000000000000000000000000000000000000000000000000000e5 args=[229]] testFuzz_RevertWhen_OverflowSD1x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x91251ea200000000000000000000000000000000000000000000000000000000000000e5 args=[229]] testFuzz_RevertWhen_OverflowSD59x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x8791670f00000000000000000000000000000000000000000000000000000000000000e5 args=[229]] testFuzz_RevertWhen_OverflowUD2x18(uint256) (runs: 0, μ: 0, ~: 0)
+
+Encountered 5 failing tests in test/fuzz/sd1x18/casting/Casting.t.sol:Casting_Fuzz_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xb0408d63ffffffffffffffffffffffffffffffffffffffffffffffff8000000072a399d8 args=[-9223372034931451432 [-9.223e18]]] testFuzz_RevertWhen_OverflowUint40(int64) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xf341dd61ffffffffffffffffffffffffffffffffffffffffffffffff8000000072a399d8 args=[-9223372034931451432 [-9.223e18]]] testFuzz_RevertWhen_UnderflowUD60x18(int64) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x72a399d8ffffffffffffffffffffffffffffffffffffffffffffffff8000000072a399d8 args=[-9223372034931451432 [-9.223e18]]] testFuzz_RevertWhen_UnderflowUint128(int64) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x3cbd5752ffffffffffffffffffffffffffffffffffffffffffffffff8000000072a399d8 args=[-9223372034931451432 [-9.223e18]]] testFuzz_RevertWhen_UnderflowUint256(int64) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x433bc67affffffffffffffffffffffffffffffffffffffffffffffff8000000072a399d8 args=[-9223372034931451432 [-9.223e18]]] testFuzz_RevertWhen_UnderflowUint40(int64) (runs: 0, μ: 0, ~: 0)
+
+Encountered 5 failing tests in test/fuzz/sd21x18/casting/Casting.t.sol:Casting_Fuzz_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xc95683d0ffffffffffffffffffffffffffffffff8000000000000000000000005fc3b5b8 args=[-170141183460469231731687303714277444168 [-1.701e38]]] testFuzz_RevertWhen_OverflowUint40(int128) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xf88260bcffffffffffffffffffffffffffffffff8000000000000000000000005fc3b5b8 args=[-170141183460469231731687303714277444168 [-1.701e38]]] testFuzz_RevertWhen_UnderflowUD60x18(int128) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xbb5e5badffffffffffffffffffffffffffffffff8000000000000000000000005fc3b5b8 args=[-170141183460469231731687303714277444168 [-1.701e38]]] testFuzz_RevertWhen_UnderflowUint128(int128) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x47596ed2ffffffffffffffffffffffffffffffff8000000000000000000000005fc3b5b8 args=[-170141183460469231731687303714277444168 [-1.701e38]]] testFuzz_RevertWhen_UnderflowUint256(int128) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x03515fafffffffffffffffffffffffffffffffff8000000000000000000000005fc3b5b8 args=[-170141183460469231731687303714277444168 [-1.701e38]]] testFuzz_RevertWhen_UnderflowUint40(int128) (runs: 0, μ: 0, ~: 0)
+
+Encountered 14 failing tests in test/fuzz/sd59x18/casting/Casting.t.sol:SD59x18_Casting_Fuzz_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x62b589f20000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowSD1x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x37b4efbf0000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowSD21x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xc794d3730000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowUD21x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x709784f00000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowUD2x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x8da87f300000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowUint128(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x973d18cb0000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_OverflowUint40(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x22042f000000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowSD1x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xfcb77bf00000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowSD21x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x97f3ff930000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUD21x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xecc51a0d0000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUD2x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x2b9e1e8c0000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUD60x18(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x0f6ae8a20000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUint128(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x6105bd050000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUint256(int256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xc5208cb20000000000000000000000000000000000000000000000000000000000000144 args=[324]] testFuzz_RevertWhen_UnderflowUint40(int256) (runs: 0, μ: 0, ~: 0)
+
+Encountered 1 failing test in test/fuzz/ud21x18/casting/Casting.t.sol:UD21x18_Casting_Fuzz_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x5f914a02000000000000000000000000000000000000000000000000000000005f914a03 args=[1603357187 [1.603e9]]] testFuzz_RevertWhen_OverflowUint40(uint128) (runs: 0, μ: 0, ~: 0)
+
+Encountered 1 failing test in test/fuzz/ud2x18/casting/Casting.t.sol:UD2x18_Casting_Fuzz_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x2240a3c5000000000000000000000000000000000000000000000000000000009264220c args=[2456035852 [2.456e9]]] testFuzz_RevertWhen_OverflowUint40(uint64) (runs: 0, μ: 0, ~: 0)
+
+Encountered 6 failing tests in test/fuzz/ud60x18/casting/Casting.t.sol:UD60x18_Casting_Fuzz_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xe751c6a90000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowSD1x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xead9e6030000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowSD21x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x91251ea20000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowSD59x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x8791670f0000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowUD2x18(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0x763554080000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowUint128(uint256) (runs: 0, μ: 0, ~: 0)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth; counterexample: calldata=0xb46f83530000000000000000000000000000000000000000000000000000000087916710 args=[2274453264 [2.274e9]]] testFuzz_RevertWhen_OverflowUint40(uint256) (runs: 0, μ: 0, ~: 0)
+
+Encountered 2 failing tests in test/unit/sd59x18/conversion/convert-to/convertTo.t.sol:ConvertTo_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3961)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_LtMinPermitted() (gas: 3818)
+
+Encountered 1 failing test in test/unit/sd59x18/math/abs/abs.t.sol:Abs_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_MinSD59x18() (gas: 3471)
+
+Encountered 1 failing test in test/unit/sd59x18/math/ceil/ceil.t.sol:Ceil_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3764)
+
+Encountered 8 failing tests in test/unit/sd59x18/math/div/div.t.sol:Div_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorMinSD59x18_Function() (gas: 3189)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorMinSD59x18_Operator() (gas: 3166)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorZero_Function() (gas: 3844)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorZero_Operator() (gas: 3888)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_NumeratorMinSD59x18_Function() (gas: 3488)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_NumeratorMinSD59x18_Operator() (gas: 3510)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowSD59x18_Function() (gas: 4220)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowSD59x18_Operator() (gas: 4285)
+
+Encountered 1 failing test in test/unit/sd59x18/math/exp/exp.t.sol:Exp_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Positive_GtMaxPermitted() (gas: 3813)
+
+Encountered 1 failing test in test/unit/sd59x18/math/exp2/exp2.t.sol:Exp2_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Positive_GtMaxPermitted() (gas: 3812)
+
+Encountered 1 failing test in test/unit/sd59x18/math/floor/floor.t.sol:Floor_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Negative_LtMinPermitted() (gas: 3785)
+
+Encountered 6 failing tests in test/unit/sd59x18/math/gm/gm.t.sol:Gm_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductNegative_A() (gas: 3881)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductNegative_B() (gas: 3871)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductOverflow_A() (gas: 3873)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductOverflow_B() (gas: 3996)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductOverflow_C() (gas: 4218)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductOverflow_D() (gas: 3839)
+
+Encountered 1 failing test in test/unit/sd59x18/math/inv/inv.t.sol:Inv_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Zero() (gas: 3569)
+
+Encountered 2 failing tests in test/unit/sd59x18/math/ln/ln.t.sol:Ln_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Negative() (gas: 3649)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Zero() (gas: 3638)
+
+Encountered 2 failing tests in test/unit/sd59x18/math/log10/log10.t.sol:Log10_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Negative() (gas: 3621)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Zero() (gas: 5442)
+
+Encountered 2 failing tests in test/unit/sd59x18/math/log2/log2.t.sol:Log2_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Negative() (gas: 3595)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Zero() (gas: 3628)
+
+Encountered 5 failing tests in test/unit/sd59x18/math/mul/mul.t.sol:Mul_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_OneOperandMinSD59x18_Function() (gas: 3177)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_OneOperandMinSD59x18_Operator() (gas: 3167)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowSD59x18_A() (gas: 4270)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowSD59x18_B() (gas: 4305)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUint256() (gas: 359756)
+
+Encountered 3 failing tests in test/unit/sd59x18/math/powu/powu.t.sol:Powu_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowSD59x18() (gas: 4672)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUint256() (gas: 4291)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultUnderflowSD59x18() (gas: 4756)
+
+Encountered 2 failing tests in test/unit/sd59x18/math/sqrt/sqrt.t.sol:Sqrt_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3929)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Negative() (gas: 3611)
+
+Encountered 1 failing test in test/unit/ud60x18/conversion/convert-to/convertTo.t.sol:ConvertTo_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3719)
+
+Encountered 1 failing test in test/unit/ud60x18/math/ceil/ceil.t.sol:CeilTest
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3747)
+
+Encountered 4 failing tests in test/unit/ud60x18/math/div/div.t.sol:Div_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorZero_Function() (gas: 3674)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_DenominatorZero_Operator() (gas: 3696)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUD60x18_Function() (gas: 4111)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUD60x18_Operator() (gas: 4090)
+
+Encountered 1 failing test in test/unit/ud60x18/math/exp/exp.t.sol:Exp_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3748)
+
+Encountered 1 failing test in test/unit/ud60x18/math/exp2/exp2.t.sol:Exp2_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3747)
+
+Encountered 1 failing test in test/unit/ud60x18/math/gm/gm.t.sol:Gm_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ProductOverflows() (gas: 4084)
+
+Encountered 1 failing test in test/unit/ud60x18/math/inv/inv.t.sol:Inv_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_Zero() (gas: 3544)
+
+Encountered 1 failing test in test/unit/ud60x18/math/ln/ln.t.sol:Ln_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_LtUnit() (gas: 3779)
+
+Encountered 1 failing test in test/unit/ud60x18/math/log10/log10.t.sol:Log10_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_LtUnit() (gas: 3748)
+
+Encountered 1 failing test in test/unit/ud60x18/math/log2/log2.t.sol:Log2_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_LtUnit() (gas: 3725)
+
+Encountered 2 failing tests in test/unit/ud60x18/math/mul/mul.t.sol:Mul_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUD60x18_Function() (gas: 4109)
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowUD60x18_Operator() (gas: 4065)
+
+Encountered 1 failing test in test/unit/ud60x18/math/powu/powu.t.sol:Powu_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_ResultOverflowsUD60x18() (gas: 3915)
+
+Encountered 1 failing test in test/unit/ud60x18/math/sqrt/sqrt.t.sol:Sqrt_Unit_Test
+[FAIL: call didn't revert at a lower depth than cheatcode call depth] test_RevertWhen_GtMaxPermitted() (gas: 3725)
+
+Encountered a total of 92 failing tests, 222 tests succeeded

@@ -1,0 +1,42 @@
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Saving this and future failures in cache/fuzz/failures
+proptest: If this test was run on a CI system, you may wish to add the following line to your copy of the file. (You may need to create it.)
+cc 7a00f7bc913d50a8a8b89aa4d78b6b9969622ce8aa81a5cb2f897ca80dc51329
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Saving this and future failures in cache/fuzz/failures
+proptest: If this test was run on a CI system, you may wish to add the following line to your copy of the file.
+cc 50b4e9ba5556835360dc0ea66a9e75264d85e4f655c8814f1a25615530bcd88e
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Saving this and future failures in cache/fuzz/failures
+proptest: If this test was run on a CI system, you may wish to add the following line to your copy of the file.
+cc 271ec369430afee867fed8c00c8524ccbc52f1cf6ad396ea022db962852d2d94
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Saving this and future failures in cache/fuzz/failures
+proptest: If this test was run on a CI system, you may wish to add the following line to your copy of the file.
+cc b50d4fa4670cbfaa87d1e235fdcfe041df1f6ba47489df0ef223272fe7eb98be
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Saving this and future failures in cache/fuzz/failures
+proptest: If this test was run on a CI system, you may wish to add the following line to your copy of the file.
+cc 8780e2c81b29309f41c05239d5e35f6c752e78659241dd26441bcd52ce69ffec
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)
+proptest: Aborting shrinking after the PROPTEST_MAX_SHRINK_ITERS environment variable or ProptestConfig.max_shrink_iters iterations (set 0 to a large(r) value to shrink more; current configuration: 0 iterations)

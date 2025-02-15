@@ -245,7 +245,7 @@ function report(org, repo, executable) {
   let forgeTest;
   try {
     const forgeTestOutput = read(org, repo, ['forge', 'test'], 'out');
-    const forgeTestSummary = forgeTestOutput.match(/Ran (\d+) test suites in (\d+\.\d+)s \((\d+\.\d+)s CPU time\): (\d+) tests passed, (\d+) failed, (\d+) skipped \((\d+) total tests\)/);
+    const forgeTestSummary = forgeTestOutput.match(/Ran (\d+) test suites in (\d+\.\d+)m?s \((\d+\.\d+)m?s CPU time\): (\d+) tests passed, (\d+) failed, (\d+) skipped \((\d+) total tests\)/);
     let forgeTestPassed = 0;
     let forgeTestFailed = 0;
     if (forgeTestSummary !== null) {

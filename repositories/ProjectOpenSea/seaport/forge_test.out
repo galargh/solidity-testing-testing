@@ -1,0 +1,388 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/foundry/offerers/TestPoolOffererTest.t.sol:TestPoolOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.85ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/conduit/ConduitExecute.t.sol:ConduitExecuteTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.06ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/conduit/ConduitExecuteBatch1155.t.sol:ConduitExecuteBatch1155Test
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.86ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/BulkSignature.t.sol:BulkSignatureTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 3.01ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/offerers/AdjustedAmountOfferer.t.sol:AdjustedAmountOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 3.13ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/SeaportValidator.t.sol:SeaportValidatorTestSuite
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 3.03ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/conduit/ConduitExecuteWithBatch1155.t.sol:ConduitExecuteWithBatch1155Test
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.38ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/TokenTransferrer.t.sol:TokenTransferrerTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.51ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/offerers/BadOfferer.t.sol:BadOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.73ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/zone/TestTransferValidationZoneFuzz.t.sol:TestTransferValidationZoneOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.88ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/FuzzMain.t.sol:FuzzMainTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 6.27ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/ConstantsTest.t.sol:ConstantsTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.23ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/ConsiderationErrors.t.sol:ConsiderationErrors
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.73ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/TransferHelperMultipleRecipientsTest.sol:TransferHelperMultipleRecipientsTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.91ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/zone/TestZoneCalldataFidelity.t.sol:PreAndPostFulfillmentCheckTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.73ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/SelfRestricted.t.sol:SelfRestrictedTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 3.94ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/FulfillAdvancedOrder.t.sol:FulfillAdvancedOrder
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 7.67ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/offerers/ContractOffersNativeTokenOfferItems.t.sol:ContractOffersNativeTokenOfferItems
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.71ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/FuzzSetup.t.sol:FuzzSetupTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.39ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/TransferHelperSingleRecipientTest.sol:TransferHelperSingleRecipientTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.88ms (0.00ns CPU time)
+
+Ran 5 tests for test/foundry/new/FractionUtil.t.sol:FractionUtilTest
+[PASS] testGetInvalidResults() (gas: 3797)
+[PASS] testGetPartialFillResults() (gas: 2741)
+[PASS] testGetPartialFillResultsGCD() (gas: 4170)
+[PASS] testGetWholeFillResults() (gas: 2733)
+[PASS] testGetWholeFillResultsGCD() (gas: 4084)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 649.63µs (103.33µs CPU time)
+
+Ran 1 test for test/foundry/zone/UnauthorizedOrderSkip.t.sol:UnauthorizedOrderSkipTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.88ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/GetterTests.t.sol:TestGetters
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.23ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/CeilEquivalenceTest.t.sol:CeilEquivalenceTest
+[PASS] testCeilEquivalence(uint256,uint256) (runs: 1000, μ: 521, ~: 521)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 10.15ms (9.59ms CPU time)
+
+Ran 1 test for test/foundry/FulfillAdvancedOrderCriteria.t.sol:FulfillAdvancedOrderCriteria
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 3.34ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/TestNewHelpers.t.sol:TestNewHelpersTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.86ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/FulfillOrderTest.t.sol:FulfillOrderTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.35ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/offerers/StatefulOfferer.t.sol:StatefulOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.86ms (0.00ns CPU time)
+
+Ran 9 tests for test/foundry/offerers/TestPoolOffererImpl.t.sol:TestPoolOffererImpl
+[PASS] testGenerateOrder() (gas: 132992)
+[PASS] testGenerateOrder2() (gas: 72715)
+[PASS] testGenerateOrder_wildcard1() (gas: 74631)
+[PASS] testGenerateOrder_wildcard_rejectWildcardSpent() (gas: 21729)
+[PASS] testInitialized() (gas: 27162)
+[PASS] testPreviewOrder() (gas: 24215)
+[PASS] testPreviewOrder2() (gas: 27615)
+[PASS] testPreviewOrder3() (gas: 28153)
+[PASS] testPreviewOrder_wildcard() (gas: 26675)
+Suite result: ok. 9 passed; 0 failed; 0 skipped; finished in 1.57ms (532.04µs CPU time)
+
+Ran 1 test for test/foundry/FullfillAvailableOrder.t.sol:FulfillAvailableOrder
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.81ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/FulfillAvailableAdvancedOrder.t.sol:FulfillAvailableAdvancedOrder
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.94ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/SelfRestrictedContractOfferer.t.sol:SelfRestrictedContractOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 6.07ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/MatchAdvancedOrder.t.sol:MatchAdvancedOrder
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 3.91ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/FuzzHelpers.t.sol:FuzzHelpersTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.86ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/FuzzEngine.t.sol:FuzzEngineTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 5.22ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/FuzzInscribers.t.sol:FuzzHelpersTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.91ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/FulfillAvailableAdvancedOrderCriteria.t.sol:FulfillAdvancedOrderCriteria
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.77ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/SignatureVerification.t.sol:SignatureVerificationTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 6.26ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/helpers/sol/MatchFulfillmentHelper.t.sol:MatchFulfillmentHelperTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.80ms (0.00ns CPU time)
+
+Ran 4 tests for test/foundry/new/helpers/sol/FulfillAvailableHelper.t.sol:FulfillAvailableHelperTest
+[PASS] testAggregated_multi() (gas: 632544)
+[PASS] testAggregated_multi_conduitKey() (gas: 726052)
+[PASS] testAggregated_single() (gas: 419911)
+[PASS] testNaive() (gas: 75710)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 1.57ms (882.17µs CPU time)
+
+Ran 1 test for test/foundry/MatchOrders.t.sol:MatchOrders
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.85ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/NonReentrant.t.sol:NonReentrantTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 3.46ms (0.00ns CPU time)
+
+Ran 5 tests for test/foundry/NonMatchSelectorTest.t.sol:NonMatchSelectorTest
+[PASS] testNonMatchSelectorMagicMaskAndInvalidErrorValue() (gas: 317)
+[PASS] testSelectorFulfillAvailableAdvancedOrders() (gas: 330)
+[PASS] testSelectorFulfillAvailableOrders() (gas: 285)
+[PASS] testSelectorMatchAdvancedOrders() (gas: 317)
+[PASS] testSelectorMatchOrders() (gas: 308)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 568.58µs (37.42µs CPU time)
+
+Ran 1 test for test/foundry/zone/PreAndPostFulfillmentCheck.t.sol:PreAndPostFulfillmentCheckTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.87ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/FuzzCoverage.t.sol:FuzzCoverageTestSuite
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 5.16ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/FuzzGenerators.t.sol:FuzzGeneratorsTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 3.86ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/FulfillBasicOrderTest.t.sol:FulfillBasicOrderTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.18ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/offerers/OffererCriteriaAdvanced.t.sol:OffererCriteriaAdvancedTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 2.00ms (0.00ns CPU time)
+
+Ran 1 test for test/foundry/new/SeaportNavigator.t.sol:SeaportNavigatorTestSuite
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 3.25ms (0.00ns CPU time)
+
+Ran 15 tests for test/foundry/new/ExpectedBalances.t.sol:ExpectedBalancesTest
+[PASS] testAddTransfers() (gas: 1361115)
+[PASS] testCheckBalances() (gas: 1360856)
+[PASS] testERC1155ExtraBalance() (gas: 472051)
+[PASS] testERC1155InsufficientBalance() (gas: 231624)
+[PASS] testERC1155NotTransferred() (gas: 472121)
+[PASS] testERC20ExtraBalance() (gas: 344769)
+[PASS] testERC20InsufficientBalance() (gas: 118518)
+[PASS] testERC20MultipleSenders() (gas: 331745)
+[PASS] testERC20NotTransferred() (gas: 317567)
+[PASS] testERC721ExtraBalance() (gas: 461026)
+[PASS] testERC721MultipleIdentifiers() (gas: 562275)
+[PASS] testERC721NotTransferred() (gas: 478164)
+[PASS] testNativeExtraBalance() (gas: 176919)
+[PASS] testNativeInsufficientBalance() (gas: 39445)
+[PASS] testNativeNotTransferred() (gas: 211851)
+Suite result: ok. 15 passed; 0 failed; 0 skipped; finished in 14.63ms (1.96ms CPU time)
+
+Ran 4 tests for test/foundry/new/helpers/sol/lib/types/MatchComponentType.t.sol:MatchComponentTypeTest
+[PASS] testCreateGetAndUnpack() (gas: 1144)
+[PASS] testCreateGetAndUnpack(uint240,uint8,uint8) (runs: 1000, μ: 1531, ~: 1531)
+[PASS] testSetters() (gas: 2202)
+[PASS] testSetters(uint240,uint8,uint8) (runs: 1000, μ: 2588, ~: 2588)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 18.01ms (31.02ms CPU time)
+
+Ran 1 test for test/foundry/new/helpers/sol/lib/fulfillment/AmountDeriverHelper.t.sol:AmountDeriverHelperTest
+[PASS] testDeriveFractionCompatibleAmountsAndTimes(uint256,uint256,uint256,uint256,uint256,uint120,uint120) (runs: 1000, μ: 27883, ~: 28125)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 71.51ms (70.77ms CPU time)
+
+Ran 3 tests for test/foundry/new/helpers/sol/MatchFulfillmentPriv.t.sol:MatchFulfillmentLibTest
+[PASS] testConsolidateComponents(uint240[10]) (runs: 1000, μ: 275822, ~: 277579)
+[PASS] testProcessConsiderationComponents() (gas: 160700)
+[PASS] testProcessOfferComponent() (gas: 157267)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 138.66ms (137.67ms CPU time)
+
+Ran 53 test suites in 185.52ms (379.91ms CPU time): 47 tests passed, 44 failed, 0 skipped (91 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/foundry/BulkSignature.t.sol:BulkSignatureTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/ConsiderationErrors.t.sol:ConsiderationErrors
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/ConstantsTest.t.sol:ConstantsTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/FulfillAdvancedOrder.t.sol:FulfillAdvancedOrder
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/FulfillAdvancedOrderCriteria.t.sol:FulfillAdvancedOrderCriteria
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/FulfillAvailableAdvancedOrder.t.sol:FulfillAvailableAdvancedOrder
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/FulfillAvailableAdvancedOrderCriteria.t.sol:FulfillAdvancedOrderCriteria
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/FulfillBasicOrderTest.t.sol:FulfillBasicOrderTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/FulfillOrderTest.t.sol:FulfillOrderTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/FullfillAvailableOrder.t.sol:FulfillAvailableOrder
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/GetterTests.t.sol:TestGetters
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/MatchAdvancedOrder.t.sol:MatchAdvancedOrder
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/MatchOrders.t.sol:MatchOrders
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/NonReentrant.t.sol:NonReentrantTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/SignatureVerification.t.sol:SignatureVerificationTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/TestNewHelpers.t.sol:TestNewHelpersTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/TokenTransferrer.t.sol:TokenTransferrerTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/TransferHelperMultipleRecipientsTest.sol:TransferHelperMultipleRecipientsTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/TransferHelperSingleRecipientTest.sol:TransferHelperSingleRecipientTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/conduit/ConduitExecute.t.sol:ConduitExecuteTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/conduit/ConduitExecuteBatch1155.t.sol:ConduitExecuteBatch1155Test
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/conduit/ConduitExecuteWithBatch1155.t.sol:ConduitExecuteWithBatch1155Test
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/FuzzCoverage.t.sol:FuzzCoverageTestSuite
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/FuzzEngine.t.sol:FuzzEngineTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/FuzzGenerators.t.sol:FuzzGeneratorsTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/FuzzHelpers.t.sol:FuzzHelpersTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/FuzzInscribers.t.sol:FuzzHelpersTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/FuzzMain.t.sol:FuzzMainTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/FuzzSetup.t.sol:FuzzSetupTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/SeaportNavigator.t.sol:SeaportNavigatorTestSuite
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/SeaportValidator.t.sol:SeaportValidatorTestSuite
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/SelfRestricted.t.sol:SelfRestrictedTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/SelfRestrictedContractOfferer.t.sol:SelfRestrictedContractOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/new/helpers/sol/MatchFulfillmentHelper.t.sol:MatchFulfillmentHelperTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/offerers/AdjustedAmountOfferer.t.sol:AdjustedAmountOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/offerers/BadOfferer.t.sol:BadOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/offerers/ContractOffersNativeTokenOfferItems.t.sol:ContractOffersNativeTokenOfferItems
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/offerers/OffererCriteriaAdvanced.t.sol:OffererCriteriaAdvancedTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/offerers/StatefulOfferer.t.sol:StatefulOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/offerers/TestPoolOffererTest.t.sol:TestPoolOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/zone/PreAndPostFulfillmentCheck.t.sol:PreAndPostFulfillmentCheckTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/zone/TestTransferValidationZoneFuzz.t.sol:TestTransferValidationZoneOffererTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/zone/TestZoneCalldataFidelity.t.sol:PreAndPostFulfillmentCheckTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered 1 failing test in test/foundry/zone/UnauthorizedOrderSkip.t.sol:UnauthorizedOrderSkipTest
+[FAIL: vm.getCode: failed to read from "/Users/galargh/GitHub/galargh/solidity-testing-testing/repositories/ProjectOpenSea/seaport/optimized-out/ConduitController.sol/ConduitController.json": No such file or directory (os error 2)] setUp() (gas: 0)
+
+Encountered a total of 44 failing tests, 47 tests succeeded

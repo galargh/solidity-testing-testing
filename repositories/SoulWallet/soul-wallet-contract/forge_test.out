@@ -1,0 +1,71 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/soulwallet/deploy/direct.t.sol:DeployDirectTest
+[PASS] test_Deploy() (gas: 10937675)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 905.54µs (557.50µs CPU time)
+
+Ran 2 tests for test/soulwallet/factory/SoulWalletFactory.t.sol:SoulWalletFactoryTest
+[PASS] test_alreadyDeployedWallet() (gas: 232567)
+[PASS] test_deployWallet() (gas: 229676)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 1.25ms (289.83µs CPU time)
+
+Ran 1 test for test/paymaster/ERC20PaymasterActiveWallet.t.sol:ERC20PaymasterActiveWalletTest
+[FAIL: `testFail*` has been removed. Consider changing to test_Revert[If|When]_Condition and expecting a revert] Found 1 instances: testFail_ActiveWalletWithERC20PaymasterMoreOperation (gas: 0)
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 1.28ms (0.00ns CPU time)
+
+Ran 1 test for test/modules/upgrade/UpgradeModule.t.sol:UpgradeTest
+[PASS] test_upgrade() (gas: 75658)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.28ms (40.25µs CPU time)
+
+Ran 1 test for test/soulwallet/1271/SoulWallet1271.t.sol:DeployDirectTest
+[PASS] testVerify1271Signature() (gas: 39847)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.39ms (448.79µs CPU time)
+
+Ran 4 tests for test/validator/SoulWalletDefaultValidator.t.sol:ValidatorSigDecoderTest
+[PASS] test_SignValidatorTypeC() (gas: 266875)
+[PASS] test_ValidatorRecoverSignatureTypeA() (gas: 32708)
+[PASS] test_ValidatorRecoverSignatureTypeB() (gas: 34355)
+[PASS] test_p256() (gas: 237235)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 2.77ms (3.57ms CPU time)
+
+Ran 1 test for test/soulwallet/deploy/protocol.t.sol:DeployProtocolTest
+[PASS] test_Deploy() (gas: 883183)
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 1.56ms (825.29µs CPU time)
+
+Ran 2 tests for test/hooks/2fa/Crypto2FAHook.t.sol:Crypto2FAHookTest
+[PASS] test_applyChange2faWithoutInitiateChange2FA() (gas: 13369)
+[PASS] test_hook() (gas: 1054082)
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 2.79ms (1.38ms CPU time)
+
+Ran 5 tests for test/paymaster/ERC20Paymaster.t.sol:ERC20PaymasterTest
+[PASS] testERC20Paymaster() (gas: 297158)
+[PASS] testSetup() (gas: 22270)
+[PASS] testWithdrawToken(uint256) (runs: 256, μ: 59917, ~: 60361)
+[PASS] testWithdrawTokenFailNotOwner(uint256) (runs: 256, μ: 49678, ~: 50654)
+[PASS] testWithoutPaymaster() (gas: 183602)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 14.70ms (23.03ms CPU time)
+
+Ran 4 tests for test/automation/ClaimInterest.t.sol:ClaimInterestTest
+[PASS] test_change_signer() (gas: 48206)
+[PASS] test_claim_interest() (gas: 87214)
+[PASS] test_expired_signature() (gas: 26858)
+[PASS] test_invalidate_nonce() (gas: 52532)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 14.81ms (1.72ms CPU time)
+
+Ran 7 tests for test/modules/socialRecovery/SocialRecoveryModule.t.sol:SocialRecoveryModuleTest
+[PASS] test_cancelSocialRecovery() (gas: 8788643)
+[PASS] test_deployWalletWithSocialRecoveryModule() (gas: 8603628)
+[PASS] test_executeSocialRecovery() (gas: 8688856)
+[PASS] test_executeSocialRecoveryNotInReadyState() (gas: 8660876)
+[PASS] test_guardianDataZeroWallet() (gas: 8551634)
+[PASS] test_reuseNonceRecovery() (gas: 8658453)
+[PASS] test_scheduleSocialReocery() (gas: 8653483)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 14.32ms (5.96ms CPU time)
+
+Ran 11 test suites in 167.77ms (57.08ms CPU time): 28 tests passed, 1 failed, 0 skipped (29 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/paymaster/ERC20PaymasterActiveWallet.t.sol:ERC20PaymasterActiveWalletTest
+[FAIL: `testFail*` has been removed. Consider changing to test_Revert[If|When]_Condition and expecting a revert] Found 1 instances: testFail_ActiveWalletWithERC20PaymasterMoreOperation (gas: 0)
+
+Encountered a total of 1 failing tests, 28 tests succeeded
