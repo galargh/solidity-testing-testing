@@ -116,7 +116,7 @@ jobs:
           done
           env
           touch '${{ matrix.run.command }}.out'
-          ${{ matrix.run.command }} 2>&1 | tee -a '${{ matrix.run.command }}.out'
+          /usr/bin/time -o '${{ matrix.run.command }}.time' ${{ matrix.run.command }} 2>&1 | tee -a '${{ matrix.run.command }}.out'
         working-directory: ${{ matrix.repository }}
         continue-on-error: true
       - name: Prepare the upload
@@ -130,6 +130,8 @@ jobs:
           echo "content<<EOF" | tee -a $GITHUB_OUTPUT
           (grep -P '${{ matrix.run.regex }}' '${{ matrix.run.command }}.out' || echo "Unexpected Error") | tee -a '${{ matrix.run.command }}.result' | tee -a $GITHUB_OUTPUT
           echo "EOF" | tee -a $GITHUB_OUTPUT
+          echo "" | tee -a '${{ matrix.run.command }}.result'
+          cat '${{ matrix.run.command }}.time' | tee -a '${{ matrix.run.command }}.result'
         working-directory: ${{ matrix.repository }}
       - name: Set the notice
         run: |
