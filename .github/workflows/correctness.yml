@@ -11,6 +11,11 @@ defaults:
   run:
     shell: bash
 
+env:
+  HARDHAT_VERSION: 3.0.0-next.18
+  FORGE_VERSION: v0.3.0
+  NODE_VERSION: 22.10.0
+
 jobs:
   discover:
     if: github.event.inputs.repositories == ''
@@ -43,10 +48,6 @@ jobs:
             regex: 'Compiled \d+ Solidity files with solc \d+\.\d+'
           - command: hardhat test solidity
             regex: 'Run (?:Failed|Passed): \d+ tests, \d+ passed, \d+ failed, \d+ skipped \(duration: \d+ ms\)'
-    env:
-      HARDHAT_VERSION: 3.0.0-next.18
-      FORGE_VERSION: v0.3.0
-      NODE_VERSION: 22.10.0
     steps:
       - name: Checkout the testing repository
         uses: actions/checkout@v4
@@ -62,6 +63,7 @@ jobs:
           echo "EOF" >> $GITHUB_OUTPUT
         working-directory: ${{ github.repository }}
       - name: Checkout the repository to be tested
+        id: repository
         uses: actions/checkout@v4
         with:
           submodules: recursive
@@ -122,7 +124,7 @@ jobs:
         env:
           REPOSITORY: ${{ matrix.repository }}
         run: |
-          echo "name=${REPOSITORY%/*} ${REPOSITORY#*/} ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
+          echo "name=${REPOSITORY%/*} ${REPOSITORY#*/} $(git rev-parse HEAD) ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
           echo "title=${{ matrix.repository }}: ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
           echo "path=${{ matrix.repository }}/${{ matrix.run.command }}.result" | tee -a $GITHUB_OUTPUT
           echo "content<<EOF" | tee -a $GITHUB_OUTPUT
@@ -150,9 +152,15 @@ jobs:
       - name: Summarize the results
         id: summary
         run: |
-          ls -R
+          echo "Testing repository: ${{ github.repository }}" | tee -a $GITHUB_STEP_SUMMARY
+          echo "GitHub ref: ${{ github.ref }}" | tee -a $GITHUB_STEP_SUMMARY
+          echo "Node.js version: $NODE_VERSION" | tee -a $GITHUB_STEP_SUMMARY
+          echo "Hardhat version: $HARDHAT_VERSION"  | tee -a $GITHUB_STEP_SUMMARY
+          echo "Forge version: $FORGE_VERSION" | tee -a $GITHUB_STEP_SUMMARY
+          echo "" | tee -a $GITHUB_STEP_SUMMARY
           for file in **/*.result; do
             echo "#### $file" | tee -a $GITHUB_STEP_SUMMARY
+            echo "" | tee -a $GITHUB_STEP_SUMMARY
             cat "$file" | tee -a $GITHUB_STEP_SUMMARY
             echo "" | tee -a $GITHUB_STEP_SUMMARY
           done
