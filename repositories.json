@@ -129,7 +129,10 @@
           ]
         }
       }
-    }
+    },
+    "ignore": [
+      "*/integration/*"
+    ]
   },
   "sablier-labs/lockup": {
     "packageManager": "bun",

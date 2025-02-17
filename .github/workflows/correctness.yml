@@ -118,6 +118,14 @@ jobs:
           repository: ${{ matrix.repository }}
           path: ${{ matrix.repository }}
           ref: ${{ fromJSON(steps.config.outputs.config).ref }}
+      - name: Remove ignored paths
+        if: fromJSON(steps.config.outputs.config).ignore != ''
+        env:
+          IGNORE: ${{ toJSON(fromJSON(steps.config.outputs.config).ignore) }}
+        run: |
+          for path in $(jq -r 'keys' <<< "$IGNORE"); do
+            rm -rf "${path}"
+          done
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
