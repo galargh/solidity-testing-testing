@@ -8,10 +8,10 @@ on:
         type: string
         default: ''
       hardhat-version:
-        description: 'Hardhat version (default: "3.0.0-next.18")'
+        description: 'Hardhat version (default: "3.0.0-next.19")'
         required: true
         type: string
-        default: '3.0.0-next.18'
+        default: '3.0.0-next.19'
       forge-version:
         description: 'Forge version (default: "v0.3.0")'
         required: true
@@ -78,7 +78,7 @@ jobs:
           name: hardhat
           path: v-next/hardhat/*.tgz
   run:
-    if: success() || (!cancelled() && github.event.inputs.repositories != '')
+    if: (!cancelled())
     needs:
       - discover
       - build
