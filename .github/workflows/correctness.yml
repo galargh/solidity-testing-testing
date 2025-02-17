@@ -6,15 +6,31 @@ on:
         description: 'Repositories (default: "", example: ["transmissions11/solmate"])'
         required: false
         type: string
+        default: ''
+      hardhat-version:
+        description: 'Hardhat version (default: "3.0.0-next.18")'
+        required: true
+        type: string
+        default: '3.0.0-next.18'
+      forge-version:
+        description: 'Forge version (default: "v0.3.0")'
+        required: true
+        type: string
+        default: 'v0.3.0'
+      node-version:
+        description: 'Node.js version (default: "22.10.0")'
+        required: true
+        type: string
+        default: '22.10.0'
 
 defaults:
   run:
     shell: bash
 
 env:
-  HARDHAT_VERSION: 3.0.0-next.18
-  FORGE_VERSION: v0.3.0
-  NODE_VERSION: 22.10.0
+  HARDHAT_VERSION: ${{ github.event.inputs.hardhat-version }}
+  FORGE_VERSION: ${{ github.event.inputs.forge-version }}
+  NODE_VERSION: ${{ github.event.inputs.node-version }}
 
 jobs:
   discover:
@@ -31,9 +47,41 @@ jobs:
           echo "repositories<<EOF" >> $GITHUB_OUTPUT
           jq -r 'keys' repositories.json | tee -a $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
+  build:
+    if: (!startsWith(github.event.inputs.hardhat-version, '3.0.0'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the Hardhat repository
+        uses: actions/checkout@v4
+        with:
+          repository: NomicFoundation/hardhat
+          ref: ${{ github.event.inputs.hardhat-version }}
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        id: setup-node
+        with:
+          node-version: 22
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --prefer-offline
+        working-directory: v-next/hardhat
+      - name: Build the Hardhat package
+        run: pnpm build
+        working-directory: v-next/hardhat
+      - name: Pack the Hardhat package
+        run: pnpm pack
+        working-directory: v-next/hardhat
+      - name: Upload the Hardhat package
+        uses: actions/upload-artifact@v4
+        with:
+          name: hardhat
+          path: v-next/hardhat/*.tgz
   run:
     if: success() || (!cancelled() && github.event.inputs.repositories != '')
-    needs: discover
+    needs:
+      - discover
+      - build
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -80,7 +128,16 @@ jobs:
           version: ${{ env.FORGE_VERSION }}
           cache: false
       - name: Install Hardhat
+        if: startsWith(github.event.inputs.hardhat-version, '3.0.0')
         run: npm install -g @ignored/hardhat-vnext@${{ env.HARDHAT_VERSION }}
+      - name: Download Hardhat
+        if: (!startsWith(github.event.inputs.hardhat-version, '3.0.0'))
+        uses: actions/download-artifact@v4
+        with:
+          name: hardhat
+      - name: Install Hardhat
+        if: (!startsWith(github.event.inputs.hardhat-version, '3.0.0'))
+        run: npm install -g *.tgz
       - name: Install the package manager
         if: fromJSON(steps.config.outputs.config).packageManager != '' && fromJSON(steps.config.outputs.config).packageManager != 'npm'
         run: npm install -g ${{ fromJSON(steps.config.outputs.config).packageManager }}
@@ -116,7 +173,7 @@ jobs:
           done
           env
           touch '${{ matrix.run.command }}.out'
-          /usr/bin/time -o '${{ matrix.run.command }}.time' ${{ matrix.run.command }} 2>&1 | tee -a '${{ matrix.run.command }}.out'
+          /usr/bin/time -o '${{ matrix.run.command }}.time' -p ${{ matrix.run.command }} 2>&1 | tee -a '${{ matrix.run.command }}.out'
         working-directory: ${{ matrix.repository }}
         continue-on-error: true
       - name: Prepare the upload
@@ -155,7 +212,7 @@ jobs:
         id: summary
         run: |
           echo "Testing repository: ${{ github.repository }}" | tee -a $GITHUB_STEP_SUMMARY
-          echo "GitHub ref: ${{ github.ref }}" | tee -a $GITHUB_STEP_SUMMARY
+          echo "Git SHA: ${{ github.sha }}" | tee -a $GITHUB_STEP_SUMMARY
           echo "Node.js version: $NODE_VERSION" | tee -a $GITHUB_STEP_SUMMARY
           echo "Hardhat version: $HARDHAT_VERSION"  | tee -a $GITHUB_STEP_SUMMARY
           echo "Forge version: $FORGE_VERSION" | tee -a $GITHUB_STEP_SUMMARY
