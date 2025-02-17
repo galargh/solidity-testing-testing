@@ -182,11 +182,13 @@ jobs:
           REPOSITORY: ${{ matrix.repository }}
         run: |
           echo "name=${REPOSITORY%/*} ${REPOSITORY#*/} $(git rev-parse HEAD) ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
-          echo "title=${{ matrix.repository }}: ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
+          echo "title=${{ matrix.repository }}: ${{ matrix.run.command }} (${{ steps.run.outcome }})" | tee -a $GITHUB_OUTPUT
           echo "path=${{ matrix.repository }}/${{ matrix.run.command }}.result" | tee -a $GITHUB_OUTPUT
           echo "content<<EOF" | tee -a $GITHUB_OUTPUT
           (grep -P '${{ matrix.run.regex }}' '${{ matrix.run.command }}.out' || echo "Unexpected Error") | tee -a '${{ matrix.run.command }}.result' | tee -a $GITHUB_OUTPUT
           echo "EOF" | tee -a $GITHUB_OUTPUT
+          echo "" | tee -a '${{ matrix.run.command }}.result'
+          echo '${{ steps.run.outcome }}' | tee -a '${{ matrix.run.command }}.result'
           echo "" | tee -a '${{ matrix.run.command }}.result'
           cat '${{ matrix.run.command }}.time' | tee -a '${{ matrix.run.command }}.result'
         working-directory: ${{ matrix.repository }}

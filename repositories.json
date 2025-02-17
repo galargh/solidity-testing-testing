@@ -46,6 +46,9 @@
         "settings": {
           "optimizer": {
             "runs": 1000000
+          },
+          "metadata": {
+            "bytecodeHash": "none"
           }
         }
       },
@@ -70,9 +73,10 @@
         ],
         "settings": {
           "optimizer": {
-            "enabled": false,
+            "enabled": true,
             "runs": 1000
-          }
+          },
+          "evmVersion": "paris"
         }
       },
       "solidityTest": {
@@ -84,6 +88,10 @@
         },
         "fuzz": {
           "runs": 256
+        },
+        "invariant": {
+          "depth": 15,
+          "runs": 10
         }
       }
     }
@@ -109,7 +117,6 @@
         ],
         "settings": {
           "optimizer": {
-            "enabled": false,
             "runs": 1000000
           }
         }
@@ -124,7 +131,7 @@
       }
     }
   },
-  "sablier-labs/v2-core": {
+  "sablier-labs/lockup": {
     "packageManager": "bun",
     "hardhatConfig": {
       "paths": {
@@ -143,10 +150,13 @@
           "solarray/=node_modules/solarray/"
         ],
         "settings": {
-          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 570
+          },
+          "evmVersion": "shanghai",
+          "metadata": {
+            "bytecodeHash": "none"
           }
         }
       },
@@ -172,7 +182,39 @@
           "failOnRevert": true,
           "callOverride": false
         },
-        "sender": "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38"
+        "sender": "0x1804c8AB1F12E6bbf3894d4083f33e07309d1f38",
+        "rpcEndpoints": {
+          "arbitrum": "${ARBITRUM_RPC_URL}",
+          "arbitrum_sepolia": "https://arbitrum-sepolia-rpc.publicnode.com",
+          "avalanche": "${AVALANCHE_RPC_URL}",
+          "base": "https://mainnet.base.org",
+          "base_sepolia": "https://sepolia.base.org",
+          "berachain_artio": "https://bartio.rpc.berachain.com/",
+          "blast": "https://rpc.blast.io",
+          "blast_sepolia": "https://sepolia.blast.io",
+          "bnb": "https://bsc-dataseed.binance.org",
+          "core_dao": "https://rpc.coredao.org",
+          "gnosis": "https://rpc.gnosischain.com",
+          "lightlink": "https://replicator.phoenix.lightlink.io/rpc/v1",
+          "linea": "https://rpc.linea.build",
+          "linea_sepolia": "https://rpc.sepolia.linea.build",
+          "localhost": "http://localhost:8545",
+          "mainnet": "${MAINNET_RPC_URL}",
+          "mode": "https://mainnet.mode.network/",
+          "mode_sepolia": "https://sepolia.mode.network/",
+          "morph": "https://rpc.morphl2.io",
+          "optimism": "${OPTIMISM_RPC_URL}",
+          "optimism_sepolia": "https://sepolia.optimism.io",
+          "polygon": "${POLYGON_RPC_URL}",
+          "scroll": "https://rpc.scroll.io/",
+          "sei": "https://evm-rpc.sei-apis.com",
+          "sei_testnet": "https://evm-rpc.arctic-1.seinetwork.io",
+          "sepolia": "${SEPOLIA_RPC_URL}",
+          "superseed": "https://mainnet.superseed.xyz",
+          "superseed_sepolia": "https://sepolia.superseed.xyz",
+          "taiko_hekla": "https://rpc.hekla.taiko.xyz",
+          "taiko_mainnet": "https://rpc.mainnet.taiko.xyz"
+        }
       }
     },
     "env": {
@@ -198,10 +240,13 @@
           "solady/=node_modules/solady/"
         ],
         "settings": {
-          "viaIR": true,
           "optimizer": {
             "enabled": true,
             "runs": 10000
+          },
+          "evmVersion": "shanghai",
+          "metadata": {
+            "bytecodeHash": "none"
           }
         }
       },
@@ -222,6 +267,22 @@
         "fuzz": {
           "runs": 20,
           "maxTestRejects": 1000000
+        },
+        "rpcEndpoints": {
+          "arbitrum": "${ARBITRUM_RPC_URL}",
+          "arbitrum_sepolia": "https://arbitrum-sepolia.blockpi.network/v1/rpc/public",
+          "avalanche": "${AVALANCHE_RPC_URL}",
+          "base": "https://mainnet.base.org",
+          "base_sepolia": "https://sepolia.base.org",
+          "bnb": "https://bsc-dataseed.binance.org",
+          "gnosis": "https://rpc.gnosischain.com",
+          "localhost": "http://localhost:8545",
+          "mainnet": "${MAINNET_RPC_URL}",
+          "optimism": "${OPTIMISM_RPC_URL}",
+          "optimism_sepolia": "https://sepolia.optimism.io",
+          "polygon": "${POLYGON_RPC_URL}",
+          "scroll": "https://rpc.scroll.io/",
+          "sepolia": "${SEPOLIA_RPC_URL}"
         }
       }
     },
@@ -244,7 +305,8 @@
           "optimizer": {
             "enabled": true,
             "runs": 1000000
-          }
+          },
+          "evmVersion": "shanghai"
         }
       },
       "solidityTest": {
@@ -269,6 +331,11 @@
           "optimizer": {
             "enabled": true,
             "runs": 200
+          },
+          "evmVersion": "paris",
+          "metadata": {
+            "bytecodeHash": "none",
+            "cborMetadata": false
           }
         }
       },
@@ -281,6 +348,18 @@
           "read": [
             "./out-optimized"
           ]
+        },
+        "rpcEndpoints": {
+          "arbitrum": "https://arbitrum-mainnet.infura.io/v3/${API_KEY_INFURA}",
+          "avalanche": "https://avalanche-mainnet.infura.io/v3/${API_KEY_INFURA}",
+          "bnb_smart_chain": "https://bsc-dataseed.binance.org",
+          "gnosis_chain": "https://rpc.gnosischain.com",
+          "goerli": "https://goerli.infura.io/v3/${API_KEY_INFURA}",
+          "localhost": "http://localhost:8545",
+          "mainnet": "https://eth-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}",
+          "optimism": "https://optimism-mainnet.infura.io/v3/${API_KEY_INFURA}",
+          "polygon": "https://polygon-mainnet.infura.io/v3/${API_KEY_INFURA}",
+          "sepolia": "https://sepolia.infura.io/v3/${API_KEY_INFURA}"
         }
       }
     }
@@ -299,7 +378,8 @@
         "settings": {
           "optimizer": {
             "enabled": false
-          }
+          },
+          "evmVersion": "shanghai"
         }
       },
       "solidityTest": {
@@ -335,6 +415,7 @@
           "seaport/=contracts/"
         ],
         "settings": {
+          "evmVersion": "cancun",
           "optimizer": {
             "runs": 4294967292
           }
@@ -387,7 +468,7 @@
       }
     }
   },
-  "SoulWallet/soul-wallet-contract": {
+  "Elytro-eth/soul-wallet-contract": {
     "packageManager": "npm",
     "hardhatConfig": {
       "paths": {
@@ -415,15 +496,30 @@
           "optimizer": {
             "enabled": true,
             "runs": 100000
+          },
+          "evmVersion": "cancun",
+          "metadata": {
+            "bytecodeHash": "none",
+            "cborMetadata": false
           }
         }
       },
       "solidityTest": {
-        "testFail": true
+        "testFail": true,
+        "rpcEndpoints": {
+          "goerli": "${GOERLI_RPC_URL}",
+          "arbitrumgoerli": "${ARBITRUM_GOERLI_RPC_URL}",
+          "optimismgoerli": "${OPTIMISM_GOERLI_RPC_URL}",
+          "etherum": "${ETHERUM_RPC_URL}",
+          "arbitrum": "${ARBITRUM_RPC_URL}",
+          "optimism": "${OPTIMISM_RPC_URL}",
+          "scrollsepolia": "${SCROLL_SEPOLIA_RPC_URL}",
+          "basesepolia": "${BASE_SEPOLIA_RPC_URL}"
+        }
       }
     }
   },
-  "pancakeswap/pancake-v4-core": {
+  "pancakeswap/infinity-core": {
     "packageManager": "yarn",
     "hardhatConfig": {
       "paths": {
@@ -444,8 +540,11 @@
         "settings": {
           "viaIR": true,
           "optimizer": {
-            "enabled": false,
             "runs": 25666
+          },
+          "evmVersion": "cancun",
+          "metadata": {
+            "bytecodeHash": "none"
           }
         }
       },
@@ -486,11 +585,17 @@
           "forge-std/=lib/forge-std/src/",
           "openzeppelin/=lib/openzeppelin-contracts/contracts/"
         ],
-        "optimizer": {
-          "enabled": true,
-          "runs": 10000000
-        },
-        "viaIR": false
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 10000000
+          },
+          "viaIR": false,
+          "evmVersion": "paris",
+          "metadata": {
+            "bytecodeHash": "none"
+          }
+        }
       },
       "solidityTest": {
         "fuzz": {
