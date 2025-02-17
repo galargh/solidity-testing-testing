@@ -335,7 +335,7 @@
           "evmVersion": "paris",
           "metadata": {
             "bytecodeHash": "none",
-            "cborMetadata": false
+            "appendCBOR": false
           }
         }
       },
@@ -500,7 +500,7 @@
           "evmVersion": "cancun",
           "metadata": {
             "bytecodeHash": "none",
-            "cborMetadata": false
+            "appendCBOR": false
           }
         }
       },
