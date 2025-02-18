@@ -22,9 +22,6 @@ pushd $2
   sed -i 's/blockGasLimit": "\([0-9]\+\)"/blockGasLimit": BigInt(\1)/' hardhat.config.js
   sed -i 's/blockTimestamp": "\([0-9]\+\)"/blockTimestamp": BigInt(\1)/' hardhat.config.js
 
-  if [[ "$packageManager" != "npm" ]]; then
-    npm install -g $packageManager
-  fi
   $packageManager install || npm init -y
   npm pkg set type="module"
 popd

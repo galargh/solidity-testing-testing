@@ -38,7 +38,7 @@ Run `./issues/143.sh` to reproduce the `Process exited with code 143` error we s
 Run the following command to build all the Docker images:
 
 ```bash
-for key in "$(jq -r 'keys[]' repositories.json)"; do
+for key in $(jq -r 'keys[]' repositories.json); do
   docker build --platform linux/x86_64 --build-arg HARDHAT_VERSION=3.0.0-next.19 --build-arg PROJECT_REPOSITORY=$key -t $key .
 done
 ```
@@ -46,7 +46,7 @@ done
 Run the following command to run all the tests:
 
 ```bash
-for key in "$(jq -r 'keys[]' repositories.json)"; do
+for key in $(jq -r 'keys[]' repositories.json); do
   docker run --platform linux/x86_64 --rm --memory=16g --cpus=4 $key test solidity
   echo $?
 done
@@ -57,8 +57,8 @@ done
 Run the following command to clone and initialize all the repositories:
 
 ```bash
-for key in "$(jq -r 'keys[]' repositories.json)"; do
-  git clone --depth 1 --recurse-submodules https://github.com/$key.git repositories/$key
+for key in $(jq -r 'keys[]' repositories.json); do
+  # git clone --depth 1 --recurse-submodules https://github.com/$key.git repositories/$key
   ./init.sh $key repositories/$key
 done
 ```
@@ -66,10 +66,11 @@ done
 Run the following command to run all the tests:
 
 ```bash
-for key in "$(jq -r 'keys[]' repositories.json)"; do
+for key in $(jq -r 'keys[]' repositories.json); do
+  root="$(pwd)"
   pushd repositories/$key
-  hardhat test solidity
-  echo $?
+  hardhat test solidity 2>&1 | tee "hardhat.test.out"
+  echo "$key: $?" | tee -a "$root/results.txt"
   popd
 done
 ```

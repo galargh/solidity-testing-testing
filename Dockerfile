@@ -7,6 +7,8 @@ RUN ls -la node-v22.10.0-linux-x64/bin
 
 ENV PATH="/node-v22.10.0-linux-x64/bin:${PATH}"
 
+RUN npm install -g pnpm bun yarn
+
 ARG HARDHAT_VERSION
 RUN npm install -g @ignored/hardhat-vnext@${HARDHAT_VERSION}
 
