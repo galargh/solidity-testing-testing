@@ -72,4 +72,7 @@ for key in $(jq -r 'keys[]' repositories.json); do
   hardhat test solidity 2>&1 | tee "hardhat.test.out"
   popd
 done
+
+grep "✔ Run Passed" repositories/*/*/hardhat.test.out
+grep "✘ Run Failed" repositories/*/*/hardhat.test.out
 ```
