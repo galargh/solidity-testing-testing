@@ -16,7 +16,7 @@ pushd $2
     done
   fi
 
-  rm hardhat.confifg.* 2>/dev/null || true
+  rm hardhat.config.* 2>/dev/null || true
 
   echo "export default $hardhatConfig;" > hardhat.config.js
   sed -i 's/blockGasLimit": "\([0-9]\+\)"/blockGasLimit": BigInt(\1)/' hardhat.config.js
