@@ -70,7 +70,6 @@ for key in $(jq -r 'keys[]' repositories.json); do
   root="$(pwd)"
   pushd repositories/$key
   hardhat test solidity 2>&1 | tee "hardhat.test.out"
-  echo "$key: $?" | tee -a "$root/results.txt"
   popd
 done
 ```
