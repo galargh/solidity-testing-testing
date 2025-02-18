@@ -1,4 +1,21 @@
+FROM node:22.10.0-alpine AS hardhat
+ARG HARDHAT_REF_NAME
+
+RUN apk add --no-cache git
+RUN npm install -g pnpm
+
+RUN git clone --depth 1 --branch=${HARDHAT_REF_NAME} https://github.com/NomicFoundation/hardhat.git /hardhat
+
+WORKDIR /hardhat
+RUN git rev-parse HEAD
+
+WORKDIR /hardhat/v-next/hardhat
+RUN pnpm install --frozen-lockfile --prefer-offline
+RUN pnpm build
+RUN pnpm pack
+
 FROM ubuntu:24.04
+ARG PROJECT_REPOSITORY
 
 RUN apt-get update && apt-get install -y curl xz-utils git jq
 RUN curl -sL https://nodejs.org/dist/v22.10.0/node-v22.10.0-linux-x64.tar.xz -o node-v22.10.0-linux-x64.tar.xz
@@ -7,10 +24,12 @@ RUN ls -la node-v22.10.0-linux-x64/bin
 
 ENV PATH="/node-v22.10.0-linux-x64/bin:${PATH}"
 
-ARG HARDHAT_VERSION
-RUN npm install -g @ignored/hardhat-vnext@${HARDHAT_VERSION}
+COPY --from=hardhat /hardhat/v-next/hardhat/*.tgz /hardhat/
 
-ARG PROJECT_REPOSITORY
+WORKDIR /hardhat
+RUN npm install -g *.tgz
+RUN rm -rf /hardhat
+
 RUN git clone --depth 1 --recurse-submodules https://github.com/${PROJECT_REPOSITORY}.git /project
 
 COPY repositories.json init.sh /test/

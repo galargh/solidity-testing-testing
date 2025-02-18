@@ -28,3 +28,48 @@ This repository contains a collection of Solidity repositories that are used for
 | sablier-labs/lockup | 95717b7b970a8000446febe0053fbb3afab2c418 | ✅ (243 in 93.98s) | ❌ (575/590 in 127.20s) | ✅ (20 in 5.58s) | ❌ Exit Code 143 |
 | sablier-labs/v2-periphery | c3ea8d7f7aab4cb33c6b4517ba38d32ca35b1257 | ✅ (169 in 24.35s) | ❌ (77/87 in 24.08s) | ✅ (12 in 4.51s) | ❌ Exit Code 143 |
 | transmissions11/solmate | c93f7716c9909175d45f6ef80a34a650e2d24e56 | ✅ (60 in 6.96s) | ✅ (568 in 23.94s) | ✅ (38 in 3.72s) | ❌ (565/570 in 51.67s) |
+
+## Issues
+
+Run `./issues/143.sh` to reproduce the `Process exited with code 143` error we saw in the GitHub Actions environment. Locally, the error shows up as `Process exited with code 137` i.e. out-of-memory. Please note that this is quite slow when running on an MacOS ARM machine.
+
+## Docker
+
+Run the following command to build all the Docker images:
+
+```bash
+for key in "$(jq -r 'keys[]' repositories.json)"; do
+  docker build --platform linux/x86_64 --build-arg HARDHAT_VERSION=3.0.0-next.19 --build-arg PROJECT_REPOSITORY=$key -t $key .
+done
+```
+
+Run the following command to run all the tests:
+
+```bash
+for key in "$(jq -r 'keys[]' repositories.json)"; do
+  docker run --platform linux/x86_64 --rm --memory=16g --cpus=4 $key test solidity
+  echo $?
+done
+```
+
+## Native
+
+Run the following command to clone and initialize all the repositories:
+
+```bash
+for key in "$(jq -r 'keys[]' repositories.json)"; do
+  git clone --depth 1 --recurse-submodules https://github.com/$key.git repositories/$key
+  ./init.sh $key repositories/$key
+done
+```
+
+Run the following command to run all the tests:
+
+```bash
+for key in "$(jq -r 'keys[]' repositories.json)"; do
+  pushd repositories/$key
+  hardhat test solidity
+  echo $?
+  popd
+done
+```
