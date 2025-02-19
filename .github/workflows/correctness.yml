@@ -7,6 +7,11 @@ on:
         required: false
         type: string
         default: ''
+      runners:
+        description: 'Runs-on (default: ["ubuntu-latest"])'
+        required: true
+        type: string
+        default: '["ubuntu-latest"]'
       hardhat-version:
         description: 'Hardhat version (default: "3.0.0-next.19")'
         required: true
@@ -82,11 +87,12 @@ jobs:
     needs:
       - discover
       - build
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.runner }}
     strategy:
       fail-fast: false
       matrix:
         repository: ${{ github.event.inputs.repositories != '' && fromJson(github.event.inputs.repositories) || fromJson(needs.discover.outputs.repositories) }}
+        runner: ${{ fromJson(github.event.inputs.runners) }}
         run:
           - command: forge build
             regex: 'Compiling \d+ files with Solc \d+\.\d+'
@@ -190,9 +196,11 @@ jobs:
         env:
           REPOSITORY: ${{ matrix.repository }}
         run: |
-          echo "name=${REPOSITORY%/*} ${REPOSITORY#*/} $(git rev-parse HEAD) ${{ matrix.run.command }}" | tee -a $GITHUB_OUTPUT
-          echo "title=${{ matrix.repository }}: ${{ matrix.run.command }} (${{ steps.run.outcome }})" | tee -a $GITHUB_OUTPUT
+          echo "name=${REPOSITORY%/*} ${REPOSITORY#*/} ${{ matrix.run.command }} ${{ matrix.runner }}" | tee -a $GITHUB_OUTPUT
+          echo "title=${{ matrix.repository }}: ${{ matrix.run.command }} (${{ steps.run.outcome }}) [${{ matrix.runner }}]" | tee -a $GITHUB_OUTPUT
           echo "path=${{ matrix.repository }}/${{ matrix.run.command }}.result" | tee -a $GITHUB_OUTPUT
+          echo "#### ${{ matrix.repository }} ($(git rev-parse --short HEAD)): ${{ matrix.run.command }} (${{ steps.run.outcome }}) [${{ matrix.runner }}]" | tee -a '${{ matrix.run.command }}.result'
+          echo "" | tee -a '${{ matrix.run.command }}.result'
           echo "content<<EOF" | tee -a $GITHUB_OUTPUT
           (grep -P '${{ matrix.run.regex }}' '${{ matrix.run.command }}.out' || echo "Unexpected Error") | tee -a '${{ matrix.run.command }}.result' | tee -a $GITHUB_OUTPUT
           echo "EOF" | tee -a $GITHUB_OUTPUT
@@ -229,8 +237,6 @@ jobs:
           echo "Forge version: $FORGE_VERSION" | tee -a $GITHUB_STEP_SUMMARY
           echo "" | tee -a $GITHUB_STEP_SUMMARY
           for file in **/*.result; do
-            echo "#### $file" | tee -a $GITHUB_STEP_SUMMARY
-            echo "" | tee -a $GITHUB_STEP_SUMMARY
             cat "$file" | tee -a $GITHUB_STEP_SUMMARY
             echo "" | tee -a $GITHUB_STEP_SUMMARY
           done
