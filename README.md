@@ -58,7 +58,7 @@ Run the following command to clone and initialize all the repositories:
 
 ```bash
 for key in $(jq -r 'keys[]' repositories.json); do
-  # git clone --depth 1 --recurse-submodules https://github.com/$key.git repositories/$key
+  git clone --depth 1 --recurse-submodules https://github.com/$key.git repositories/$key
   ./init.sh $key repositories/$key
 done
 ```
