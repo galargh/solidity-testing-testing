@@ -186,9 +186,16 @@ jobs:
             value=$(jq -r ".[\"$key\"]" <<< "$CONFIG_ENV")
             export "$key"="$value"
           done
-          env
-          touch '${{ matrix.run.command }}.out'
-          /usr/bin/time -o '${{ matrix.run.command }}.time' -p ${{ matrix.run.command }} 2>&1 | tee -a '${{ matrix.run.command }}.out'
+          if [[ -f /usr/bin/time ]]; then
+            /usr/bin/time -o '${{ matrix.run.command }}.time' -p ${{ matrix.run.command }} 2>&1 | tee -a '${{ matrix.run.command }}.out'
+          else
+            before=$(date +%s)
+            { ${{ matrix.run.command }} 2>&1 || exit_code=$?; } | tee -a '${{ matrix.run.command }}.out'
+            exit_code=${exit_code:-0}
+            after=$(date +%s)
+            echo "real $((after - before))" > '${{ matrix.run.command }}.time'
+            exit $exit_code
+          fi
         working-directory: ${{ matrix.repository }}
         continue-on-error: true
       - name: Prepare the upload
