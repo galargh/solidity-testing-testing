@@ -95,13 +95,13 @@ jobs:
         runner: ${{ fromJson(github.event.inputs.runners) }}
         run:
           - command: forge build
-            regex: 'Compiling \d+ files with Solc \d+\.\d+'
+            regex: 'Compiling [0-9]+ files with Solc [0-9]+\.[0-9]+'
           - command: forge test
-            regex: 'Ran \d+ test suites in \d+\.\d+m?s \(\d+\.\d+m?s CPU time\): \d+ tests passed, \d+ failed, \d+ skipped \(\d+ total tests\)'
+            regex: 'Ran [0-9]+ test suites in [0-9]+\.[0-9]+m?s \([0-9]+\.[0-9]+m?s CPU time\): [0-9]+ tests passed, [0-9]+ failed, [0-9]+ skipped \([0-9]+ total tests\)'
           - command: hardhat compile
-            regex: 'Compiled \d+ Solidity files with solc \d+\.\d+'
+            regex: 'Compiled [0-9]+ Solidity files with solc [0-9]+\.[0-9]+'
           - command: hardhat test solidity
-            regex: 'Run (?:Failed|Passed): \d+ tests, \d+ passed, \d+ failed, \d+ skipped \(duration: \d+ ms\)'
+            regex: 'Run (Failed|Passed): [0-9]+ tests, [0-9]+ passed, [0-9]+ failed, [0-9]+ skipped \(duration: [0-9]+ ms\)'
     steps:
       - name: Checkout the testing repository
         uses: actions/checkout@v4
@@ -209,7 +209,7 @@ jobs:
           echo "#### ${{ matrix.repository }} ($(git rev-parse --short HEAD)): ${{ matrix.run.command }} (${{ steps.run.outcome }}) [${{ matrix.runner }}]" | tee -a '${{ matrix.run.command }}.result'
           echo "" | tee -a '${{ matrix.run.command }}.result'
           echo "content<<EOF" | tee -a $GITHUB_OUTPUT
-          (grep -P '${{ matrix.run.regex }}' '${{ matrix.run.command }}.out' || echo "Unexpected Error") | tee -a '${{ matrix.run.command }}.result' | tee -a $GITHUB_OUTPUT
+          (grep -E '${{ matrix.run.regex }}' '${{ matrix.run.command }}.out' || echo "Unexpected Error") | tee -a '${{ matrix.run.command }}.result' | tee -a $GITHUB_OUTPUT
           echo "EOF" | tee -a $GITHUB_OUTPUT
           echo "" | tee -a '${{ matrix.run.command }}.result'
           echo '${{ steps.run.outcome }}' | tee -a '${{ matrix.run.command }}.result'
