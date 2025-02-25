@@ -94,7 +94,13 @@
           "runs": 10
         }
       }
-    }
+    },
+    "ignore": [
+      "*/*7702*",
+      "*/*Transient*",
+      "*/ext/ithaca/*",
+      "*/ext/zksync/*"
+    ]
   },
   "Uniswap/UniswapX": {
     "hardhatConfig": {
@@ -447,7 +453,7 @@
     "packageManager": "pnpm",
     "hardhatConfig": {
       "paths": {
-        "sources": "contracts",
+        "sources": "src",
         "tests": {
           "solidity": "test"
         }

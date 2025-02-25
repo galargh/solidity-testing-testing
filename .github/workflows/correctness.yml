@@ -157,20 +157,21 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Setup Foundry
+        if: startsWith(matrix.run.command, 'forge')
         uses: foundry-rs/foundry-toolchain@de808b1eea699e761c404bda44ba8f21aba30b2c
         with:
           version: ${{ env.FORGE_VERSION }}
           cache: false
       - name: Install Hardhat
-        if: startsWith(github.event.inputs.hardhat-version, '3.0.0')
+        if: startsWith(matrix.run.command, 'hardhat') && startsWith(github.event.inputs.hardhat-version, '3.0.0')
         run: npm install -g @ignored/hardhat-vnext@${{ env.HARDHAT_VERSION }}
       - name: Download Hardhat
-        if: (!startsWith(github.event.inputs.hardhat-version, '3.0.0'))
+        if: startsWith(matrix.run.command, 'hardhat') && !startsWith(github.event.inputs.hardhat-version, '3.0.0')
         uses: actions/download-artifact@v4
         with:
           name: hardhat
       - name: Install Hardhat
-        if: (!startsWith(github.event.inputs.hardhat-version, '3.0.0'))
+        if: startsWith(matrix.run.command, 'hardhat') && !startsWith(github.event.inputs.hardhat-version, '3.0.0')
         run: npm install -g *.tgz
         working-directory: hardhat
       - name: Install the package manager
@@ -181,13 +182,15 @@ jobs:
         run: ${{ fromJSON(steps.config.outputs.config).packageManager }} install
         working-directory: ${{ matrix.repository }}
       - name: Initialize the repository
-        if: fromJSON(steps.config.outputs.config).packageManager == ''
+        if: startsWith(matrix.run.command, 'hardhat') && fromJSON(steps.config.outputs.config).packageManager == ''
         run: npm init -y
         working-directory: ${{ matrix.repository }}
       - name: Set the package type
+        if: startsWith(matrix.run.command, 'hardhat')
         run: npm pkg set type="module"
         working-directory: ${{ matrix.repository }}
       - name: Set the Hardhat configuration
+        if: startsWith(matrix.run.command, 'hardhat')
         env:
           HARDHAT_CONFIG: ${{ toJSON(fromJSON(steps.config.outputs.config).hardhatConfig) }}
         run: |
@@ -196,6 +199,31 @@ jobs:
           sed -i 's/blockGasLimit": "\([0-9]\+\)"/blockGasLimit": BigInt(\1)/' hardhat.config.js
           sed -i 's/blockTimestamp": "\([0-9]\+\)"/blockTimestamp": BigInt(\1)/' hardhat.config.js
           cat hardhat.config.js
+        working-directory: ${{ matrix.repository }}
+      - name: Download compilers
+        if: startsWith(matrix.run.command, 'hardhat')
+        env:
+          SOURCES: ${{ fromJSON(steps.config.outputs.config).hardhatConfig.paths.sources }}
+          TESTS: ${{ fromJSON(steps.config.outputs.config).hardhatConfig.paths.tests.solidity }}
+        run: |
+          mv "$SOURCES" "$SOURCES.bak"
+          if [[ "$TESTS" != "" ]]; then
+            mv "$TESTS" "$TESTS.bak"
+          fi
+          hardhat compile
+          if [[ "$TESTS" != "" ]]; then
+            mv "$TESTS.bak" "$TESTS"
+          fi
+          mv "$SOURCES.bak" "$SOURCES"
+        working-directory: ${{ matrix.repository }}
+      - name: Remove the tests
+        if: matrix.run.command == 'forge build'
+        env:
+          TESTS: ${{ fromJSON(steps.config.outputs.config).hardhatConfig.paths.tests.solidity }}
+        run: |
+          if [[ "$TESTS" != "" ]]; then
+            rm -rf "$TESTS"
+          fi
         working-directory: ${{ matrix.repository }}
       - name: Run ${{ matrix.run.command }}
         id: run
