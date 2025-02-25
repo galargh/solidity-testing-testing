@@ -17,6 +17,11 @@ on:
         required: true
         type: string
         default: '3.0.0-next.19'
+      build-dependencies:
+        description: 'Hardhat build dependencies (default: "", example: ["hardhat-utils"])'
+        required: false
+        type: string
+        default: ''
       forge-version:
         description: 'Forge version (default: "v0.3.0")'
         required: true
@@ -69,8 +74,23 @@ jobs:
         with:
           node-version: 22
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --prefer-offline
-        working-directory: v-next/hardhat
+        env:
+          DEPENDENCIES: ${{ github.event.inputs.build-dependencies || '[]' }}
+        run: |
+          pushd hardhat
+            pnpm install --frozen-lockfile --prefer-offline
+          popd
+          for dependency in $(jq -r '.[]' <<< "$DEPENDENCIES"); do
+            pushd $dependency
+              pnpm install --frozen-lockfile --prefer-offline
+              pnpm build
+              pnpm pack
+            popd
+            pushd hardhat
+              pnpm install ../$dependency/*.tgz
+            popd
+          done
+        working-directory: v-next
       - name: Build the Hardhat package
         run: pnpm build
         working-directory: v-next/hardhat
@@ -81,7 +101,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: hardhat
-          path: v-next/hardhat/*.tgz
+          path: v-next/*/*.tgz
   run:
     if: (!cancelled())
     needs:
@@ -152,6 +172,7 @@ jobs:
       - name: Install Hardhat
         if: (!startsWith(github.event.inputs.hardhat-version, '3.0.0'))
         run: npm install -g *.tgz
+        working-directory: hardhat
       - name: Install the package manager
         if: fromJSON(steps.config.outputs.config).packageManager != '' && fromJSON(steps.config.outputs.config).packageManager != 'npm'
         run: npm install -g ${{ fromJSON(steps.config.outputs.config).packageManager }}
